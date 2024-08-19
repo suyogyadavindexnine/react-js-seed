@@ -1,0 +1,257 @@
+@import './variables';
+@import './mixins';
+@import './component/login';
+@import './component/header';
+@import './component/notifications';
+@import './component/userbox';
+@import './component/layout';
+@import './component/suspenseloader';
+@import './component/sidebar';
+@import './component/app';
+
+//common classes goes here
+body {
+  overflow-y: scroll !important;
+  padding: 0 !important;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.cursorDefault {
+  cursor: default !important;
+}
+
+.hr-line {
+  border: 1px solid $borderColor;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-fixed {
+  position: fixed;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//multiple file upload icon size
+
+.text-center {
+  text-align: center;
+}
+
+//Text Transform
+.textUppercase {
+  text-transform: uppercase !important;
+}
+
+.textCapitalize {
+  text-transform: capitalize !important;
+}
+.textNone {
+  text-transform: none !important;
+}
+
+//text align
+.flex-basic-center {
+  @include flex-basic-center;
+}
+
+.flex-column-center {
+  @include flex-column-center;
+}
+
+.flex-basic-start {
+  justify-content: start !important;
+  @include flex-basic-center;
+}
+
+.flex-basic-space-between {
+  justify-content: space-between !important;
+  @include flex-basic-center;
+}
+
+.flex-basic-space-around {
+  justify-content: space-around !important;
+  @include flex-basic-center;
+}
+
+.flex-basic-end {
+  justify-content: end !important;
+  @include flex-basic-center;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+.flex-column-end {
+  display: flex;
+  flex-direction: column !important;
+  align-items: flex-end;
+}
+
+.flex-column-start {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: start;
+}
+
+.align-items-start {
+  align-items: start !important;
+}
+
+.align-items-end {
+  align-items: end !important;
+}
+
+.textDecorationNone {
+  text-decoration: none !important;
+}
+.textweight {
+  @include font-weight-bold;
+}
+.textalign {
+  text-align: center;
+}
+
+//height
+.h-100 {
+  height: 100%;
+}
+
+//width per clasess
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.m-width {
+  min-width: 350 !important ;
+}
+
+.sidebarwrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.baselayout {
+  flex: 1;
+  height: 100%;
+}
+
+.selectformcontrol {
+  width: 100%;
+}
+
+.overflow_auto {
+  overflow: auto;
+}
+.flex_1 {
+  flex: 1;
+}
+.overflow_x_hidden {
+  overflow-x: hidden;
+}
+.alignitem {
+  align-items: center;
+}
+
+.loginBox {
+  position: relative;
+  &::after {
+    height: 100%;
+    content: '';
+    position: absolute;
+    width: 1px;
+    right: 0px;
+    background-color: $borderBgColor;
+  }
+}
+
+.commonListScroll {
+  @include commonScrollBar;
+  overflow: auto;
+}
+
+//password strength meter
+.passStrengthWeak {
+  background-color: $progressErrorBg !important;
+  .MuiLinearProgress-bar1Determinate {
+    background-color: $progressError !important;
+  }
+}
+.passStrengthFair {
+  background-color: $progressWarningBg !important;
+  .MuiLinearProgress-bar1Determinate {
+    background-color: $progressWarning !important;
+  }
+}
+.passStrengthGood {
+  background-color: $progressStrongBg !important;
+  .MuiLinearProgress-bar1Determinate {
+    background-color: $progressStrong !important;
+  }
+}
+.passStrengthStrong {
+  background-color: $progressSuccessBg !important;
+  .MuiLinearProgress-bar1Determinate {
+    background-color: $progressSuccess !important;
+  }
+}
+.errorState {
+  color: $errorTextColor !important;
+}

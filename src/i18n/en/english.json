@@ -1,0 +1,16 @@
+{
+  "transac_list": "Transaction list",
+  "welcome": "Welcome",
+  "message": "Today is a good day to start trading crypto assets!",
+  "completed": "Completed",
+  "pending": "Pending",
+  "failed": "Failed",
+  "signUp": "Sign Up",
+  "signIn": "Sign In",
+  "emailAddress": "Email Address",
+  "password": "Password",
+  "forgotPassword": "Forgot password",
+  "noAccountLabel": "Don't have an account? Sign Up",
+  "google": "Google",
+  "microsoft": "Microsoft"
+}
