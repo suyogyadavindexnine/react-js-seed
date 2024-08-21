@@ -77,7 +77,7 @@ function Header() {
         <HeaderMenu />
       </Stack>
       <Box display="flex" alignItems="center">
-        <LangSelect />
+        {/* <LangSelect /> */}
         <HeaderButtons />
         <HeaderUserbox />
         <Box

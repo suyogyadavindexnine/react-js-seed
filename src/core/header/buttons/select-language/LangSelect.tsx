@@ -68,12 +68,12 @@ const LangSelect = () => {
           >
             English
           </MenuItem>
-          <MenuItem
+          {/* <MenuItem
             sx={{ px: 3 }}
             onClick={() => changeLanguage('French', 'French')}
           >
             French
-          </MenuItem>
+          </MenuItem> */}
           {/* <MenuItem sx={{ px: 3 }}>Spanish</MenuItem>
           <MenuItem sx={{ px: 3 }}>Chinease</MenuItem> */}
         </Menu>

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import TreeView from '@mui/lab/TreeView';
-import TreeItem, { TreeItemProps, treeItemClasses } from '@mui/lab/TreeItem';
+import { TreeView, TreeItem } from '@mui/x-tree-view';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -25,7 +24,7 @@ const TreeViewMenu = ({ data, onNodeClick }: TreeViewMenuProps) => {
       className="treeItemView"
       key={nodes.id}
       nodeId={nodes.id}
-      label={nodes.name}
+      label={nodes.label}
       onClick={(event) => handleNodeClick(event, nodes.name)}
     >
       {Array.isArray(nodes.children)

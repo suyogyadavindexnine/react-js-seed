@@ -50,7 +50,7 @@ const employeeDetailsData: FC<EmployeeDetailsProps> = ({
             }
           ]}
           value={tabs}
-          exclusive
+          // exclusive
           onChange={handleViewOrientation}
         />
       </Box>

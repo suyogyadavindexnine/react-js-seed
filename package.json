@@ -29,7 +29,7 @@
     "@mui/system": "^5.16.7",
     "@mui/x-data-grid": "^7.13.0",
     "@mui/x-date-pickers": "5.0.0",
-    "@mui/x-tree-view": "^7.13.0",
+    "@mui/x-tree-view": "^6.17.0",
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.2.7",
     "@storybook/react": "^8.2.9",

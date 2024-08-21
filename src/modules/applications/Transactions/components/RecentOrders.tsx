@@ -38,7 +38,7 @@ const RecentOrders: FC<RecentOrdersProps> = ({
       >
         <ToggleButtonGroup
           value={tabs}
-          exclusive
+          // exclusive
           onChange={handleViewOrientation}
         >
           <ToggleButton disableRipple value="Recent_Orders_Card">

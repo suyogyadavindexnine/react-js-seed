@@ -41,7 +41,7 @@ const WatchList = ({ Watchlistlabel, watchListDetails }: WatchListDetails) => {
         </Typography>
         <ToggleButtonGroup
           value={tabs}
-          exclusive
+          // exclusive
           onChange={handleViewOrientation}
         >
           <ToggleButton disableRipple value="watch_list_columns">
