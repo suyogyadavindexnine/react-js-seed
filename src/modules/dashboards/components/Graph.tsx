@@ -93,12 +93,14 @@ const Graph = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Chart
+         {chartOptions ?( <Chart
             options={chartOptions}
-            series={chartOptions.series}
-            type={chartOptions.chart.type}
-            height={chartOptions.chart.height}
-          />
+            series={chartOptions?.series}
+            type={chartOptions?.chart?.type}
+            height={chartOptions?.chart?.height}
+          />) : (
+            <Typography variant="body1">Loading...</Typography>
+          )}
         </Grid>
       </Grid>
     </Card>

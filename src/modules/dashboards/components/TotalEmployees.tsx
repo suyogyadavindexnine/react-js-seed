@@ -105,12 +105,12 @@ const TotalEmployees = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Chart
+          {totalEmployeeData ? (<Chart
             height={180}
             options={options}
             series={totalEmployeeData?.series || []}
             type="line"
-          />
+          />) : (<Typography variant="body1">Loading...</Typography>)}
         </Grid>
       </Grid>
     </Card>

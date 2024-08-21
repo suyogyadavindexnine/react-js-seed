@@ -47,7 +47,7 @@ const CustomerSatisfaction = () => {
       position: 'bottom',
       horizontalAlign: 'left',
       markers: {
-        radius: 0
+        strokeWidth: 0,
       }
     },
     plotOptions: {
@@ -76,12 +76,7 @@ const CustomerSatisfaction = () => {
   //HTML
   return (
     <Card style={{ height: 245 }}>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="stretch"
-      >
+      <Grid container direction="row" justifyContent="center" alignItems="stretch">
         <Grid item xs={12}>
           <Box sx={{ p: 2 }} className="flex-basic-space-between">
             <Typography variant="h4">
@@ -90,16 +85,21 @@ const CustomerSatisfaction = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Chart
-            options={chartOptions}
-            series={chartOptions?.series || []}
-            type={chartOptions?.chart?.type}
-            height={chartOptions?.chart?.height}
-          />
+          {chartOptions?.series ? (
+            <Chart
+              options={chartOptions}
+              series={chartOptions?.series || []}
+              type={chartOptions?.chart?.type}
+              height={chartOptions?.chart?.height}
+            />
+          ) : (
+            <Typography variant="body1">Loading...</Typography>
+          )}
         </Grid>
       </Grid>
     </Card>
   );
+  
 };
 
 export default CustomerSatisfaction;

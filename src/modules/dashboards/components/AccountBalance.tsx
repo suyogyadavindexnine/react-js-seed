@@ -230,7 +230,7 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
                   <Chart
                     height={250}
                     options={chartOptions}
-                    series={accountDetails?.chartSeries}
+                    series={accountDetails?.chartSeries || []}
                     type="donut"
                   />
                 ) : null}

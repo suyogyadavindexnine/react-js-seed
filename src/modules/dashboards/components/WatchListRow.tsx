@@ -16,8 +16,8 @@ import {
   Card,
   Typography
 } from '../../../shared/components/index';
-import Chart from 'react-apexcharts';
 import type { ApexOptions } from 'apexcharts';
+import Chart from 'react-apexcharts';
 import TrendingUpTwoToneIcon from '@mui/icons-material/TrendingUpTwoTone';
 
 const AvatarWrapper = styled(Avatar)(
@@ -180,7 +180,7 @@ function WatchListRow({ Watchlistlabel, watchListDetails }) {
             <Box pt={2}>
               <Chart
                 options={Box1Options}
-                series={item.chartData}
+                series={item?.chartData}
                 type="line"
                 height={100}
               />
