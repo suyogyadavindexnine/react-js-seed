@@ -1,21 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Avatar, Box, Button, Hidden, Popover } from '@mui/material';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
 import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
 import { useAuth } from 'src/providers/AuthguardContext';
-import { Typography } from 'src/shared/components/index';
-import { getLoggedInUserData } from 'src/modules/Transactions/services/transaction.service';
-import { useSelector, useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from 'src/store/configure-store';
-
+import { Typography } from '../../../shared/components/index';
 
 const HeaderUserbox = () => {
-
-  const dispatch = useDispatch<AppDispatch>();
-  const { userData } = useSelector((state: RootState) => state.userData);
-  useEffect(() => {
-    dispatch(getLoggedInUserData());
-  }, []);
+  const user = {
+    name: 'John Smith',
+    avatar: '/static/images/avatars/1.jpg',
+    jobtitle: 'Project Manager'
+  };
 
   const ref = useRef<HTMLButtonElement>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -32,17 +27,18 @@ const HeaderUserbox = () => {
   const userLogout = () => {
     logout();
   };
+
   return (
     <>
       <Button color="secondary" ref={ref} onClick={handleOpen}>
-        <Avatar variant="rounded" alt={userData?.name} src={userData?.avatar} />
+        <Avatar variant="rounded" alt={user.name} src={user.avatar} />
         <Hidden mdDown>
           <Box className="UserBoxText">
             <Typography className="UserBoxLabel" variant="body1">
-              {userData?.name}
+              {user.name}
             </Typography>
             <Typography className="UserBoxDescription" variant="body2">
-              {userData?.jobtitle}
+              {user.jobtitle}
             </Typography>
           </Box>
         </Hidden>
@@ -64,13 +60,13 @@ const HeaderUserbox = () => {
         }}
       >
         <Box className="m-width-Userbox MenuUserBox">
-          <Avatar variant="rounded" alt={userData?.name} src={userData?.avatar} />
+          <Avatar variant="rounded" alt={user.name} src={user.avatar} />
           <Box className="UserBoxText">
             <Typography className="UserBoxLabel" variant="body1">
-              {userData?.name}
+              {user.name}
             </Typography>
             <Typography className="UserBoxDescription" variant="body2">
-              {userData?.jobtitle}
+              {user.jobtitle}
             </Typography>
           </Box>
         </Box>

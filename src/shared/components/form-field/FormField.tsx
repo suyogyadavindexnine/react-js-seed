@@ -42,12 +42,13 @@ export const FormField = ({ fieldProps }: FormFieldProps) => {
   const handleOnChange = (event, field, value?, form?) => {
     // Text only and number only validation checks
     if (
-      (fieldProps?.type === FIELD_TYPE.TEXT &&
-        !REGEX.TEXT_ONLY.test(event?.target?.value)) ||
-      (fieldProps?.type === FIELD_TYPE.INTEGER_ONLY &&
-        !REGEX.NUMBER_INTEGER.test(event?.target?.value)) ||
-      (fieldProps?.type === FIELD_TYPE.ALPHA_NUMBERICS &&
-        !REGEX.ALPHA_NUMBERICS.test(event?.target?.value))
+      fieldProps?.type === FIELD_TYPE.TEXT &&
+      !REGEX.TEXT_ONLY.test(event?.target?.value)
+    ) {
+      return;
+    } else if (
+      fieldProps?.type === FIELD_TYPE.INTEGER_ONLY &&
+      !REGEX.NUMBER_INTEGER.test(event?.target?.value)
     ) {
       return;
     }
@@ -208,7 +209,6 @@ export const FormField = ({ fieldProps }: FormFieldProps) => {
   ) => {
     switch (fieldType) {
       case FIELD_TYPE.TEXT:
-      case FIELD_TYPE.ALPHA_NUMBERICS:
       case FIELD_TYPE.EMAIL:
       case FIELD_TYPE.REGEX:
       case FIELD_TYPE.PASSWORD:
@@ -225,7 +225,6 @@ export const FormField = ({ fieldProps }: FormFieldProps) => {
                 : fieldProps?.type
             }
             autoComplete="off"
-            disabled={fieldProps?.isDisabled}
             label={fieldProps?.label}
             error={meta.touched && meta.error !== undefined}
             helperText={meta.touched && meta.error}
@@ -265,19 +264,17 @@ export const FormField = ({ fieldProps }: FormFieldProps) => {
           <Select
             {...field}
             fullWidth
-            label={`${fieldProps?.label}${
-              fieldProps?.validations?.required ? ' *' : ''
-            }`}
+            label={fieldProps?.label}
             disabled={fieldProps?.isDisabled}
             defaultValue={''}
             value={field?.value || ''}
-            options={fieldProps?.options || []}
+            options={fieldProps?.options}
             itemValue={fieldProps?.itemValueKey}
             itemText={fieldProps?.itemLabelKey}
             error={meta.touched && meta.error !== undefined}
             helperText={meta.touched && meta.error}
             onChange={(event) => handleOnChange(event, field)}
-          ></Select>
+          />
         );
 
       case FIELD_TYPE.RADIO:
@@ -388,13 +385,8 @@ export const FormField = ({ fieldProps }: FormFieldProps) => {
             {...field}
             multiple
             value={field?.value || []}
-            options={fieldProps?.options || []}
-            getOptionLabel={(option) => option[fieldProps.itemLabelKey]}
-            filterSelectedOptions
-            isOptionEqualToValue={(option, value) =>
-              option[fieldProps?.itemValueKey] ===
-              value[fieldProps?.itemValueKey]
-            }
+            options={fieldProps?.options}
+            getOptionLabel={(option) => option.label}
             onChange={(_event, value) =>
               handleOnChange(_event, field, value, form)
             }

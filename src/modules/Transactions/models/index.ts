@@ -17,5 +17,4 @@ export interface CryptoOrder {
 export type UserData = {
   name: string;
   avatar: string;
-  jobtitle: string;
 };

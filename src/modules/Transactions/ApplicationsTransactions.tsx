@@ -1,13 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import RecentOrders from './components/RecentOrders';
-import { PageTitleWrapper, PageHeader } from 'src/shared/components/index';
-import { Typography, Grid, Container, Button } from '@mui/material';
+import { PageTitleWrapper, PageHeader } from '../../shared/components/index';
+import { Grid, Container } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTransactionData } from './services/transaction.service';
 import { AppDispatch, RootState } from 'src/store/configure-store';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
-
 
 const ApplicationsTransactions = () => {
   //constants
@@ -41,26 +40,12 @@ const ApplicationsTransactions = () => {
       <PageTitleWrapper>
         <PageHeader
           heading="Transactions"
-          subHeading={`${userData?.name} these are your recent transactions`}
+          subHeading={`John Smith, these are your recent transactions`}
+          buttonText="Create Transactions"
+          btnVariant={'contained'}
           icon={<AddTwoToneIcon fontSize="small" />}
-        >
-          <>
-            <Typography variant="h3" component="h3" gutterBottom>
-              Transactions
-            </Typography>
-            <Typography variant="subtitle2">
-              {userData?.name} these are your recent transactions
-            </Typography>
-          </>
-          <Button
-            sx={{ mt: { xs: 2, md: 0 } }}
-            variant="contained"
-            startIcon={<AddTwoToneIcon fontSize="small" />}
-            onClick={onBtnClick}
-            >
-            Create Transactions
-          </Button>
-        </PageHeader>
+          btnClick={onBtnClick}
+        />
       </PageTitleWrapper>
 
       <Container maxWidth="lg">

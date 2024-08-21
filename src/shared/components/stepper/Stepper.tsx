@@ -2,6 +2,12 @@ import * as React from 'react';
 import { Stepper as MuiStepper, Step, StepLabel } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { CombinedProps } from './services/stepperInterface';
+export interface CustomProps {
+  stepsList: {
+    value: string;
+    key?: any;
+  }[];
+}
 
 const useStyles = makeStyles({
   stepper: {

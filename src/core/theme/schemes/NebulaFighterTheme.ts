@@ -402,6 +402,15 @@ export const NebulaFighterTheme = createTheme({
             ', 0 0 8px' +
             colors.primary.light
         },
+        '.ql-toolbar.ql-snow': { border: '1px solid #292E4E!important' },
+        '.ql-container.ql-snow': {
+          border: '1px solid #292E4E!important'
+        },
+        '.ql-snow .ql-stroke': {
+          stroke: '#fff!important'
+        },
+        '.ql-picker-label': { color: '#fff' },
+
         ':root': {
           '--swiper-theme-color': colors.primary.main,
           colorScheme: 'dark'
@@ -828,6 +837,7 @@ export const NebulaFighterTheme = createTheme({
         }
       }
     },
+    MuiCardContent: {},
     MuiRadio: {
       styleOverrides: {
         root: {
@@ -1189,7 +1199,6 @@ export const NebulaFighterTheme = createTheme({
         }
       }
     },
-
     MuiTab: {
       styleOverrides: {
         root: {

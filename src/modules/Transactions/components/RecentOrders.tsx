@@ -5,7 +5,7 @@ import { FC, MouseEvent, useState } from 'react';
 import { Box } from '@mui/material';
 import GridViewSharpIcon from '@mui/icons-material/GridViewSharp';
 import TableRowsTwoToneIcon from '@mui/icons-material/TableRowsTwoTone';
-import { Card, ButtonToggle } from 'src/shared/components/index';
+import { Card, ButtonToggle } from '../../../shared/components/index';
 
 interface RecentOrdersProps {
   className?: string;

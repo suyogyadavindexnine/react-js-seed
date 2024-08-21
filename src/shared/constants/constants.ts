@@ -1,9 +1,14 @@
+
+import INSTAGRAM_PATH from 'src/assets/icons/SocialMediaIcons/instagram.svg';
+import FACEBOOK_PATH from 'src/assets/icons/SocialMediaIcons/facebook.svg';
+import LINKEDIN_PATH from 'src/assets/icons/SocialMediaIcons/linkedin.svg';
+import TWITTER_PATH from 'src/assets/icons/SocialMediaIcons/twitter.svg';
+
 export const SERVER_API_URL = import.meta.env.VITE_APP_SERVER_API_URL;
 
 export const USERPOOL_ID = import.meta.env.VITE_APP_USERPOOL_ID;
 
-export const USERPOOL_WEBCLIENT_ID =
-  import.meta.env.VITE_APP_USERPOOL_WEBCLIENT_ID;
+export const USERPOOL_WEBCLIENT_ID = import.meta.env.VITE_APP_USERPOOL_WEBCLIENT_ID;
 
 export const HEADER_AUTHORIZATION = 'a64bccc5-1648-46ae-ad78-b0f890f1d6c1';
 
@@ -29,13 +34,84 @@ export const QASTAGE_USERPOOL_WEBCLIENT_ID = '34jp7c8060jmgqu9bnhjptrotc';
 
 export const CLINICALUSER__USERPOOL_WEBCLIENT_ID = '34jp7c8060jmgqu9bnhjptrotc';
 
-export const LOGIN = import('src/auth/login/Login');
-export const SIGNUP = import('src/auth/login/SignUp');
+export const CRYPTO = import('src/modules/dashboards/DashboardV2');
+export const DASHBOARD = import('src/modules/dashboardComponent');
+export const USERPROFILE = import('src/modules/applications/users');
 
+export const BUTTONS = import('src/modules/components/Buttons');
+export const MODALS = import('src/modules/components/Modals');
+export const ACCORDIONS = import('src/modules/components/Accordions');
+export const TABS = import('src/modules/components/Tabs');
+export const BADGES = import('src/modules/components/Badges');
+export const TOOLTIP = import('src/modules/components/Tooltips');
+export const AVATARS = import('src/modules/components/Avatars');
+export const CARDS = import('src/modules/components/Cards');
+export const FORMS = import('src/modules/components/Forms');
+export const CHECKBOX = import('src/modules/components/Checkbox');
+export const FILEBUTTON = import('src/modules/components/Filebutton');
+export const RADIOBUTTON = import('src/modules/components/Radio');
+export const TEXTFIELD = import('src/modules/components/Textfield');
+export const SELECT = import('src/modules/components/Select');
+export const SLIDER = import('src/modules/components/Slider');
+export const STEPPER = import('src/modules/components/Stepper');
+export const TIMEPICKER = import('src/modules/components/Timepicker');
+export const TYPOGRAPHY = import('src/modules/components/Typography');
+export const CURRENCYFIELD = import('src/modules/components/Currencyfield');
+export const TOASTER = import('src/modules/components/toaster');
+export const CIRCULARPROGRESS = import(
+  'src/modules/components/Circularprogress'
+);
+export const DATEPICKER = import('src/modules/components/Datepicker');
+export const STATUS404 = import('src/core/status/status-404');
+export const STATUS500 = import('src/core/status/status-500');
+export const STATUSCOMINGSOON = import('src/core/status/coming-soon');
+export const STATUSMAINTENANCE = import('src/core/status/maintenance');
+export const DEMOCARD = import('src/demoComponent/index');
+
+export const LOGIN = import('src/auth/login/Login');
 export const TRANSACTIONS = import(
   'src/modules/Transactions/ApplicationsTransactions'
 );
 export const ERROR_PAGE = import('src/modules/ErrorPage/ErrorPage');
+
+export const CUSTOMFORMWRAPPER = import(
+  'src/modules/CustomFormWrapper/CustomFormWrapper'
+);
+
+export const FLOWCHART = import('src/modules/flow-charts/FlowCharts');
+
+export const FLOWCHART_DETAIL = import(
+  'src/modules/flow-charts/components/NodeDetailWrapper'
+);
+
+export const CUSTOM_FLOW_CHART = import(
+  'src/modules/flow-charts/CustomFlowChart'
+);
+
+export const DEPARTMENT_DETAIL = import(
+  'src/modules/flow-charts/components/EmployeeDataWrappper'
+);
+
+export const EMPLOYEE_DETAIL = import(
+  'src/modules/flow-charts/components/EmployeeDetailWrapper'
+);
+
+export const EMPLOYEES = import('src/modules/Employees/Employees');
+
+export const UPLOAD = import('src/modules/components/Upload/UploadWrapper');
+
+export const TREEVIEW = import('src/modules/components/tree-view/index');
+
+export const FILE_MANAGER = import('src/modules/components/file-manager/Index');
+
+export const CHOROPLETH_MAP = import(
+  'src/modules/choropleth-map/ChoroplethWidget'
+);
+export const TEXTEDITOR = import(
+  'src/modules/components/text-editor-wrapper/TextEditorWrapper'
+);
+
+export const CHATBOT = import('src/modules/chat-bot-wrapper/ChatBotWrapper');
 
 export const COMPLETED = 'completed';
 export const SUCCESS = 'success';
@@ -47,14 +123,6 @@ export enum statusLable {
   FAILED = 'failed'
 }
 
-export const PASSWORD_STRENGTH_LABEL_BY_SCORE: Record<number, string> = {
-  0: 'weak',
-  1: 'weak',
-  2: 'fair',
-  3: 'good',
-  4: 'strong'
-};
-
 export const REGEX = {
   EMAIL:
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -62,9 +130,9 @@ export const REGEX = {
     /^(?:\d{1,2}(?:\.\d{1,2})?|100(?:\.0{1,2})?|0(?:\.\d{1,2})?)$/,
   NUMBER_INTEGER: /^(?:\d*[1-9]\d*|)$/,
   TEXT_ONLY: /^[a-zA-Z ]*$/,
-  ALPHA_NUMBERICS: /^[a-zA-Z0-9-_ ]*$/,
   PASSWORD:
     /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])(?!.*\s).{8,}$/,
+  // JSON: /^[\],:{}\s]*$|^"(.|\\[\\"/bfnrt])*"$|^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?(?:[eE][+-]?\d+)?$/
   JSON: /^[\],:{}\s]*$|^"(.|\\[\\"/bfnrt])*"$/
 };
 
@@ -72,7 +140,6 @@ export const MEGABYTE_CONVERTER = 1000000;
 
 export const FIELD_TYPE = {
   TEXT: 'text',
-  ALPHA_NUMBERICS: 'alphanumerics',
   RADIO: 'radio',
   EMAIL: 'email',
   SWITCH: 'switch',
@@ -87,3 +154,42 @@ export const FIELD_TYPE = {
   AUTOCOMPLETE: 'autocomplete',
   CHECKBOX_GROUP: 'checkbox_group'
 };
+
+export const DEPARTMENTS = {
+  MANAGEMENT: 'management',
+  OPERATIONS: 'operations',
+  DESIGN: 'design',
+  ENGINEERING: 'engineering',
+  QA: 'qa'
+};
+
+export const DEPARTMENT_LABELS = {
+  MANAGEMENT: 'Management',
+  OPERATIONS: 'Operations',
+  DESIGN: 'Design',
+  ENGINEERING: 'Engineering',
+  QA: 'Quality Analyst'
+};
+
+export const INDEXNINE_SOCIAL_MEDIA = [
+  {
+    path: INSTAGRAM_PATH as string,
+    followers: '500',
+    url: 'https://www.instagram.com/indexninehq/?hl=en'
+  },
+  {
+    path: FACEBOOK_PATH,
+    followers: '350',
+    url: 'https://www.facebook.com/indexnine/'
+  },
+  {
+    path: LINKEDIN_PATH,
+    followers: '600',
+    url: 'https://www.linkedin.com/company/indexnine-technologies/mycompany/'
+  },
+  {
+    path: TWITTER_PATH,
+    followers: '550',
+    url: 'https://twitter.com/indexnine'
+  }
+];

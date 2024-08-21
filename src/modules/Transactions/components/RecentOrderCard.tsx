@@ -28,7 +28,7 @@ import {
   Select,
   TextField,
   Typography
-} from 'src/shared/components/index';
+} from '../../../shared/components/index';
 import BulkActions from './BulkActions';
 
 interface RecentOrdersCardProps {
@@ -407,8 +407,8 @@ RecentOrdersCard.propTypes = {
   cryptoOrders: PropTypes.array.isRequired
 };
 
-RecentOrdersCard.defaultProps = {
-  cryptoOrders: []
-};
+// RecentOrdersCard.defaultProps = {
+//   cryptoOrders: []
+// };
 
 export default RecentOrdersCard;

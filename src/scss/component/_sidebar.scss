@@ -8,5 +8,13 @@
   position: relative;
   z-index: 7;
   height: 100%;
-  padding-bottom: 68px;
+  padding-bottom: 90px;
+}
+
+.social-section {
+  position: fixed;
+  z-index: 8;
+  bottom: 0px;
+  height: 90px;
+  padding: 15px;
 }

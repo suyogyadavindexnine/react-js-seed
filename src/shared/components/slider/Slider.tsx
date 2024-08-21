@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Slider as MuiSlider } from '@mui/material';
+// import { SliderProps } from 'src/shared/components/slider/services/sliderInterface';
 import { SliderProps } from './services/sliderInterface';
 
 export const Slider = ({ disabled = false, ...props }: SliderProps) => {

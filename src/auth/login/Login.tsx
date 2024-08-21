@@ -16,18 +16,17 @@ import {
   TextField,
   Typography,
   Card,
-  ToastMsgs
-} from 'src/shared/components/index';
+  showWarningMessage,
+  Logo
+} from '../../shared/components/index';
 import Googlelogo from '../../assets/images/Googlelogo.png';
 import Microsoftlogo from '../../assets/images/Microsoftlogo.png';
 import * as ROUTES from '../../shared/constants/routes';
-import { useTranslation } from 'react-i18next';
 
 const Login = () => {
   // Constants
   const navigate = useNavigate();
   const { login } = useAuth();
-  const { t } = useTranslation('english');
 
   // State Values
   const [email, setEmail] = useState('');
@@ -42,17 +41,13 @@ const Login = () => {
       navigate(ROUTES.DASHBOARD);
       localStorage.setItem('logged', JSON.stringify(true));
     } else {
-      ToastMsgs.showWarningMessage('not valid', {
+      showWarningMessage('not valid', {
         theme: 'dark',
         position: 'bottom-right'
       });
     }
     setEmail('');
     setPassword('');
-  };
-
-  const goToSignUp = () => {
-    navigate('signup');
   };
 
   // HTML
@@ -71,7 +66,7 @@ const Login = () => {
             >
               <CardContent sx={{ p: 5 }}>
                 <Box sx={{ mb: 3 }} className="flex-basic-center">
-                  <img src="https://indexnine.com/wp-content/uploads/2019/06/indexnine.com_.gif" />
+                  <Logo />
                 </Box>
                 <CssBaseline />
                 <Typography
@@ -79,7 +74,7 @@ const Login = () => {
                   variant="h5"
                   align="center"
                 >
-                  {t('signIn')}
+                  Sign In
                 </Typography>
 
                 <TextField
@@ -87,7 +82,7 @@ const Login = () => {
                   required
                   fullWidth
                   id="email"
-                  label={t('emailAddress')}
+                  label="Email Address"
                   name="email"
                   autoComplete="email"
                   autoFocus
@@ -100,7 +95,7 @@ const Login = () => {
                   required
                   fullWidth
                   name="password"
-                  label={t('password')}
+                  label="Password"
                   type="password"
                   id="password"
                   autoComplete="current-password"
@@ -116,17 +111,17 @@ const Login = () => {
                   fullWidth
                   variant="contained"
                   sx={{ mt: 3, mb: 2 }}
-                  btnText={t('signUp')}
                   onClick={submitLoginDetails}
+                  btnText=" Sign In"
                 ></Button>
 
                 <Box className="flex-basic-space-between">
-                  <Link sx={{ pr: 1 }} href="#" variant="body2">
-                    {t('forgotPassword')}?
+                  <Link href="#" variant="body2">
+                    Forgot password?
                   </Link>
 
-                  <Link onClick={goToSignUp} href="#" variant="body2">
-                    {t('noAccountLabel')}
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
                   </Link>
                 </Box>
               </CardContent>
@@ -148,7 +143,7 @@ const Login = () => {
                     startIcon={
                       <Box className="flex-basic-center">
                         <img src={Googlelogo} />
-                        <Box sx={{ pl: 1 }}>{t('google')}</Box>
+                        <Box sx={{ pl: 1 }}> Google</Box>
                       </Box>
                     }
                   ></Button>
@@ -165,7 +160,7 @@ const Login = () => {
                     startIcon={
                       <Box className="flex-basic-center">
                         <img src={Microsoftlogo} />
-                        <Box sx={{ pl: 1 }}>{t('microsoft')}</Box>
+                        <Box sx={{ pl: 1 }}>Microsoft</Box>
                       </Box>
                     }
                   ></Button>

@@ -1,0 +1,64 @@
+{
+  "sidebar-menu": {
+    "crypto": "Main",
+    "dashboard": "Dashboard",
+    "messeng": "Messenger",
+    "transac_list": "Transaction list",
+    "user_prof": "User Profile",
+    "accnt_sett": "Account settings",
+    "btns": "Buttons",
+    "modals": "Modals",
+    "accordions": "Accordions",
+    "tabs": "Tabs",
+    "checkbox": "Checkbox",
+    "badges": "Badges",
+    "tooltips": "Tooltips",
+    "cards": "Cards",
+    "forms": "Forms",
+    "error_404": "Error 404",
+    "error_500": "Error 500",
+    "coming_soon": "Coming soon",
+    "circularprog": "Circularprogress",
+    "datepicker": "Datepicker",
+    "filebutton": "Filebutton",
+    "radiobutton": "Radiobutton",
+    "textfield": "Textfield",
+    "select": "Select",
+    "slider": "Slider",
+    "stepper": "Stepper",
+    "timepicker": "Timepicker",
+    "typography": "Typography",
+    "currency": "Currency",
+    "toaster": "Toaster",
+    "upload": "Upload",
+    "flow_chart": "Flow Charts",
+    "indexnine_flow_chart": "Indexnine Flow Chart",
+    "indexnine_org": "Indexnine Organization",
+    "indexnine_employee_info": "Indexnine Employee Information",
+    "choropleth_map": "Choropleth Map"
+  },
+
+  "dashboard": {
+    "header": {
+      "welcome": "Welcome",
+      "message": "Today is a good day to start trading crypto assets!"
+    },
+    "account_balance": {
+      "account_balance": "Account Balance",
+      "this_month": "This Month",
+      "send": "Send",
+      "receive": "Receive"
+    },
+    "wallets": {
+      "wallets": "Wallets",
+      "add_new_wallet": "Add New Wallet",
+      "watch_list": "Watch List",
+      "view_more_assets": "View more assets"
+    },
+    "account_security": {
+      "account_security": "Account Security",
+      "phone_verification": "Phone Verification",
+      "recovery_email": "Recovery Email"
+    }
+  }
+}

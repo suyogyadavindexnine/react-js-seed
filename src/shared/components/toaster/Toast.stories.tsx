@@ -1,33 +1,34 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import { ToastOptions } from 'react-toastify';
-import { ToastMsgs } from './Toast';
+import { Story, Meta } from '@storybook/react';
+import * as Toast from './Toast';
+import { Button } from '../button/Button';
 
 export default {
   title: 'Seed/Toast',
+  component: Toast.showSuccessMessage,
+  argTypes: {}
 } as Meta;
 
-type ToastStoryArgs = {
-  message: string;
-  options: ToastOptions;
+const StatefulToast = () => {
+  return (
+    <>
+      <Button
+        variant={'outlined'}
+        btnText="Open Toast"
+        onClick={() =>
+          Toast.showSuccessMessage('success', {
+            theme: 'dark',
+            position: 'top-right'
+          })
+        }
+      />
+    </>
+  );
 };
 
-type StoryType = Story<ToastStoryArgs>;
+const Template: Story<Toast.ToastProps> = (args) => <StatefulToast {...args} />;
 
-const Template: StoryType = (args) => {
-  // You can use ToastMsgs here if needed
-  return <div>{args.message}</div>;
-};
-
-export const SuccessMessage: StoryType = Template.bind({});
-SuccessMessage.args = {
-  message: 'Success Message',
-  options: {
-    position: 'top-right',
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-  } as ToastOptions,
+export const SuccessToast = Template.bind({});
+SuccessToast.args = {
+  message: 'Success Toast',
+  severity: 'success'
 };

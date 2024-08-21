@@ -1,12 +1,12 @@
-import { Button as MuiButton, ButtonProps } from '@mui/material';
-import { FILE_TYPES } from '../FileButton';
+import { ButtonProps } from '@mui/material';
+import { FILE_TYPES } from './../FileButton';
 
 export interface FileButtonProps {
   fileType?: typeof FILE_TYPES;
   label?: string;
   isMultipleFile: boolean;
   onClick?: () => void;
-  onChange: (val: object) => void;
+  onChange: (val: any[]) => void;
 }
 
 export type CombinedProps = FileButtonProps & ButtonProps;

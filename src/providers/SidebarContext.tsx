@@ -6,7 +6,7 @@ export const SidebarContext = createContext<SidebarContextType>(
   {} as SidebarContextType
 );
 
-export const SidebarProvider: FC = ({ children }:any) => {
+export const SidebarProvider: FC = ({ children }) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
   const toggleSidebar = () => {
     setSidebarToggle(!sidebarToggle);

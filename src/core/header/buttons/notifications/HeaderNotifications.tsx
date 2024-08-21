@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
 import { formatDistance, subDays } from 'date-fns';
-import { Typography } from 'src/shared/components/index';
+import { Typography } from '../../../../shared/components/index';
 
 const HeaderNotifications = () => {
   const ref = useRef<HTMLInputElement>(null);

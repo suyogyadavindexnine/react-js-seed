@@ -15,7 +15,7 @@ const SidebarLayout: FC<SidebarLayoutProps> = () => {
     <>
       <Box
         className={
-          theme.colors.error.main === 'dark'
+          theme.palette.mode === 'dark'
             ? 'layoutbox MuiPageTitlewrapperDark '
             : 'layoutbox MuiPageTitlewrapperLight '
         }

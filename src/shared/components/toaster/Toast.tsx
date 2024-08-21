@@ -1,19 +1,25 @@
+import { AlertProps } from '@mui/material/Alert';
+import { de } from 'date-fns/locale';
 import { toast, ToastOptions } from 'react-toastify';
-export const ToastMsgs = {
-  showSuccessMessage: (message: string, options: ToastOptions) => {
-    toast.success(message, options);
-  },
 
-  requestPopupMessage: (message: string, options: ToastOptions) => {
-    toast.success(message, options);
-  },
+export interface ToastProps extends AlertProps {
+  showToast: boolean;
+  message?: string;
+  onClose?: (event: any) => void;
+}
 
-  showWarningMessage: (message: string, options: ToastOptions) => {
-    toast.warn(message, options);
-  },
-
-  showErrorMessage: (message: string, options: ToastOptions) => {
-    toast.error(message, options);
-  }
+export const showSuccessMessage = (message: string, options: ToastOptions) => {
+  toast.success(message, options);
 };
-export default ToastMsgs;
+
+export const requestPopupMessage = (message: string, options: ToastOptions) => {
+  toast.success(message, options);
+};
+
+export const showWarningMessage = (message: string, options: ToastOptions) => {
+  toast.warn(message, options);
+};
+
+export const showErrorMessage = (message: string, options: ToastOptions) => {
+  toast.error(message, options);
+};

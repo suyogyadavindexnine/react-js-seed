@@ -3,7 +3,8 @@ import {
   AvatarProps as MuiAvatarProps
 } from '@mui/material';
 
-export const Avatar = ({ ...props }: MuiAvatarProps) => {
+import { AvatarProps } from './services/avatarInterface';
+export const Avatar = ({ ...props }: AvatarProps) => {
   return (
     <>
       <MuiAvatar {...props} />

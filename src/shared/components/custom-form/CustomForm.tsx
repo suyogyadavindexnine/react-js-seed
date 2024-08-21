@@ -12,13 +12,11 @@ export const CustomForm = ({
   cancelBtnText = 'Cancel',
   editFieldValues,
   submitBtnHandler,
-  cancelBtnHandler,
-  enableReinitialize = false
+  cancelBtnHandler
 }: CustomFormType) => {
   //Form constants
   const formik = useFormik({
     initialValues,
-    enableReinitialize,
     validateOnMount: true,
     validateOnChange: true,
     onSubmit: (values: any) => {

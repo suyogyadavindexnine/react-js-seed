@@ -14,7 +14,7 @@ import {
   Tables,
   TextField,
   Typography
-} from 'src/shared/components/index';
+} from '../../../shared/components/index';
 import {
   ERROR,
   statusLable,

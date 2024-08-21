@@ -761,7 +761,6 @@ export const PureLightTheme = createTheme({
         }
       }
     },
-
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
@@ -1497,7 +1496,6 @@ export const PureLightTheme = createTheme({
         }
       }
     },
-
     MuiStepIcon: {
       styleOverrides: {
         root: {
@@ -1552,7 +1550,6 @@ export const PureLightTheme = createTheme({
   shape: {
     borderRadius: 10
   },
-
   typography: {
     fontFamily:
       '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
@@ -1610,7 +1607,6 @@ export const PureLightTheme = createTheme({
       textTransform: 'uppercase'
     }
   },
-
   shadows: [
     'none',
     'none',

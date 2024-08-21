@@ -10,7 +10,7 @@ import { makeStyles } from '@mui/styles';
 export interface CustomProps {
   stepsList: {
     value: string;
-    key?: number;
+    key?: any;
   }[];
   activestep?: number;
 }

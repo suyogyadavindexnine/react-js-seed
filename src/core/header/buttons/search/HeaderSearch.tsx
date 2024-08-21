@@ -25,7 +25,7 @@ import {
   SimpleDialog,
   TextField,
   Typography
-} from 'src/shared/components/index';
+} from '../../../../shared/components/index';
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & { children: ReactElement<any, string> },

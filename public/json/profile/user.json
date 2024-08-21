@@ -1,0 +1,106 @@
+{
+  "userDetails": {
+    "id": "hjdghfj0",
+    "savedCards": 7,
+    "name": "Catherine Pike",
+    "coverImg": "/static/images/placeholders/covers/5.jpg",
+    "avatar": "/static/images/avatars/4.jpg",
+    "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage",
+    "jobtitle": "Web Developer",
+    "location": "Barcelona, Spain",
+    "followers": "465"
+  },
+  "recentActivity": {
+    "orders": {
+      "total": "485",
+      "failed": "8"
+    },
+    "favourites": {
+      "products": "64",
+      "lists": "15"
+    },
+    "reviews": {
+      "total": "654",
+      "useful": "60"
+    }
+  },
+  "followersFeed": [
+    {
+      "name": "Munroe Dacks",
+      "jobtitle": "Senior Accountant",
+      "company": "Trudoo",
+      "avatar": "/static/images/avatars/1.jpg"
+    },
+    {
+      "name": "Gunilla Canario",
+      "jobtitle": "Associate Professor",
+      "company": "Buzzdog",
+      "avatar": "/static/images/avatars/2.jpg"
+    },
+    {
+      "name": "Rowena Geistmann",
+      "jobtitle": "Pharmacist",
+      "company": "Yozio",
+      "avatar": "/static/images/avatars/3.jpg"
+    },
+    {
+      "name": "Ede Stoving",
+      "jobtitle": "VP Operations",
+      "company": "Cogibox",
+      "avatar": "/static/images/avatars/4.jpg"
+    },
+    {
+      "name": "Crissy Spere",
+      "jobtitle": "Social Worker",
+      "company": "Babbleblab",
+      "avatar": "/static/images/avatars/5.jpg"
+    },
+    {
+      "name": "Michel Greatbanks",
+      "jobtitle": "Research Assistant III",
+      "company": "Aimbu",
+      "avatar": "/static/images/avatars/6.jpg"
+    }
+  ],
+  "popularTags": ["#HTML", "#software_development", "#TrendingInfuencers"],
+  "groups": [
+    {
+      "logo": "WD",
+      "title": "Web Designers Lounge"
+    },
+    {
+      "logo": "D",
+      "title": "Writer’s Digest Daily"
+    },
+    {
+      "path": "/static/images/logo/google.svg",
+      "title": "Google Developers"
+    }
+  ],
+  "deliveryAddresses": {
+    "saved": "12",
+    "addressLine1": "Kadin Westervelt",
+    "addressNumber": "714-650-6297",
+    "street": "348 W. Goldfield Street Bethel Park, PA 15102"
+  },
+  "shippingAddress": {
+    "saved": "8",
+    "addressLine1": "Kadin Westervelt",
+    "addressNumber": "714-650-6297",
+    "street": "10 E. Wrangler Avenue Sioux Falls, SD 57103"
+  },
+  "cards": [
+    {
+      "lastDigits": "6879",
+      "expires": "12/24",
+      "logo": "/static/images/placeholders/logo/visa.png",
+      "alt": "Visa"
+    },
+    {
+      "lastDigits": "4634",
+      "expires": "12/24",
+      "logo": "/static/images/placeholders/logo/mastercard.png",
+      "alt": "Mastercard"
+    }
+  ]
+}

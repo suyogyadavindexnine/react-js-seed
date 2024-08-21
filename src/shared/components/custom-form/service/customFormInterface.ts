@@ -1,3 +1,4 @@
+import { FormEvent } from 'react';
 import { FormFieldType } from '../../form-field/service/formFieldInterface';
 
 export type CustomFormType = {
@@ -8,5 +9,4 @@ export type CustomFormType = {
   editFieldValues?: any;
   submitBtnHandler?: (args: any) => void;
   cancelBtnHandler?: (params?: any) => void;
-  enableReinitialize?: boolean;
 };

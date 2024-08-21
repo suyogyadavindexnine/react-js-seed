@@ -1,4 +1,5 @@
 {
+  "sidebar-menu":{
   "crypto": "Main",
   "messeng": "Messagère",
   "transac_list": "Liste des transactions",
@@ -27,5 +28,12 @@
   "timepicker": "Sélecteur de temps",
   "typography": "Typographie",
   "currency": "Monnaie",
-  "toaster": "alerte"
+  "toaster": "alerte",
+  "upload": "Télécharger",
+  "flow_chart": "Organigramme",
+  "indexnine_flow_chart": "Indexnine Organigramme",
+  "indexnine_org": "Indexnine Organisation",
+  "indexnine_employee_info": "Indexnine Employés Informations",
+  "choropleth_map": "Choropleth Carte"
+}
 }

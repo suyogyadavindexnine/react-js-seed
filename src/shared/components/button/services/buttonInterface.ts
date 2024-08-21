@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  Button as MuiButton,
-  SvgIconProps,
-  ButtonProps as MuiButtonProps
-} from '@mui/material';
+import { SvgIconProps, ButtonProps as MuiButtonProps } from '@mui/material';
 
 export interface ButtonProps extends MuiButtonProps {
   btnText?: string;

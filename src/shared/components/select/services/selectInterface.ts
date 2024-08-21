@@ -7,10 +7,10 @@ import {
 } from '@mui/material';
 
 interface CustomSelectProps {
-  options: object[];
+  options: string[] | any[];
   label: string;
   isMultiple?: boolean;
-  defaultValue?: string | number;
+  defaultValue?: any;
   isObject?: boolean;
   itemValue: string;
   itemText: string;

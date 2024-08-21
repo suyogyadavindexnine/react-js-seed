@@ -1,3 +1,4 @@
+// import { CheckboxProps } from 'src/shared/components/checkbox/services/checkboxInterface';
 import { CheckboxProps } from './services/checkboxInterface';
 import {
   Checkbox as MuiCheckbox,

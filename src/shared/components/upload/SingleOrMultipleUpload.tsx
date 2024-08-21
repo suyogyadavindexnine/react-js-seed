@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 
 import { MEGABYTE_CONVERTER } from '../../constants/constants';
 import { SingleOrMultipleUploadProps } from './services/singleOrMultipleUploadInterface';
-import { ToastMsgs } from '../toaster/Toast';
+import { showErrorMessage } from '../toaster/Toast';
 
 export const SingleOrMultipleUpload = ({
   children,
@@ -42,13 +42,13 @@ export const SingleOrMultipleUpload = ({
     accept: acceptedFileFormat?.toString(),
     onDropRejected: (rejections: FileRejection[]) => {
       if (!acceptedFileFormat.includes(rejections[0]?.file?.type)) {
-        return ToastMsgs.showErrorMessage('Please upload a file with a valid format', {
+        return showErrorMessage('Please upload a file with a valid format', {
           theme: 'colored',
           position: 'bottom-center',
           autoClose: 5000
         });
       } else {
-        return ToastMsgs.showErrorMessage(
+        return showErrorMessage(
           `File(s) size should be less than  ${
             maxFileSize / MEGABYTE_CONVERTER
           } MB`,
@@ -68,7 +68,7 @@ export const SingleOrMultipleUpload = ({
           multpileFileAccept(acceptedFiles);
         }
       } else {
-        ToastMsgs.showErrorMessage('Please upload a file with a valid format', {
+        showErrorMessage('Please upload a file with a valid format', {
           theme: 'colored',
           position: 'bottom-center',
           autoClose: 5000
@@ -104,7 +104,7 @@ export const SingleOrMultipleUpload = ({
     });
     const combineFiles = [...filesList, ...oldFiles];
     if (combineFiles?.length > maxFilesToUpload) {
-      ToastMsgs.showErrorMessage(
+      showErrorMessage(
         `File upload limit reached. You can upload upto ${maxFilesToUpload} files`,
         {
           theme: 'colored',

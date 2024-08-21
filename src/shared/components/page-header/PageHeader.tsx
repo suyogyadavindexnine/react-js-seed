@@ -1,45 +1,49 @@
 import { FC } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, SvgIconProps } from '@mui/material';
+import { Typography, Button, Grid, SvgIconProps } from '@mui/material';
 
 interface PageHeaderProps {
-  children?: React.ReactNode[];
   heading?: string;
   subHeading?: string;
+  buttonText?: string;
   icon?: React.ReactElement<SvgIconProps>;
-  breadcrumbs?: any[];
-  value?: string;
+  btnVariant?: 'contained' | 'outlined' | 'text';
+  btnClick?: ((event: any) => void) | undefined;
+  docs?: string;
 }
 
 export const PageHeader: FC<PageHeaderProps> = ({
   heading = '',
   subHeading = '',
-  children,
+  docs = '',
+  buttonText = '',
+  btnVariant,
   icon,
-  value,
-  breadcrumbs = [],
+  btnClick,
   ...rest
 }) => {
   return (
-    <Grid item xs={12} sm={12} md={'auto'}>
-      <Grid 
+    <Grid
       container
-      display='flex'
       justifyContent="space-between"
       alignItems="center"
-      rowSpacing={3}
-      columnSpacing={2}
-      sx={{
-        pb : 2
-      }}
-      >
-        {children.map((item, index) => {
-          return(
-            <Grid key={`header${index}`} item md={'auto'}>
-              {item}
-            </Grid>
-          )
-        })}
+      {...rest}
+    >
+      <Grid item>
+        <Typography variant="h3" component="h3" gutterBottom>
+          {heading}
+        </Typography>
+        <Typography variant="subtitle2">{subHeading}</Typography>
+      </Grid>
+      <Grid item>
+        <Button
+          sx={{ mt: { xs: 2, md: 0 } }}
+          variant={btnVariant}
+          startIcon={icon}
+          onClick={btnClick}
+        >
+          {buttonText}
+        </Button>
       </Grid>
     </Grid>
   );
@@ -48,4 +52,5 @@ export const PageHeader: FC<PageHeaderProps> = ({
 PageHeader.propTypes = {
   heading: PropTypes.string,
   subHeading: PropTypes.string,
+  docs: PropTypes.string
 };

@@ -18,7 +18,6 @@ export type FormFieldType = {
 
 export type FieldType =
   | 'text'
-  | 'alphanumerics'
   | 'radio'
   | 'email'
   | 'select'

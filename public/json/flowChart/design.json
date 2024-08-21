@@ -1,0 +1,383 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "JA+"
+      },
+      "employee": {
+        "name": "Jett Ashley",
+        "designation": "Associate Design Manager",
+        "has_branch": true,
+        "nodes": [
+          {
+            "id": "1",
+            "type": "input",
+            "data": {
+              "label": "Jett Ashley"
+            },
+            "employee": {
+              "name": "Jett Ashley",
+              "designation": "Associate Design Manager",
+              "has_branch": false
+            },
+            "position": { "x": 250, "y": 0 },
+            "sourcePosition": "bottom",
+            "targetPosition": "right"
+          },
+          {
+            "id": "2",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "LC"
+            },
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "employee": {
+              "name": "Lane Chandler",
+              "designation": "Senior UX Designer",
+              "has_branch": false
+            },
+            "sourcePosition": "left",
+            "targetPosition": "right"
+          },
+          {
+            "id": "3",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "CN"
+            },
+            "position": {
+              "x": 500,
+              "y": 100
+            },
+            "employee": {
+              "name": "Cory Noble",
+              "designation": "Senior UX Designer",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1-2",
+            "source": "1",
+            "target": "2"
+          },
+          { "id": "e1-3", "source": "1", "target": "3" }
+        ]
+      },
+      "position": {
+        "x": 62.45434264405944,
+        "y": 133.86274906775998
+      }
+    },
+    {
+      "id": "2",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "NK+"
+      },
+      "employee": {
+        "name": "Nicholas Kennedy",
+        "designation": "Senior UX Designer",
+        "has_branch": true,
+        "nodes": [
+          {
+            "id": "1",
+            "type": "input",
+            "data": {
+              "label": "Nicholas Kennedy"
+            },
+            "employee": {
+              "name": "Nicholas Kennedy",
+              "designation": "Senior UX Designer",
+              "has_branch": false
+            },
+            "position": { "x": 250, "y": 0 },
+            "sourcePosition": "bottom",
+            "targetPosition": "right"
+          },
+          {
+            "id": "2",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "WB"
+            },
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "employee": {
+              "name": "Winston Bates",
+              "designation": "UX Designer",
+              "has_branch": false
+            },
+            "sourcePosition": "left",
+            "targetPosition": "right"
+          },
+          {
+            "id": "3",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "BC"
+            },
+            "position": {
+              "x": 500,
+              "y": 100
+            },
+            "employee": {
+              "name": "Broderick Chase",
+              "designation": "UX Designer",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1-2",
+            "source": "1",
+            "target": "2"
+          },
+          { "id": "e1-3", "source": "1", "target": "3" }
+        ]
+      },
+      "position": {
+        "x": -18.453784915222858,
+        "y": 81.3859960423577
+      }
+    },
+    {
+      "id": "3",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "LC"
+      },
+      "employee": {
+        "name": "Lane Chandler",
+        "designation": "Senior UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": -17,
+        "y": 36.5
+      }
+    },
+    {
+      "id": "4",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "CN"
+      },
+      "employee": {
+        "name": "Cory Noble",
+        "designation": "Senior UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": 107.49916340674513,
+        "y": 118.95406377964116
+      }
+    },
+    {
+      "id": "5",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "DR"
+      },
+      "employee": {
+        "name": "Draven Reese",
+        "designation": "Senior UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": 62.5,
+        "y": -22.5
+      }
+    },
+    {
+      "id": "6",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "YA"
+      },
+      "employee": {
+        "name": "Yamilet Armstrong",
+        "designation": "UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": 139.3395020931623,
+        "y": 81.72717132202968
+      }
+    },
+    {
+      "id": "7",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "BC"
+      },
+      "employee": {
+        "name": "Broderick Chase",
+        "designation": "UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": 107.86542056508432,
+        "y": -1.7977992200761719
+      }
+    },
+    {
+      "id": "8",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "WB"
+      },
+      "employee": {
+        "name": "Winston Bates",
+        "designation": "UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": 12,
+        "y": -1.5
+      }
+    },
+    {
+      "id": "9",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "RM"
+      },
+      "employee": {
+        "name": "Reese Mann",
+        "designation": "UX Designer",
+        "has_branch": false
+      },
+      "position": {
+        "x": 12.13669320340344,
+        "y": 120.43137453388005
+      }
+    },
+    {
+      "id": "10",
+      "type": "input",
+      "className": "circleDesign",
+      "data": {
+        "label": "LG+"
+      },
+      "employee": {
+        "name": "Lorena Grimes",
+        "designation": "Design Director",
+        "has_branch": true,
+        "nodes": [
+          {
+            "id": "1",
+            "type": "input",
+            "data": {
+              "label": "Lorena Grimes"
+            },
+            "employee": {
+              "name": "Lorena Grimes",
+              "designation": "Design Director",
+              "has_branch": false
+            },
+            "position": { "x": 250, "y": 0 },
+            "sourcePosition": "bottom",
+            "targetPosition": "right"
+          },
+          {
+            "id": "2",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "JA"
+            },
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "employee": {
+              "name": "Jett Ashley",
+              "designation": "Associate Design Manager",
+              "has_branch": false
+            },
+            "sourcePosition": "left",
+            "targetPosition": "right"
+          },
+          {
+            "id": "3",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "DR"
+            },
+            "position": {
+              "x": 300,
+              "y": 150
+            },
+            "employee": {
+              "name": "Draven Reese",
+              "designation": "Senior UX Designer",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          },
+          {
+            "id": "4",
+            "type": "output",
+            "className": "circleDesign",
+            "data": {
+              "label": "YA"
+            },
+            "position": {
+              "x": 500,
+              "y": 100
+            },
+            "employee": {
+              "name": "Yamilet Armstrong",
+              "designation": "UX Designer",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1-2",
+            "source": "1",
+            "target": "2"
+          },
+          { "id": "e1-3", "source": "1", "target": "3" },
+          { "id": "e1-4", "source": "1", "target": "4" }
+        ]
+      },
+      "position": {
+        "x": 137.5,
+        "y": 36
+      }
+    }
+  ]
+}

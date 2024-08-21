@@ -9,6 +9,7 @@ import {
   FormControl,
   FormHelperText
 } from '@mui/material';
+// import { CombinedProps } from 'src/shared/components/select/services/selectInterface';
 import { CombinedProps } from './services/selectInterface';
 
 export const Select = ({
@@ -32,7 +33,7 @@ export const Select = ({
   );
 
   const renderOption = (option: any) => (
-    <MenuItem key={option[itemValue]} value={option[itemValue]}>
+    <MenuItem key={option[itemValue]} value={option[itemText]}>
       {option[itemText]}
     </MenuItem>
   );

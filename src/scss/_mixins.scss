@@ -1,3 +1,5 @@
+@import './variables';
+
 @mixin border-radius($val) {
   border-radius: $val;
   -moz-border-radius: $val;
@@ -46,4 +48,21 @@
     background: $scrollBarBgColor !important;
     border-radius: 10px;
   }
+}
+
+@mixin circularNode {
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.5rem;
+  color: $white;
+}
+
+@mixin circularNodeBorder($color) {
+  border: 3px solid $color;
+  background: $color;
 }

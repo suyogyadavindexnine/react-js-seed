@@ -1,4 +1,8 @@
 {
+  "user": {
+    "name": "John Smith",
+    "avatar": "/static/images/avatars/1.jpg"
+  },
   "cryptoOrders": [
     {
       "id": "1",

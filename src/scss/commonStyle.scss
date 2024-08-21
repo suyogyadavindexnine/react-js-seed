@@ -59,6 +59,7 @@ body {
 .textCapitalize {
   text-transform: capitalize !important;
 }
+
 .textNone {
   text-transform: none !important;
 }
@@ -120,9 +121,11 @@ body {
 .textDecorationNone {
   text-decoration: none !important;
 }
+
 .textweight {
   @include font-weight-bold;
 }
+
 .textalign {
   text-align: center;
 }
@@ -179,7 +182,7 @@ body {
 }
 
 .m-width {
-  min-width: 350 !important ;
+  min-width: 350 !important;
 }
 
 .sidebarwrapper {
@@ -200,18 +203,22 @@ body {
 .overflow_auto {
   overflow: auto;
 }
+
 .flex_1 {
   flex: 1;
 }
+
 .overflow_x_hidden {
   overflow-x: hidden;
 }
+
 .alignitem {
   align-items: center;
 }
 
 .loginBox {
   position: relative;
+
   &::after {
     height: 100%;
     content: '';
@@ -227,31 +234,335 @@ body {
   overflow: auto;
 }
 
-//password strength meter
-.passStrengthWeak {
-  background-color: $progressErrorBg !important;
-  .MuiLinearProgress-bar1Determinate {
-    background-color: $progressError !important;
-  }
-}
-.passStrengthFair {
-  background-color: $progressWarningBg !important;
-  .MuiLinearProgress-bar1Determinate {
-    background-color: $progressWarning !important;
-  }
-}
-.passStrengthGood {
-  background-color: $progressStrongBg !important;
-  .MuiLinearProgress-bar1Determinate {
-    background-color: $progressStrong !important;
-  }
-}
-.passStrengthStrong {
-  background-color: $progressSuccessBg !important;
-  .MuiLinearProgress-bar1Determinate {
-    background-color: $progressSuccess !important;
-  }
-}
 .errorState {
   color: $errorTextColor !important;
+}
+
+.editFormPopup > .MuiDialog-container > .MuiPaper-root {
+  max-width: 90% !important;
+  width: 90% !important;
+}
+
+.passwordRequirement {
+  background: transparent !important;
+  border-radius: 0px !important;
+  padding: 0px 0px 0px 5px !important;
+}
+
+.passwordRequirementList {
+  padding-left: 0px !important;
+  li {
+    padding: 0px !important;
+  }
+}
+
+.btn-180 {
+  width: 12rem !important;
+}
+
+.upcomingEvents {
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to left,
+      rgba(92, 104, 252, 0.7708),
+      rgba(0, 0, 0, 0)
+    )
+    1;
+  width: 100%;
+}
+
+.cardBorder {
+  border-bottom: 1px solid #eaeeef;
+}
+
+.eventIconContainer {
+  border-radius: 50%;
+  min-width: 36px;
+  min-height: 36px;
+  background-color: #535ffc33;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventLink {
+  @extend .text-ellipsis;
+  max-width: 13rem !important;
+}
+
+.rightSectionTitle {
+  min-width: fit-content;
+}
+
+.customMobileStepper {
+  background-color: transparent !important;
+}
+
+.customField {
+  .MuiInputBase-root {
+    .MuiInputBase-input {
+      padding: 6px;
+    }
+  }
+}
+
+.customTable {
+  .tablestyle {
+    .MuiDataGrid-root {
+      border-radius: 0;
+
+      .MuiDataGrid-columnHeader {
+        &:focus-within {
+          outline: none !important;
+        }
+
+        .MuiDataGrid-columnHeaderTitle {
+          font-size: 10px;
+          font-weight: 600;
+        }
+      }
+
+      .MuiDataGrid-cell {
+        font-size: 10px;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.customSelect {
+  .MuiFormControl-root {
+    .MuiInputBase-root {
+      .MuiSelect-select {
+        padding: 8px 14px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: $scrollBarWidth;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $scrollBarColor;
+  border-radius: $scrollBarRadius;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollBarColorHover;
+}
+
+.scrollableTable {
+  .tablestyle {
+    .MuiDataGrid-root {
+      .MuiDataGrid-main {
+        div > .MuiDataGrid-virtualScroller {
+          overflow-y: scroll !important;
+          max-height: 157px;
+          @include commonScrollBar;
+        }
+      }
+    }
+  }
+}
+
+.empDetailsBySkillTable {
+  .tablestyle {
+    .MuiDataGrid-root {
+      .MuiDataGrid-main {
+        div > .MuiDataGrid-virtualScroller {
+          overflow-y: scroll !important;
+          max-height: 310px !important;
+          @include commonScrollBar;
+        }
+      }
+    }
+  }
+}
+
+.skilledEmpDetailsPopup {
+  .MuiDialog-container {
+    .MuiPaper-root {
+      max-width: 45% !important;
+      width: 45% !important;
+      max-height: 75% !important;
+    }
+  }
+}
+
+.chat-bot-container {
+  width: 22.75rem;
+  height: 35rem;
+  right: 40px;
+  position: absolute;
+  bottom: 50px;
+  padding-right: 10px;
+  background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  @include border-radius(20px);
+}
+
+.chat-bot-header {
+  margin: 20px 20px 15px 30px;
+}
+
+.chat-bot-icon-container {
+  background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+  width: 55px;
+  height: 55px;
+  border: 3px solid $white;
+  @include border-radius(50%);
+}
+
+.chat-bot-heading {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  color: $white;
+}
+
+.chat-bot-close-btn-container {
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  background: rgba(20, 26, 31, 0.14);
+  color: $white;
+  @include border-radius(50%);
+  @extend .cursorPointer;
+}
+
+.chat-bot-body-container {
+  width: 100%;
+  margin-left: 5px;
+  max-height: 465px;
+  height: 465px;
+  border-radius: 20px;
+  background-color: $white;
+  position: relative;
+  overflow-y: auto;
+
+  .MuiGrid-root {
+    height: 100% !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+
+    .MuiGrid-item {
+      padding-left: 0 !important;
+    }
+  }
+}
+
+.full-screen-bot-container {
+  max-height: 33rem;
+  height: 33rem;
+  position: relative;
+}
+
+.bot-container {
+  height: 100%;
+}
+
+//customTreeView
+.customTreeView {
+  overflow: auto;
+  @include commonScrollBar;
+  height: calc(100vh - 196px);
+  .treeItemView {
+    .MuiTreeItem-content {
+      padding: 10px;
+    }
+  }
+}
+
+//File Manager Component
+.fleManager {
+  .breadcrumbItem {
+    button {
+      background: transparent;
+      border: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 0 3px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .refreshIcon {
+    .MuiSvgIcon-root {
+      font-size: 18px;
+    }
+  }
+  .fileActionBar {
+    background-color: #efefef;
+    .iconActiveColor {
+      .MuiSvgIcon-root {
+        color: #000 !important;
+      }
+    }
+    .MuiBox-root {
+      width: 25px;
+      height: 25px;
+      @include border-radius(50%);
+      margin-right: 20px;
+      @extend .flex-basic-center;
+      @extend .cursorPointer;
+      &:hover {
+        background-color: #d4d4d4;
+      }
+      .MuiSvgIcon-root {
+        font-size: 16px;
+        color: #808080;
+      }
+    }
+  }
+  .fileViewSection {
+    height: calc(100vh - 199px);
+    .sideTreeMenu {
+      width: 280px;
+      border-right: 1px solid #d7d7d7;
+    }
+  }
+}
+
+//cardBoxFileManager
+.cardBoxFileManager {
+  .MuiCardContent-root {
+    padding: 0px !important;
+  }
+}
+
+//fileFolderListView
+.fileFolderListView {
+  svg[data-testid='FolderIcon'] {
+    color: #efb63c;
+  }
+  .fileFolder {
+    &:hover {
+      background-color: #edefef;
+    }
+    &.active {
+      background-color: #dae4f3;
+      border: 1px solid #c5d4eb;
+    }
+    .MuiTypography-subtitle1 {
+      color: #000;
+    }
+  }
 }

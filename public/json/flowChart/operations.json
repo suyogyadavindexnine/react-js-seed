@@ -1,0 +1,257 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "AG+"
+      },
+      "employee": {
+        "name": "Agustin Griffith",
+        "designation": "Operations Director",
+        "has_branch": true,
+        "nodes": [
+          {
+            "id": "1",
+            "type": "input",
+            "data": {
+              "label": "Agustin Griffith"
+            },
+            "employee": {
+              "name": "Agustin Griffith",
+              "designation": "Operations Director",
+              "has_branch": false
+            },
+            "position": { "x": 250, "y": 0 },
+            "sourcePosition": "bottom",
+            "targetPosition": "right"
+          },
+          {
+            "id": "2",
+            "type": "output",
+            "className": "circleOperations",
+            "data": {
+              "label": "MS"
+            },
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "employee": {
+              "name": "Molly Shah",
+              "designation": "Senior HR Executive",
+              "has_branch": false
+            },
+            "sourcePosition": "left",
+            "targetPosition": "right"
+          },
+          {
+            "id": "3",
+            "type": "output",
+            "className": "circleOperations",
+            "data": {
+              "label": "TK"
+            },
+            "position": {
+              "x": 300,
+              "y": 150
+            },
+            "employee": {
+              "name": "Raphael Lloyd",
+              "designation": "Management Trainee",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          },
+          {
+            "id": "4",
+            "type": "output",
+            "className": "circleOperations",
+            "data": {
+              "label": "KH"
+            },
+            "position": {
+              "x": 500,
+              "y": 100
+            },
+            "employee": {
+              "name": "Kate Hester",
+              "designation": "HR Executive",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1-2",
+            "source": "1",
+            "target": "2"
+          },
+          { "id": "e1-3", "source": "1", "target": "3" },
+          { "id": "e1-4", "source": "1", "target": "4" }
+        ]
+      },
+      "position": {
+        "x": 62.45434264405944,
+        "y": 133.86274906775998
+      }
+    },
+    {
+      "id": "2",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "MS"
+      },
+      "employee": {
+        "name": "Molly Shah",
+        "designation": "Senior HR Executive",
+        "has_branch": false
+      },
+      "position": {
+        "x": -18.453784915222858,
+        "y": 81.3859960423577
+      }
+    },
+    {
+      "id": "3",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "RL"
+      },
+      "employee": {
+        "name": "Raphael Lloyd",
+        "designation": "Management Trainee",
+        "has_branch": false
+      },
+      "position": {
+        "x": -17,
+        "y": 36.5
+      }
+    },
+    {
+      "id": "4",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "CO"
+      },
+      "employee": {
+        "name": "Chasity Owen",
+        "designation": "HR Executive",
+        "has_branch": false
+      },
+      "position": {
+        "x": 107.49916340674513,
+        "y": 118.95406377964116
+      }
+    },
+    {
+      "id": "5",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "KH"
+      },
+      "employee": {
+        "name": "Kate Hester",
+        "designation": "HR Executive",
+        "has_branch": false
+      },
+      "position": {
+        "x": 62.5,
+        "y": -22.5
+      }
+    },
+    {
+      "id": "6",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "EC"
+      },
+      "employee": {
+        "name": "Erika Cook",
+        "designation": "Senior HR Executive",
+        "has_branch": false
+      },
+      "position": {
+        "x": 139.3395020931623,
+        "y": 81.72717132202968
+      }
+    },
+    {
+      "id": "7",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "JG"
+      },
+      "employee": {
+        "name": "Jazmine Gordon",
+        "designation": "Technical Recruiter",
+        "has_branch": false
+      },
+      "position": {
+        "x": 107.86542056508432,
+        "y": -1.7977992200761719
+      }
+    },
+    {
+      "id": "8",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "AD"
+      },
+      "employee": {
+        "name": "Andrea Deleon",
+        "designation": "HR Executive",
+        "has_branch": false
+      },
+      "position": {
+        "x": 12,
+        "y": -1.5
+      }
+    },
+    {
+      "id": "9",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "AB"
+      },
+      "employee": {
+        "name": "Amari Branch",
+        "designation": "Senior HR Executive",
+        "has_branch": false
+      },
+      "position": {
+        "x": 12.13669320340344,
+        "y": 120.43137453388005
+      }
+    },
+    {
+      "id": "10",
+      "type": "input",
+      "className": "circleOperations",
+      "data": {
+        "label": "GA"
+      },
+      "employee": {
+        "name": "Gracie Andersen",
+        "designation": "Operations Manager",
+        "has_branch": false
+      },
+      "position": {
+        "x": 137.5,
+        "y": 36
+      }
+    }
+  ]
+}

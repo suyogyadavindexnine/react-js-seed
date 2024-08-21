@@ -1,23 +1,703 @@
-import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
-import { SidebarMenus } from 'src/shared/components/index';
-import * as ROUTES from 'src/shared/constants/routes';
+import { useContext } from 'react';
 
-const SidebarMenu = () => {
+import {
+  ListSubheader,
+  alpha,
+  Box,
+  List,
+  styled,
+  Button,
+  ListItem
+} from '@mui/material';
+import { NavLink as RouterLink } from 'react-router-dom';
+import { SidebarContext } from 'src/contexts/SidebarContext';
+
+import BrightnessLowTwoToneIcon from '@mui/icons-material/BrightnessLowTwoTone';
+import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import BallotTwoToneIcon from '@mui/icons-material/BallotTwoTone';
+import BeachAccessTwoToneIcon from '@mui/icons-material/BeachAccessTwoTone';
+import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
+import FilterVintageTwoToneIcon from '@mui/icons-material/FilterVintageTwoTone';
+import HowToVoteTwoToneIcon from '@mui/icons-material/HowToVoteTwoTone';
+import LocalPharmacyTwoToneIcon from '@mui/icons-material/LocalPharmacyTwoTone';
+import RedeemTwoToneIcon from '@mui/icons-material/RedeemTwoTone';
+import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
+import TrafficTwoToneIcon from '@mui/icons-material/TrafficTwoTone';
+import CheckBoxTwoToneIcon from '@mui/icons-material/CheckBoxTwoTone';
+import PaidIcon from '@mui/icons-material/Paid';
+import RttIcon from '@mui/icons-material/Rtt';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import TuneIcon from '@mui/icons-material/Tune';
+import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import SyncIcon from '@mui/icons-material/Sync';
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import TitleIcon from '@mui/icons-material/Title';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import ChromeReaderModeTwoToneIcon from '@mui/icons-material/ChromeReaderModeTwoTone';
+import WorkspacePremiumTwoToneIcon from '@mui/icons-material/WorkspacePremiumTwoTone';
+import CameraFrontTwoToneIcon from '@mui/icons-material/CameraFrontTwoTone';
+import { useTranslation } from 'react-i18next';
+import FeedIcon from '@mui/icons-material/Feed';
+import TimelineIcon from '@mui/icons-material/Timeline';
+import AppsIcon from '@mui/icons-material/Apps';
+import PublicIcon from '@mui/icons-material/Public';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
+
+const MenuWrapper = styled(Box)(
+  ({ theme }) => `
+  .MuiList-root {
+    padding: ${theme.spacing(1)};
+
+    & > .MuiList-root {
+      padding: 0 ${theme.spacing(0)} ${theme.spacing(1)};
+    }
+  }
+
+    .MuiListSubheader-root {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: ${theme.typography.pxToRem(12)};
+      color: ${theme.sidebar.textColor[50]};
+      padding: ${theme.spacing(0, 2.5)};
+      line-height: 1.4;
+    }
+`
+);
+
+const SubMenuWrapper = styled(Box)(
+  ({ theme }) => `
+    .MuiList-root {
+
+      .MuiListItem-root {
+        padding: 1px 0;
+
+        .MuiBadge-root {
+          position: absolute;
+          right: ${theme.spacing(3.2)};
+
+          .MuiBadge-standard {
+            background: ${theme.sidebar.background};
+            font-size: ${theme.typography.pxToRem(10)};
+            font-weight: bold;
+            text-transform: uppercase;
+            color: ${theme.palette.primary.contrastText};
+          }
+        }
+    
+        .MuiButton-root {
+          display: flex;
+          color: ${theme.colors.alpha.black[70]};
+          background-color: ${theme.colors.alpha.black};
+          width: 100%;
+          justify-content: flex-start;
+          padding: ${theme.spacing(1.2, 3)};
+
+          .MuiButton-startIcon,
+          .MuiButton-endIcon {
+            transition: ${theme.transitions.create(['color'])};
+
+            .MuiSvgIcon-root {
+              font-size: inherit;
+              transition: none;
+            }
+          }
+
+          .MuiButton-startIcon {
+            color: ${theme.sidebar.textColor[30]};
+            font-size: ${theme.typography.pxToRem(20)};
+            margin-right: ${theme.spacing(1)};
+          }
+          
+          .MuiButton-endIcon {
+            color: ${theme.colors.alpha.trueWhite[50]};
+            margin-left: auto;
+            opacity: .8;
+            font-size: ${theme.typography.pxToRem(20)};
+          }
+
+          &.active,
+          &:hover {
+            background-color: ${alpha(theme.colors.alpha.black[100], 0.06)};
+            color: ${theme.sidebar.textColor[100]};
+
+            .MuiButton-startIcon,
+            .MuiButton-endIcon {
+              color: ${theme.sidebar.textColor[100]};
+            }
+          }
+        }
+
+        &.Mui-children {
+          flex-direction: column;
+
+          .MuiBadge-root {
+            position: absolute;
+            right: ${theme.spacing(7)};
+          }
+        }
+
+        .MuiCollapse-root {
+          width: 100%;
+
+          .MuiList-root {
+            padding: ${theme.spacing(1, 0)};
+          }
+
+          .MuiListItem-root {
+            padding: 1px 0;
+
+            .MuiButton-root {
+              padding: ${theme.spacing(0.8, 3)};
+
+              .MuiBadge-root {
+                right: ${theme.spacing(3.2)};
+              }
+
+              &:before {
+                content: ' ';
+                background: ${theme.sidebar.background[100]};
+                opacity: 0;
+                transition: ${theme.transitions.create([
+                  'transform',
+                  'opacity'
+                ])};
+                width: 6px;
+                height: 6px;
+                transform: scale(0);
+                transform-origin: center;
+                border-radius: 20px;
+                margin-right: ${theme.spacing(1.8)};
+              }
+
+              &.active,
+              &:hover {
+
+                &:before {
+                  transform: scale(1);
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+`
+);
+
+function SidebarMenu() {
+  const { closeSidebar } = useContext(SidebarContext);
+  const { i18n, t } = useTranslation(['english']);
+  console.log(t('sidebar-menu.crypto'))
+  console.log(t('sidebar-menu.dashboard'))
   return (
     <>
-      <SidebarMenus
-        menuname={'Dashboards'}
-        option={[
-          {
-            pathname: ROUTES.DASHBOARD,
-            subpathname: ROUTES.TRANSACTIONS,
-            icon: <TableChartTwoToneIcon />,
-            submenuname: 'transac_list'
+      <MenuWrapper>
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              {t('Dashboards')}
+            </ListSubheader>
           }
-        ]}
-      />
+        >
+          <SubMenuWrapper>
+            <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/dashboards"
+                  startIcon={<BrightnessLowTwoToneIcon />}
+                >
+                  {t('sidebar-menu.crypto')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/dashboards/dashboard"
+                  startIcon={<BrightnessLowTwoToneIcon />}
+                >
+                  {t('sidebar-menu.dashboard')}
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
+        </List>
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Management
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+            <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/employees/employees"
+                  startIcon={<TableChartTwoToneIcon />}
+                >
+                  {t('sidebar-menu.employee')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/management/custom-form"
+                  startIcon={<FeedIcon />}
+                >
+                  {t('sidebar-menu.custom_form')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/management/flow-chart"
+                  startIcon={<TimelineIcon />}
+                >
+                  {t('sidebar-menu.flow_chart')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/management/indexnine-flow-chart"
+                  startIcon={<AppsIcon />}
+                >
+                  {t('sidebar-menu.indexnine_flow_chart')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/choropleth-map"
+                  startIcon={<PublicIcon />}
+                >
+                  {t('sidebar-menu.choropleth_map')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/chat-bot"
+                  startIcon={<QuestionAnswerIcon />}
+                >
+                  {t('sidebar-menu.chat_bot')}
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
+        </List>
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Accounts
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+            <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/management/profile/details"
+                  startIcon={<AccountCircleTwoToneIcon />}
+                >
+                  {t('sidebar-menu.user_prof')}
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
+        </List>
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Components
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+            <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/buttons"
+                  startIcon={<BallotTwoToneIcon />}
+                >
+                  {t('sidebar-menu.btns')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/modals"
+                  startIcon={<BeachAccessTwoToneIcon />}
+                >
+                  {t('sidebar-menu.modals')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/accordions"
+                  startIcon={<EmojiEventsTwoToneIcon />}
+                >
+                  {t('sidebar-menu.accordions')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/tabs"
+                  startIcon={<FilterVintageTwoToneIcon />}
+                >
+                  {t('sidebar-menu.tabs')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/badges"
+                  startIcon={<HowToVoteTwoToneIcon />}
+                >
+                  {t('sidebar-menu.badges')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/tooltips"
+                  startIcon={<LocalPharmacyTwoToneIcon />}
+                >
+                  {t('sidebar-menu.tooltips')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/avatars"
+                  startIcon={<RedeemTwoToneIcon />}
+                >
+                  Avatars
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/cards"
+                  startIcon={<SettingsTwoToneIcon />}
+                >
+                  {t('sidebar-menu.cards')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/forms"
+                  startIcon={<TrafficTwoToneIcon />}
+                >
+                  {t('sidebar-menu.forms')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/checkbox"
+                  startIcon={<CheckBoxTwoToneIcon />}
+                >
+                  {t('sidebar-menu.checkbox')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/circularprogress"
+                  startIcon={<SyncIcon />}
+                >
+                  {t('sidebar-menu.circularprog')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/datepicker"
+                  startIcon={<CalendarMonthIcon />}
+                >
+                  {t('sidebar-menu.datepicker')}
+                </Button>
+              </ListItem>
+
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/filebutton"
+                  startIcon={<UploadFileIcon />}
+                >
+                  {t('sidebar-menu.filebutton')}
+                </Button>
+              </ListItem>
+
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/upload"
+                  startIcon={<UploadFileIcon />}
+                >
+                  {t('sidebar-menu.upload')}
+                </Button>
+              </ListItem>
+
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/radiobutton"
+                  startIcon={<RadioButtonCheckedIcon />}
+                >
+                  {t('sidebar-menu.radiobutton')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/textfield"
+                  startIcon={<TitleIcon />}
+                >
+                  {t('sidebar-menu.textfield')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/select"
+                  startIcon={<DoneOutlineIcon />}
+                >
+                  {t('sidebar-menu.select')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/slider"
+                  startIcon={<TuneIcon />}
+                >
+                  {t('sidebar-menu.slider')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/stepper"
+                  startIcon={<CheckBoxTwoToneIcon />}
+                >
+                  {t('sidebar-menu.stepper')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/timepicker"
+                  startIcon={<AccessTimeIcon />}
+                >
+                  {t('sidebar-menu.timepicker')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/typography"
+                  startIcon={<RttIcon />}
+                >
+                  {t('sidebar-menu.typography')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/currencyfield"
+                  startIcon={<PaidIcon />}
+                >
+                  {t('sidebar-menu.currency')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/toaster"
+                  startIcon={<ContactSupportIcon />}
+                >
+                  {t('sidebar-menu.toaster')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/text-editor"
+                  startIcon={<TitleIcon />}
+                >
+                  {t('sidebar-menu.text_editor')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/tree-view-menu"
+                  startIcon={<AccountTreeIcon />}
+                >
+                  {t('sidebar-menu.tree_view_menu')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/components/file-manager"
+                  startIcon={<CreateNewFolderIcon />}
+                >
+                  {t('sidebar-menu.file_manager')}
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
+        </List>
+        <List
+          component="div"
+          subheader={
+            <ListSubheader component="div" disableSticky>
+              Extra Pages
+            </ListSubheader>
+          }
+        >
+          <SubMenuWrapper>
+            <List component="div">
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/status/404"
+                  startIcon={<CheckBoxTwoToneIcon />}
+                >
+                  {t('sidebar-menu.error_404')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/status/500"
+                  startIcon={<CameraFrontTwoToneIcon />}
+                >
+                  {t('sidebar-menu.error_500')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/status/coming-soon"
+                  startIcon={<ChromeReaderModeTwoToneIcon />}
+                >
+                  {t('sidebar-menu.coming_soon')}
+                </Button>
+              </ListItem>
+              <ListItem component="div">
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  onClick={closeSidebar}
+                  to="/status/maintenance"
+                  startIcon={<WorkspacePremiumTwoToneIcon />}
+                >
+                  Maintenance
+                </Button>
+              </ListItem>
+            </List>
+          </SubMenuWrapper>
+        </List>
+      </MenuWrapper>
     </>
   );
-};
+}
 
 export default SidebarMenu;

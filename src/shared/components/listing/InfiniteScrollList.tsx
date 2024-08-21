@@ -3,6 +3,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { Box } from '@mui/material';
 import clsx from 'clsx';
 
+// import { InfiniteScrollListProps } from 'src/shared/components/listing/services/infiniteScrollListInterface';
 import { InfiniteScrollListProps } from './services/infiniteScrollListInterface';
 
 export const InfiniteScrollList = ({

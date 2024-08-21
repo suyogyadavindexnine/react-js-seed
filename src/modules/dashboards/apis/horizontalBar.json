@@ -1,0 +1,83 @@
+{
+  "chart": {
+    "type": "bar",
+    "height": 195,
+    "zoom": {
+      "enabled": false
+    },
+    "toolbar": {
+      "show": false
+    }
+  },
+  "plotOptions": {
+    "bar": {
+      "horizontal": true
+    }
+  },
+  "dataLabels": {
+    "enabled": false
+  },
+  "fill": {
+    "colors": ["#174076"]
+  },
+  "yaxis": {
+    "labels": {
+      "show": true,
+      "align": "left"
+    }
+  },
+  "xaxis": {
+    "min": 0,
+    "max": 100,
+    "tickAmount": 4
+  },
+  "grid": {
+    "padding": {
+      "top": -25,
+      "bottom": 0
+    },
+    "xaxis": {
+      "lines": {
+        "show": true
+      }
+    },
+    "yaxis": {
+      "lines": {
+        "show": false
+      }
+    }
+  },
+  "series": [
+    {
+      "data": [
+        {
+          "x": "Cyber Security",
+          "y": 10
+        },
+        {
+          "x": "IOT",
+          "y": 20
+        },
+        {
+          "x": "Healthcare",
+          "y": 25
+        },
+        {
+          "x": "Fintech",
+          "y": 40
+        },
+        {
+          "x": "Education",
+          "y": 10
+        },
+        {
+          "x": "Other",
+          "y": 20
+        }
+      ],
+      "xaxis": {
+        "type": "category"
+      }
+    }
+  ]
+}

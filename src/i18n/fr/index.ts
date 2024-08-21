@@ -1,8 +1,10 @@
-import * as french from './french.json';
-import * as sidebarmenu from './sidebarmenu.json';
+import french from './french.json';
+import sidebarmenu from './sidebarmenu.json';
 const allFr = {
   french,
-  sidebarmenu
+sidebarmenu
 };
+
+console.log(allFr);
 
 export default allFr;

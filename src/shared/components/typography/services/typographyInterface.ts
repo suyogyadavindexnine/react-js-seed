@@ -1,11 +1,17 @@
-import { TypographyProps as MuiTypographyProps } from '@mui/material';
+import {
+  Typography as MuiTypography,
+  TypographyProps as MuiTypographyProps
+} from '@mui/material';
 type align = 'center' | 'inherit' | 'right' | 'left' | 'justify';
 type variant =
   | 'h1'
   | 'h2'
+  | 'h2'
   | 'h3'
   | 'h4'
   | 'h5'
+  | 'h6'
+  | 'h6'
   | 'h6'
   | 'body1'
   | 'body2'

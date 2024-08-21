@@ -7,6 +7,5 @@ export const getTransactionDataAPI = async () => {
     setLoading: () => {}
   };
   const res = await apiGet('management/transaction.json', config);
-  console.log()
   return res.data;
 };

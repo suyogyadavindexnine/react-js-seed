@@ -152,3 +152,105 @@ export const hexToRgbA = (hex: string, opacity: number) => {
 export const getCommaSeperatedValues = (data: string[]) => {
   return data?.length > 0 ? data?.toString()?.replaceAll(',', ', ') : '';
 };
+
+// get the current date
+const currentDate = new Date();
+
+//get last weeks date
+export const lastWeekStart = new Date(
+  currentDate.getFullYear(),
+  currentDate.getMonth(),
+  currentDate.getDate() - 7
+);
+
+//get last month start date
+export const lastMonthStart = new Date(
+  currentDate.getFullYear(),
+  currentDate.getMonth() - 1,
+  1
+);
+
+//get last month end date
+export const lastMonthEnd = new Date(
+  currentDate.getFullYear(),
+  currentDate.getMonth(),
+  0
+);
+
+// get last month start and end date
+export const lastYearStart = new Date(currentDate.getFullYear() - 1, 0, 1);
+export const lastYearEnd = new Date(currentDate.getFullYear() - 1, 11, 31);
+
+// convert the date string into date
+/**
+ * @param date
+ * @returns date
+ */
+export const convertStringDateToDate = (date: string) => {
+  const [day, month, year] = date.split('/').map(Number);
+  return new Date(year, month - 1, day);
+};
+
+// To sort the data by date
+/**
+ * @param v1
+ * @param v2
+ * @param cellParams1
+ * @param cellParams2
+ * @returns
+ */
+export const sortComparator = (v1, v2, cellParams1, cellParams2) => {
+  const date1Parts = v1.split('/');
+  const date2Parts = v2.split('/');
+
+  const day1 = parseInt(date1Parts[0], 10);
+  const month1 = parseInt(date1Parts[1], 10) - 1;
+  const year1 = parseInt(date1Parts[2], 10);
+
+  const day2 = parseInt(date2Parts[0], 10);
+  const month2 = parseInt(date2Parts[1], 10) - 1;
+  const year2 = parseInt(date2Parts[2], 10);
+
+  const dateObj1 = new Date(year1, month1, day1);
+  const dateObj2 = new Date(year2, month2, day2);
+
+  if (dateObj1 < dateObj2) {
+    return -1;
+  }
+  if (dateObj1 > dateObj2) {
+    return 1;
+  }
+  return 0;
+};
+
+// To filter the data by week month and year
+/**
+ * @param dataToFilter
+ * @param filter
+ * @param dateToFilter
+ * @returns filtered data
+ */
+export const filterDataByWeekMonthYear = (
+  dataToFilter,
+  filter,
+  dateToFilter
+) => {
+  let fliteredData = dataToFilter;
+  if (filter.toLowerCase() == 'last week') {
+    fliteredData = dataToFilter.filter((item) => {
+      const itemDate = convertStringDateToDate(item[dateToFilter]);
+      return itemDate >= lastWeekStart && itemDate <= currentDate;
+    });
+  } else if (filter.toLowerCase() == 'last month') {
+    fliteredData = dataToFilter.filter((item) => {
+      const itemDate = convertStringDateToDate(item[dateToFilter]);
+      return itemDate >= lastMonthStart && itemDate <= lastMonthEnd;
+    });
+  } else if (filter.toLowerCase() == 'last year') {
+    fliteredData = dataToFilter.filter((item) => {
+      const itemDate = convertStringDateToDate(item[dateToFilter]);
+      return itemDate >= lastYearStart && itemDate <= lastYearEnd;
+    });
+  }
+  return fliteredData;
+};
