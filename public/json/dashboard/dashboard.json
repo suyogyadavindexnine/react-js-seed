@@ -187,17 +187,17 @@
   ],
 
   "totalEmployees": {
-    "total": 105,
-    "maleEmployees": 60,
-    "femaleEmployees": 45,
+    "total": 175,
+    "maleEmployees": 96,
+    "femaleEmployees": 79,
     "transgenderEmployees": 0,
-    "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+    "years": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
     "min": 0,
-    "max": 150,
+    "max": 200,
     "series": [
       {
         "name": "Employees",
-        "data": [30, 45, 50, 60, 90, 90, 100, 110]
+        "data": [30, 45, 50, 60, 90, 90, 100, 110, 140, 175]
       }
     ]
   },
