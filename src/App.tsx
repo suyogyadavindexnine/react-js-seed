@@ -154,7 +154,7 @@ const App = () => {
                 <CssBaseline />
                 {content}
                 {configsButton}
-                {chatBotBtn}
+                {/* {chatBotBtn} */}
               </LocalizationProvider>
             </ThemeProvider>
           </StylesProvider>

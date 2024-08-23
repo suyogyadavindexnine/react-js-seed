@@ -200,7 +200,8 @@ const CustomerProjects = () => {
           <Tables
             rows={projectDetails}
             columns={columns}
-            showCheckboxSelection={false}
+            showSearchField={false}
+            // showCheckboxSelection={false}
           />
         </Box>
       </Box>

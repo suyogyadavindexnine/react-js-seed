@@ -6,10 +6,12 @@ import {
   Menu,
   MenuItem
 } from '@mui/material';
-import { useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+import { PageHeader, PageTitleWrapper } from 'src/shared/components';
+import * as ROUTES from 'src/shared/constants/routes';
 
 const ListWrapper = styled(Box)(
   ({ theme }) => `
@@ -63,8 +65,14 @@ const ListWrapper = styled(Box)(
 );
 
 function HeaderMenu() {
+  const { pathname } = useLocation();
   const ref = useRef<any>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
+  const [title, setTitle] = useState('asdads');
+
+  useEffect(() => {
+    updatePageTitle(pathname);
+  }, [pathname]);
 
   const handleOpen = (): void => {
     setOpen(true);
@@ -74,8 +82,23 @@ function HeaderMenu() {
     setOpen(false);
   };
 
+  const updatePageTitle = (pathName: string) => {
+    switch (pathName) {
+      case ROUTES.DASHBOARD:
+        setTitle('Dashboard');
+        break;
+      case ROUTES.EMPLOYEE_TABLE:
+        setTitle('Employee');
+        break;
+      default:
+        setTitle('');
+        break;
+    }
+  };
+
   return (
     <>
+      {/* <PageHeader heading={title} /> */}
       <ListWrapper
         sx={{
           display: {

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 
 import { PageTitleWrapper } from '../../shared/components/index';
-import { Container, Grid } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 import Footer from 'src/core/footer';
 import GroupMembers from './components/GroupMembers';
 import { getDashboardUserDetails } from './services/dashboard.service';
@@ -55,7 +55,7 @@ function Dashboard() {
           <GroupMembers feeds={dashboardProfileData} />
         </Grid>
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -82,7 +82,7 @@ function Dashboard() {
             />
           </Grid> */}
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

@@ -62,7 +62,7 @@ const EmployeeDetailWrappper = () => {
           docs="https://indexnine.com/"
         />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Box>
         <Grid container direction="row" justifyContent="space-between">
           <Grid item xs={12}>
             <Card sx={{ m: 1 }}>
@@ -93,7 +93,7 @@ const EmployeeDetailWrappper = () => {
             </Card>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Scrollbar, Logo } from '../../shared/components/index';
 import { SidebarContext } from 'src/providers/SidebarContext';
 import { Box, Drawer, Divider, useTheme, useMediaQuery } from '@mui/material';
@@ -12,12 +12,18 @@ const Sidebar = () => {
   const theme = useTheme();
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
   const closeSidebar = () => toggleSidebar();
-  const classes = isLg ? 'large SidebarWrapper ' : 'small SidebarWrapper';
+  const classes = sidebarToggle ? 'large SidebarWrapper ' : 'small SidebarWrapper';
   const wrapperclass =
     theme.palette.mode === 'dark'
       ? 'sidebarwrapperDark'
       : 'sidebarwrapperLight';
   const finalclass = `${classes} ${wrapperclass}`;
+
+  useEffect(() => {
+    if(!isLg || !sidebarToggle) {
+      closeSidebar();
+    }
+  }, [isLg])
 
   const { t } = useTranslation(['english']);
 

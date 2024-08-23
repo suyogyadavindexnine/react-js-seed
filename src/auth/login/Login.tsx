@@ -1,176 +1,195 @@
 import {
   Box,
-  CardContent,
-  Container,
-  CssBaseline,
-  FormControlLabel,
-  Grid,
-  Link
-} from '@mui/material';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from 'src/providers/AuthguardContext';
-import {
-  Button,
-  CheckBox,
-  TextField,
-  Typography,
   Card,
-  showWarningMessage,
-  Logo
-} from '../../shared/components/index';
-import Googlelogo from '../../assets/images/Googlelogo.png';
-import Microsoftlogo from '../../assets/images/Microsoftlogo.png';
+  Container,
+  Divider,
+  FormControl,
+  Grid
+} from '@mui/material';
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { Helmet } from 'react-helmet-async';
+import logo from 'src/assets/images/indexnine-logo.svg';
+import IllustrationLogin from 'src/assets/images/IllustrationLogin.svg';
+import {
+  AUTH_CONFIG,
+} from 'src/shared/constants/constants';
+import { styled } from '@mui/material/styles';
 import * as ROUTES from '../../shared/constants/routes';
+import { useNavigate } from 'react-router';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useAuth } from 'src/providers/AuthguardContext';
+import LoginByUserNamePassword from './LoginByUserNamePassword';
+import OTPWithLogin from '../OTPWithLogin';
+import { loginData } from './models/login';
+import { userVerifyWithOTP } from './apis/login';
+import {
+  showErrorMessage,
+  showSuccessMessage
+} from 'src/shared/components/toaster/Toast';
+
+
 
 const Login = () => {
   // Constants
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { t } = useTranslation(['english']);
 
-  // State Values
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState<string>('');
 
-  // Methods
-  const submitLoginDetails = () => {
-    localStorage.setItem('accessToken', 'tokendasdasda#aasdas131233');
-    localStorage.setItem('userRoles', JSON.stringify([]));
-    login('tokendasdasda#aasdas131233');
-    if (email && password) {
-      navigate(ROUTES.DASHBOARD);
-      localStorage.setItem('logged', JSON.stringify(true));
+  //state variables
+  const [loginType, setLoginType] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [isOnEmailScreen, setIsOnEmailScreen] = useState<boolean>(true);
+
+  //methods
+  const MainContent = styled(Box)(
+    ({ theme }) => `
+      height: 100%;
+      display: flex;
+      flex: 1;
+      overflow: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  `
+  );
+
+  useEffect(() => {
+    if (window.location.pathname === ROUTES.ADMIN_LOGIN) {
+      setLoginType(AUTH_CONFIG.LOGIN_TYPE_ADMIN);
     } else {
-      showWarningMessage('not valid', {
-        theme: 'dark',
-        position: 'bottom-right'
+      setLoginType(AUTH_CONFIG.LOGIN_TYPE_USER);
+    }
+  }, [window.location.pathname]);
+
+  const checkLastLoginAndRedirect = (
+    lastActive: string,
+    route: string
+  ): void => {
+    if (lastActive) {
+      navigate(`${route}`);
+    } else {
+      navigate(`${ROUTES.DASHBOARD}`);
+    }
+  };
+
+  // Google Login SSO
+  const responseonSuccessGoogle = (response: any) => {
+    if (response) {
+
+    }
+  };
+
+  const responseonFailureGoogle = (response: any) => {
+  };
+
+  //isOnOtpScreen
+  const isOnOtpScreen = (val) => {
+    getOtpOnEmail(val);
+  };
+
+  const getOtpOnEmail = async (value) => {
+    try {
+      const payload: loginData = {
+        loginType: loginType,
+        email: value.email
+      };
+
+      const respData = await userVerifyWithOTP(payload);
+      if (respData?.message && respData?.status) {
+        showSuccessMessage(respData?.message, {
+          position: 'top-right'
+        });
+        setIsOnEmailScreen(false);
+      }
+    } catch (error) {
+      showErrorMessage(error.response.data.message, {
+        position: 'top-right'
       });
     }
-    setEmail('');
-    setPassword('');
   };
 
   // HTML
   return (
-    <Container className="loginWrapper h-100 flex-basic-center">
-      <Container className="containerCenter" maxWidth="md">
-        <Card>
-          <Grid container spacing={2} className="">
-            <Grid
-              className="flex-basic-center loginBox"
-              item
-              xs={12}
-              sm={6}
-              md={6}
-              lg={6}
-            >
-              <CardContent sx={{ p: 5 }}>
-                <Box sx={{ mb: 3 }} className="flex-basic-center">
-                  <Logo />
-                </Box>
-                <CssBaseline />
-                <Typography
-                  className="loginTextStyle"
-                  variant="h5"
-                  align="center"
-                >
-                  Sign In
-                </Typography>
-
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-
-                <TextField
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <FormControlLabel
-                  control={<CheckBox value="remember" color="primary" />}
-                  label="Remember me"
-                />
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
-                  onClick={submitLoginDetails}
-                  btnText=" Sign In"
-                ></Button>
-
-                <Box className="flex-basic-space-between">
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
-                </Box>
-              </CardContent>
-            </Grid>
-            <Grid
-              className="loginWithGoogle flex-basic-center"
-              item
-              xs={12}
-              md={6}
-              sm={6}
-              lg={6}
-            >
-              <Box sx={{ p: 10 }} className="flex-column-center w-100">
-                <Box className="w-100">
-                  <Button
-                    variant="outlined"
-                    sx={{ px: 2 }}
-                    className="w-100"
-                    startIcon={
-                      <Box className="flex-basic-center">
-                        <img src={Googlelogo} />
-                        <Box sx={{ pl: 1 }}> Google</Box>
-                      </Box>
-                    }
-                  ></Button>
-                </Box>
-                <Box sx={{ my: 2 }}>
-                  <Typography variant="h5" align="center">
-                    Or
-                  </Typography>
-                </Box>
-                <Box className="w-100">
-                  <Button
-                    className="w-100"
-                    variant="outlined"
-                    startIcon={
-                      <Box className="flex-basic-center">
-                        <img src={Microsoftlogo} />
-                        <Box sx={{ pl: 1 }}>Microsoft</Box>
-                      </Box>
-                    }
-                  ></Button>
-                </Box>
+    <>
+      <Helmet>
+        <title> {t('login.title')}</title>
+      </Helmet>
+      <MainContent className="loginWrapper">
+        <Container maxWidth="md">
+          <Grid container spacing={2}>
+            <Grid item xs={12} lg={6} className="flex-basic-center">
+              <Box>
+                <img
+                  className="img-fluid illustrationLoginImage"
+                  alt="IllustrationLogin"
+                  src={IllustrationLogin}
+                ></img>
               </Box>
             </Grid>
+            <Grid item xs={12} lg={6}>
+              <Card sx={{ px: 5, py: 4 }}>
+                <Box>
+                  <Box sx={{ mb: 4 }}>
+                    <img className="tekcheckLogo" src={logo} />
+                  </Box>
+                  {isOnEmailScreen ? (
+                    <>
+                      <Box>
+                        <Box
+                          className="text-h4 welcomeText font-weight-semibold"
+                          sx={{ mb: 4 }}
+                        >
+                          {t('login.welcomeText')}
+                        </Box>
+                      </Box>
+                      <LoginByUserNamePassword
+                        getOtpOnEmail={isOnOtpScreen}
+                        setIsOnEmailScreen={setIsOnEmailScreen}
+                        loginType={loginType}
+                      />
+                      <Divider sx={{ my: 5 }}>{t('login.orText')}</Divider>
+                      <Box className="w-100">
+                        <FormControl
+                          className="w-100"
+                          variant="outlined"
+                          fullWidth
+                        >
+                          <Box
+                            textAlign="center"
+                            display={'flex'}
+                            justifyContent={'center'}
+                            className="w-100"
+                          >
+                            <GoogleOAuthProvider
+                              clientId={AUTH_CONFIG.GOOGLE_CLIENT_ID}
+                            >
+                              <GoogleLogin
+                                onSuccess={(response) => {
+                                  responseonSuccessGoogle(response);
+                                }}
+                                onError={() => {
+                                  responseonFailureGoogle(null);
+                                }}
+                                useOneTap={false}
+                              />
+                            </GoogleOAuthProvider>
+                          </Box>
+                        </FormControl>
+                      </Box>
+                    </>
+                  ) : (
+                    <>
+                      <OTPWithLogin resendOtp={isOnOtpScreen} />
+                    </>
+                  )}
+                </Box>
+              </Card>
+            </Grid>
           </Grid>
-        </Card>
-      </Container>
-    </Container>
+        </Container>
+      </MainContent>
+    </>
   );
 };
 

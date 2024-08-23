@@ -70,7 +70,7 @@ function Forms() {
         documentlink="https://material-ui.com/components/text-fields/"
       />
 
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -465,7 +465,7 @@ function Forms() {
             </Card>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

@@ -51,7 +51,8 @@ import {
   TEXTEDITOR,
   CHATBOT,
   TREEVIEW,
-  FILE_MANAGER
+  FILE_MANAGER,
+  DEMO1
 } from './../shared/constants/constants';
 import { SuspenseLoader } from '../shared/components/index';
 import * as ROUTES from 'src/shared/constants/routes';
@@ -100,6 +101,7 @@ const Currencyfield = Loader(lazy(() => CURRENCYFIELD));
 const Toaster = Loader(lazy(() => TOASTER));
 const Upload = Loader(lazy(() => UPLOAD));
 const TextEditor = Loader(lazy(() => TEXTEDITOR));
+const Demo1 = Loader(lazy(() => DEMO1))
 // Status
 
 const Status404 = Loader(lazy(() => STATUS404));
@@ -131,6 +133,10 @@ const routes: RouteObject[] = [
     children: [
       {
         path: '/',
+        element: <Login />
+      },
+      {
+        path: 'admin',
         element: <Login />
       },
       {
@@ -180,6 +186,16 @@ const routes: RouteObject[] = [
       {
         path: 'democard',
         element: <GuardedRoute component={DemoCard} />
+      },
+    ]
+  },
+  {
+    path: ROUTES.DEMO,
+    element: <SidebarLayout />,
+    children: [
+      {
+        path: 'demo1',
+        element: <GuardedRoute component={Demo1} />
       }
     ]
   },
@@ -207,12 +223,12 @@ const routes: RouteObject[] = [
     path: 'employees',
     element: <SidebarLayout />,
     children: [
+      // {
+      //   path: '',
+      //   element: <Navigate to="employees" replace />
+      // },
       {
         path: '',
-        element: <Navigate to="employees" replace />
-      },
-      {
-        path: 'employees',
         element: <Employees />
       }
     ]

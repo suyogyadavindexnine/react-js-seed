@@ -145,15 +145,15 @@ const UserDetails = (userInfo) => {
           lg={4}
         >
           <Box display="flex" alignItems="flex-start">
-           {userInfo ? (<Chart
+            <Chart
               height={180}
               options={chartOptions}
               series={[
-                (userInfo?.userInfo?.userDetails?.length &&
-                  userInfo?.userInfo?.userDetails[0]?.healthscore / 10) * 100
+                (userInfo.userInfo.userDetails.length &&
+                  userInfo.userInfo.userDetails[0].healthscore / 10) * 100
               ]}
               type="radialBar"
-            />) : null}
+            />
           </Box>
         </Grid>
         <Grid

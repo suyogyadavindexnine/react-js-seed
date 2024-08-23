@@ -50,7 +50,6 @@ const RecentOrders: FC<RecentOrdersProps> = ({
             }
           ]}
           value={tabs}
-          // exclusive
           onChange={handleViewOrientation}
         />
       </Box>

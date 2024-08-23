@@ -3,15 +3,15 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { TextField, DatePicker } from '../../../../shared/components/index';
 
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers'
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 test('renders Datepicker component', () => {
   const selectedDate = new Date();
   const handleFileUpload = jest.fn();
   render(
     <BrowserRouter>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           renderInput={() => <TextField />}
           value={selectedDate}

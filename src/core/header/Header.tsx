@@ -12,7 +12,6 @@ import {
   useTheme
 } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
-import { SidebarContext } from 'src/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -21,6 +20,8 @@ import HeaderButtons from './buttons';
 import HeaderUserbox from './user-box';
 import HeaderMenu from './menu';
 import LangSelect from './buttons/select-language';
+import { SidebarContext } from 'src/providers/SidebarContext';
+import { SidebarContextType } from 'src/providers/models/SidebarContextType';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -42,12 +43,10 @@ const HeaderWrapper = styled(Box)(
 );
 
 function Header() {
-  const { sidebarToggle, setToggleSidebar } = useContext<any>(SidebarContext);
+  const { sidebarToggle, toggleSidebar } = useContext<SidebarContextType>(SidebarContext);
   console.log('sidebarToggle', sidebarToggle);
   const theme = useTheme();
-  const SidebarClikc = () => {
-    setToggleSidebar(true);
-  };
+
   return (
     <HeaderWrapper
       display="flex"
@@ -77,7 +76,7 @@ function Header() {
         <HeaderMenu />
       </Stack>
       <Box display="flex" alignItems="center">
-        {/* <LangSelect /> */}
+        <LangSelect />
         <HeaderButtons />
         <HeaderUserbox />
         <Box
@@ -88,7 +87,7 @@ function Header() {
           }}
         >
           <Tooltip arrow title="Toggle Menu">
-            <IconButton color="primary" onClick={SidebarClikc}>
+            <IconButton color="primary" onClick={toggleSidebar}>
               {!sidebarToggle ? (
                 <MenuTwoToneIcon fontSize="small" />
               ) : (

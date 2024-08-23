@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Grid, Container } from '@mui/material';
+import { Grid, Container, Box } from '@mui/material';
 
 import { PageTitle, PageTitleWrapper } from '../../shared/components';
 
@@ -33,7 +33,7 @@ const ChoroplethWidget = () => {
           />
         </div>
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -45,7 +45,7 @@ const ChoroplethWidget = () => {
             <div className="choropleth_widget" data-subreddit="javascript" />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };

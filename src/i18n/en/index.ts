@@ -1,9 +1,9 @@
-import english from './english.json'; 
-import sidebarMenu from './sidebarmenu.json'; 
+import english from './english.json';
+import sidebarmenu from './sidebarmenu.json';
 
 const allEn = {
   english,
-  sidebarMenu
+  sidebarmenu
 };
 
 export default allEn;

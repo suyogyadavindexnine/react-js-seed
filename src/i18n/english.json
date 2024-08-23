@@ -38,6 +38,20 @@
     "choropleth_map": "Choropleth Map"
   },
 
+  "login": {
+    "title": "Login",
+    "loginAs": "Login as:",
+    "welcomeText": "Welcome to Indexnine Demos",
+    "continueBtnText": "CONTINUE",
+    "VerifyAndLoginBtnText": "VERIFY & LOGIN",
+    "orText": "OR",
+    "verificationText": "Verification Code",
+    "verificationSubText": "Please enter 6-digit verification that was sent to your email-id.",
+    "otpText": "OTP",
+    "dontReceiveOpt": "Don’t receive an OTP? ",
+    "resendOpt": "Resend OTP"
+  },
+
   "dashboard": {
     "header": {
       "welcome": "Welcome",

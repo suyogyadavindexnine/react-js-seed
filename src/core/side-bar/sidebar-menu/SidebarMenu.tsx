@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-
 import {
   ListSubheader,
   alpha,
@@ -7,10 +5,12 @@ import {
   List,
   styled,
   Button,
-  ListItem
+  ListItem,
+  Collapse,
+  ListItemButton,
+  ListItemText
 } from '@mui/material';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { SidebarContext } from 'src/contexts/SidebarContext';
 
 import BrightnessLowTwoToneIcon from '@mui/icons-material/BrightnessLowTwoTone';
 import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
@@ -47,6 +47,8 @@ import PublicIcon from '@mui/icons-material/Public';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import { useState } from 'react';
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -191,509 +193,574 @@ const SubMenuWrapper = styled(Box)(
 );
 
 function SidebarMenu() {
-  const { closeSidebar } = useContext(SidebarContext);
-  const { i18n, t } = useTranslation(['english']);
-  console.log(t('sidebar-menu.crypto'))
-  console.log(t('sidebar-menu.dashboard'))
+  const { t } = useTranslation(['english']);
+  const [managementNav, setManagementNav] = useState(false);
+  const [accountsNav, setAccountsNav] = useState(false);
+  const [componentsNav, setComponentsNav] = useState(false);
+  const [othersNav, setOthersNav] = useState(false);
+  const [dashboardNav, setDashboardNav] = useState(true);
+  const [demoNav, setDemoNav] = useState(false);
+
+  const onChildNavClick = (e, callback, value) => {
+    closeAll();
+    callback(value);
+    e.stopPropagation();
+  };
+  const closeAll = () => {
+    setManagementNav(false);
+    setAccountsNav(false);
+    setComponentsNav(false);
+    setOthersNav(false);
+    setDashboardNav(false);
+    setDemoNav(false);
+  };
+
   return (
     <>
       <MenuWrapper>
         <List
           component="div"
           subheader={
-            <ListSubheader component="div" disableSticky>
-              {t('Dashboards')}
-            </ListSubheader>
+            <ListItemButton>
+              <ListItemText> {t('Dashboards')}</ListItemText>
+              {dashboardNav ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
           }
+          onClick={() => setDashboardNav(!dashboardNav)}
         >
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
+          <Collapse in={dashboardNav} timeout="auto" unmountOnExit>
+            <SubMenuWrapper>
+              <List component="div">
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/dashboards"
+                    startIcon={<BrightnessLowTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setDashboardNav, true)}
+                  >
+                    {t('sidebar-menu.crypto')}
+                  </Button>
+                </ListItem>
+                {/* <ListItem component="div">
                 <Button
                   disableRipple
                   component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/dashboards"
-                  startIcon={<BrightnessLowTwoToneIcon />}
-                >
-                  {t('sidebar-menu.crypto')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
                   to="/dashboards/dashboard"
                   startIcon={<BrightnessLowTwoToneIcon />}
                 >
                   {t('sidebar-menu.dashboard')}
                 </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
+              </ListItem> */}
+              </List>
+            </SubMenuWrapper>
+          </Collapse>
         </List>
         <List
           component="div"
           subheader={
-            <ListSubheader component="div" disableSticky>
-              Management
-            </ListSubheader>
+            <ListItemButton>
+              <ListItemText>Demos</ListItemText>
+              {demoNav ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
           }
+          onClick={() => setDemoNav(!demoNav)}
         >
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/employees/employees"
-                  startIcon={<TableChartTwoToneIcon />}
-                >
-                  {t('sidebar-menu.employee')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/management/custom-form"
-                  startIcon={<FeedIcon />}
-                >
-                  {t('sidebar-menu.custom_form')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/management/flow-chart"
-                  startIcon={<TimelineIcon />}
-                >
-                  {t('sidebar-menu.flow_chart')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/management/indexnine-flow-chart"
-                  startIcon={<AppsIcon />}
-                >
-                  {t('sidebar-menu.indexnine_flow_chart')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/choropleth-map"
-                  startIcon={<PublicIcon />}
-                >
-                  {t('sidebar-menu.choropleth_map')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/chat-bot"
-                  startIcon={<QuestionAnswerIcon />}
-                >
-                  {t('sidebar-menu.chat_bot')}
-                </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
+          <Collapse in={demoNav} timeout="auto" unmountOnExit>
+            <SubMenuWrapper>
+              <List component="div">
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/demo1"
+                    startIcon={<BrightnessLowTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Demo
+                  </Button>
+                </ListItem>
+              </List>
+            </SubMenuWrapper>
+          </Collapse>
         </List>
         <List
           component="div"
           subheader={
-            <ListSubheader component="div" disableSticky>
-              Accounts
-            </ListSubheader>
+            <ListItemButton>
+              <ListItemText>Management</ListItemText>
+              {managementNav ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
           }
+          onClick={() => setManagementNav(!managementNav)}
         >
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/management/profile/details"
-                  startIcon={<AccountCircleTwoToneIcon />}
-                >
-                  {t('sidebar-menu.user_prof')}
-                </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
+          <Collapse in={managementNav} timeout="auto" unmountOnExit>
+            <SubMenuWrapper>
+              <List component="div">
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/employees"
+                    startIcon={<TableChartTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setManagementNav, true)}
+                  >
+                    {t('sidebar-menu.employee')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/management/custom-form"
+                    startIcon={<FeedIcon />}
+                    onClick={(e) => onChildNavClick(e, setManagementNav, true)}
+                  >
+                    {t('sidebar-menu.custom_form')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/management/flow-chart"
+                    startIcon={<TimelineIcon />}
+                    onClick={(e) => onChildNavClick(e, setManagementNav, true)}
+                  >
+                    {t('sidebar-menu.flow_chart')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/management/indexnine-flow-chart"
+                    startIcon={<AppsIcon />}
+                    onClick={(e) => onChildNavClick(e, setManagementNav, true)}
+                  >
+                    {t('sidebar-menu.indexnine_flow_chart')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/choropleth-map"
+                    startIcon={<PublicIcon />}
+                    onClick={(e) => onChildNavClick(e, setManagementNav, true)}
+                  >
+                    {t('sidebar-menu.choropleth_map')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/chat-bot"
+                    startIcon={<QuestionAnswerIcon />}
+                    onClick={(e) => onChildNavClick(e, setManagementNav, true)}
+                  >
+                    {t('sidebar-menu.chat_bot')}
+                  </Button>
+                </ListItem>
+              </List>
+            </SubMenuWrapper>
+          </Collapse>
         </List>
         <List
           component="div"
           subheader={
-            <ListSubheader component="div" disableSticky>
-              Components
-            </ListSubheader>
+            <ListItemButton>
+              <ListItemText>Accounts</ListItemText>
+              {accountsNav ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
           }
+          onClick={() => setAccountsNav(!accountsNav)}
         >
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/buttons"
-                  startIcon={<BallotTwoToneIcon />}
-                >
-                  {t('sidebar-menu.btns')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/modals"
-                  startIcon={<BeachAccessTwoToneIcon />}
-                >
-                  {t('sidebar-menu.modals')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/accordions"
-                  startIcon={<EmojiEventsTwoToneIcon />}
-                >
-                  {t('sidebar-menu.accordions')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/tabs"
-                  startIcon={<FilterVintageTwoToneIcon />}
-                >
-                  {t('sidebar-menu.tabs')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/badges"
-                  startIcon={<HowToVoteTwoToneIcon />}
-                >
-                  {t('sidebar-menu.badges')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/tooltips"
-                  startIcon={<LocalPharmacyTwoToneIcon />}
-                >
-                  {t('sidebar-menu.tooltips')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/avatars"
-                  startIcon={<RedeemTwoToneIcon />}
-                >
-                  Avatars
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/cards"
-                  startIcon={<SettingsTwoToneIcon />}
-                >
-                  {t('sidebar-menu.cards')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/forms"
-                  startIcon={<TrafficTwoToneIcon />}
-                >
-                  {t('sidebar-menu.forms')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/checkbox"
-                  startIcon={<CheckBoxTwoToneIcon />}
-                >
-                  {t('sidebar-menu.checkbox')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/circularprogress"
-                  startIcon={<SyncIcon />}
-                >
-                  {t('sidebar-menu.circularprog')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/datepicker"
-                  startIcon={<CalendarMonthIcon />}
-                >
-                  {t('sidebar-menu.datepicker')}
-                </Button>
-              </ListItem>
+          <Collapse in={accountsNav} timeout="auto" unmountOnExit>
+            <SubMenuWrapper>
+              <List component="div">
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/management/profile/details"
+                    startIcon={<AccountCircleTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setAccountsNav, true)}
+                  >
+                    {t('sidebar-menu.user_prof')}
+                  </Button>
+                </ListItem>
+              </List>
+            </SubMenuWrapper>
+          </Collapse>
+        </List>
+        <List
+          component="div"
+          subheader={
+            <ListItemButton>
+              <ListItemText>Components</ListItemText>
+              {componentsNav ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
+          }
+          onClick={() => setComponentsNav(!componentsNav)}
+        >
+          <Collapse in={componentsNav} timeout="auto" unmountOnExit>
+            <SubMenuWrapper>
+              <List component="div">
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/buttons"
+                    startIcon={<BallotTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.btns')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/modals"
+                    startIcon={<BeachAccessTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.modals')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/accordions"
+                    startIcon={<EmojiEventsTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.accordions')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/tabs"
+                    startIcon={<FilterVintageTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.tabs')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/badges"
+                    startIcon={<HowToVoteTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.badges')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/tooltips"
+                    startIcon={<LocalPharmacyTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.tooltips')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/avatars"
+                    startIcon={<RedeemTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    Avatars
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/cards"
+                    startIcon={<SettingsTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.cards')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/forms"
+                    startIcon={<TrafficTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.forms')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/checkbox"
+                    startIcon={<CheckBoxTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.checkbox')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/circularprogress"
+                    startIcon={<SyncIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.circularprog')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/datepicker"
+                    startIcon={<CalendarMonthIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.datepicker')}
+                  </Button>
+                </ListItem>
 
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/filebutton"
-                  startIcon={<UploadFileIcon />}
-                >
-                  {t('sidebar-menu.filebutton')}
-                </Button>
-              </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/filebutton"
+                    startIcon={<UploadFileIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.filebutton')}
+                  </Button>
+                </ListItem>
 
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/upload"
-                  startIcon={<UploadFileIcon />}
-                >
-                  {t('sidebar-menu.upload')}
-                </Button>
-              </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/upload"
+                    startIcon={<UploadFileIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.upload')}
+                  </Button>
+                </ListItem>
 
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/radiobutton"
-                  startIcon={<RadioButtonCheckedIcon />}
-                >
-                  {t('sidebar-menu.radiobutton')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/textfield"
-                  startIcon={<TitleIcon />}
-                >
-                  {t('sidebar-menu.textfield')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/select"
-                  startIcon={<DoneOutlineIcon />}
-                >
-                  {t('sidebar-menu.select')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/slider"
-                  startIcon={<TuneIcon />}
-                >
-                  {t('sidebar-menu.slider')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/stepper"
-                  startIcon={<CheckBoxTwoToneIcon />}
-                >
-                  {t('sidebar-menu.stepper')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/timepicker"
-                  startIcon={<AccessTimeIcon />}
-                >
-                  {t('sidebar-menu.timepicker')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/typography"
-                  startIcon={<RttIcon />}
-                >
-                  {t('sidebar-menu.typography')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/currencyfield"
-                  startIcon={<PaidIcon />}
-                >
-                  {t('sidebar-menu.currency')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/toaster"
-                  startIcon={<ContactSupportIcon />}
-                >
-                  {t('sidebar-menu.toaster')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/text-editor"
-                  startIcon={<TitleIcon />}
-                >
-                  {t('sidebar-menu.text_editor')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/tree-view-menu"
-                  startIcon={<AccountTreeIcon />}
-                >
-                  {t('sidebar-menu.tree_view_menu')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/components/file-manager"
-                  startIcon={<CreateNewFolderIcon />}
-                >
-                  {t('sidebar-menu.file_manager')}
-                </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/radiobutton"
+                    startIcon={<RadioButtonCheckedIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.radiobutton')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/textfield"
+                    startIcon={<TitleIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.textfield')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/select"
+                    startIcon={<DoneOutlineIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.select')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/slider"
+                    startIcon={<TuneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.slider')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/stepper"
+                    startIcon={<CheckBoxTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.stepper')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/timepicker"
+                    startIcon={<AccessTimeIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.timepicker')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/typography"
+                    startIcon={<RttIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.typography')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/currencyfield"
+                    startIcon={<PaidIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.currency')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/toaster"
+                    startIcon={<ContactSupportIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.toaster')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/text-editor"
+                    startIcon={<TitleIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.text_editor')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/tree-view-menu"
+                    startIcon={<AccountTreeIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.tree_view_menu')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/file-manager"
+                    startIcon={<CreateNewFolderIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {t('sidebar-menu.file_manager')}
+                  </Button>
+                </ListItem>
+              </List>
+            </SubMenuWrapper>
+          </Collapse>
         </List>
         <List
           component="div"
           subheader={
-            <ListSubheader component="div" disableSticky>
-              Extra Pages
-            </ListSubheader>
+            <ListItemButton>
+              <ListItemText>Extra Pages</ListItemText>
+              {othersNav ? <ExpandLess /> : <ExpandMore />}
+            </ListItemButton>
           }
+          onClick={() => setOthersNav(!othersNav)}
         >
-          <SubMenuWrapper>
-            <List component="div">
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/status/404"
-                  startIcon={<CheckBoxTwoToneIcon />}
-                >
-                  {t('sidebar-menu.error_404')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/status/500"
-                  startIcon={<CameraFrontTwoToneIcon />}
-                >
-                  {t('sidebar-menu.error_500')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/status/coming-soon"
-                  startIcon={<ChromeReaderModeTwoToneIcon />}
-                >
-                  {t('sidebar-menu.coming_soon')}
-                </Button>
-              </ListItem>
-              <ListItem component="div">
-                <Button
-                  disableRipple
-                  component={RouterLink}
-                  onClick={closeSidebar}
-                  to="/status/maintenance"
-                  startIcon={<WorkspacePremiumTwoToneIcon />}
-                >
-                  Maintenance
-                </Button>
-              </ListItem>
-            </List>
-          </SubMenuWrapper>
+          <Collapse in={othersNav} timeout="auto" unmountOnExit>
+            <SubMenuWrapper>
+              <List component="div">
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/status/404"
+                    startIcon={<CheckBoxTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setOthersNav, true)}
+                  >
+                    {t('sidebar-menu.error_404')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/status/500"
+                    startIcon={<CameraFrontTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setOthersNav, true)}
+                  >
+                    {t('sidebar-menu.error_500')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/status/coming-soon"
+                    startIcon={<ChromeReaderModeTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setOthersNav, true)}
+                  >
+                    {t('sidebar-menu.coming_soon')}
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/status/maintenance"
+                    startIcon={<WorkspacePremiumTwoToneIcon />}
+                    onClick={(e) => onChildNavClick(e, setOthersNav, true)}
+                  >
+                    Maintenance
+                  </Button>
+                </ListItem>
+              </List>
+            </SubMenuWrapper>
+          </Collapse>
         </List>
       </MenuWrapper>
     </>

@@ -6,6 +6,13 @@
   -webkit-border-radius: $val;
 }
 
+//---- Font Custom ----//
+@mixin font-custom($fWeight, $fSize, $lHeight) {
+  font-size: $fSize !important;
+  line-height: $lHeight !important;
+  font-weight: $fWeight !important;
+}
+
 @mixin font-weight-bold {
   font-weight: 700 !important;
 }

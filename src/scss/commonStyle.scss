@@ -1,5 +1,6 @@
 @import './variables';
 @import './mixins';
+@import './fontStyle.scss';
 @import './component/login';
 @import './component/header';
 @import './component/notifications';
@@ -8,6 +9,7 @@
 @import './component/suspenseloader';
 @import './component/sidebar';
 @import './component/app';
+@import './component/table';
 
 //common classes goes here
 body {
@@ -185,6 +187,73 @@ body {
   min-width: 350 !important;
 }
 
+/******* Typography *******/
+
+.text-h1 {
+  //font size 32px
+  font: normal 500 2rem/36px $font-family-base;
+}
+
+.text-h2 {
+  //font size 28px
+  font: normal 500 1.75rem/32px $font-family-base;
+}
+
+.text-h3 {
+  //font size 24px
+  font: normal 500 1.5rem/28px $font-family-base;
+}
+
+.text-h4 {
+  //font size 20px
+  font: normal 500 1.25rem/24px $font-family-base;
+}
+
+.text-h5 {
+  //font size 18px
+  font: normal 500 1.125rem/20px $font-family-base;
+}
+
+.text-large {
+  //font size 16px
+  font: normal 500 1rem/24px $font-family-base;
+}
+
+.text-medium {
+  //font size 14px
+  font: normal 500 0.875rem/20px $font-family-base;
+}
+
+.text-small {
+  //font size 12px
+  font: normal normal 0.75rem/18px $font-family-base;
+}
+
+.text-extra-small {
+  //font size 10px
+  font: normal normal 0.625rem/16px $font-family-base;
+}
+
+.font-weight-bold {
+  //font weight 700
+  @include font-weight-bold();
+}
+
+.font-weight-semibold {
+  //font weight 600
+  @include font-weight-semibold();
+}
+
+.font-weight-medium {
+  //font weight 500
+  @include font-weight-medium();
+}
+
+.font-weight-regular {
+  //font weight 400
+  @include font-weight-regular();
+}
+
 .sidebarwrapper {
   position: fixed;
   left: 0;
@@ -310,28 +379,30 @@ body {
   }
 }
 
-.customTable {
-  .tablestyle {
-    .MuiDataGrid-root {
-      border-radius: 0;
-
-      .MuiDataGrid-columnHeader {
-        &:focus-within {
-          outline: none !important;
-        }
-
-        .MuiDataGrid-columnHeaderTitle {
-          font-size: 10px;
-          font-weight: 600;
-        }
-      }
-
-      .MuiDataGrid-cell {
-        font-size: 10px;
-        font-weight: 400;
-      }
+.customField {
+  .MuiInputBase-root {
+    .MuiInputBase-input {
+      padding: 11px;
     }
   }
+}
+
+.css-t89xny-MuiDataGrid-columnHeaderTitle {
+  font-size: 13px;
+  @extend .font-weight-bold;
+  line-height: inherit;
+  color: #818b9a;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase;
+}
+
+.css-e5xz2x-MuiDivider-root {
+  height: 0px !important;
+}
+
+.css-alhbss-MuiDataGrid-root {
+  border-width: 0 !important;
+  border-style: none !important;
 }
 
 .customSelect {
@@ -565,4 +636,85 @@ body {
       color: #000;
     }
   }
+}
+
+Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
+  color: rgba(0, 0, 0, 0.3) !important;
+  box-shadow: none !important;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.demo-container {
+  position: relative;
+  width: 100%;
+  max-width: calc(100% - 15px);
+  height: 80vh;
+  margin: 3em auto;
+  // border: 0.1px solid #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.demo-container:hover {
+  // transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.image-wrapper {
+  height: 100%;
+}
+
+.demo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.demo-container:hover .demo-image {
+  transform: scale(1.05);
+}
+
+.text-overlay-container {
+  position: absolute;
+  bottom: 0;
+  // left: 0;
+  right: 0;
+  height: 80%;
+  width: 100%;
+  padding: 40px;
+  color: #fff;
+  transition: opacity 0.3s ease-in-out;
+  background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 40px;
+  color: #fff;
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #dfdfdf;
+}
+
+.description {
+  margin-bottom: 4rem;
+  color: #fff;
+  font-size: 14px !important;
+}
+
+.launch-button {
+  width: fit-content;
 }

@@ -191,7 +191,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
       )}
       {!selectedBulkActions && (
         <Box flex={1} p={1}>
-          <Container maxWidth="lg">
+          <Box>
             <Grid container direction="row" spacing={2}>
               <Grid item xs={12} md={10} sm={10} lg={11}>
                 <TextField
@@ -215,7 +215,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
                 ></Select>
               </Grid>
             </Grid>
-          </Container>
+          </Box>
         </Box>
       )}
       <Divider />
@@ -373,8 +373,6 @@ RecentOrdersTable.propTypes = {
   cryptoOrders: PropTypes.array.isRequired
 };
 
-// RecentOrdersTable.defaultProps = {
-//   cryptoOrders: []
-// };
+
 
 export default RecentOrdersTable;

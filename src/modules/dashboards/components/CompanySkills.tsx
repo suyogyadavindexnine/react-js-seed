@@ -171,9 +171,10 @@ const CompanySkills = () => {
                 rows={companySkillsDetails}
                 columns={columns}
                 hideFooter={true}
-                isRowClickable={true}
-                showCheckboxSelection={false}
-                handleRowClick={handleRowClick}
+                showSearchField={false}
+                // isRowClickable={true}
+                // showCheckboxSelection={false}
+                // handleRowClick={handleRowClick}
               />
             </Box>
           </Grid>

@@ -12,7 +12,6 @@ import {
   useTheme
 } from '@mui/material';
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
-import { SidebarContext } from 'src/contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import LightModeIcon from '@mui/icons-material/LightMode';
@@ -21,6 +20,7 @@ import HeaderButtons from './buttons';
 import HeaderUserbox from './user-box';
 import HeaderMenu from './menu';
 import LangSelect from './buttons/select-language';
+import { SidebarContext } from 'src/providers/SidebarContext';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -73,7 +73,7 @@ function Header() {
         <HeaderMenu />
       </Stack>
       <Box display="flex" alignItems="center">
-        {/* <LangSelect /> */}
+        <LangSelect />
         <HeaderButtons />
         <HeaderUserbox />
         <Box

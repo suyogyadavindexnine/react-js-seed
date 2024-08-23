@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import PageHeader from './components/PageHeader';
 import RecentOrders from './components/RecentOrders';
 import { PageTitleWrapper } from '../../../shared/components/index';
-import { Grid, Container } from '@mui/material';
+import { Grid, Container, Box } from '@mui/material';
 import Footer from 'src/core/footer';
 
 import { useEffect, useState } from 'react';
@@ -33,7 +33,7 @@ function ApplicationsTransactions() {
       <PageTitleWrapper>
         <PageHeader />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -48,7 +48,7 @@ function ApplicationsTransactions() {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

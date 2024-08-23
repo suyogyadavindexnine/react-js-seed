@@ -10,4 +10,80 @@
       width: 25px;
     }
   }
+  .illustrationLoginImage {
+    height: 252px;
+  }
+  .tekcheckLogo {
+    height: 34px;
+  }
+  .welcomeText {
+    color: $primary;
+  }
+  .divider {
+    background: $dividerBorderColor;
+    span {
+      font: normal 700 14px/18px $font-family-base;
+      color: $textColor;
+      text-transform: capitalize;
+      margin-top: -9px;
+    }
+  }
+  .loginWithOtp {
+    .verificationSubText {
+      color: $grayColor200;
+    }
+    .receivedOTP {
+      color: $grayColor200;
+      a {
+        color: $primary;
+        @extend .cursorPointer;
+        &.disabled {
+          color: $switchDisabledBorderColor;
+          pointer-events: none;
+        }
+      }
+    }
+    .otpLbl {
+      font: normal 400 15px/22px $font-family-base;
+      letter-spacing: 0px;
+      color: $grayColor;
+    }
+    .OtpInputs {
+      input {
+        font: normal 400 15px/22px $font-family-base;
+        height: 48px;
+        margin-right: 18px;
+        width: 48px !important;
+        border: 1.09px solid #2452eb29;
+        @include border-radius(4px);
+        &:focus {
+          border: 1px solid $primary !important;
+          outline: none;
+        }
+      }
+      input[type='number']::-webkit-inner-spin-button,
+      input[type='number']::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .otpErrorMsg {
+        font: normal 400 12px/18px $font-family-base;
+        color: $delete-modal-subtitle;
+      }
+    }
+    .textFields {
+      .MuiInputBase-root {
+        .MuiInputBase-input {
+          padding: 13px 14px !important;
+        }
+        width: 48px;
+      }
+    }
+  }
+
+  .continueButton {
+    color: rgba(0, 0, 0, 0.3) !important;
+    box-shadow: none !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+  }
 }

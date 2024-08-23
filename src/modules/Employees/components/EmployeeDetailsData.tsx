@@ -6,6 +6,7 @@ import { Box } from '@mui/material';
 import GridViewSharpIcon from '@mui/icons-material/GridViewSharp';
 import TableRowsTwoToneIcon from '@mui/icons-material/TableRowsTwoTone';
 import { Card, ButtonToggle } from '../../../shared/components/index';
+import { PageHeader, PageTitleWrapper } from 'src/shared/components';
 
 interface EmployeeDetailsProps {
   className?: string;
@@ -30,7 +31,7 @@ const employeeDetailsData: FC<EmployeeDetailsProps> = ({
 
   return (
     <>
-      <Box
+      {/* <Box
         display="flex"
         alignItems="center"
         justifyContent="end"
@@ -50,11 +51,11 @@ const employeeDetailsData: FC<EmployeeDetailsProps> = ({
             }
           ]}
           value={tabs}
-          // exclusive
+          exclusive
           onChange={handleViewOrientation}
         />
-      </Box>
-      {tabs === 'Employees_Card' && (
+      </Box> */}
+      {/* {tabs === 'Employees_Card' && (
         <EmployeeDetailsCard
           employeeDetails={employeeDetails}
           handleButtonClick={handleButtonClick}
@@ -67,7 +68,7 @@ const employeeDetailsData: FC<EmployeeDetailsProps> = ({
             handleButtonClick={handleButtonClick}
           />
         </Card>
-      )}
+      )} */}
     </>
   );
 };

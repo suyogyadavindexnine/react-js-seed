@@ -1,3 +1,5 @@
+import { KeyboardEventHandler } from "react";
+
 export type FormFieldType = {
   id?: string;
   name: string;
@@ -13,6 +15,8 @@ export type FormFieldType = {
   errorMessages?: FieldValidationsErrorMessages;
   uniqueData?: any[];
   uniqueDataKey?: string;
+  placeholder?: string;
+  handleKeyDown?: KeyboardEventHandler<HTMLDivElement>;
   handleFieldChange?: (event, field, value?) => void;
 };
 

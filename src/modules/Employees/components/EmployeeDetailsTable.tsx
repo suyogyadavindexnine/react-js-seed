@@ -1,4 +1,11 @@
-import { Box, Divider, Grid, IconButton, Tooltip } from '@mui/material';
+import {
+  Box,
+  Divider,
+  Grid,
+  IconButton,
+  InputAdornment,
+  Tooltip
+} from '@mui/material';
 import PropTypes from 'prop-types';
 import { FC, useState } from 'react';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
@@ -6,9 +13,15 @@ import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import Container from '@mui/material/Container';
 import { GridColDef } from '@mui/x-data-grid';
 import { useTranslation } from 'react-i18next';
-import { Card, Tables, TextField } from '../../../shared/components/index';
+import {
+  Button,
+  Card,
+  Tables,
+  TextField
+} from '../../../shared/components/index';
 import { EmployeeDetails } from '../models';
 import { sortComparator } from '../../../shared/utils/utils';
+import SearchIcon from '@mui/icons-material/Search';
 
 interface EmployeeDetailsTableProps {
   className?: string;
@@ -43,39 +56,58 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
       field: 'id',
       sortable: true,
       headerName: 'Employee Id',
-      width: 170
+      width: 170,
+      headerClassName: 'tableHeadersFont'
     },
-    { field: 'name', sortable: true, headerName: 'Name', width: 170 },
+    {
+      field: 'name',
+      sortable: true,
+      flex: 0.25,
+      headerName: 'Name',
+      width: 170,
+      headerClassName: 'tableHeadersFont'
+    },
     {
       field: 'designation',
       sortable: true,
+      flex: 0.25,
       headerName: 'Designation',
-      width: 170
+      width: 170,
+      headerClassName: 'tableHeadersFont'
     },
     {
       field: 'date_of_join',
       headerName: 'Date of Joining',
       sortable: true,
+      flex: 0.25,
+      align: 'center',
+      headerAlign: 'center',
       sortComparator: sortComparator,
-      width: 170
+      width: 170,
+      headerClassName: 'tableHeadersFont'
     },
     {
       field: 'date_of_birt',
       headerName: 'Date of Birth',
       sortable: true,
+      align: 'center',
+      headerAlign: 'center',
       sortComparator: sortComparator,
-      width: 170
+      width: 170,
+      headerClassName: 'tableHeadersFont'
     },
     {
       field: 'address',
       headerName: 'Adress',
       sortable: false,
-      width: 170
+      width: 170,
+      headerClassName: 'tableHeadersFont'
     },
     {
       field: 'Actions',
       sortable: false,
-
+      headerClassName: 'tableHeadersFont',
+      width: 150,
       renderCell: () => {
         return (
           <>
@@ -84,10 +116,10 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
                 aria-label="editorder"
                 className="RecentOrderEditButton"
                 color="inherit"
-                size="small"
+                size="medium"
                 onClick={() => handleButtonClick('clicked!')}
               >
-                <EditTwoToneIcon fontSize="small" />
+                <EditTwoToneIcon fontSize="medium" />
               </IconButton>
             </Tooltip>
             <Tooltip
@@ -95,43 +127,49 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
               title="Delete Order"
               arrow
             >
-              <IconButton color="inherit" size="small">
-                <DeleteTwoToneIcon fontSize="small" />
+              <IconButton color="inherit" size="medium">
+                <DeleteTwoToneIcon fontSize="medium" />
               </IconButton>
             </Tooltip>
           </>
         );
-      },
-      width: 170
+      }
     }
   ];
 
   return (
     <>
       <Card>
-        <Box flex={1} p={3}>
-          <Container maxWidth="lg">
-            <Grid container direction="row-reverse" spacing={2}>
-              <Grid item lg={4}>
+        {/* <Box flex={1} py={3}>
+          <Box>
+            <Grid container direction="row">
+              <Grid>
                 <TextField
+                  className="customField"
                   id="outlined-search"
-                  label="Search field"
+                  placeholder="Search"
                   type="search"
                   value={searchQuery}
                   onChange={onSearchChange}
-                  fullWidth
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon />
+                      </InputAdornment>
+                    )
+                  }}
                 />
               </Grid>
             </Grid>
-          </Container>
-        </Box>
+          </Box>
+        </Box> */}
 
-        <Divider />
+        {/* <Divider /> */}
         <Box>
           <Tables
             rows={employeeDetails}
             columns={columns}
-            showCheckboxSelection={false}
+            // showCheckboxSelection={false}
           />
         </Box>
       </Card>
@@ -143,8 +181,6 @@ EmployeeDetailsTable.propTypes = {
   employeeDetails: PropTypes.array.isRequired
 };
 
-// EmployeeDetailsTable.defaultProps = {
-//   employeeDetails: []
-// };
+
 
 export default EmployeeDetailsTable;

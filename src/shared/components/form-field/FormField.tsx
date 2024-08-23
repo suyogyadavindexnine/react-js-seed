@@ -225,6 +225,8 @@ export const FormField = ({ fieldProps }: FormFieldProps) => {
                 : fieldProps?.type
             }
             autoComplete="off"
+            onKeyDown={fieldProps?.handleKeyDown}
+            placeholder={fieldProps?.placeholder}
             label={fieldProps?.label}
             error={meta.touched && meta.error !== undefined}
             helperText={meta.touched && meta.error}

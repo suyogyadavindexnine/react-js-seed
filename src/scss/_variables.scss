@@ -1,4 +1,6 @@
 //all varibles goes under this files
+$font-family-base: 'Poppins';
+$font-family-icomoon: 'icomoon';
 
 $borderColor: #ccc;
 $borderBgColor: #eeeeee;
@@ -19,3 +21,77 @@ $scrollBarColor: #d8d8d8;
 $scrollBarColorHover: #cccccc;
 $scrollBarWidth: 8px;
 $scrollBarRadius: 4px;
+
+//all varibles goes under this files
+$font-family-base: 'Poppins';
+$font-family-icomoon: 'icomoon';
+//main colors,
+
+$primary: #2d5bff;
+$tertiary: #161e54;
+$textColor: #1a2128;
+$white: #fff;
+$black: 000000;
+$borderColor: #ccc;
+$borderBgColor: #eeeeee;
+$backgroundColor: #f1f4f5;
+$scrollBarBgColor: rgba(105, 129, 155, 0.2);
+$grayColor: #8c9093;
+$grayColor200: #333;
+$grayColor666: #666666;
+$textColor: #304050;
+$grayComponentColor: #979797;
+
+$borderColor: #ccc;
+$borderBgColor: #eeeeee;
+$backgroundColor: #edf2f3;
+$scrollBarBgColor: rgba(105, 129, 155, 0.5);
+$adminLoginbackgroundColor: #525fbd;
+
+//progress stats color
+$progressError: #e55957;
+$progressSuccess: #009f46;
+$progressWarning: #f6841b;
+$progressStrong: #ffc30b;
+
+//progress status bg color with opacity
+$progressErrorBg: rgba(229, 89, 87, 0.585);
+$progressSuccessBg: rgba(0, 159, 69, 0.486);
+$progressWarningBg: rgba(246, 133, 27, 0.545);
+$progressStrongBg: rgba(255, 194, 11, 0.495);
+$errorTextColor: #ff1943;
+
+//table
+$table-bg-color: #fff;
+$table-header: #818b9a;
+$table-checkbox-checked: #4e2788;
+$table-checkbox-unchecked: #e9e9f8;
+$table-hover: rgba(233, 233, 248, 0.4);
+$pagination-selected-bd: #31125f;
+$pagination-font: #ffffff;
+$table-sort-icon: #aeaeae;
+$table-cell-text: #2e384d;
+
+//modal
+$delete-modal-subtitle: rgb(234, 84, 85);
+$colorNeutralGrey03: #e9e9f8;
+
+//status Chips colors
+$statustextColor: #464f60;
+$statusChipsWarningBgColor: #fff6e9;
+$statusChipsErrorBgColor: #ffefe7;
+$statusChipsSuccessBgColor: #d3f1e5;
+$statusChipsInfoBgColor: #e8f0fb;
+$statusChipsCloseIconColor: #b4aeae;
+
+$statusChipsWarningBorderColor: #ffc369;
+$statusChipsErrorBorderColor: #ff51514d;
+$statusChipsSuccessBorderColor: #7fd5b2;
+$statusChipsInfoBorderColor: #3786f14d;
+$switchDisabledBorderColor: #dadada;
+
+//input fields
+$inputFieldBorderColor: #2452eb24;
+
+//divider bg color
+$dividerBorderColor: #bdbdbd;

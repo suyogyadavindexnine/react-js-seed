@@ -7,4 +7,4 @@ export const getDashboardUserDetailsAPI = async () => {
   };
   const res = await apiGet('dashboard/dashboard.json', config);
   return res.data;
-};  
+};
