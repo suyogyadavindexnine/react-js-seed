@@ -36,7 +36,7 @@
       @extend .tableRowCellHeight;
       .MuiDataGrid-columnHeaderTitle {
         align-items: center;
-        @include font-custom(600, 13px, 16px);
+        @include font-custom(600, 14px, 16px);
         color: $table-header;
       }
       &:hover {

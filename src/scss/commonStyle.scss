@@ -10,6 +10,7 @@
 @import './component/sidebar';
 @import './component/app';
 @import './component/table';
+@import './overridestyles';
 
 //common classes goes here
 body {
@@ -104,7 +105,9 @@ body {
   flex-direction: column !important;
   align-items: flex-end;
 }
-
+.align-items-center {
+  align-items: center !important;
+}
 .flex-column-start {
   display: flex;
   flex-direction: column !important;
@@ -718,3 +721,13 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
 .launch-button {
   width: fit-content;
 }
+
+
+
+
+
+
+
+
+
+

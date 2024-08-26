@@ -46,6 +46,7 @@
   "sidebar": {
     "followers": "Followers"
   },
+
   "dashboard": {
     "header": {
       "welcome": "Welcome",
@@ -142,7 +143,7 @@
     "cancel": "Cancel",
     "available": "Available"
   },
-
+ 
   "login": {
     "title": "Login",
     "loginAs": "Login as:",
@@ -155,5 +156,14 @@
     "otpText": "OTP",
     "dontReceiveOpt": "Don’t receive an OTP? ",
     "resendOpt": "Resend OTP"
+  },
+  "table": {
+    "view": "View",
+    "perPage": "Per Page",
+    "delete": "Delete",
+    "edit": "Edit",
+    "moreInfo": "More Info",
+    "noResultFound": "No results found.",
+    "viewBylabel": "View by:"
   }
 }

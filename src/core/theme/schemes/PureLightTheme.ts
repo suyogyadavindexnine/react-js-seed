@@ -1568,8 +1568,8 @@ export const PureLightTheme = createTheme({
     borderRadius: 10
   },
   typography: {
-    fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: 'Poppins',
     h1: {
       fontWeight: 700,
       fontSize: '2.188rem'
