@@ -1,0 +1,83 @@
+
+
+//width per clasess
+@for $i from 0 through 100 {
+    .w-#{$i} {
+      width: round(percentage($i/100));
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .mt-#{$i} {
+      margin-top: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .mr-#{$i} {
+      margin-right: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .ml-#{$i} {
+      margin-left: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .mb-#{$i} {
+      margin-bottom: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .p-#{$i} {
+      padding: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .pl-#{$i} {
+      padding-left: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .pr-#{$i} {
+      padding-right: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .pt-#{$i} {
+      padding-top: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .pb-#{$i} {
+      padding-bottom: #{($i/16)}rem !important;
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .border-radius-#{$i} {
+      @include border-radius(#{$i}px);
+    }
+  }
+  
+  @for $i from 0 through 100 {
+    .font-size-#{$i} {
+      font-size: #{$i}px;
+    }
+  }
+  .css-dten5e {
+    padding-left: 21px;
+    padding-right: 21px;
+    margin-bottom: 0px;
+}
+.css-gzlx6l-MuiPaper-root-MuiCard-root{
+    border-radius: 5px !important;
+}
+

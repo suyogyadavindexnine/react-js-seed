@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Pager,
   PaginationResponseDto
-} from "src/core/model/pagination.dto";
+} from '../../../core/model/pagination.dto';
 import React, { FC, useEffect, useState } from 'react';
 import { TabMenu } from '../tabmenu/TabMenu';
 
@@ -75,7 +75,7 @@ export const Tables = (props: TableProps) => {
   } = props;
 
   //Constants
-  const { t } = useTranslation(I18N.DEFAULT);
+  const { t } = useTranslation(['english']);
   const classes = useStyles();
   const noOfRowPerPage = TABLE_PAGESIZE;
 
@@ -107,6 +107,7 @@ export const Tables = (props: TableProps) => {
       setShowDataTableFooters(false);
     }
   }, [paginationData]);
+
 
   //Methods
   const handleClose = () => {
@@ -141,7 +142,7 @@ export const Tables = (props: TableProps) => {
           <Box sx={{ px: 3, mb: 1 }} className="flex-basic-space-between mt-20">
             <Box>
               {showSearchField && (
-                <Box  sx={{paddingTop: '20px'}}>
+                <Box>
                   <TextField
                     className="customField"
                     id="outlined-search"
@@ -196,7 +197,7 @@ export const Tables = (props: TableProps) => {
             disableDensitySelector={true}
             classes={{ root: classes.datatable }}
             localeText={{ noRowsLabel: t('table.noResultFound') }}
-            // hideFooter={!showDataTableFooter ?? true}
+            hideFooter={!showDataTableFooter ?? true}
             loading={loading}
           />
         </Card>
@@ -245,7 +246,7 @@ export const Tables = (props: TableProps) => {
             disableDensitySelector={true}
             classes={{ root: classes.datatable }}
             localeText={{ noRowsLabel: t('table.noResultFound') }}
-            // hideFooter={!showDataTableFooter ?? true}
+            hideFooter={!showDataTableFooter ?? true}
             loading={loading}
             getRowId={(row) => row?.id}
           />

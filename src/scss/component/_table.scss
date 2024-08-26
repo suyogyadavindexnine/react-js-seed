@@ -22,12 +22,12 @@
           padding-left: 22px;
         }
         @include font-custom(500, 13px, 20px);
-        color: #2e384d;
+        // color: #2e384d;
         @extend .tableRowCellHeight;
       }
     }
     .MuiDataGrid-withBorderColor {
-      border-color: $colorNeutralGrey03;
+      // border-color: $colorNeutralGrey03;
       &:first-child {
         padding-left: 11px;
       }
@@ -36,7 +36,7 @@
       @extend .tableRowCellHeight;
       .MuiDataGrid-columnHeaderTitle {
         align-items: center;
-        @include font-custom(600, 13px, 16px);
+        @include font-custom(600, 14px, 16px);
         color: $table-header;
       }
       &:hover {

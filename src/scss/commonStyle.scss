@@ -1,15 +1,16 @@
-@import "./variables";
-@import "./mixins";
-@import "./fontStyle.scss";
-@import "./component/login";
-@import "./component/header";
-@import "./component/notifications";
-@import "./component/userbox";
-@import "./component/layout";
-@import "./component/suspenseloader";
-@import "./component/sidebar";
-@import "./component/app";
-@import "./component/table";
+@import './variables';
+@import './mixins';
+@import './fontStyle.scss';
+@import './component/login';
+@import './component/header';
+@import './component/notifications';
+@import './component/userbox';
+@import './component/layout';
+@import './component/suspenseloader';
+@import './component/sidebar';
+@import './component/app';
+@import './component/table';
+@import './overridestyles';
 
 //common classes goes here
 body {
@@ -104,7 +105,9 @@ body {
   flex-direction: column !important;
   align-items: flex-end;
 }
-
+.align-items-center {
+  align-items: center !important;
+}
 .flex-column-start {
   display: flex;
   flex-direction: column !important;

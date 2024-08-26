@@ -49,7 +49,7 @@ const Graph = () => {
     yaxis: {
       labels: {
         show: true,
-        align: 'left'
+        align: 'right',
       }
     },
     xaxis: {
