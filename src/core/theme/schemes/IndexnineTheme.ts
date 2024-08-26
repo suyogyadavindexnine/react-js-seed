@@ -1147,7 +1147,7 @@ export const IndexnineTheme = createTheme({
     }
   },
   shape: {
-    borderRadius: 10
+    borderRadius: 5
   },
   typography: {
     // fontFamily:'"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
