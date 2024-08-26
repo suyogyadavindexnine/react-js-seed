@@ -57,7 +57,21 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
       sortable: true,
       headerName: 'Employee Id',
       width: 170,
-      headerClassName: 'tableHeadersFont'
+      headerClassName: 'tableHeadersFont',
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              Employee Id
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'name',
@@ -65,7 +79,21 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
       flex: 0.25,
       headerName: 'Name',
       width: 170,
-      headerClassName: 'tableHeadersFont'
+      headerClassName: 'tableHeadersFont',
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              Name
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'designation',
@@ -73,7 +101,21 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
       flex: 0.25,
       headerName: 'Designation',
       width: 170,
-      headerClassName: 'tableHeadersFont'
+      headerClassName: 'tableHeadersFont',
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              Designation
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'date_of_join',
@@ -84,7 +126,21 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
       headerAlign: 'center',
       sortComparator: sortComparator,
       width: 170,
-      headerClassName: 'tableHeadersFont'
+      headerClassName: 'tableHeadersFont',
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              Date of Joining
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'date_of_birt',
@@ -94,14 +150,29 @@ const EmployeeDetailsTable: FC<EmployeeDetailsTableProps> = ({
       headerAlign: 'center',
       sortComparator: sortComparator,
       width: 170,
-      headerClassName: 'tableHeadersFont'
+      headerClassName: 'tableHeadersFont',
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              Date of Birth
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'address',
-      headerName: 'Adress',
+      headerName: 'Address',
       sortable: false,
       width: 170,
-      headerClassName: 'tableHeadersFont'
+      headerClassName: 'tableHeadersFont',
+      
     },
     {
       field: 'Actions',
