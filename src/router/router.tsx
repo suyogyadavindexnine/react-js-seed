@@ -52,7 +52,15 @@ import {
   CHATBOT,
   TREEVIEW,
   FILE_MANAGER,
-  DEMO1
+  DEMO,
+  CYBER_SECURITY_DEMO,
+  IOT_DEMO,
+  CYBER_INCIDENT_DEMO,
+  NETWORK_THREAT_DEMO,
+  CYBER_THREAT_DEMO,
+  SNAP_RECRUIT_DEMO,
+  FINTECH_DEMO,
+  SNAP_ASSESS_DEMO,
 } from './../shared/constants/constants';
 import { SuspenseLoader } from '../shared/components/index';
 import * as ROUTES from 'src/shared/constants/routes';
@@ -101,7 +109,17 @@ const Currencyfield = Loader(lazy(() => CURRENCYFIELD));
 const Toaster = Loader(lazy(() => TOASTER));
 const Upload = Loader(lazy(() => UPLOAD));
 const TextEditor = Loader(lazy(() => TEXTEDITOR));
-const Demo1 = Loader(lazy(() => DEMO1))
+
+const Demo = Loader(lazy(() => DEMO))
+const CyberSecurityDemo = Loader(lazy(() => CYBER_SECURITY_DEMO))
+const IotDemo = Loader(lazy(() => IOT_DEMO))
+const CyberIncident = Loader(lazy(() => CYBER_INCIDENT_DEMO))
+const NetworkThreat = Loader(lazy(() => NETWORK_THREAT_DEMO))
+const CyberThreat =  Loader(lazy(() => CYBER_THREAT_DEMO))
+const SnapRecuit = Loader(lazy(() => SNAP_RECRUIT_DEMO))
+const FinTech = Loader(lazy(() => FINTECH_DEMO))
+const SnapAssess = Loader(lazy(() => SNAP_ASSESS_DEMO))
+
 // Status
 
 const Status404 = Loader(lazy(() => STATUS404));
@@ -194,8 +212,34 @@ const routes: RouteObject[] = [
     element: <SidebarLayout />,
     children: [
       {
-        path: 'demo1',
-        element: <GuardedRoute component={Demo1} />
+        path: 'demo',
+        element: <GuardedRoute component={Demo} />
+      },
+      {
+        path: 'cyberSecurityDemo',
+        element: <GuardedRoute component={CyberSecurityDemo} />
+      }, {
+        path: 'iotDashboard',
+        element: <GuardedRoute component={IotDemo} />
+      }, {
+        path: 'cyberIncident',
+        element: <GuardedRoute component={CyberIncident} />
+      }, {
+        path: 'networkThreat',
+        element: <GuardedRoute component={NetworkThreat} />
+      }, {
+        path: 'cyberThreat',
+        element: <GuardedRoute component={CyberThreat} />
+      }, {
+        path: 'snapRecruit',
+        element: <GuardedRoute component={SnapRecuit} />
+      }, {
+        path: 'fintech',
+        element: <GuardedRoute component={FinTech} />
+      },
+      {
+        path: 'snapAssess',
+        element: <GuardedRoute component={SnapAssess} />
       }
     ]
   },

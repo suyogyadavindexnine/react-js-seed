@@ -59,7 +59,16 @@ export const TOASTER = import('src/modules/components/toaster');
 export const CIRCULARPROGRESS = import(
   'src/modules/components/Circularprogress'
 );
-export const DEMO1 = import('src/modules/demo/Demo');
+export const DEMO = import('src/modules/demos/components/Demo');
+export const CYBER_SECURITY_DEMO = import('src/modules/demos/components/CyberSecurityDemo');
+export const IOT_DEMO = import('src/modules/demos/components/IotDemo');
+export const CYBER_INCIDENT_DEMO = import('src/modules/demos/components/CyberIncident');
+export const NETWORK_THREAT_DEMO = import('src/modules/demos/components/NetworkThreat');
+export const CYBER_THREAT_DEMO = import('src/modules/demos/components/CyberThreat');
+export const SNAP_RECRUIT_DEMO = import('src/modules/demos/components/SnapRecruit');
+export const FINTECH_DEMO = import('src/modules/demos/components/FintechDemo');
+export const SNAP_ASSESS_DEMO = import('src/modules/demos/components/SnapAssess');
+
 export const DATEPICKER = import('src/modules/components/Datepicker');
 export const STATUS404 = import('src/core/status/status-404');
 export const STATUS500 = import('src/core/status/status-500');

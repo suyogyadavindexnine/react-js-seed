@@ -1,15 +1,15 @@
-@import './variables';
-@import './mixins';
-@import './fontStyle.scss';
-@import './component/login';
-@import './component/header';
-@import './component/notifications';
-@import './component/userbox';
-@import './component/layout';
-@import './component/suspenseloader';
-@import './component/sidebar';
-@import './component/app';
-@import './component/table';
+@import "./variables";
+@import "./mixins";
+@import "./fontStyle.scss";
+@import "./component/login";
+@import "./component/header";
+@import "./component/notifications";
+@import "./component/userbox";
+@import "./component/layout";
+@import "./component/suspenseloader";
+@import "./component/sidebar";
+@import "./component/app";
+@import "./component/table";
 
 //common classes goes here
 body {
@@ -290,7 +290,7 @@ body {
 
   &::after {
     height: 100%;
-    content: '';
+    content: "";
     position: absolute;
     width: 1px;
     right: 0px;
@@ -332,12 +332,7 @@ body {
 .upcomingEvents {
   border-width: 2px;
   border-style: solid;
-  border-image: linear-gradient(
-      to left,
-      rgba(92, 104, 252, 0.7708),
-      rgba(0, 0, 0, 0)
-    )
-    1;
+  border-image: linear-gradient(to left, rgba(92, 104, 252, 0.7708), rgba(0, 0, 0, 0)) 1;
   width: 100%;
 }
 
@@ -482,8 +477,7 @@ body {
   position: absolute;
   bottom: 50px;
   padding-right: 10px;
-  background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%),
-    linear-gradient(0deg, #ffffff, #ffffff);
+  background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%), linear-gradient(0deg, #ffffff, #ffffff);
   @include border-radius(20px);
 }
 
@@ -492,8 +486,7 @@ body {
 }
 
 .chat-bot-icon-container {
-  background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%),
-    linear-gradient(0deg, #ffffff, #ffffff);
+  background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%), linear-gradient(0deg, #ffffff, #ffffff);
   width: 55px;
   height: 55px;
   border: 3px solid $white;
@@ -621,7 +614,7 @@ body {
 
 //fileFolderListView
 .fileFolderListView {
-  svg[data-testid='FolderIcon'] {
+  svg[data-testid="FolderIcon"] {
     color: #efb63c;
   }
   .fileFolder {
@@ -654,7 +647,9 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
 }
 .demo-container:hover {
   // transform: translateY(-5px);
@@ -667,7 +662,7 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
 
 .demo-image {
   width: 100%;
-  height: 100%;
+  // height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
 }
@@ -681,12 +676,13 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
   bottom: 0;
   // left: 0;
   right: 0;
-  height: 80%;
+  height: 100%;
   width: 100%;
   padding: 40px;
   color: #fff;
   transition: opacity 0.3s ease-in-out;
-  background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+  // background: linear-gradient(to top, rgb(0, 0, 0), transparent);
+  background: linear-gradient(to top, rgb(0 0 0), rgb(0 0 0 / 31%));
 }
 
 .text-overlay {
@@ -717,4 +713,7 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
 
 .launch-button {
   width: fit-content;
+}
+.mt-0 {
+  margin-top: 0;
 }

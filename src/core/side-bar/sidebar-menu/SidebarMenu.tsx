@@ -1,5 +1,5 @@
+import { useState } from "react";
 import {
-  ListSubheader,
   alpha,
   Box,
   List,
@@ -8,47 +8,47 @@ import {
   ListItem,
   Collapse,
   ListItemButton,
-  ListItemText
-} from '@mui/material';
-import { NavLink as RouterLink } from 'react-router-dom';
+  ListItemText,
+} from "@mui/material";
+import { NavLink as RouterLink } from "react-router-dom";
 
-import BrightnessLowTwoToneIcon from '@mui/icons-material/BrightnessLowTwoTone';
-import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
-import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
-import BallotTwoToneIcon from '@mui/icons-material/BallotTwoTone';
-import BeachAccessTwoToneIcon from '@mui/icons-material/BeachAccessTwoTone';
-import EmojiEventsTwoToneIcon from '@mui/icons-material/EmojiEventsTwoTone';
-import FilterVintageTwoToneIcon from '@mui/icons-material/FilterVintageTwoTone';
-import HowToVoteTwoToneIcon from '@mui/icons-material/HowToVoteTwoTone';
-import LocalPharmacyTwoToneIcon from '@mui/icons-material/LocalPharmacyTwoTone';
-import RedeemTwoToneIcon from '@mui/icons-material/RedeemTwoTone';
-import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
-import TrafficTwoToneIcon from '@mui/icons-material/TrafficTwoTone';
-import CheckBoxTwoToneIcon from '@mui/icons-material/CheckBoxTwoTone';
-import PaidIcon from '@mui/icons-material/Paid';
-import RttIcon from '@mui/icons-material/Rtt';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import TuneIcon from '@mui/icons-material/Tune';
-import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import SyncIcon from '@mui/icons-material/Sync';
-import UploadFileIcon from '@mui/icons-material/UploadFile';
-import TitleIcon from '@mui/icons-material/Title';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import ChromeReaderModeTwoToneIcon from '@mui/icons-material/ChromeReaderModeTwoTone';
-import WorkspacePremiumTwoToneIcon from '@mui/icons-material/WorkspacePremiumTwoTone';
-import CameraFrontTwoToneIcon from '@mui/icons-material/CameraFrontTwoTone';
-import { useTranslation } from 'react-i18next';
-import FeedIcon from '@mui/icons-material/Feed';
-import TimelineIcon from '@mui/icons-material/Timeline';
-import AppsIcon from '@mui/icons-material/Apps';
-import PublicIcon from '@mui/icons-material/Public';
-import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
-import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
-import { useState } from 'react';
+import BrightnessLowTwoToneIcon from "@mui/icons-material/BrightnessLowTwoTone";
+import TableChartTwoToneIcon from "@mui/icons-material/TableChartTwoTone";
+import AccountCircleTwoToneIcon from "@mui/icons-material/AccountCircleTwoTone";
+import BallotTwoToneIcon from "@mui/icons-material/BallotTwoTone";
+import BeachAccessTwoToneIcon from "@mui/icons-material/BeachAccessTwoTone";
+import EmojiEventsTwoToneIcon from "@mui/icons-material/EmojiEventsTwoTone";
+import FilterVintageTwoToneIcon from "@mui/icons-material/FilterVintageTwoTone";
+import HowToVoteTwoToneIcon from "@mui/icons-material/HowToVoteTwoTone";
+import LocalPharmacyTwoToneIcon from "@mui/icons-material/LocalPharmacyTwoTone";
+import RedeemTwoToneIcon from "@mui/icons-material/RedeemTwoTone";
+import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
+import TrafficTwoToneIcon from "@mui/icons-material/TrafficTwoTone";
+import CheckBoxTwoToneIcon from "@mui/icons-material/CheckBoxTwoTone";
+import PaidIcon from "@mui/icons-material/Paid";
+import RttIcon from "@mui/icons-material/Rtt";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import TuneIcon from "@mui/icons-material/Tune";
+import DoneOutlineIcon from "@mui/icons-material/DoneOutline";
+import RadioButtonCheckedIcon from "@mui/icons-material/RadioButtonChecked";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import SyncIcon from "@mui/icons-material/Sync";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
+import TitleIcon from "@mui/icons-material/Title";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import ChromeReaderModeTwoToneIcon from "@mui/icons-material/ChromeReaderModeTwoTone";
+import WorkspacePremiumTwoToneIcon from "@mui/icons-material/WorkspacePremiumTwoTone";
+import CameraFrontTwoToneIcon from "@mui/icons-material/CameraFrontTwoTone";
+import { useTranslation } from "react-i18next";
+import FeedIcon from "@mui/icons-material/Feed";
+import TimelineIcon from "@mui/icons-material/Timeline";
+import AppsIcon from "@mui/icons-material/Apps";
+import PublicIcon from "@mui/icons-material/Public";
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
+import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -101,7 +101,7 @@ const SubMenuWrapper = styled(Box)(
 
           .MuiButton-startIcon,
           .MuiButton-endIcon {
-            transition: ${theme.transitions.create(['color'])};
+            transition: ${theme.transitions.create(["color"])};
 
             .MuiSvgIcon-root {
               font-size: inherit;
@@ -165,8 +165,8 @@ const SubMenuWrapper = styled(Box)(
                 background: ${theme.sidebar.background[100]};
                 opacity: 0;
                 transition: ${theme.transitions.create([
-                  'transform',
-                  'opacity'
+                  "transform",
+                  "opacity",
                 ])};
                 width: 6px;
                 height: 6px;
@@ -193,7 +193,7 @@ const SubMenuWrapper = styled(Box)(
 );
 
 function SidebarMenu() {
-  const { t } = useTranslation(['english']);
+  const { t } = useTranslation(["english"]);
   const [managementNav, setManagementNav] = useState(false);
   const [accountsNav, setAccountsNav] = useState(false);
   const [componentsNav, setComponentsNav] = useState(false);
@@ -222,7 +222,7 @@ function SidebarMenu() {
           component="div"
           subheader={
             <ListItemButton>
-              <ListItemText> {t('Dashboards')}</ListItemText>
+              <ListItemText> {t("Dashboards")}</ListItemText>
               {dashboardNav ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
           }
@@ -239,7 +239,7 @@ function SidebarMenu() {
                     startIcon={<BrightnessLowTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setDashboardNav, true)}
                   >
-                    {t('sidebar-menu.crypto')}
+                    {t("sidebar-menu.crypto")}
                   </Button>
                 </ListItem>
                 {/* <ListItem component="div">
@@ -273,11 +273,99 @@ function SidebarMenu() {
                   <Button
                     disableRipple
                     component={RouterLink}
-                    to="/demo/demo1"
-                    startIcon={<BrightnessLowTwoToneIcon />}
+                    to="/demo/demo"
+                    startIcon={<OpenInNewIcon />}
                     onClick={(e) => onChildNavClick(e, setDemoNav, true)}
                   >
                     Demo
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/cyberSecurityDemo"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Cyber Security Demo
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/iotDashboard"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Iot Dashboard
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/cyberIncident"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Cyber Incident
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/networkThreat"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Network threat identification and remediation
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/cyberThreat"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Cyber threat dashboard
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapRecruit"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    (snap.recruit) Recruitment Automation
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/fintech"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    Data in Motion: Fintech demo
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapAssess"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    (snap.assess) AI based assessments
                   </Button>
                 </ListItem>
               </List>
@@ -305,7 +393,7 @@ function SidebarMenu() {
                     startIcon={<TableChartTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setManagementNav, true)}
                   >
-                    {t('sidebar-menu.employee')}
+                    {t("sidebar-menu.employee")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -316,7 +404,7 @@ function SidebarMenu() {
                     startIcon={<FeedIcon />}
                     onClick={(e) => onChildNavClick(e, setManagementNav, true)}
                   >
-                    {t('sidebar-menu.custom_form')}
+                    {t("sidebar-menu.custom_form")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -327,7 +415,7 @@ function SidebarMenu() {
                     startIcon={<TimelineIcon />}
                     onClick={(e) => onChildNavClick(e, setManagementNav, true)}
                   >
-                    {t('sidebar-menu.flow_chart')}
+                    {t("sidebar-menu.flow_chart")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -338,7 +426,7 @@ function SidebarMenu() {
                     startIcon={<AppsIcon />}
                     onClick={(e) => onChildNavClick(e, setManagementNav, true)}
                   >
-                    {t('sidebar-menu.indexnine_flow_chart')}
+                    {t("sidebar-menu.indexnine_flow_chart")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -349,7 +437,7 @@ function SidebarMenu() {
                     startIcon={<PublicIcon />}
                     onClick={(e) => onChildNavClick(e, setManagementNav, true)}
                   >
-                    {t('sidebar-menu.choropleth_map')}
+                    {t("sidebar-menu.choropleth_map")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -360,7 +448,7 @@ function SidebarMenu() {
                     startIcon={<QuestionAnswerIcon />}
                     onClick={(e) => onChildNavClick(e, setManagementNav, true)}
                   >
-                    {t('sidebar-menu.chat_bot')}
+                    {t("sidebar-menu.chat_bot")}
                   </Button>
                 </ListItem>
               </List>
@@ -388,7 +476,7 @@ function SidebarMenu() {
                     startIcon={<AccountCircleTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setAccountsNav, true)}
                   >
-                    {t('sidebar-menu.user_prof')}
+                    {t("sidebar-menu.user_prof")}
                   </Button>
                 </ListItem>
               </List>
@@ -416,7 +504,7 @@ function SidebarMenu() {
                     startIcon={<BallotTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.btns')}
+                    {t("sidebar-menu.btns")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -427,7 +515,7 @@ function SidebarMenu() {
                     startIcon={<BeachAccessTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.modals')}
+                    {t("sidebar-menu.modals")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -438,7 +526,7 @@ function SidebarMenu() {
                     startIcon={<EmojiEventsTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.accordions')}
+                    {t("sidebar-menu.accordions")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -449,7 +537,7 @@ function SidebarMenu() {
                     startIcon={<FilterVintageTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.tabs')}
+                    {t("sidebar-menu.tabs")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -460,7 +548,7 @@ function SidebarMenu() {
                     startIcon={<HowToVoteTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.badges')}
+                    {t("sidebar-menu.badges")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -471,7 +559,7 @@ function SidebarMenu() {
                     startIcon={<LocalPharmacyTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.tooltips')}
+                    {t("sidebar-menu.tooltips")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -493,7 +581,7 @@ function SidebarMenu() {
                     startIcon={<SettingsTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.cards')}
+                    {t("sidebar-menu.cards")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -504,7 +592,7 @@ function SidebarMenu() {
                     startIcon={<TrafficTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.forms')}
+                    {t("sidebar-menu.forms")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -515,7 +603,7 @@ function SidebarMenu() {
                     startIcon={<CheckBoxTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.checkbox')}
+                    {t("sidebar-menu.checkbox")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -526,7 +614,7 @@ function SidebarMenu() {
                     startIcon={<SyncIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.circularprog')}
+                    {t("sidebar-menu.circularprog")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -537,7 +625,7 @@ function SidebarMenu() {
                     startIcon={<CalendarMonthIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.datepicker')}
+                    {t("sidebar-menu.datepicker")}
                   </Button>
                 </ListItem>
 
@@ -549,7 +637,7 @@ function SidebarMenu() {
                     startIcon={<UploadFileIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.filebutton')}
+                    {t("sidebar-menu.filebutton")}
                   </Button>
                 </ListItem>
 
@@ -561,7 +649,7 @@ function SidebarMenu() {
                     startIcon={<UploadFileIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.upload')}
+                    {t("sidebar-menu.upload")}
                   </Button>
                 </ListItem>
 
@@ -573,7 +661,7 @@ function SidebarMenu() {
                     startIcon={<RadioButtonCheckedIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.radiobutton')}
+                    {t("sidebar-menu.radiobutton")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -584,7 +672,7 @@ function SidebarMenu() {
                     startIcon={<TitleIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.textfield')}
+                    {t("sidebar-menu.textfield")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -595,7 +683,7 @@ function SidebarMenu() {
                     startIcon={<DoneOutlineIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.select')}
+                    {t("sidebar-menu.select")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -606,7 +694,7 @@ function SidebarMenu() {
                     startIcon={<TuneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.slider')}
+                    {t("sidebar-menu.slider")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -617,7 +705,7 @@ function SidebarMenu() {
                     startIcon={<CheckBoxTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.stepper')}
+                    {t("sidebar-menu.stepper")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -628,7 +716,7 @@ function SidebarMenu() {
                     startIcon={<AccessTimeIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.timepicker')}
+                    {t("sidebar-menu.timepicker")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -639,7 +727,7 @@ function SidebarMenu() {
                     startIcon={<RttIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.typography')}
+                    {t("sidebar-menu.typography")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -650,7 +738,7 @@ function SidebarMenu() {
                     startIcon={<PaidIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.currency')}
+                    {t("sidebar-menu.currency")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -661,7 +749,7 @@ function SidebarMenu() {
                     startIcon={<ContactSupportIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.toaster')}
+                    {t("sidebar-menu.toaster")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -672,7 +760,7 @@ function SidebarMenu() {
                     startIcon={<TitleIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.text_editor')}
+                    {t("sidebar-menu.text_editor")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -683,7 +771,7 @@ function SidebarMenu() {
                     startIcon={<AccountTreeIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.tree_view_menu')}
+                    {t("sidebar-menu.tree_view_menu")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -694,7 +782,7 @@ function SidebarMenu() {
                     startIcon={<CreateNewFolderIcon />}
                     onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
                   >
-                    {t('sidebar-menu.file_manager')}
+                    {t("sidebar-menu.file_manager")}
                   </Button>
                 </ListItem>
               </List>
@@ -722,7 +810,7 @@ function SidebarMenu() {
                     startIcon={<CheckBoxTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setOthersNav, true)}
                   >
-                    {t('sidebar-menu.error_404')}
+                    {t("sidebar-menu.error_404")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -733,7 +821,7 @@ function SidebarMenu() {
                     startIcon={<CameraFrontTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setOthersNav, true)}
                   >
-                    {t('sidebar-menu.error_500')}
+                    {t("sidebar-menu.error_500")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -744,7 +832,7 @@ function SidebarMenu() {
                     startIcon={<ChromeReaderModeTwoToneIcon />}
                     onClick={(e) => onChildNavClick(e, setOthersNav, true)}
                   >
-                    {t('sidebar-menu.coming_soon')}
+                    {t("sidebar-menu.coming_soon")}
                   </Button>
                 </ListItem>
                 <ListItem component="div">
