@@ -15,7 +15,7 @@ const ApplicationsTransactions = () => {
   const { transactionData } = useSelector(
     (state: RootState) => state.transactionData
   );
-  const { userData } = useSelector((state: RootState) => state.userData);
+  // const { userData } = useSelector((state: RootState) => state.userData);
 
   //useEffect
   useEffect(() => {

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Accept } from 'react-dropzone';
 import { FileRejection, useDropzone } from 'react-dropzone';
 import { ToastContainer } from 'react-toastify';
 import { Box } from '@mui/material';
-
+import type { DropzoneOptions } from 'react-dropzone';
 import { MEGABYTE_CONVERTER } from '../../constants/constants';
 import { SingleOrMultipleUploadProps } from './services/singleOrMultipleUploadInterface';
 import { showErrorMessage } from '../toaster/Toast';
@@ -39,7 +40,8 @@ export const SingleOrMultipleUpload = ({
   const { getRootProps, getInputProps } = useDropzone({
     multiple: isMultiple,
     maxSize: maxFileSize,
-    accept: acceptedFileFormat?.toString(),
+    accept: acceptedFileFormat as unknown as Accept,
+
     onDropRejected: (rejections: FileRejection[]) => {
       if (!acceptedFileFormat.includes(rejections[0]?.file?.type)) {
         return showErrorMessage('Please upload a file with a valid format', {

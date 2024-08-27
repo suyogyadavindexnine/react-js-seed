@@ -1,4 +1,4 @@
 import { TextFieldProps } from '@mui/material';
-import { DatePicker as MuiDatePicker, DatePickerProps } from '@mui/lab';
+import { DatePickerProps } from '@mui/x-date-pickers';
 
-export type CombinedProps = TextFieldProps & DatePickerProps;
+export type CombinedProps<TInputDate = unknown, TDate = unknown> = TextFieldProps & DatePickerProps<TInputDate, TDate>;
