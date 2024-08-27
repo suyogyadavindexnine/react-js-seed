@@ -464,7 +464,7 @@ export const NebulaFighterTheme = createTheme({
           background: colors.alpha.white[100]
         },
         '&.PageTitle': {
-          padding: '12px 5px'
+          padding: '12px 15px'
         },
         '&.listWrapper': {
           '.MuiListItem-root': {

@@ -257,7 +257,7 @@
     "dataLabels": {
       "enabled": false
     },
-    "colors": ["#0E3385", "#1F105E", "#1E50FF", "#1034A2", "#2c8968"],
+ "colors": ["#B3E5FC", "#FFCC80", "#FFAB91", "#CE93D8", "#80CBC4"],
     "legend": {
       "show": true,
       "position": "bottom",

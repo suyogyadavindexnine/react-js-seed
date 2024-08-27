@@ -41,10 +41,10 @@ const TotalEmployees = () => {
     stroke: {
       width: 2
     },
-    colors: ['#505CFD'],
+    colors: ['#B4A6FF'],
     markers: {
       size: 4,
-      colors: ['#505CFD']
+      colors: ['#B4A6FF']
     },
     tooltip: {
       x: {

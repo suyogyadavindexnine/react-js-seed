@@ -448,7 +448,7 @@ export const PureLightTheme = createTheme({
           background: colors.alpha.white[100]
         },
         '&.PageTitle': {
-          padding: '12px 5px'
+          padding: '12px 15px'
         },
         '&.HeaderWrapper': {
           height: '62px',

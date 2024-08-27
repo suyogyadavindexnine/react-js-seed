@@ -59,12 +59,12 @@ const AlertsData = () => {
     {
       eventIcon: <LinkIcon color="primary" fontSize="small" />,
       eventTitle: 'Link for the employee feedback',
-      quickLink: 'https://forms.gle/ytZqzZr8hcKzNcLt7'
+      quickLink: 'https://www.indexnine.com/'
     },
     {
       eventIcon: <LinkIcon color="primary" fontSize="small" />,
       eventTitle: 'Access our portal',
-      quickLink: 'https://portal.indexnine.com/en/home'
+      quickLink: 'https://www.indexnine.com/services/'
     }
   ];
 
