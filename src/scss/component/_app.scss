@@ -1,0 +1,39 @@
+.configsButton {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  background-color: #f2f5f9;
+  border-radius: 50%;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 99;
+  color: black;
+  border: 1px solid;
+  border-style: groove;
+}
+
+.chatBotButton {
+  position: fixed;
+  right: 1.8rem;
+  bottom: 6rem;
+  z-index: 99;
+
+  button.MuiFab-root {
+    width: 78px;
+    height: 78px;
+    border: 3px solid $white;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12) !important;
+    background: linear-gradient(318.77deg, #0145ac -6.92%, #a771ff 87.89%),
+      linear-gradient(0deg, #ffffff, #ffffff);
+  }
+}
+
+.fileUploadContainer {
+  border: 1px dashed gray;
+  width: 50%;
+}

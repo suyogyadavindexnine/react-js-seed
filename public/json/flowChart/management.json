@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "type": "input",
+      "data": {
+        "label": "AB+"
+      },
+      "className": "circleManagement",
+      "position": {
+        "x": 254.6056848562166,
+        "y": 46.1250334183822
+      },
+      "employee": {
+        "name": "Annabelle Barr",
+        "designation": "CEO",
+        "has_branch": true,
+        "nodes": [
+          {
+            "id": "1",
+            "type": "input",
+            "data": {
+              "label": "Annabelle Barr"
+            },
+            "employee": {
+              "name": "Annabelle Barr",
+              "designation": "CEO",
+              "has_branch": false
+            },
+            "position": { "x": 250, "y": 0 },
+            "sourcePosition": "bottom",
+            "targetPosition": "right"
+          },
+          {
+            "id": "2",
+            "type": "output",
+            "className": "circleManagement",
+            "data": {
+              "label": "PP"
+            },
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "employee": {
+              "name": "Phoebe Petty",
+              "designation": "Operations Director",
+              "has_branch": false
+            },
+            "sourcePosition": "left",
+            "targetPosition": "right"
+          },
+          {
+            "id": "3",
+            "type": "output",
+            "className": "circleManagement",
+            "data": {
+              "label": "RG"
+            },
+            "position": {
+              "x": 500,
+              "y": 100
+            },
+            "employee": {
+              "name": "Raelynn Guerrero",
+              "designation": "CTO",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1-2",
+            "source": "1",
+            "target": "2"
+          },
+          { "id": "e1-3", "source": "1", "target": "3" }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "type": "input",
+      "className": "circleManagement",
+      "data": {
+        "label": "RG+"
+      },
+      "position": {
+        "x": 226.04166666666657,
+        "y": 72.77500000000003
+      },
+      "employee": {
+        "name": "Raelynn Guerrero",
+        "designation": "CTO",
+        "has_branch": true,
+        "nodes": [
+          {
+            "id": "1",
+            "type": "input",
+            "data": {
+              "label": "Raelynn Guerrero"
+            },
+            "employee": {
+              "name": "Raelynn Guerrero",
+              "designation": "CTO",
+              "has_branch": false
+            },
+            "position": { "x": 250, "y": 0 },
+            "sourcePosition": "bottom",
+            "targetPosition": "right"
+          },
+          {
+            "id": "2",
+            "type": "output",
+            "className": "circleManagement",
+            "data": {
+              "label": "AN"
+            },
+            "position": {
+              "x": 100,
+              "y": 100
+            },
+            "employee": {
+              "name": "Ada Nelson",
+              "designation": "Lead Software Engineer",
+              "has_branch": false
+            },
+            "sourcePosition": "left",
+            "targetPosition": "right"
+          },
+          {
+            "id": "3",
+            "type": "output",
+            "className": "circleManagement",
+            "data": {
+              "label": "TK"
+            },
+            "position": {
+              "x": 300,
+              "y": 150
+            },
+            "employee": {
+              "name": "Teagan Krause",
+              "designation": "Lead Software Engineer",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          },
+          {
+            "id": "4",
+            "type": "output",
+            "className": "circleManagement",
+            "data": {
+              "label": "LS"
+            },
+            "position": {
+              "x": 500,
+              "y": 100
+            },
+            "employee": {
+              "name": "Londyn Snyder",
+              "designation": "Lead Software Engineer",
+              "has_branch": false
+            },
+            "sourcePosition": "right",
+            "targetPosition": "left"
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1-2",
+            "source": "1",
+            "target": "2"
+          },
+          { "id": "e1-3", "source": "1", "target": "3" },
+          { "id": "e1-4", "source": "1", "target": "4" }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "type": "input",
+      "className": "circleManagement",
+      "data": {
+        "label": "RW"
+      },
+      "position": {
+        "x": 283.24965228299214,
+        "y": 72.73368781693418
+      },
+      "employee": {
+        "name": "Ronan Wall",
+        "designation": "Technical Manager",
+        "has_branch": false
+      }
+    },
+    {
+      "id": "4",
+      "type": "input",
+      "className": "circleManagement",
+      "data": {
+        "label": "PP"
+      },
+      "position": {
+        "x": 275.31740798124537,
+        "y": 105.42080778702001
+      },
+      "employee": {
+        "name": "Phoebe Petty",
+        "designation": "Operations Director",
+        "has_branch": false
+      }
+    },
+    {
+      "id": "5",
+      "type": "input",
+      "className": "circleManagement",
+      "data": {
+        "label": "KC"
+      },
+      "position": {
+        "x": 236.73655418484782,
+        "y": 106.42914112035334
+      },
+      "employee": {
+        "name": "Kate Carrillo",
+        "designation": "Marketing Trainee",
+        "has_branch": false
+      }
+    }
+  ]
+}

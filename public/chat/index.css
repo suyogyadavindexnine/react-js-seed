@@ -1,0 +1,218 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+}
+body {
+  padding: 0 !important;
+}
+.d-flex {
+  display: flex;
+}
+.p-absolute {
+  position: absolute;
+}
+.p-relative {
+  position: relative;
+}
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.flex-basic-center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.flex-column-center {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.flex-basic-start {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: flex-start !important;
+}
+.flex-basic-space-between {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between !important;
+}
+.flex-basic-space-around {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around !important;
+}
+.flex-basic-end {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end !important;
+}
+.flex-direction-column {
+  flex-direction: column;
+}
+.flex-column-end {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column !important;
+}
+.flex-column-start {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-direction: column !important;
+}
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+.align-items-start {
+  align-items: flex-start !important;
+}
+.align-items-end {
+  align-items: flex-end !important;
+}
+.common-avatar {
+  width: 24px !important;
+  height: 24px !important;
+}
+.chat_bot_widget {
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+}
+.chat-bubble {
+  color: #333;
+  background-color: #f1f0f0;
+  border-radius: 20px;
+  max-width: 70%;
+  padding: 20px !important;
+}
+.first-bot-chat-bubble {
+  border-bottom-left-radius: 0% !important;
+}
+.first-user-chat-bubble {
+  border-bottom-right-radius: 0% !important;
+}
+.chat-bot-input-container {
+  width: 100%;
+}
+.chat-bot-input-container .MuiFormControl-root {
+  width: 100%;
+  margin: 0;
+}
+.chat-bot-input-container .MuiFormControl-root .MuiInputBase-root {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.chat-bot-input-container
+  .MuiFormControl-root
+  .MuiInputBase-root
+  textarea::-webkit-input-placeholder {
+  color: #040404;
+}
+.chat-bot-input-container
+  .MuiFormControl-root
+  .MuiInputBase-root
+  textarea::placeholder {
+  color: #040404;
+}
+.chat-bot-input-container .MuiFormControl-root .MuiInputBase-root:before,
+.chat-bot-input-container .MuiFormControl-root .MuiInputBase-root:hover {
+  border-bottom: none;
+}
+.chat-bubble-container {
+  flex: 1;
+  height: calc(100% - 54px);
+  overflow-y: auto;
+}
+.chat-bubble-container::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.chat-bubble-container::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px #edf2f3 !important;
+}
+.chat-bubble-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(105, 129, 155, 0.5) !important;
+}
+.auto-adjust-input textarea {
+  height: auto;
+  max-height: 5rem;
+  overflow-y: scroll !important;
+}
+.auto-adjust-input textarea::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.auto-adjust-input textarea::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px #edf2f3 !important;
+}
+.auto-adjust-input textarea::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(105, 129, 155, 0.5) !important;
+}
+@-webkit-keyframes loadingDots {
+  0%,
+  20% {
+    content: 'Loading';
+  }
+  40% {
+    content: 'Loading.';
+  }
+  60% {
+    content: 'Loading..';
+  }
+  80%,
+  to {
+    content: 'Loading...';
+  }
+}
+@keyframes loadingDots {
+  0%,
+  20% {
+    content: 'Loading';
+  }
+  40% {
+    content: 'Loading.';
+  }
+  60% {
+    content: 'Loading..';
+  }
+  80%,
+  to {
+    content: 'Loading...';
+  }
+}
+.loading {
+  padding-left: 1rem;
+  font-size: 16px;
+  display: inline-block;
+}
+.loading:after {
+  content: 'Loading...';
+  color: #acacac;
+  -webkit-animation: 2s infinite loadingDots;
+  animation: 2s infinite loadingDots;
+  display: inline-block;
+}

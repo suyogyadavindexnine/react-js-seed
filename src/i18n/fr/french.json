@@ -1,0 +1,79 @@
+{
+  "sidebar-menu": {
+    "crypto": "Main",
+    "dashboard": "Dashboard",
+    "messeng": "Messagère",
+    "transac_list": "Liste des transactions",
+    "employee": "employée",
+    "user_prof": "profil de l'utilisateur",
+    "accnt_sett": "Paramètres du compte",
+    "btns": "boutons",
+    "modals": "modaux",
+    "accordions": "Accordéons",
+    "checkbox": "case à cocher",
+    "tabs": "Onglets",
+    "badges": "Insignes",
+    "tooltips": "Info-bulles",
+    "cards": "Cartes",
+    "forms": "Formes",
+    "error_404": "Erreur 404",
+    "error_500": "Erreur 500",
+    "coming_soon": "Bientôt disponible",
+    "circularprog": "Progression circulaire",
+    "datepicker": "Sélecteur de date",
+    "filebutton": "Bouton de fichier",
+    "radiobutton": "Bouton radio",
+    "textfield": "Champ de texte",
+    "select": "Sélectionner",
+    "slider": "Slider",
+    "stepper": "Glissière",
+    "timepicker": "Sélecteur de temps",
+    "typography": "Typographie",
+    "currency": "Monnaie",
+    "toaster": "alerte",
+    "upload": "Télécharger",
+    "flow_chart": "Organigramme",
+    "indexnine_flow_chart": "Indexnine Organigramme",
+    "indexnine_org": "Indexnine Organisation",
+    "indexnine_employee_info": "Indexnine Employés Informations",
+    "choropleth_map": "Choropleth Carte"
+  },
+  "sidebar": {
+    "followers": "Suiveuses"
+  },
+  "dashboard": {
+    "header": {
+      "welcome": "Bienvenue",
+      "message": "Aujourd'hui est un bon jour pour commencer à trader des actifs cryptographiques !"
+    },
+    "account_balance": {
+      "account_balance": "Solde du compte",
+      "this_month": "ce mois-ci",
+      "send": "envoyer",
+      "receive": "recevoir"
+    },
+    "wallets": {
+      "wallets": "Portefeuilles",
+      "add_new_wallet": "ajouter un nouveau portefeuille",
+      "watch_list": "Liste de surveillance",
+      "view_more_assets": "Afficher plus d'actifs"
+    },
+    "account_security": {
+      "account_security": "Sécurité du compte",
+      "phone_verification": "Vérification par téléphone",
+      "recovery_email": "E-mail de secours"
+    },
+    "domain_specific_projects": {
+      "domain_specific_projects": "Projets spécifiques à un domaine"
+    },
+    "customer_satisfaction": {
+      "customer_satisfaction": "Satisfaction du client"
+    },
+    "region_wise_customers": {
+      "region_wise_customers": "Clients par région"
+    },
+    "customer_projects": {
+      "customer_projects": "Projets Clients"
+    }
+  }
+}

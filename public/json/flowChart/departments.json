@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "key": "management",
+      "data": {
+        "label": "Management"
+      },
+      "className": "departments",
+      "style": {
+        "background": "#2B6CB0",
+        "color": "white"
+      },
+      "position": { "x": 250, "y": 0 },
+      "sourcePosition": "bottom",
+      "targetPosition": "bottom",
+      "draggable": false
+    },
+    {
+      "id": "2",
+      "key": "operations",
+      "data": {
+        "label": "Operations"
+      },
+      "className": "departments",
+      "style": {
+        "background": "#dcbb09",
+        "color": "white"
+      },
+      "position": { "x": 100, "y": 100 },
+      "sourcePosition": "right",
+      "targetPosition": "right",
+      "draggable": false
+    },
+    {
+      "id": "3",
+      "key": "design",
+      "data": {
+        "label": "Design"
+      },
+      "className": "departments",
+      "style": {
+        "background": "#ff7b00",
+        "color": "white"
+      },
+      "position": { "x": 400, "y": 100 },
+      "sourcePosition": "left",
+      "targetPosition": "left",
+      "draggable": false
+    },
+    {
+      "id": "4",
+      "key": "engineering",
+      "data": {
+        "label": "Engineering"
+      },
+      "className": "departments",
+      "style": {
+        "background": "#b72934",
+        "color": "white"
+      },
+      "position": { "x": 325, "y": 250 },
+      "sourcePosition": "top",
+      "targetPosition": "top",
+      "draggable": false
+    },
+    {
+      "id": "5",
+      "key": "qa",
+      "data": {
+        "label": "Quality Analyst"
+      },
+      "className": "departments",
+      "style": {
+        "background": "#1f9712",
+        "color": "white"
+      },
+      "position": { "x": 175, "y": 250 },
+      "sourcePosition": "top",
+      "targetPosition": "top",
+      "draggable": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1-2",
+      "source": "1",
+      "target": "2"
+    },
+    { "id": "e1-3", "source": "1", "target": "3" },
+    { "id": "e3-4", "source": "3", "target": "4" },
+    { "id": "e4-5", "source": "4", "target": "5" },
+    { "id": "e5-2", "source": "5", "target": "2" }
+  ]
+}

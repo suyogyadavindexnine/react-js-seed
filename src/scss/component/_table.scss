@@ -1,0 +1,211 @@
+.tableRowCellHeight {
+  max-height: 50px !important;
+  min-height: 50px !important;
+}
+.tablestyle {
+  position: relative;
+  height: auto;
+  z-index: 99;
+  width: 100%;
+  &.MuiCard-root {
+    border-radius: 16px !important;
+    border: 1px solid $colorNeutralGrey03;
+    box-shadow: none !important;
+  }
+  .table {
+    border: 0px;
+    .MuiDataGrid-row {
+      @extend .tableRowCellHeight;
+      .MuiDataGrid-cell {
+        padding-left: 20px;
+        &:first-child {
+          padding-left: 22px;
+        }
+       &{@include font-custom(500, 13px, 20px);}
+        // color: #2e384d;
+        @extend .tableRowCellHeight;
+      }
+    }
+    .MuiDataGrid-withBorderColor {
+      // border-color: $colorNeutralGrey03;
+      &:first-child {
+        padding-left: 11px;
+      }
+    }
+    .MuiDataGrid-columnHeaders {
+      @extend .tableRowCellHeight;
+      .MuiDataGrid-columnHeaderTitle {
+        align-items: center;
+        @include font-custom(600, 14px, 16px);
+        color: $table-header;
+      }
+      &:hover {
+        .MuiDataGrid-columnSeparator {
+          opacity: 0 !important;
+        }
+      }
+    }
+    .MuiDataGrid-columnHeader {
+      .customColumnName {
+        font-size: 14px;
+        @extend .font-weight-semibold;
+        line-height: inherit;
+        color: $table-header;
+      }
+      .MuiDataGrid-iconButtonContainer {
+        display: none;
+      }
+    }
+    .MuiDataGrid-columnHeader:focus-within,
+    .MuiDataGrid-cell:focus-within {
+      outline: solid transparent 1px;
+    }
+    .MuiCheckbox-colorPrimary {
+      color: $table-checkbox-unchecked;
+      border-radius: 4px !important;
+      background-color: $table-checkbox-unchecked;
+      height: 21px;
+      width: 21px;
+      margin-left: 18px;
+      &.Mui-checked {
+        color: $primary;
+      }
+    }
+
+    .PrivateSwitchBase-root {
+      & .Mui-checked {
+        .MuiCheckbox-colorPrimary {
+          color: $table-checkbox-checked;
+          border-radius: 1px;
+          margin-left: 18px;
+        }
+      }
+    }
+    .MuiDataGrid-cellCheckbox::after {
+      border-left: 5px solid $table-checkbox-checked;
+    }
+    .table-header {
+      border: 0px;
+    }
+    .MuiDataGrid-row:hover,
+    .MuiDataGrid-row.Mui-hovered,
+    .MuiDataGrid-row.Mui-selected {
+      background-color: $table-hover;
+    }
+    .more-info-btn {
+      @include border-radius(50%);
+      &:hover {
+        background-color: $colorNeutralGrey03;
+      }
+    }
+  }
+  .customTableFooter {
+    position: absolute;
+    box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.06),
+      0px 0px 4px 0px rgba(0, 0, 0, 0.04);
+    z-index: 9999999;
+    bottom: 0;
+    background-color: $white;
+    width: 100%;
+  }
+  .paginationWrapper {
+    .paginationPerPageText {
+      color: $grayColor;
+    }
+  }
+
+  .textFields {
+    .MuiInputBase-root {
+      .MuiInputBase-input {
+        padding: 10px 14px !important;
+      }
+    }
+  }
+  //table default scrollbar
+  .table {
+    .MuiDataGrid-virtualScroller {
+      height: calc(100vh - 403px);
+      max-height: calc(100vh - 403px);
+      overflow-y: auto !important;
+      @include commonScrollBar;
+    }
+    //user management tables height
+    &.userMgmtTableHeight {
+      .MuiDataGrid-virtualScroller {
+        max-height: calc(100vh - 200px);
+        height: calc(100vh - 200px);
+      }
+    }
+  }
+
+  //table sortIcon icon using pure css
+  .tableSortIcon {
+    .arrowUpDown {
+      &::before,
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        position: relative;
+        left: 1px;
+      }
+      &::before {
+        border-bottom: 5px solid $table-header;
+        top: -1.0925rem;
+      }
+      &::after {
+        border-top: 5px solid $table-header;
+        top: 0.9rem;
+        left: -0.54rem;
+      }
+    }
+  }
+}
+
+//per page dropdown
+.table-page-dropdown {
+  height: 36px !important;
+  width: 55px !important;
+  padding: 0px;
+  border: none;
+  .MuiSelect-select {
+    text-overflow: unset !important;
+    padding: 0.5px 5px !important;
+  }
+  .expandMoreIcon {
+    margin-left: -15px;
+  }
+  fieldset {
+    border: none !important;
+    border-color: #ffff !important;
+  }
+}
+
+.pagination-class {
+  .MuiPaginationItem-root {
+    @include border-radius(5px);
+    font: normal 600 14px/16px $font-family-base;
+    color: $textColor;
+    &.Mui-selected {
+      background-color: $primary;
+      color: $pagination-font;
+    }
+    &.Mui-selected:hover {
+      background-color: $primary;
+      color: $pagination-font;
+    }
+  }
+}
+
+//table scrolling
+.companyListData {
+  .MuiDataGrid-virtualScroller {
+    height: calc(100vh - 385px);
+    max-height: calc(100vh - 385px);
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+    @include commonScrollBar;
+  }
+}
