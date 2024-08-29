@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   alpha,
   Box,
@@ -9,6 +9,8 @@ import {
   Collapse,
   ListItemButton,
   ListItemText,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { NavLink as RouterLink } from "react-router-dom";
 
@@ -49,6 +51,7 @@ import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 import CreateNewFolderIcon from "@mui/icons-material/CreateNewFolder";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { SidebarContext } from "src/providers/SidebarContext";
 
 const MenuWrapper = styled(Box)(
   ({ theme }) => `
@@ -194,6 +197,11 @@ const SubMenuWrapper = styled(Box)(
 
 function SidebarMenu() {
   const { t } = useTranslation(["english"]);
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+
+  const { closeSidebar } = useContext(SidebarContext);
+
   const [managementNav, setManagementNav] = useState(false);
   const [accountsNav, setAccountsNav] = useState(false);
   const [componentsNav, setComponentsNav] = useState(false);
@@ -204,6 +212,9 @@ function SidebarMenu() {
   const onChildNavClick = (e, callback, value) => {
     closeAll();
     callback(value);
+    if(!isLg) {
+      closeSidebar();
+    }
     e.stopPropagation();
   };
   const closeAll = () => {

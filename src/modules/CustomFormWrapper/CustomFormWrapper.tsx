@@ -269,7 +269,7 @@ const CustomFormWrapper = () => {
         </Grid>
       </Box>
 
-      <Container sx={{ mt: 5 }} maxWidth="lg">
+      <Box sx={{ mt: 5 }} maxWidth="lg">
         <Card sx={{ p: 5 }}>
           <Typography variant="h4" sx={{ mb: 3 }}>
             Code Examples
@@ -373,9 +373,9 @@ const CustomFormWrapper = () => {
             </Grid>
           </Grid>
         </Card>
-      </Container>
+      </Box>
 
-      <Container sx={{ mt: 5 }} maxWidth="lg">
+      <Box sx={{ mt: 5 }} maxWidth="lg">
         <Card sx={{ p: 5 }}>
           <Grid container direction={'row'}>
             <Grid item xs={12}>
@@ -405,7 +405,7 @@ const CustomFormWrapper = () => {
             </Grid>
           </Grid>
         </Card>
-      </Container>
+      </Box>
 
       <SimpleDialog
         open={openEditFormPopup}
