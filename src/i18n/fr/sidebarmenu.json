@@ -1,5 +1,4 @@
 {
-  "sidebar-menu":{
   "crypto": "Main",
   "messeng": "Messagère",
   "transac_list": "Liste des transactions",
@@ -35,5 +34,4 @@
   "indexnine_org": "Indexnine Organisation",
   "indexnine_employee_info": "Indexnine Employés Informations",
   "choropleth_map": "Choropleth Carte"
-}
 }

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import RecentOrders from './components/RecentOrders';
 import { PageTitleWrapper, PageHeader } from '../../shared/components/index';
-import { Grid, Container } from '@mui/material';
+import { Grid, Container, Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTransactionData } from './services/transaction.service';
@@ -15,7 +15,7 @@ const ApplicationsTransactions = () => {
   const { transactionData } = useSelector(
     (state: RootState) => state.transactionData
   );
-  const { userData } = useSelector((state: RootState) => state.userData);
+  // const { userData } = useSelector((state: RootState) => state.userData);
 
   //useEffect
   useEffect(() => {
@@ -48,7 +48,7 @@ const ApplicationsTransactions = () => {
         />
       </PageTitleWrapper>
 
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -63,7 +63,7 @@ const ApplicationsTransactions = () => {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };

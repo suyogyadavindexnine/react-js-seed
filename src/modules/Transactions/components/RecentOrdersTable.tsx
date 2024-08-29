@@ -123,7 +123,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
     <>
       <Card>
         <Box flex={1} p={3}>
-          <Container maxWidth="lg">
+          <Box>
             <Grid container direction="row-reverse" spacing={2}>
               <Grid item lg={4}>
                 <TextField
@@ -134,7 +134,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
                 />
               </Grid>
             </Grid>
-          </Container>
+          </Box>
         </Box>
 
         <Divider />
@@ -149,8 +149,6 @@ RecentOrdersTable.propTypes = {
   cryptoOrders: PropTypes.array.isRequired
 };
 
-// RecentOrdersTable.defaultProps = {
-//   cryptoOrders: []
-// };
+
 
 export default RecentOrdersTable;

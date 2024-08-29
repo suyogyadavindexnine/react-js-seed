@@ -22,7 +22,7 @@ function Tooltips() {
         documentlink="https://mui.com/material-ui/react-button/"
       />
 
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -105,7 +105,7 @@ function Tooltips() {
             </Card>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

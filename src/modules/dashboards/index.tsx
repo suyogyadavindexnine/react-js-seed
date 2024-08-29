@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 import PageHeader from './components/PageHeader';
 import { PageTitleWrapper } from '../../shared/components/index';
-import { Container, Grid } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
 import Footer from 'src/core/footer';
 import AccountBalance from './components/AccountBalance';
 import Wallets from './components/Wallets';
@@ -39,7 +39,7 @@ function DashboardCrypto() {
       <PageTitleWrapper>
         <PageHeader user={dashboardData?.user} />
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -69,7 +69,7 @@ function DashboardCrypto() {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

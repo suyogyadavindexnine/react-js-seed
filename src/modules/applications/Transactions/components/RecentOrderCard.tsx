@@ -182,7 +182,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
   return (
     <>
       <Card>
-        <Container maxWidth="lg">
+        <Box>
           <Grid
             container
             direction="row"
@@ -208,7 +208,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                   flex={1}
                   sx={{ paddingBottom: '10px', paddingTop: '10px' }}
                 >
-                  <Container maxWidth="lg">
+                  <Box>
                     <Grid container direction="row" spacing={2}>
                       <Grid item xs={12} md={10} sm={10} lg={11}>
                         <TextField
@@ -242,12 +242,12 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                         </FormControl>
                       </Grid>
                     </Grid>
-                  </Container>
+                  </Box>
                 </Box>
               )}
             </Grid>
           </Grid>
-        </Container>
+        </Box>
       </Card>
 
       <Box sx={{ flexGrow: 1 }} p={1}>
@@ -353,7 +353,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                     </Grid>
                   </CardContent>
                   <CardActions disableSpacing>
-                    <Container maxWidth="lg">
+                    <Box>
                       <Grid container direction="row" alignItems="center">
                         <Grid item xs={8}>
                           <CheckBox
@@ -397,7 +397,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                           </Tooltip>
                         </Grid>
                       </Grid>
-                    </Container>
+                    </Box>
                   </CardActions>
                 </Card>
               </Grid>
@@ -427,8 +427,5 @@ RecentOrdersCard.propTypes = {
   cryptoOrders: PropTypes.array.isRequired
 };
 
-// RecentOrdersCard.defaultProps = {
-//   cryptoOrders: []
-// };
 
 export default RecentOrdersCard;

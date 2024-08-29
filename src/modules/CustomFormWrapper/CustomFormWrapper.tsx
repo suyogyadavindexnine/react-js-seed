@@ -248,7 +248,7 @@ const CustomFormWrapper = () => {
         />
       </PageTitleWrapper>
 
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -267,7 +267,7 @@ const CustomFormWrapper = () => {
             </Card>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
 
       <Container sx={{ mt: 5 }} maxWidth="lg">
         <Card sx={{ p: 5 }}>

@@ -2,7 +2,8 @@ import { alpha, createTheme, lighten, darken } from '@mui/material';
 import '@mui/lab/themeAugmentation';
 
 const themeColors = {
-  primary: '#5569ff',
+  // primary: '#5569ff',
+  primary: '#2452EB',
   secondary: '#6E759F',
   success: '#57CA22',
   warning: '#FFA319',
@@ -447,7 +448,7 @@ export const PureLightTheme = createTheme({
           background: colors.alpha.white[100]
         },
         '&.PageTitle': {
-          padding: 28
+          padding: '12px 15px'
         },
         '&.HeaderWrapper': {
           height: '62px',
@@ -940,10 +941,12 @@ export const PureLightTheme = createTheme({
       },
       styleOverrides: {
         root: {
-          fontWeight: 'bold',
+          // fontWeight: 'bold',
           textTransform: 'none',
           paddingLeft: 16,
           paddingRight: 16,
+          fontSize: '14px',
+          fontWeight: '500',
 
           '.MuiSvgIcon-root': {
             transition: 'all .2s'
@@ -954,6 +957,20 @@ export const PureLightTheme = createTheme({
             border: '1px solid ' + colors.alpha.black[30],
             ' &:hover': {
               background: colors.error.dark
+            }
+          },
+          '&.MuiButton-contained': {
+            '&.Mui-disabled': {
+              color: 'rgba(0, 0, 0, 0.3)',
+              boxShadow: 'none',
+              backgroundColor: 'rgba(0, 0, 0, 0.20)'
+            }
+          },
+          '&.MuiButton-outlined': {
+            '&.Mui-disabled': {
+              color: 'rgba(0, 0, 0, 0.3)',
+              boxShadow: 'none',
+              border: '1px solid rgba(0, 0, 0, 0.2)'
             }
           }
         },
@@ -1548,11 +1565,11 @@ export const PureLightTheme = createTheme({
     }
   },
   shape: {
-    borderRadius: 10
+    borderRadius: 5
   },
   typography: {
-    fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    fontFamily: 'Poppins',
     h1: {
       fontWeight: 700,
       fontSize: '2.188rem'

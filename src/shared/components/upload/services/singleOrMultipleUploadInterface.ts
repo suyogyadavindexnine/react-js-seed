@@ -1,3 +1,5 @@
+
+
 export type FilePreviewType = {
   id?: string;
   file?: any;

@@ -1,4 +1,3 @@
-
 import INSTAGRAM_PATH from 'src/assets/icons/SocialMediaIcons/instagram.svg';
 import FACEBOOK_PATH from 'src/assets/icons/SocialMediaIcons/facebook.svg';
 import LINKEDIN_PATH from 'src/assets/icons/SocialMediaIcons/linkedin.svg';
@@ -23,7 +22,6 @@ export const AWS_CONFIG = {
 
   aws_appsync_apiKey: import.meta.env.VITE_APP_AWS_APPSYNC_APIKEY
 };
-
 export const DEVSTAGE_USERPOOL_ID = 'us-west-2_R4zfKO1hy';
 export const QASTAGE_USERPOOL_ID = 'us-west-2_R4zfKO1hy';
 export const CLINICALUSER_STAGE_USERPOOL_ID = 'us-west-2_VU5TDSRwJ';
@@ -61,6 +59,16 @@ export const TOASTER = import('src/modules/components/toaster');
 export const CIRCULARPROGRESS = import(
   'src/modules/components/Circularprogress'
 );
+export const DEMO = import('src/modules/demos/components/Demo');
+export const CYBER_SECURITY_DEMO = import('src/modules/demos/components/CyberSecurityDemo');
+export const IOT_DEMO = import('src/modules/demos/components/IotDemo');
+export const CYBER_INCIDENT_DEMO = import('src/modules/demos/components/CyberIncident');
+export const NETWORK_THREAT_DEMO = import('src/modules/demos/components/NetworkThreat');
+export const CYBER_THREAT_DEMO = import('src/modules/demos/components/CyberThreat');
+export const SNAP_RECRUIT_DEMO = import('src/modules/demos/components/SnapRecruit');
+export const FINTECH_DEMO = import('src/modules/demos/components/FintechDemo');
+export const SNAP_ASSESS_DEMO = import('src/modules/demos/components/SnapAssess');
+
 export const DATEPICKER = import('src/modules/components/Datepicker');
 export const STATUS404 = import('src/core/status/status-404');
 export const STATUS500 = import('src/core/status/status-500');
@@ -173,7 +181,7 @@ export const DEPARTMENT_LABELS = {
 
 export const INDEXNINE_SOCIAL_MEDIA = [
   {
-    path: INSTAGRAM_PATH as string,
+    path: INSTAGRAM_PATH,
     followers: '500',
     url: 'https://www.instagram.com/indexninehq/?hl=en'
   },
@@ -193,3 +201,45 @@ export const INDEXNINE_SOCIAL_MEDIA = [
     url: 'https://twitter.com/indexnine'
   }
 ];
+
+export const AUTH_CONFIG = {
+  LOGIN_TYPE_GOOGLE: 'goog',
+  LOGIN_TYPE_MICROSOFT: 'msft',
+  LOGIN_TYPE_BASIC_AUTH: 'basic-auth',
+  LOGIN_TYPE_ADMIN: `admin`,
+  LOGIN_TYPE_USER: `user`,
+  GOOGLE_CLIENT_ID: import.meta.env.VITE_APP_GOOGLE_CLIENT_ID
+};
+
+export const MESSAGE = 'message';
+export const STATUS_404 = '404';
+
+export const I18N = {
+  DEFAULT: 'lang',
+  ADMIN_USER: 'adminusermanagement',
+  ORGANIZATION: 'organization',
+  USER_MANAGEMENT: 'usermanagement',
+  ALL: 'all',
+  SIDE_BAR_MENU: 'sidebarmenu',
+  LOGIN: 'Login'
+};
+
+export const ROLES = {
+  SUPER_ADMIN: 'platform-admin',
+  ADMIN_OPERATOR: 'platform-coordinator',
+  COMPANY_TECH: 'company-tech',
+  TENANT_OPERATOR: 'company-tag',
+  TENANT_ADMIN: 'company-admin',
+  USER: 'user',
+  INTERVIEWER: 'interviewer'
+};
+
+export const INVALID_OTP = 'Invalid OTP';
+
+export const DEMO_EMAILS = {
+  PLATFORM_ADMIN: 'platform.admin@indexnine.com',
+  COMPANY_ADMIN: 'company.admin@indexnine.com',
+  USER: 'user@indexnine.com'
+};
+
+export const TABLE_PAGESIZE = [10, 25, 50, 100];

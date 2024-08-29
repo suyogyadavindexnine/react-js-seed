@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 import Footer from 'src/core/footer';
-import { Grid, Container } from '@mui/material';
+import { Grid, Container, Box } from '@mui/material';
 import ProfileCover from './components/ProfileCover';
 import RecentActivity from './components/RecentActivity';
 import Feed from './components/Feed';
@@ -31,7 +31,7 @@ function ManagementUserProfile() {
       <Helmet>
         <title>John Smith Details - Management</title>
       </Helmet>
-      <Container sx={{ mt: 3 }} maxWidth="lg">
+      <Box sx={{ mx: 4, my: 4 }}>
         <Grid
           container
           direction="row"
@@ -71,7 +71,7 @@ function ManagementUserProfile() {
             />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

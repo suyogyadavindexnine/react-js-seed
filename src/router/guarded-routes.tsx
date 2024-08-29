@@ -23,7 +23,3 @@ export const GuardedRoute = ({ component: RouteComponent, allowedRoles }: IGuard
   }
 };
 
-// GuardedRoute.defaultProps = {
-//   path: '',
-//   allowedRoles: [],
-// };

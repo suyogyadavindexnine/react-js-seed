@@ -34,48 +34,165 @@ const CustomerProjects = () => {
       field: 'project_name',
       sortable: true,
       headerName: 'PROJECT NAME',
-      width: 110
+      minWidth: 150,
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              PROJECT NAME
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'project_manager',
       sortable: true,
+      minWidth: 190,
       headerName: 'PROJECT MANAGER',
-      width: 120
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              PROJECT MANAGER
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
     {
       field: 'start_date',
       headerName: 'START DATE',
+      minWidth: 140,
       sortable: true,
-      sortComparator: sortComparator
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              START DATE
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
+      // sortComparator: sortComparator
     },
     {
       field: 'end_date',
       headerName: 'END DATE',
       sortable: true,
+      minWidth: 140,
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              END DATE
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
       sortComparator: sortComparator
     },
     {
       field: 'team_size',
       headerName: 'TEAM SIZE',
-      sortable: true
-    },
-    {
-      field: 'project_status',
-      headerName: 'PROJECT STATUS',
       sortable: true,
-      width: 130
+      minWidth: 120,
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              TEAM SIZE
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
+    // {
+    //   field: 'project_status',
+    //   headerName: 'PROJECT STATUS',
+    //   sortable: true,
+    //   minWidth: 170,
+    //   renderHeader: (params) => {
+    //     return (
+    //       <>
+    //         <Box className="d-flex  align-items-center tableSortIcon">
+    //           <Box className="MuiDataGrid-columnHeaderTitle">
+    //           PROJECT STATUS
+    //           </Box>
+    //           <Box className="flex-column-start p-relative">
+    //             <Box className="arrowUpDown ml-7"></Box>
+    //           </Box>
+    //         </Box>
+    //       </>
+    //     );
+    //   },
+    // },
     {
       field: 'project_domain',
       headerName: 'PROJECT DOMAIN',
       sortable: true,
-      width: 130
+      minWidth: 170,
+      renderHeader: (params) => {
+        return (
+          <>
+            <Box className="d-flex  align-items-center tableSortIcon">
+              <Box className="MuiDataGrid-columnHeaderTitle">
+              PROJECT DOMAIN
+              </Box>
+              <Box className="flex-column-start p-relative">
+                <Box className="arrowUpDown ml-7"></Box>
+              </Box>
+            </Box>
+          </>
+        );
+      },
     },
-    {
-      field: 'client_name',
-      headerName: 'CLIENT NAME',
-      sortable: true
-    }
+    // commented code demo purposes  
+    // {
+    //   field: 'client_name',
+    //   headerName: 'CLIENT NAME',
+    //   sortable: true,
+    //   minWidth: 150,
+    //   renderHeader: (params) => {
+    //     return (
+    //       <>
+    //         <Box className="d-flex  align-items-center tableSortIcon">
+    //           <Box className="MuiDataGrid-columnHeaderTitle">
+    //           CLIENT NAME
+    //           </Box>
+    //           <Box className="flex-column-start p-relative">
+    //             <Box className="arrowUpDown ml-7"></Box>
+    //           </Box>
+    //         </Box>
+    //       </>
+    //     );
+    //   },
+    // }
   ];
 
   const filterOptions = [
@@ -151,7 +268,7 @@ const CustomerProjects = () => {
       <Box>
         <Box sx={{ p: 2 }} className="flex-basic-space-between">
           <Box>
-            <Typography variant="h4">
+            <Typography variant="h4" fontSize={18}>
               {t('dashboard.customer_projects.customer_projects')}
             </Typography>
           </Box>
@@ -200,7 +317,8 @@ const CustomerProjects = () => {
           <Tables
             rows={projectDetails}
             columns={columns}
-            showCheckboxSelection={false}
+            showSearchField={false}
+            // showCheckboxSelection={false}
           />
         </Box>
       </Box>

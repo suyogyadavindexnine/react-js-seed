@@ -44,18 +44,21 @@ const Graph = () => {
       enabled: false
     },
     fill: {
-      colors: ['#174076']
+      colors: ['#A2D2FF']
     },
     yaxis: {
       labels: {
         show: true,
-        align: 'left'
+        align: 'right',
+        
+
       }
     },
     xaxis: {
       min: 0,
       max: 100,
-      tickAmount: 4
+      tickAmount: 4,
+      
     },
     grid: {
       padding: {
@@ -71,6 +74,8 @@ const Graph = () => {
         lines: {
           show: false
         }
+        
+        
       }
     },
     series: domainSpecProjectsData?.series || []
@@ -93,14 +98,12 @@ const Graph = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-         {chartOptions ?( <Chart
+          <Chart
             options={chartOptions}
-            series={chartOptions?.series}
-            type={chartOptions?.chart?.type}
-            height={chartOptions?.chart?.height}
-          />) : (
-            <Typography variant="body1">Loading...</Typography>
-          )}
+            series={chartOptions.series}
+            type={chartOptions.chart.type}
+            height={chartOptions.chart.height}
+          />
         </Grid>
       </Grid>
     </Card>

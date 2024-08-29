@@ -68,7 +68,7 @@ const EmployeesSkillDetails = ({ empSkillData }: EmployeesSkillDetailsProp) => {
         rows={empSkillData}
         columns={columns}
         hideFooter={true}
-        showCheckboxSelection={false}
+        // showCheckboxSelection={false}
       />
     </Box>
   );

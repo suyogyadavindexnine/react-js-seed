@@ -464,7 +464,7 @@ export const NebulaFighterTheme = createTheme({
           background: colors.alpha.white[100]
         },
         '&.PageTitle': {
-          padding: 28
+          padding: '12px 15px'
         },
         '&.listWrapper': {
           '.MuiListItem-root': {
@@ -1540,11 +1540,11 @@ export const NebulaFighterTheme = createTheme({
     }
   },
   shape: {
-    borderRadius: 10
+    borderRadius: 5
   },
   typography: {
-    fontFamily:
-      '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+    // fontFamily:'"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"',
+     fontFamily: 'Poppins',
     h1: {
       fontWeight: 700,
       fontSize: '2.188rem'
@@ -1597,7 +1597,8 @@ export const NebulaFighterTheme = createTheme({
       fontSize: '0.813rem',
       fontWeight: 700,
       textTransform: 'uppercase'
-    }
+    },
+    
   },
   shadows: [
     'none',

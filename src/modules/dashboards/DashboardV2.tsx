@@ -48,7 +48,7 @@ function DashboardV2() {
           />
         </Box>
       </PageTitleWrapper>
-      <Container maxWidth="lg">
+      <Box>
         <Grid
           container
           direction="row"
@@ -63,7 +63,7 @@ function DashboardV2() {
             <AlertsData />
           </Grid>
         </Grid>
-      </Container>
+      </Box>
       <Footer />
     </>
   );

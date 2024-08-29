@@ -41,10 +41,10 @@ const TotalEmployees = () => {
     stroke: {
       width: 2
     },
-    colors: ['#505CFD'],
+    colors: ['#B4A6FF'],
     markers: {
       size: 4,
-      colors: ['#505CFD']
+      colors: ['#B4A6FF']
     },
     tooltip: {
       x: {
@@ -105,12 +105,12 @@ const TotalEmployees = () => {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          {totalEmployeeData ? (<Chart
+          <Chart
             height={180}
             options={options}
             series={totalEmployeeData?.series || []}
             type="line"
-          />) : (<Typography variant="body1">Loading...</Typography>)}
+          />
         </Grid>
       </Grid>
     </Card>

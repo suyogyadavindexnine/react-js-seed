@@ -111,7 +111,7 @@ function LangSelect() {
           </ListItem>
         </List>
       </ListWrapper>
-      {<Box sx={{ mr: 1 }}>
+      <Box sx={{ mr: 1 }}>
         <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>
           <MenuItem
             sx={{ px: 3 }}
@@ -128,7 +128,7 @@ function LangSelect() {
           {/* <MenuItem sx={{ px: 3 }}>Spanish</MenuItem>
           <MenuItem sx={{ px: 3 }}>Chinease</MenuItem> */}
         </Menu>
-      </Box>}
+      </Box>
     </>
   );
 }

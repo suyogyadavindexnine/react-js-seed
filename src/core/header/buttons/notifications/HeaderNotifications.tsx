@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, RefObject } from 'react';
 import {
   Badge,
   Box,
@@ -14,7 +14,7 @@ import { formatDistance, subDays } from 'date-fns';
 import { Typography } from '../../../../shared/components/index';
 
 const HeaderNotifications = () => {
-  const ref = useRef<HTMLInputElement>(null);
+  const ref: RefObject<HTMLButtonElement> = useRef<HTMLButtonElement>(null);
   const [isOpen, setOpen] = useState<boolean>(false);
 
   const handleOpen = (): void => {

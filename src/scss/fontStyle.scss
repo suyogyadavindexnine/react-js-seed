@@ -1,0 +1,174 @@
+@font-face {
+  font-family: $font-family-icomoon;
+  src: url('fonts-icons/icomoon.eot?4clz3j');
+  src: url('fonts-icons/icomoon.eot?4clz3j#iefix') format('embedded-opentype'),
+    url('fonts-icons/icomoon.ttf?4clz3j') format('truetype'),
+    url('fonts-icons/icomoon.woff?4clz3j') format('woff'),
+    url('fonts-icons/icomoon.svg?4clz3j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: $font-family-icomoon !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//always add new icon in the top
+//always remove colors while adding new icons
+.icon-folder:before {
+  content: '\e929';
+}
+.icon-nudge:before {
+  content: '\e92a';
+}
+.icon-minimize:before {
+  content: '\e92b';
+}
+.icon-expand:before {
+  content: '\e92c';
+}
+.icon-add-person:before {
+  content: '\e928';
+}
+.icon-chevron:before {
+  content: '\e926';
+}
+.icon-slot:before {
+  content: '\e927';
+}
+.icon-info:before {
+  content: '\e925';
+}
+.icon-close:before {
+  content: '\e924';
+}
+.icon-icon-active-status:before {
+  content: '\e923';
+}
+.icon-resume .path1:before {
+  content: '\e921';
+}
+.icon-resume .path2:before {
+  content: '\e922';
+  margin-left: -0.794921875em;
+}
+
+.icon-employer-name:before {
+  content: '\e920';
+}
+
+.icon-zip-code .path1:before {
+  content: '\e91d';
+  opacity: 0.01;
+}
+.icon-zip-code .path2:before {
+  content: '\e91e';
+  margin-left: -1em;
+}
+.icon-zip-code .path3:before {
+  content: '\e91f';
+  margin-left: -1em;
+}
+.icon-city:before {
+  content: '\e900';
+}
+.icon-rate-type:before {
+  content: '\e901';
+}
+.icon-rate:before {
+  content: '\e902';
+}
+.icon-address:before {
+  content: '\e903';
+}
+.icon-work-authorization:before {
+  content: '\e904';
+}
+.icon-confirm:before {
+  content: '\e905';
+}
+.icon-calendar:before {
+  content: '\e906';
+}
+.icon-edit:before {
+  content: '\e907';
+}
+.icon-delete:before {
+  content: '\e908';
+}
+.icon-table-sort-down:before {
+  content: '\e909';
+}
+.icon-table-sort-up:before {
+  content: '\e90a';
+}
+.icon-plus-icon:before {
+  content: '\e90b';
+}
+.icon-reports:before {
+  content: '\e90c';
+}
+.icon-jobs:before {
+  content: '\e90d';
+}
+.icon-interviews:before {
+  content: '\e90e';
+}
+.icon-phone:before {
+  content: '\e90f';
+}
+.icon-email:before {
+  content: '\e910';
+}
+.icon-master-data:before {
+  content: '\e911';
+}
+.icon-users:before {
+  content: '\e912';
+}
+.icon-dashboard:before {
+  content: '\e913';
+}
+.icon-notification:before {
+  content: '\e914';
+}
+.icon-add:before {
+  content: '\e915';
+}
+.icon-link:before {
+  content: '\e916';
+}
+.icon-user-default-profile:before {
+  content: '\e917';
+}
+.icon-pending:before {
+  content: '\e918';
+}
+.icon-video-join:before {
+  content: '\e919';
+}
+.icon-arrow:before {
+  content: '\e91a';
+}
+.icon-url:before {
+  content: '\e91b';
+}
+.icon-filter-close:before {
+  content: '\e91c';
+}
+.icon-key:before {
+  content: '\e98d';
+}

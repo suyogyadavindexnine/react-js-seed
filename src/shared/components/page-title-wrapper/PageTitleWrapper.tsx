@@ -9,7 +9,7 @@ interface PageTitleWrapperProps {
 export const PageTitleWrapper: FC<PageTitleWrapperProps> = ({ children }) => {
   return (
     <Box className="MuiPageTitle-wrapper PageTitle">
-      <Container maxWidth="lg">{children}</Container>
+      <Box>{children}</Box>
     </Box>
   );
 };

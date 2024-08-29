@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { SidebarContext } from 'src/contexts/SidebarContext';
 
 import {
   Box,
@@ -16,6 +15,7 @@ import {
 
 import SidebarMenu from './sidebar-menu';
 import { Logo, Scrollbar } from '../../shared/components/index';
+import { SidebarContext } from 'src/providers/SidebarContext';
 
 const SidebarWrapper = styled(Box)(
   ({ theme }) => `
@@ -54,7 +54,7 @@ function Sidebar() {
         }}
       >
         <Scrollbar>
-          <Box mt={3}>
+          <Box >
             <Box
               mx={2}
               sx={{

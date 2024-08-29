@@ -205,7 +205,7 @@ function WatchListColumn({ Watchlistlabel, watchListDetails }) {
             </Box>
             <Chart
               options={chartOptions}
-              series={item?.chartData}
+              series={item.chartData}
               type="area"
               height={200}
             />
