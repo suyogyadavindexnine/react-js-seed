@@ -21,7 +21,7 @@
         &:first-child {
           padding-left: 22px;
         }
-        @include font-custom(500, 13px, 20px);
+       &{@include font-custom(500, 13px, 20px);}
         // color: #2e384d;
         @extend .tableRowCellHeight;
       }

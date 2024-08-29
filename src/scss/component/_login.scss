@@ -76,7 +76,9 @@
         .MuiInputBase-input {
           padding: 13px 14px !important;
         }
-        width: 48px;
+        & {
+          width: 48px;
+        }
       }
     }
   }

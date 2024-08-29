@@ -197,7 +197,7 @@ export const Tables = (props: TableProps) => {
             disableDensitySelector={true}
             classes={{ root: classes.datatable }}
             localeText={{ noRowsLabel: t('table.noResultFound') }}
-            hideFooter={!showDataTableFooter ?? true}
+            hideFooter={!showDataTableFooter}
             loading={loading}
           />
         </Card>
@@ -246,7 +246,7 @@ export const Tables = (props: TableProps) => {
             disableDensitySelector={true}
             classes={{ root: classes.datatable }}
             localeText={{ noRowsLabel: t('table.noResultFound') }}
-            hideFooter={!showDataTableFooter ?? true}
+            hideFooter={!showDataTableFooter}
             loading={loading}
             getRowId={(row) => row?.id}
           />

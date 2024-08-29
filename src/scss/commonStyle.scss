@@ -303,7 +303,7 @@ body {
 
 .commonListScroll {
   @include commonScrollBar;
-  overflow: auto;
+  & {overflow: auto;}
 }
 
 .errorState {
@@ -549,7 +549,7 @@ body {
 .customTreeView {
   overflow: auto;
   @include commonScrollBar;
-  height: calc(100vh - 196px);
+&{  height: calc(100vh - 196px);}
   .treeItemView {
     .MuiTreeItem-content {
       padding: 10px;
