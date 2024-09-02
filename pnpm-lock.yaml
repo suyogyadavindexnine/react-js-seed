@@ -98,6 +98,9 @@ importers:
       numeral:
         specifier: ^2.0.6
         version: 2.0.6
+      pnpm:
+        specifier: ^9.8.0
+        version: 9.9.0
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
@@ -6099,6 +6102,11 @@ packages:
   pnp-webpack-plugin@1.6.4:
     resolution: {integrity: sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg==}
     engines: {node: '>=6'}
+
+  pnpm@9.9.0:
+    resolution: {integrity: sha512-YMGKzROL/2ldM5vmrRP36TbupnRWYNTMSndtUkfFQNDt7hpWNpXBg6ZuuRfviPK0/rH8JfMqetytx6rzQ46ZwQ==}
+    engines: {node: '>=18.12'}
+    hasBin: true
 
   polished@4.3.1:
     resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}
@@ -15499,6 +15507,8 @@ snapshots:
       ts-pnp: 1.2.0(typescript@5.5.4)
     transitivePeerDependencies:
       - typescript
+
+  pnpm@9.9.0: {}
 
   polished@4.3.1:
     dependencies:

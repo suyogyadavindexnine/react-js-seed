@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Card, Button } from "@mui/material";
+import { Box, Typography, Card, Button, useMediaQuery, useTheme } from "@mui/material";
 import myImage from "../../../assets/images/demoImages/demo1.png";
 import { PageTitleWrapper, PageHeader } from "src/shared/components/index";
 import { makeStyles } from "@mui/styles";
@@ -20,13 +20,16 @@ const DemoComponent = ({
   demoLink,
 }: Demo1Props) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+
   return (
     <>
       <Card className="demo-container">
         <Box className="image-wrapper">
           <img src={image} className="demo-image" alt="Demo visual" />
         </Box>
-        <Box className="text-overlay-container">
+        <Box className={!isLg ? 'text-overlay-container overflow-y' : 'text-overlay-container'}>
           <Box className="text-overlay">
             <Typography
               variant="h2"
@@ -35,7 +38,7 @@ const DemoComponent = ({
             >
               {heading}
             </Typography>
-            <Box className={classes.descSection}>
+            <Box className={isLg ? classes.descSection : 'overflow-y'}>
               <Typography
                 variant="body2"
                 className={`${classes.description} description`}

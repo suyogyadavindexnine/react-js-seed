@@ -635,7 +635,7 @@ export const PureLightTheme = createTheme({
           position: 'fixed',
           left: 0,
           top: 0,
-          background: alpha(lighten(colors.alpha.white[100], 0.1), 0.5),
+          background: alpha(lighten(colors.alpha.white[100], 0.1), 1),
           boxShadow:
             ' 2px 0 3px rgba(159, 162, 191, .18), 1px 0 1px rgba(159, 162, 191, 0.32)'
         },

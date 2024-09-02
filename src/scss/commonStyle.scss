@@ -676,7 +676,7 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
 
 .text-overlay-container {
   position: absolute;
-  bottom: 0;
+  top: 0;
   // left: 0;
   right: 0;
   height: 100%;
@@ -690,7 +690,7 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
 
 .text-overlay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
   padding: 40px;
   color: #fff;
@@ -723,4 +723,9 @@ Button .css-1nyngvs.MuiButton-contained.Mui-disabled {
 
 .MuiPageTitle-wrapper.PageTitle.MuiBox-root.css-0 {
   margin-inline: -15px;
+}
+
+.overflow-y {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
