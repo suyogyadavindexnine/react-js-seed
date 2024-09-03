@@ -184,7 +184,7 @@ export const Tables = (props: TableProps) => {
               )}
             </Box>
           </Box>
-          <DataGrid
+          <DataGrid 
             rows={records}
             columns={columns}
             checkboxSelection={checkboxSelection}
@@ -233,7 +233,7 @@ export const Tables = (props: TableProps) => {
               </Box>
             )}
           </Box>
-          <DataGrid
+          <DataGrid 
             rows={records}
             columns={columns}
             checkboxSelection={checkboxSelection}

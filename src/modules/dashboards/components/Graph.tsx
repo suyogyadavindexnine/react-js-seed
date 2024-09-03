@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import Chart from 'react-apexcharts';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, useTheme } from '@mui/material';
 import { Card, Typography } from '../../../shared/components/index';
 import { ApexOptions } from 'apexcharts';
 import { useSelector } from 'react-redux';
@@ -10,6 +10,7 @@ import { getDomainSpecProjectsData } from '../services/dashboards.service';
 
 const Graph = () => {
   //Constants
+  const theme = useTheme();
   const { t } = useTranslation(['english']);
   const dispatch = useDispatch<any>();
 
@@ -50,15 +51,20 @@ const Graph = () => {
       labels: {
         show: true,
         align: 'right',
-        
-
+        style: {
+          colors: theme.palette.text.primary, 
+        }
       }
     },
     xaxis: {
       min: 0,
       max: 100,
       tickAmount: 4,
-      
+      labels: {
+        style: {
+          colors: theme.palette.text.primary, 
+        }
+      }
     },
     grid: {
       padding: {
@@ -74,8 +80,6 @@ const Graph = () => {
         lines: {
           show: false
         }
-        
-        
       }
     },
     series: domainSpecProjectsData?.series || []

@@ -14,6 +14,7 @@ const themeColors = {
   trueWhite: '#ffffff'
 };
 
+
 const colors = {
   gradients: {
     blue1: 'linear-gradient(135deg, #6B73FF 0%, #000DFF 100%)',
@@ -333,6 +334,15 @@ export const NebulaFighterTheme = createTheme({
           }
         }
       }
+    },
+    MuiDataGrid: {
+      styleOverrides: {
+        root: {
+          '& .MuiDataGrid-withBorderColor': {
+            borderColor: '#6A7199', // Your custom border color
+          },
+        },
+      },
     },
     MuiFormHelperText: {
       styleOverrides: {
