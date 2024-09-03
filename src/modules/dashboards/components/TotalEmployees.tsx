@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, useTheme } from '@mui/material';
 import { Card, Typography } from '../../../shared/components/index';
 import { useTranslation } from 'react-i18next';
 import Chart from 'react-apexcharts';
@@ -13,6 +13,7 @@ import { getTotalEmployeeChartData } from '../services/dashboards.service';
 
 const TotalEmployees = () => {
   //constant
+  const theme = useTheme();
   const { t } = useTranslation(['english']);
   const dispatch = useDispatch<any>();
 
@@ -57,6 +58,13 @@ const TotalEmployees = () => {
       axisBorder: {
         show: false
       },
+      labels: {
+        style: {
+          colors: theme.palette.text.primary
+        }
+      },
+      
+
       axisTicks: {
         show: true
       }
@@ -64,8 +72,14 @@ const TotalEmployees = () => {
     yaxis: {
       tickAmount: 3,
       min: totalEmployeeData?.min,
-      max: totalEmployeeData?.max
-    }
+      max: totalEmployeeData?.max,
+      labels: {
+        style: {
+          colors: theme.palette.text.primary
+        }
+      },
+    },
+    
   };
 
   return (

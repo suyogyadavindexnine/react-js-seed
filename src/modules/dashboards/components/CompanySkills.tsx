@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Card, Grid } from '@mui/material';
+import { Box, Card, Grid, useTheme } from '@mui/material';
 import { Typography } from '../../../shared/components/index';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,9 +8,11 @@ import { getCompanySkillsData, getSkillSpecificEmpData } from '../services/dashb
 import { EmployeesDetails } from '../models/DashboardDetails';
 import EmployeesSkillDetails from './EmployeesSkillDetails';
 import { titleCase } from 'src/shared/utils/utils';
+import { color, style } from '@mui/system';
 
 const CompanySkills = () => {
   // Constants
+  const theme = useTheme();
   const { t } = useTranslation(['english']);
   const dispatch = useDispatch<any>();
 
@@ -48,7 +50,7 @@ const CompanySkills = () => {
         data: companySkillsDetails.map(skill => ({
           x: skill.name,
           y: skill.employees
-        }))
+        })),
       },
       {
         name: t('dashboard.company_skills.available'),
@@ -62,6 +64,7 @@ const CompanySkills = () => {
         data: companySkillsDetails.map(skill => ({
           x: skill.name,
           y: skill.unavailable
+
         }))
       },
       {
@@ -70,7 +73,8 @@ const CompanySkills = () => {
           x: skill.name,
           y: skill.projects
         }))
-      }
+      },
+      
     ],
     options: {
       chart: {
@@ -89,11 +93,24 @@ const CompanySkills = () => {
       },
       xaxis: {
         categories: companySkillsDetails.map(skill => skill.name),
+        labels: {
+          style: {
+            colors: theme.palette.text.primary
+          }
+        },
       },
       yaxis: {
         title: {
-          text: 'Count'
-        }
+          text: 'Count',
+          style: {
+            color: theme.palette.text.primary
+          },
+        },
+        labels: {
+          style: {
+            colors: theme.palette.text.primary
+          }
+        },
       },
       fill: {
         opacity: 0.8  
@@ -102,11 +119,15 @@ const CompanySkills = () => {
       legend: {
         position: 'top',
         horizontalAlign: 'left',
+        labels: {
+          colors: theme.palette.text.primary  
+        }
       },
       tooltip: {
         shared: true,
         intersect: false
       }
+      
     }
   };
 
