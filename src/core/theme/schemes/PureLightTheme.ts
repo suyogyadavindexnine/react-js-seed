@@ -338,15 +338,15 @@ export const PureLightTheme = createTheme({
         }
       }
     },
-    MuiDataGrid: {
-      styleOverrides: {
-        root: {
-          '& .MuiDataGrid-withBorderColor': {
-            borderColor: '#e9e9f8',
-          },
-        },
-      },
-    },
+    // MuiDataGrid: {
+    //   styleOverrides: {
+    //     root: {
+    //       '& .MuiDataGrid-withBorderColor': {
+    //         borderColor: '#e9e9f8',
+    //       },
+    //     },
+    //   },
+    // },
     MuiFormHelperText: {
       styleOverrides: {
         root: {

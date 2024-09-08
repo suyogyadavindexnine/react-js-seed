@@ -335,15 +335,15 @@ export const NebulaFighterTheme = createTheme({
         }
       }
     },
-    MuiDataGrid: {
-      styleOverrides: {
-        root: {
-          '& .MuiDataGrid-withBorderColor': {
-            borderColor: '#6A7199', // Your custom border color
-          },
-        },
-      },
-    },
+    // MuiDataGrid: {
+    //   styleOverrides: {
+    //     root: {
+    //       '& .MuiDataGrid-withBorderColor': {
+    //         borderColor: '#6A7199', // Your custom border color
+    //       },
+    //     },
+    //   },
+    // },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
