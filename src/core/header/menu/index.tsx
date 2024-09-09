@@ -3,6 +3,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemButton,
   Menu,
   MenuItem
 } from '@mui/material';
@@ -108,9 +109,8 @@ function HeaderMenu() {
         }}
       >
         <List disablePadding component={Box} display="flex">
-          <ListItem
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             component={NavLink}
             to="/components/buttons"
           >
@@ -118,10 +118,9 @@ function HeaderMenu() {
               primaryTypographyProps={{ noWrap: true }}
               primary="Buttons"
             />
-          </ListItem>
-          <ListItem
+          </ListItemButton>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             component={NavLink}
             to="/components/forms"
           >
@@ -129,10 +128,9 @@ function HeaderMenu() {
               primaryTypographyProps={{ noWrap: true }}
               primary="Forms"
             />
-          </ListItem>
-          <ListItem
+          </ListItemButton>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             ref={ref}
             onClick={handleOpen}
           >
@@ -147,7 +145,7 @@ function HeaderMenu() {
                 </Box>
               }
             />
-          </ListItem>
+          </ListItemButton>
         </List>
       </ListWrapper>
       <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>

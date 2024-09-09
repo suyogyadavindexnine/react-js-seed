@@ -61,6 +61,10 @@ import {
   SNAP_RECRUIT_DEMO,
   FINTECH_DEMO,
   SNAP_ASSESS_DEMO,
+  SNAP_BRAIN_DEMO,
+  SNAP_CORE_DEMO,
+  SNAP_NOTIFY_DEMO,
+  TRAVEL_DEMO
 } from './../shared/constants/constants';
 import { SuspenseLoader } from '../shared/components/index';
 import * as ROUTES from 'src/shared/constants/routes';
@@ -116,9 +120,13 @@ const IotDemo = Loader(lazy(() => IOT_DEMO))
 const CyberIncident = Loader(lazy(() => CYBER_INCIDENT_DEMO))
 const NetworkThreat = Loader(lazy(() => NETWORK_THREAT_DEMO))
 const CyberThreat =  Loader(lazy(() => CYBER_THREAT_DEMO))
-const SnapRecuit = Loader(lazy(() => SNAP_RECRUIT_DEMO))
+const SnapRecruit = Loader(lazy(() => SNAP_RECRUIT_DEMO))
 const FinTech = Loader(lazy(() => FINTECH_DEMO))
 const SnapAssess = Loader(lazy(() => SNAP_ASSESS_DEMO))
+const SnapBrain = Loader(lazy(() => SNAP_BRAIN_DEMO))
+const SnapCore = Loader(lazy(() => SNAP_CORE_DEMO))
+const SnapNotify = Loader(lazy(() => SNAP_NOTIFY_DEMO))
+const TravelDemo = Loader(lazy(() => TRAVEL_DEMO))
 
 // Status
 
@@ -232,7 +240,7 @@ const routes: RouteObject[] = [
         element: <GuardedRoute component={CyberThreat} />
       }, {
         path: 'snapRecruit',
-        element: <GuardedRoute component={SnapRecuit} />
+        element: <GuardedRoute component={SnapRecruit} />
       }, {
         path: 'fintech',
         element: <GuardedRoute component={FinTech} />
@@ -240,7 +248,24 @@ const routes: RouteObject[] = [
       {
         path: 'snapAssess',
         element: <GuardedRoute component={SnapAssess} />
-      }
+      },
+      {
+        path: 'snapBrain',
+        element: <GuardedRoute component={SnapBrain} />
+      },
+      {
+        path: 'snapNotify',
+        element: <GuardedRoute component={SnapNotify} />
+      },
+      {
+        path: 'snapCore',
+        element: <GuardedRoute component={SnapCore} />
+      },
+      {
+        path: 'travelDemo',
+        element: <GuardedRoute component={TravelDemo} />
+      },
+
     ]
   },
   {

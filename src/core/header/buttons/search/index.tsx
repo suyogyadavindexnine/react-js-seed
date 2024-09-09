@@ -19,7 +19,8 @@ import {
   DialogContent,
   DialogTitle,
   Slide,
-  Hidden
+  Hidden,
+  ListItemButton
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { TransitionProps } from '@mui/material/transitions';
@@ -149,7 +150,7 @@ function HeaderSearch() {
             </Box>
             <Divider sx={{ my: 1 }} />
             <List disablePadding>
-              <ListItem button>
+              <ListItemButton>
                 <Hidden smDown>
                   <ListItemAvatar>
                     <Avatar
@@ -186,9 +187,9 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
               <Divider sx={{ my: 1 }} component="li" />
-              <ListItem button>
+              <ListItemButton>
                 <Hidden smDown>
                   <ListItemAvatar>
                     <Avatar
@@ -224,9 +225,9 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
               <Divider sx={{ my: 1 }} component="li" />
-              <ListItem button>
+              <ListItemButton>
                 <Hidden smDown>
                   <ListItemAvatar>
                     <Avatar
@@ -263,7 +264,7 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
             </List>
             <Divider sx={{ mt: 1, mb: 2 }} />
             <Box sx={{ textAlign: 'center' }}>

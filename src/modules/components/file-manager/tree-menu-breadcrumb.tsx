@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import Link from '@mui/material/Link';
-import ListItem from '@mui/material/ListItem';
+import {ListItemButton} from '@mui/material';
 import Collapse from '@mui/material/Collapse';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
@@ -37,10 +37,10 @@ function ListItemLink(props) {
 
   return (
     <li>
-      <ListItem button component={RouterLink} to={to} {...other}>
+      <ListItemButton component={RouterLink} to={to} {...other}>
         <ListItemText primary={primary} />
         {icon}
-      </ListItem>
+      </ListItemButton>
     </li>
   );
 }

@@ -379,6 +379,50 @@ function SidebarMenu() {
                     (snap.assess) AI based assessments
                   </Button>
                 </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapBrain"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    (snap.brain) sample title 
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapCore"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    (snap.core) sample title 
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapNotify "
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    (snap.Notify) sample title 
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/travelDemo "
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                  >
+                    (Data-in-motion: Travel demo) sample title 
+                  </Button>
+                </ListItem>
               </List>
             </SubMenuWrapper>
           </Collapse>

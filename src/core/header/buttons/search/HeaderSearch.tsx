@@ -12,6 +12,7 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemButton,
   Slide,
   Tooltip
 } from '@mui/material';
@@ -117,7 +118,7 @@ const HeaderSearch = () => {
                 </Box>
                 <Divider sx={{ my: 1 }} />
                 <List disablePadding>
-                  <ListItem button>
+                  <ListItemButton>
                     <Hidden smDown>
                       <ListItemAvatar>
                         <Avatar className="SearchAvatar">
@@ -142,9 +143,9 @@ const HeaderSearch = () => {
                       </Typography>
                     </Box>
                     <ChevronRightTwoToneIcon />
-                  </ListItem>
+                  </ListItemButton>
                   <Divider sx={{ my: 1 }} component="li" />
-                  <ListItem button>
+                  <ListItemButton>
                     <Hidden smDown>
                       <ListItemAvatar>
                         <Avatar className="SearchAvatar">
@@ -169,9 +170,9 @@ const HeaderSearch = () => {
                       </Typography>
                     </Box>
                     <ChevronRightTwoToneIcon />
-                  </ListItem>
+                  </ListItemButton>
                   <Divider sx={{ my: 1 }} component="li" />
-                  <ListItem button>
+                  <ListItemButton>
                     <Hidden smDown>
                       <ListItemAvatar>
                         <Avatar className="SearchAvatar">
@@ -196,7 +197,7 @@ const HeaderSearch = () => {
                       </Typography>
                     </Box>
                     <ChevronRightTwoToneIcon />
-                  </ListItem>
+                  </ListItemButton>
                 </List>
                 <Divider sx={{ mt: 1, mb: 2 }} />
                 <Box className="textalign">

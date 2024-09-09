@@ -51,7 +51,7 @@ const SnapAssess = () => {
         image={myImage}
         heading="(snap.assess) AI based assessments"
         demoDesc={demoDesc}
-        demoLink={"https://snap-assess.indexnine.com"}
+        demoLink={"https://snap-assess-demo.indexnine.com/"}
       />
     </>
   );

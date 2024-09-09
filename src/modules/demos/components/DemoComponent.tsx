@@ -9,7 +9,7 @@ interface Demo1Props {
   heading: string;
   demoDesc: any;
   idxRole?: any;
-  demoLink: string;
+  demoLink?: string;
 }
 
 const DemoComponent = ({
@@ -47,7 +47,7 @@ const DemoComponent = ({
               </Typography>
               {idxRole && <Box className={classes.descBox}>{idxRole}</Box>}
             </Box>
-            <Box className={classes.p15}>
+            {demoLink && <Box className={classes.p15}>
               <Button
                 href={demoLink}
                 target="_blank"
@@ -57,7 +57,7 @@ const DemoComponent = ({
               >
                 Discover →
               </Button>
-            </Box>
+            </Box>}
           </Box>
         </Box>
       </Card>

@@ -6,7 +6,8 @@ import {
   Menu,
   MenuItem,
   ListItem,
-  Tooltip
+  Tooltip,
+  ListItemButton
 } from '@mui/material';
 import { useRef, useState } from 'react';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
@@ -37,9 +38,8 @@ const LangSelect = () => {
     <>
       <Box className="listWrapper">
         <List>
-          <ListItem
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             ref={ref}
             defaultValue="a"
             onClick={handleOpen}
@@ -57,7 +57,7 @@ const LangSelect = () => {
                 }
               />
             </Tooltip>
-          </ListItem>
+          </ListItemButton>
         </List>
       </Box>
       <Box sx={{ mr: 1 }}>

@@ -68,6 +68,10 @@ export const CYBER_THREAT_DEMO = import('src/modules/demos/components/CyberThrea
 export const SNAP_RECRUIT_DEMO = import('src/modules/demos/components/SnapRecruit');
 export const FINTECH_DEMO = import('src/modules/demos/components/FintechDemo');
 export const SNAP_ASSESS_DEMO = import('src/modules/demos/components/SnapAssess');
+export const SNAP_BRAIN_DEMO = import('src/modules/demos/components/SnapBrain');
+export const SNAP_NOTIFY_DEMO = import('src/modules/demos/components/SnapNotify');
+export const SNAP_CORE_DEMO = import('src/modules/demos/components/SnapCore');
+export const TRAVEL_DEMO  = import('src/modules/demos/components/TravelDemo');
 
 export const DATEPICKER = import('src/modules/components/Datepicker');
 export const STATUS404 = import('src/core/status/status-404');
