@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Grid, Container, Box } from '@mui/material';
+import { Grid2 as Grid, Container, Box } from '@mui/material';
 
 import { PageTitle, PageTitleWrapper } from '../../shared/components';
 
@@ -41,7 +41,7 @@ const ChoroplethWidget = () => {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12} sx={{ mb: 10 }}>
+          <Grid size ={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12}} sx={{ mb: 10 }}>
             <div className="choropleth_widget" data-subreddit="javascript" />
           </Grid>
         </Grid>

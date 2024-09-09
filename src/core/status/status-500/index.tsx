@@ -5,7 +5,7 @@ import {
   Hidden,
   Container,
   Button,
-  Grid
+  Grid2 as Grid,
 } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import RefreshTwoToneIcon from '@mui/icons-material/RefreshTwoTone';
@@ -62,12 +62,10 @@ function Status500() {
           spacing={0}
         >
           <Grid
-            xs={12}
-            md={12}
+            size = {{xs: 12, md: 12}}
             alignItems="center"
             display="flex"
             justifyContent="center"
-            item
           >
             <Container maxWidth="sm">
               <Box textAlign="center">

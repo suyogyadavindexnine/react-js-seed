@@ -5,6 +5,7 @@ import {
   List,
   Menu,
   MenuItem,
+  ListItemButton,
   ListItem,
   Tooltip
 } from '@mui/material';
@@ -37,9 +38,8 @@ const LangSelect = () => {
     <>
       <Box className="listWrapper">
         <List>
-          <ListItem
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             ref={ref}
             defaultValue="a"
             onClick={handleOpen}
@@ -57,7 +57,7 @@ const LangSelect = () => {
                 }
               />
             </Tooltip>
-          </ListItem>
+          </ListItemButton>
         </List>
       </Box>
       <Box sx={{ mr: 1 }}>

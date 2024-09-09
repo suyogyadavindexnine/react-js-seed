@@ -3,6 +3,7 @@ import {
   IconButton,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
   Menu,
   Typography
@@ -68,12 +69,12 @@ const BulkActions = () => {
         }}
       >
         <List sx={{ p: 1 }} component="nav">
-          <ListItem button>
+          <ListItemButton>
             <ListItemText primary="Bulk delete selected" />
-          </ListItem>
-          <ListItem button>
+          </ListItemButton>
+          <ListItemButton>
             <ListItemText primary="Bulk edit selected" />
-          </ListItem>
+          </ListItemButton>
         </List>
       </Menu>
     </>

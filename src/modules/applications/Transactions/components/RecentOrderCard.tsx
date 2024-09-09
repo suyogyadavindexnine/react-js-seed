@@ -9,7 +9,7 @@ import {
   MenuItem,
   useTheme,
   CardHeader,
-  Grid,
+  Grid2 as Grid,
   TablePagination
 } from '@mui/material';
 import {
@@ -189,7 +189,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
             justifyContent="flex-start"
             alignItems="center"
           >
-            <Grid item xs="auto">
+            <Grid size={{ xs:"auto" }}>
               <CheckBox
                 color="primary"
                 checked={selectedAllCryptoOrders}
@@ -197,7 +197,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                 onChange={handleSelectAllCryptoOrders}
               />
             </Grid>
-            <Grid item xs>
+            <Grid  size={{ xs:"auto" }}>
               {selectedBulkActions && (
                 <Box flex={1} p={2}>
                   <BulkActions />
@@ -210,7 +210,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                 >
                   <Box>
                     <Grid container direction="row" spacing={2}>
-                      <Grid item xs={12} md={10} sm={10} lg={11}>
+                      <Grid size={{xs:12, md:10, sm:10, lg:11}}>
                         <TextField
                           id="outlined-search"
                           label="Search field"
@@ -218,7 +218,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                           fullWidth
                         />
                       </Grid>
-                      <Grid item xs={12} md={2} sm={2} lg={1}>
+                      <Grid size ={{xs:12, md:2, sm:2, lg:1}}>
                         <FormControl variant="outlined">
                           <Select
                             sx={{ width: 100 }}
@@ -261,7 +261,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
               cryptoOrder?.id
             );
             return (
-              <Grid item xs={12} sm={6} md={4} lg={4} key={cryptoOrder?.id}>
+              <Grid size ={{ xs: 12, sm: 6, md: 4, lg: 4 }} key={cryptoOrder?.id}>
                 <Card
                   sx={{
                     maxWidth: 500,
@@ -296,7 +296,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                       spacing={4}
                       alignItems="center"
                     >
-                      <Grid item lg={4} md={6} sm={6} xs={6}>
+                      <Grid size ={{ xs: 6, sm: 6, md: 6, lg: 4 }} >
                         <Typography
                           gutterBottom
                           variant="caption"
@@ -308,7 +308,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                           {cryptoOrder?.orderID}
                         </Typography>
                       </Grid>
-                      <Grid item lg={4} md={6} sm={6} xs={6}>
+                      <Grid  size ={{ xs: 6, sm: 6, md: 6, lg: 4 }}>
                         <Typography
                           gutterBottom
                           variant="caption"
@@ -322,7 +322,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                           {cryptoOrder?.sourceDesc}
                         </Typography>
                       </Grid>
-                      <Grid item lg={4} md={6} sm={6} xs={6}>
+                      <Grid size ={{ xs: 6, sm: 6, md: 6, lg: 4 }}>
                         <Typography
                           gutterBottom
                           variant="caption"
@@ -355,7 +355,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                   <CardActions disableSpacing>
                     <Box>
                       <Grid container direction="row" alignItems="center">
-                        <Grid item xs={8}>
+                        <Grid size={{xs: 8}}>
                           <CheckBox
                             color="primary"
                             checked={isCryptoOrderSelected}
@@ -365,7 +365,7 @@ const RecentOrdersCard: FC<RecentOrdersCardProps> = ({
                             value={isCryptoOrderSelected}
                           />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid size={{xs: 4}}>
                           <Tooltip title="Edit Order" arrow>
                             <IconButton
                               sx={{

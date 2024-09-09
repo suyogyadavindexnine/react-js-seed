@@ -4,6 +4,7 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemButton,
   ListSubheader,
   ListItemText,
   Avatar,
@@ -35,15 +36,15 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
       <ListWrapper disablePadding>
         {tags?.map((tag) => (
           <React.Fragment key={tag}>
-            <ListItem
+            <ListItemButton
               sx={{
                 color: `${theme.colors.primary.main}`,
                 '&:hover': { color: `${theme.colors.primary.dark}` }
               }}
-              button
+              
             >
               <ListItemText primary={tag} />
-            </ListItem>
+            </ListItemButton>
             <Divider />
           </React.Fragment>
         ))}
@@ -55,7 +56,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
         <Divider />
         {groups?.map((group) => (
           <React.Fragment key={group.title}>
-            <ListItem button>
+            <ListItemButton>
               <ListItemAvatar>
                 {group.path && (
                   <Avatar sx={{ width: 38, height: 38 }} src={group.path} />
@@ -80,7 +81,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
                 }}
                 primary={group.title}
               />
-            </ListItem>
+            </ListItemButton>
             <Divider />
           </React.Fragment>
         ))}
