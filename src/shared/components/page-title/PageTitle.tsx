@@ -8,6 +8,7 @@ interface PageTitleProps {
   subHeading?: string;
   docs?: string;
   showDocumentationText?: boolean;
+  showButton ?: boolean;
 }
 
 export const PageTitle: FC<PageTitleProps> = ({
@@ -15,6 +16,7 @@ export const PageTitle: FC<PageTitleProps> = ({
   subHeading = '',
   docs = '',
   showDocumentationText = true,
+  showButton = true,
   ...rest
 }) => {
   return (
@@ -30,7 +32,7 @@ export const PageTitle: FC<PageTitleProps> = ({
         </Typography>
         <Typography variant="subtitle2">{subHeading}</Typography>
       </Grid>
-      <Grid item>
+      {showButton && <Grid item>
         <Button
           href={docs}
           target="_blank"
@@ -41,7 +43,7 @@ export const PageTitle: FC<PageTitleProps> = ({
         >
           {heading} {showDocumentationText && 'Documentation'}
         </Button>
-      </Grid>
+      </Grid>}
     </Grid>
   );
 };
