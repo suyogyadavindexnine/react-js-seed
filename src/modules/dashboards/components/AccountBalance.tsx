@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import {
   Box,
-  Grid,
+  Grid2 as Grid,
   useTheme,
   styled,
   Avatar,
@@ -134,7 +134,7 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
   return (
     <Card>
       <Grid spacing={0} container>
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }} >
           <Box p={4}>
             <Typography
               sx={{
@@ -181,7 +181,7 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
               </Box>
             </Box>
             <Grid container spacing={3}>
-              <Grid sm item>
+              <Grid sm szi>
                 <Button
                   btnText={t('dashboard.account_balance.send')}
                   fullWidth

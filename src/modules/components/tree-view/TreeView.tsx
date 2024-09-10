@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { TreeView, TreeItem } from '@mui/x-tree-view';
+import { SimpleTreeView, TreeItem } from '@mui/x-tree-view';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
@@ -18,12 +18,11 @@ const TreeViewMenu = ({ data, onNodeClick }: TreeViewMenuProps) => {
     onNodeClick(event, nodeId);
   };
 
-  //re
   const renderTree = (nodes) => (
     <TreeItem
       className="treeItemView"
       key={nodes.id}
-      nodeId={nodes.id}
+      itemId={nodes.id}
       label={nodes.label}
       onClick={(event) => handleNodeClick(event, nodes.name)}
     >
@@ -35,13 +34,12 @@ const TreeViewMenu = ({ data, onNodeClick }: TreeViewMenuProps) => {
 
   return (
     <Box>
-      <TreeView
-        defaultCollapseIcon={<ExpandMoreIcon />}
-        defaultExpandIcon={<ChevronRightIcon />}
+      <SimpleTreeView
+        slots={{ collapseIcon: ExpandMoreIcon, expandIcon: ChevronRightIcon }}
         className="customTreeView"
       >
         {renderTree(data)}
-      </TreeView>
+      </SimpleTreeView>
     </Box>
   );
 };

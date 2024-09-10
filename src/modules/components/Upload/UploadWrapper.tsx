@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid2 as Grid } from '@mui/material';
 
 import {
   PageTitleWrapper,
@@ -39,12 +39,12 @@ const UploadWrapper = () => {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Card sx={{ p: 5 }}>
               <Upload isMultipleUpload={false} />
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Card sx={{ p: 5 }}>
               <Upload isMultipleUpload={true} />
             </Card>

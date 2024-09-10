@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import {
   Box,
-  Grid,
+  Grid2 as Grid,
   useTheme,
   styled,
   Avatar,
@@ -82,7 +82,7 @@ const UserDetails = (userInfo) => {
   return (
     <Card>
       <Grid spacing={0} container>
-        <Grid item xs={12} md={6} lg={4}>
+        <Grid size={{ xs: 12, sm: 12, md: 6, lg: 4 }}>
           <Box p={4}>
             <Grid>
               <Box p={3} display="flex" alignItems="flex-start">
@@ -139,10 +139,7 @@ const UserDetails = (userInfo) => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          item
-          xs={12}
-          md={6}
-          lg={4}
+          size={{ xs: 12,  md: 6, lg: 4 }}
         >
           <Box display="flex" alignItems="flex-start">
             <Chart
@@ -163,10 +160,7 @@ const UserDetails = (userInfo) => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          item
-          xs={12}
-          md={6}
-          lg={4}
+          size={{ xs: 12,  md: 6, lg: 4 }}
         >
           <Typography variant="h4">
             {userInfo.userInfo.userDetails.length &&

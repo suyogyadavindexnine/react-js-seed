@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid2 as Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import EditIcon from '@mui/icons-material/Edit';
@@ -256,7 +256,7 @@ const CustomFormWrapper = () => {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Card sx={{ p: 5 }}>
               <CustomForm
                 formFields={fields}
@@ -275,7 +275,7 @@ const CustomFormWrapper = () => {
             Code Examples
           </Typography>
           <Grid container direction={'row'}>
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+            <Grid size={{ xs: 12, sm: 12, md: 3, lg: 3, xl: 3 }} >
               <Typography variant="subtitle2">Text Field: </Typography>
               <Box>
                 <pre>
@@ -297,7 +297,7 @@ const CustomFormWrapper = () => {
                 </pre>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+            <Grid size={{   xs: 12, sm: 12, md: 3, lg: 3, xl: 3}} >
               <Typography variant="subtitle2">Radio Button: </Typography>
               <Box>
                 <pre>
@@ -322,7 +322,7 @@ const CustomFormWrapper = () => {
                 </pre>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+            <Grid size={{xs: 12, sm: 12, md: 3, lg: 3, xl: 3}} >
               <Typography variant="subtitle2">Dropdown Field: </Typography>
               <Box>
                 <pre>
@@ -346,7 +346,7 @@ const CustomFormWrapper = () => {
                 </pre>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
+            <Grid size={{xs: 12, sm: 12, md: 3, lg: 3, xl: 3}}>
               <Typography variant="subtitle2">Checkbox Group: </Typography>
               <Box>
                 <pre>
@@ -378,7 +378,7 @@ const CustomFormWrapper = () => {
       <Box sx={{ mt: 5 }} maxWidth="lg">
         <Card sx={{ p: 5 }}>
           <Grid container direction={'row'}>
-            <Grid item xs={12}>
+            <Grid size={{ xs: 12}}>
               <Typography variant="h4">Possible fields</Typography>
               <Box sx={{ maxWidth: 250 }}>
                 <pre>
