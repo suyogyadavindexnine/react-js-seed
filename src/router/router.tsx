@@ -64,6 +64,7 @@ import {
   SNAP_BRAIN_DEMO,
   SNAP_CORE_DEMO,
   SNAP_NOTIFY_DEMO,
+  STATUSCHIPS,
   TRAVEL_DEMO
 } from './../shared/constants/constants';
 import { SuspenseLoader } from '../shared/components/index';
@@ -113,7 +114,7 @@ const Currencyfield = Loader(lazy(() => CURRENCYFIELD));
 const Toaster = Loader(lazy(() => TOASTER));
 const Upload = Loader(lazy(() => UPLOAD));
 const TextEditor = Loader(lazy(() => TEXTEDITOR));
-
+const StatusChips = Loader(lazy(() => STATUSCHIPS));
 const Demo = Loader(lazy(() => DEMO))
 const CyberSecurityDemo = Loader(lazy(() => CYBER_SECURITY_DEMO))
 const IotDemo = Loader(lazy(() => IOT_DEMO))
@@ -127,6 +128,7 @@ const SnapBrain = Loader(lazy(() => SNAP_BRAIN_DEMO))
 const SnapCore = Loader(lazy(() => SNAP_CORE_DEMO))
 const SnapNotify = Loader(lazy(() => SNAP_NOTIFY_DEMO))
 const TravelDemo = Loader(lazy(() => TRAVEL_DEMO))
+
 
 // Status
 
@@ -253,10 +255,10 @@ const routes: RouteObject[] = [
         path: 'snapBrain',
         element: <GuardedRoute component={SnapBrain} />
       },
-      {
-        path: 'snapNotify',
-        element: <GuardedRoute component={SnapNotify} />
-      },
+      // {
+      //   path: 'snapNotify',
+      //   element: <GuardedRoute component={SnapNotify} />
+      // },
       {
         path: 'snapCore',
         element: <GuardedRoute component={SnapCore} />
@@ -475,6 +477,10 @@ const routes: RouteObject[] = [
       {
         path: 'tree-view-menu',
         element: <TreeViewMenu />
+      },
+      {
+        path: 'statusChips',
+        element: <StatusChips />
       },
       {
         path: 'file-manager',

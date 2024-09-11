@@ -1,30 +1,24 @@
-import myImage from "../../../assets/images/demoImages/snapRecruit.png";
+import myImage from "../../../assets/images/demoImages/snapBrain.png";
 import DemoComponent from "./DemoComponent";
 
 const SnapBrain = () => {
   const demoDesc = (
     <>
-      <p>
-        <b>snap.recruit</b> is a recruitment automation solution that showcases
-        a multi-tenant product with complex workflows across the organization.
-      </p>
+      <p><b>snap.brain</b> makes it easy for end users in any organization to create their own AI assistants. It takes the complexity out of utilizing AI for productivity improvements.</p>
 
-      <p>
-        <b>snap.recruit</b> showcases our frontend and backend accelerator
-        projects which are part of <b>(snap.core). snap.core</b> contains
-        ready-made productized SaaS application modules for modern SaaS
-        applications. These modules are tested and ready for use. Being
-        pluggable, they can be turned on or off depending on need. However, the
-        advantage of using <b>snap.core</b> is a best-practice led SaaS
-        application out of the box which can greatly improve time-to-market.
-      </p>
+      <p>Using <b>snap.brain</b>, relevant information for an assistant can be fed into the model, allowing the AI to become a thought partner and provide valuable assistance to end users.</p>
 
-      <p>
-        <b>snap.core</b> is available as a value add to all our customers
-        (either completely or module-wise). <b>snap.core</b> represents years of
-        experience building SaaS products that scale and more than 12 man months
-        of engineering efforts.
-      </p>
+      <p><b>snap.brain</b> works with a variety of models (commercial as well as open source), making it a fast, cost-effective and seamless way to bring AI into your environments.</p>
+
+      <p><b>snap.brain</b> keeps data private and stores secrets securely, enabling end users to use company data safely to enhance the experience of the teams.</p>
+
+      <p>Using <b>snap.brain</b>, you can do the following easily, no coding needed:</p>
+      <ul>
+        <li>Create chat assistants that know your context.</li>
+        <li>Create Data analytics widgets you can ask questions to.</li>
+        <li>Build an API over the model to expose your data for other systems to use.</li>
+      </ul>
+
     </>
   );
 
@@ -32,8 +26,9 @@ const SnapBrain = () => {
     <>
       <DemoComponent
         image={myImage}
-        heading="(snap.recruit) Recruitment Automation"
+        heading="snap.brain: ProgressSelf Service AI"
         demoDesc={demoDesc}
+        demoLink={"https://snap-brain.indexnine.com/"}
       />
     </>
   );

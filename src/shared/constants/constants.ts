@@ -122,7 +122,7 @@ export const CHOROPLETH_MAP = import(
 export const TEXTEDITOR = import(
   'src/modules/components/text-editor-wrapper/TextEditorWrapper'
 );
-
+export const STATUSCHIPS = import('src/modules/components/StatusChips');
 export const CHATBOT = import('src/modules/chat-bot-wrapper/ChatBotWrapper');
 
 export const COMPLETED = 'completed';

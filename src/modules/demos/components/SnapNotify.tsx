@@ -32,7 +32,7 @@ const SnapNotify = () => {
     <>
       <DemoComponent
         image={myImage}
-        heading="(snap.recruit) Recruitment Automation"
+        heading="snap.recruit: AI Recruitment Automation"
         demoDesc={demoDesc}
         demoLink={"https://snap-recruit-demo.indexnine.com"}
       />

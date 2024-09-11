@@ -280,7 +280,7 @@ function SidebarMenu() {
           <Collapse in={demoNav} timeout="auto" unmountOnExit>
             <SubMenuWrapper>
               <List component="div">
-                <ListItem component="div">
+                <ListItem component="div" >
                   <Button
                     disableRipple
                     component={RouterLink}
@@ -331,6 +331,7 @@ function SidebarMenu() {
                     to="/demo/networkThreat"
                     startIcon={<OpenInNewIcon />}
                     onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
                   >
                     Network threat identification and remediation
                   </Button>
@@ -342,52 +343,9 @@ function SidebarMenu() {
                     to="/demo/cyberThreat"
                     startIcon={<OpenInNewIcon />}
                     onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
                   >
                     Cyber threat dashboard
-                  </Button>
-                </ListItem>
-                <ListItem component="div">
-                  <Button
-                    disableRipple
-                    component={RouterLink}
-                    to="/demo/snapRecruit"
-                    startIcon={<OpenInNewIcon />}
-                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
-                  >
-                    (snap.recruit) Recruitment Automation
-                  </Button>
-                </ListItem>
-                <ListItem component="div">
-                  <Button
-                    disableRipple
-                    component={RouterLink}
-                    to="/demo/fintech"
-                    startIcon={<OpenInNewIcon />}
-                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
-                  >
-                    Data in Motion: Fintech demo
-                  </Button>
-                </ListItem>
-                <ListItem component="div">
-                  <Button
-                    disableRipple
-                    component={RouterLink}
-                    to="/demo/snapAssess"
-                    startIcon={<OpenInNewIcon />}
-                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
-                  >
-                    (snap.assess) AI based assessments
-                  </Button>
-                </ListItem>
-                <ListItem component="div">
-                  <Button
-                    disableRipple
-                    component={RouterLink}
-                    to="/demo/snapBrain"
-                    startIcon={<OpenInNewIcon />}
-                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
-                  >
-                    (snap.brain) sample title 
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -397,19 +355,58 @@ function SidebarMenu() {
                     to="/demo/snapCore"
                     startIcon={<OpenInNewIcon />}
                     onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{  alignItems: 'flex-start' }}
                   >
-                    (snap.core) sample title 
+                    <div>snap.<span><b>core</b></span>:<br/> Core set of services for SaaS companies</div>
                   </Button>
                 </ListItem>
                 <ListItem component="div">
                   <Button
                     disableRipple
                     component={RouterLink}
-                    to="/demo/snapNotify "
+                    to="/demo/snapRecruit"
                     startIcon={<OpenInNewIcon />}
                     onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
                   >
-                    (snap.Notify) sample title 
+                    <div>snap.<span><b>recruit</b></span>:<br/> Recruitment Automation</div>
+                  </Button>
+                </ListItem>
+              
+                <ListItem component="div" >
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapAssess"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
+                  >
+                    <div>snap.<span><b>assess:</b></span> <br/>AI based assessments</div>
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/snapBrain"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
+                  >
+                    <div>snap.<span><b>brain:</b></span> <br/>ProgressSelf Service AI</div>
+                  </Button>
+                </ListItem>
+                <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/demo/fintech"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
+                  >
+                    <div><b>Data in Motion:</b><br/> Fintech demo</div>
                   </Button>
                 </ListItem>
                 <ListItem component="div">
@@ -419,8 +416,9 @@ function SidebarMenu() {
                     to="/demo/travelDemo "
                     startIcon={<OpenInNewIcon />}
                     onClick={(e) => onChildNavClick(e, setDemoNav, true)}
+                    style={{ alignItems: 'flex-start' }}
                   >
-                    (Data-in-motion: Travel demo) sample title 
+                    <div><b>Data in Motion:</b><br/> Travel demo</div>
                   </Button>
                 </ListItem>
               </List>
@@ -796,6 +794,17 @@ function SidebarMenu() {
                     {t("sidebar-menu.currency")}
                   </Button>
                 </ListItem>
+                {/* <ListItem component="div">
+                  <Button
+                    disableRipple
+                    component={RouterLink}
+                    to="/components/statusChips"
+                    startIcon={<PaidIcon />}
+                    onClick={(e) => onChildNavClick(e, setComponentsNav, true)}
+                  >
+                    {"Status Chips"}
+                  </Button>
+                </ListItem> */}
                 <ListItem component="div">
                   <Button
                     disableRipple

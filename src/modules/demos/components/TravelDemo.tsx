@@ -1,30 +1,30 @@
-import myImage from "../../../assets/images/demoImages/fintech.png";
+import myImage from "../../../assets/images/demoImages/travelDemo.png";
 import DemoComponent from "./DemoComponent";
 
 const Travel = () => {
   const demoDesc = (
     <>
       <p>
-        This is a demo based on kafka that demonstrates how to detect and use
-        user intervention for smooth transactions in a fintech environment.
+        This is a demo based on kafka that demonstrates how to detect and react
+        to real-time activity by users in a travel environment.
       </p>
 
       <p>
-        The demo displays a stream of transactions being performed (Generate
-        transactions). The system showcases identifying anomalies (Different
-        location, Larger transaction amount) derived from a user profile
-        (boundaries of transactions performed regularly by the customer)
+        The demo displays results for a search performed by a travel agent. The
+        travel agent profile (shown on the right hand side) determines the kind
+        of loyalty strategy to be used by the system.
       </p>
 
       <p>
-        Anomalies identified are rejected and an immediate notification is sent
-        to the customer (demonstrated by SMS). The customer can Accept or Reject
-        and set up a temporary approval for the transaction or for a time
-        period.
+        Based on the loyalty strategy, the appropriate kind of discounting or
+        cashback reward is applied. This strategy could be rule-based or decided
+        by an AI model trained on user behaviour.
       </p>
       <p>
-        This demo showcases a real-time stream processing use case for Fintech
-        to combat fraudulent transactions by involving the customer directly.
+        This strategy can be used to perform real-time decision making to
+        maximize user retention, find competitor pricing, evaluate strategies by
+        targeting specific personas, run campaigns and many other real-time
+        interventions.
       </p>
     </>
   );
@@ -33,9 +33,9 @@ const Travel = () => {
     <>
       <DemoComponent
         image={myImage}
-        heading="Data in Motion: Fintech demo"
+        heading="Data in Motion: Travel Demo"
         demoDesc={demoDesc}
-        demoLink={"https://dim-fintech-demo.indexnine.com/"}
+        demoLink={"https://dim-travel-demo.indexnine.com/"}
       />
     </>
   );

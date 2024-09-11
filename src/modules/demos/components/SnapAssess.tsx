@@ -49,7 +49,7 @@ const SnapAssess = () => {
     <>
       <DemoComponent
         image={myImage}
-        heading="(snap.assess) AI based assessments"
+        heading="snap.assess: AI based assessments"
         demoDesc={demoDesc}
         demoLink={"https://snap-assess-demo.indexnine.com/"}
       />
