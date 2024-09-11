@@ -5,12 +5,11 @@ const SnapRecruit = () => {
   const demoDesc = (
     <>
       <p>
-        <b>snap.recruit</b> is a recruitment automation solution that showcases
+        snap.<b>recruit</b> is a recruitment automation solution that showcases
         a multi-tenant product with complex workflows across the organization.
       </p>
 
-      <p>
-        <b>snap.recruit</b> showcases our frontend and backend accelerator
+      <p>snap.<b>recruit</b> showcases our frontend and backend accelerator
         projects which are part of <b>(snap.core). snap.core</b> contains
         ready-made productized SaaS application modules for modern SaaS
         applications. These modules are tested and ready for use. Being
@@ -20,7 +19,7 @@ const SnapRecruit = () => {
       </p>
 
       <p>
-        <b>snap.core</b> is available as a value add to all our customers
+        snap.<b>core</b> is available as a value add to all our customers
         (either completely or module-wise). <b>snap.core</b> represents years of
         experience building SaaS products that scale and more than 12 man months
         of engineering efforts.

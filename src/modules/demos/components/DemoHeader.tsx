@@ -7,16 +7,18 @@ export const DemoHeader = (props) => {
       <Helmet>
         <title>{props.titlename}</title>
       </Helmet>{' '}
-      <PageTitleWrapper>
-        <PageTitle
-          heading={props.heading}
-          subHeading={props.subHeading}
-          docs={props.documentlink}
-          showDocumentationText={props.showDocumentationText}
-          demoButton={props.demoButton}
-          showButton={props.showButton}
-        />
-      </PageTitleWrapper>
+      <div style={{ position: 'sticky', top: '62px', zIndex: 10 }}>
+        <PageTitleWrapper>
+          <PageTitle
+            heading={props.heading}
+            subHeading={props.subHeading}
+            docs={props.documentlink}
+            showDocumentationText={props.showDocumentationText}
+            demoButton={props.demoButton}
+            showButton={props.showButton}
+          />
+        </PageTitleWrapper>
+      </div>
     </>
   );
 };

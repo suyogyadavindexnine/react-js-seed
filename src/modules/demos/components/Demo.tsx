@@ -6,7 +6,7 @@ const Demo = () => {
   const demoDesc = (
     <>
       <p>
-        This demo is a collection of some of the work done by Indexnine which we
+        This demo is a collection of work done by Indexnine which we
         are proud of.
       </p>
 

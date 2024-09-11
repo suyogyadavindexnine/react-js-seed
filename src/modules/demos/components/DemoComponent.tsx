@@ -79,7 +79,7 @@ const useStyles = makeStyles({
     border: "1px solid #000",
     padding: "15px",
     borderRadius: "5px",
-    background: "#000000ad",
+    background: "#000000c3",
     alignSelf: "end",
     width: "50%",
   },

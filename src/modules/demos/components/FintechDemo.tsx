@@ -5,8 +5,8 @@ const Fintech = () => {
   const demoDesc = (
     <>
       <p>
-        This is a demo based on kafka that demonstrates how to detect and use
-        user intervention for smooth transactions in a fintech environment.
+        This is a streaming demo that utilizes kafka to demonstrate the detection of anomalies 
+        in real time. 
       </p>
 
       <p>

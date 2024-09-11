@@ -4,15 +4,15 @@ import DemoHeader from './DemoHeader';
 const SnapBrain = () => {
   const demoDesc = (
     <>
-      <p><b>snap.brain</b> makes it easy for end users in any organization to create their own AI assistants. It takes the complexity out of utilizing AI for productivity improvements.</p>
+      <p>snap.<b>brain</b> makes it easy for end users in any organization to create their own AI assistants. It takes the complexity out of utilizing AI for productivity improvements.</p>
 
-      <p>Using <b>snap.brain</b>, relevant information for an assistant can be fed into the model, allowing the AI to become a thought partner and provide valuable assistance to end users.</p>
+      <p>Using snap.<b>brain</b>, relevant information for an assistant can be fed into the model, allowing the AI to become a thought partner and provide valuable assistance to end users.</p>
 
-      <p><b>snap.brain</b> works with a variety of models (commercial as well as open source), making it a fast, cost-effective and seamless way to bring AI into your environments.</p>
+      <p>snap.<b>brain</b> works with a variety of models (commercial as well as open source), making it a fast, cost-effective and seamless way to bring AI into your environments.</p>
 
-      <p><b>snap.brain</b> keeps data private and stores secrets securely, enabling end users to use company data safely to enhance the experience of the teams.</p>
+      <p>snap.<b>brain</b> keeps data private and stores secrets securely, enabling end users to use company data safely to enhance the experience of the teams.</p>
 
-      <p>Using <b>snap.brain</b>, you can do the following easily, no coding needed:</p>
+      <p>Using snap.<b>brain</b>, you can do the following easily, no coding needed:</p>
       <ol>
         <li>Create chat assistants that know your context.</li>
         <li>Create Data analytics widgets you can ask questions to.</li>

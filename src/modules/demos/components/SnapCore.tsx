@@ -68,7 +68,7 @@ const SnapCore = () => {
     <>
       <PageTitleWrapper>
         <PageTitle
-          heading="Snap.Core"
+          heading="snap.core"
           subHeading="snap.core is a core set of cloud agnostic libraries and services that are required for any SaaS product. Our customers can leverage these to accelerate outcomes for their products."
           showDocumentationText={false} 
           showButton={false}

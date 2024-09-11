@@ -5,13 +5,13 @@ const SnapAssess = () => {
   const demoDesc = (
     <>
       <p className="mt-0">
-        <b>snap.assesst</b> is an AI based assessments platform that can be
+        snap.<b>assess</b> is an AI based assessments platform that can be
         integrated into any learning management system or used in a standalone
         manner.
       </p>
 
       <div>
-        <b>snap.assess</b> allows creation and administration of assessments for
+        snap.<b>assess</b> allows creation and administration of assessments for
         any topic. The workflow is as follows:
         <ol>
           <li>
@@ -30,7 +30,7 @@ const SnapAssess = () => {
       </div>
 
       <div>
-        <b>snap.assess</b> helps assessments in various scenarios:
+        snap.<b>assess</b> helps assessments in various scenarios:
         <ol>
           <li>Training Sales associates.</li>
           <li>Grading of understanding in colleges and schools.</li>
@@ -38,7 +38,7 @@ const SnapAssess = () => {
         </ol>
       </div>
       <div>
-        With its <b>multimodal assessment capabiltiy</b>, snap.assess is unique
+        With its <b>multimodal assessment capabiltiy</b>, snap.<b>assess</b> is unique
         in <b>providing feedback on audio, video and text</b> using video
         responses to questions.
       </div>

@@ -4,11 +4,8 @@ import DemoHeader from './DemoHeader';
 const Travel = () => {
   const demoDesc = (
     <>
-      <p>
-        This is a demo based on kafka that demonstrates how to detect and react
-        to real-time activity by users in a travel environment.
-      </p>
-
+    <p> This is a streaming demo that utilizes kafka to demonstrate how to detect and react
+    to real-time activity by users in a travel environment.</p>
       <p>
         The demo displays results for a search performed by a travel agent. The
         travel agent profile (shown on the right hand side) determines the kind
@@ -18,7 +15,7 @@ const Travel = () => {
       <p>
         Based on the loyalty strategy, the appropriate kind of discounting or
         cashback reward is applied. This strategy could be rule-based or decided
-        by an AI model trained on user behaviour.
+        by an AI model trained on user behavior.
       </p>
       <p>
         This strategy can be used to perform real-time decision making to
