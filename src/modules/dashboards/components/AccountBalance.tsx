@@ -181,14 +181,14 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
               </Box>
             </Box>
             <Grid container spacing={3}>
-              <Grid sm szi>
+              <Grid size={{ sm: 12 }} >
                 <Button
                   btnText={t('dashboard.account_balance.send')}
                   fullWidth
                   variant="outlined"
                 ></Button>
               </Grid>
-              <Grid sm item>
+              <Grid size={{ sm: 12 }}>
                 <Button
                   btnText={t('dashboard.account_balance.receive')}
                   fullWidth
@@ -204,9 +204,7 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
           }}
           display="flex"
           alignItems="center"
-          item
-          xs={12}
-          md={6}
+          size={{ xs: 12, md: 6 }}
         >
           <Box
             component="span"
@@ -219,9 +217,7 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
           <Box py={4} pr={4} flex={1}>
             <Grid container spacing={0}>
               <Grid
-                xs={12}
-                sm={5}
-                item
+              size={{xs: 12, sm: 5}}
                 display="flex"
                 justifyContent="center"
                 alignItems="center"
@@ -235,7 +231,7 @@ const AccountBalance = ({ accountDetails, handleButtonClick }) => {
                   />
                 ) : null}
               </Grid>
-              <Grid xs={12} sm={7} item display="flex" alignItems="center">
+              <Grid size={{ xs: 12, sm: 7 }}  display="flex" alignItems="center">
                 <List
                   disablePadding
                   sx={{

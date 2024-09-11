@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import {
-  Grid,
+  Grid2 as Grid,
   Box,
   CardContent,
   Avatar,
@@ -97,7 +97,7 @@ function Wallets({ walletDetails, handleButtonClick }) {
       </Box>
       <Grid container spacing={3}>
         {walletDetails?.map((item) => (
-          <Grid xs={12} sm={6} md={3} item key={item.currency}>
+          <Grid size = {{ xs: 12,sm: 6 ,md: 3 }}  key={item.currency}>
             <Card
               sx={{
                 px: 1
@@ -130,7 +130,7 @@ function Wallets({ walletDetails, handleButtonClick }) {
           </Grid>
         ))}
 
-        <Grid xs={12} sm={6} md={3} item>
+        <Grid size = {{ xs: 12,sm: 6 ,md: 3 }}>
           <Tooltip arrow title="Click to add a new wallet">
             <CardAddAction>
               <CardActionArea

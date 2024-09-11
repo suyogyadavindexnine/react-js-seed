@@ -14,6 +14,9 @@ importers:
       '@azure/msal-react':
         specifier: ^2.0.22
         version: 2.0.22(@azure/msal-browser@3.23.0)(react@18.3.1)
+      '@date-io/date-fns':
+        specifier: ^3.0.0
+        version: 3.0.0(date-fns@3.6.0)
       '@emotion/react':
         specifier: ^11.13.3
         version: 11.13.3(@types/react@18.3.5)(react@18.3.1)
@@ -927,6 +930,17 @@ packages:
   '@chromatic-com/storybook@1.8.0':
     resolution: {integrity: sha512-vkB9dPVmM2Yvqc/0DJ4MYwOGY1MOjd/KbB9TXTMGN+qshaEyiZtSOgbz9u0ExFALEgDKLmtUnWyUtoGb0pCzUg==}
     engines: {node: '>=16.0.0', yarn: '>=1.22.18'}
+
+  '@date-io/core@3.0.0':
+    resolution: {integrity: sha512-S3j+IAQVBYNkQzchVVhX40eBkGDreBpScy9RXwTS5j2+k07+62pMVPisQ44Gq76Rqy5AOG/EZXCwBpY/jbemvA==}
+
+  '@date-io/date-fns@3.0.0':
+    resolution: {integrity: sha512-hsLAbsdP8LKfi7OQ729cXMWfmHQEq0hn3ysXfAAoc92j6j6sBq0s0tplnkWu6O4iBUpVCYRPGuNjQQhTaOu2AA==}
+    peerDependencies:
+      date-fns: ^3.2.0
+    peerDependenciesMeta:
+      date-fns:
+        optional: true
 
   '@emotion/babel-plugin@11.12.0':
     resolution: {integrity: sha512-y2WQb+oP8Jqvvclh8Q55gLUyb7UFvgv7eJfsj7td5TToBrIUtPay2kMrZi4xjq9qw2vD0ZR5fSho0yqoFgX7Rw==}
@@ -5949,6 +5963,14 @@ snapshots:
       - '@chromatic-com/cypress'
       - '@chromatic-com/playwright'
       - react
+
+  '@date-io/core@3.0.0': {}
+
+  '@date-io/date-fns@3.0.0(date-fns@3.6.0)':
+    dependencies:
+      '@date-io/core': 3.0.0
+    optionalDependencies:
+      date-fns: 3.6.0
 
   '@emotion/babel-plugin@11.12.0':
     dependencies:

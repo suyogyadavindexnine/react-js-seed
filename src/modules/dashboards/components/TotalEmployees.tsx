@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Grid, useTheme } from '@mui/material';
+import { Box, Grid2 as Grid, useTheme } from '@mui/material';
 import { Card, Typography } from '../../../shared/components/index';
 import { useTranslation } from 'react-i18next';
 import Chart from 'react-apexcharts';
@@ -90,7 +90,7 @@ const TotalEmployees = () => {
         justifyContent="center"
         alignItems="stretch"
       >
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12}} >
           <Box sx={{ p: 2 }} className="flex-basic-space-between">
             <Box className="flex-basic-center">
               <Typography variant="h4">
@@ -118,7 +118,7 @@ const TotalEmployees = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12}} >
           <Chart
             height={180}
             options={options}
