@@ -1,9 +1,14 @@
 import myImage from "../../../assets/images/demoImages/networkThreat.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const NetworkThreatDemo = () => {
   const demoDesc = (
     <>
+     <p>
+      Indexnine worked closely with customer experts to perform UX research,
+      secondary research, UX Design, UI development and consulting on APIs for
+      this product.
+    </p>
       <p>
         This demonstration showcases a visual analysis of network threats that
         are propagating in an geographically diverse environment.
@@ -42,12 +47,16 @@ const NetworkThreatDemo = () => {
 
   return (
     <>
+    <DemoHeader
+    heading="Network threat identification and remediation"
+    documentlink="http://cns-demo.indexnine.com/"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="Network threat identification and remediation"
         demoDesc={demoDesc}
-        idxRole={idxRole}
-        demoLink={"http://cns-demo.indexnine.com/"}
       />
     </>
   );

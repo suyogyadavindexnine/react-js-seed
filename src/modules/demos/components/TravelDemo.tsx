@@ -1,6 +1,6 @@
 import myImage from "../../../assets/images/demoImages/travelDemo.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const Travel = () => {
   const demoDesc = (
     <>
@@ -31,11 +31,16 @@ const Travel = () => {
 
   return (
     <>
+    <DemoHeader
+    heading="Data in Motion: Travel Demo"
+    documentlink="https://dim-travel-demo.indexnine.com/"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="Data in Motion: Travel Demo"
         demoDesc={demoDesc}
-        demoLink={"https://dim-travel-demo.indexnine.com/"}
       />
     </>
   );

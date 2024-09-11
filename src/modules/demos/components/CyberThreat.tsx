@@ -1,9 +1,14 @@
 import myImage from "../../../assets/images/demoImages/cyberThreat.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const CyberThreat = () => {
   const demoDesc = (
     <>
+     <p>
+      Indexnine worked closely with customer experts to learn the domain,
+      perform UX research, secondary research, UX Design, UI development and
+      consulting on APIs for this product.
+    </p>
       <p>
         This demonstration showcases a dashboard with data collated from various
         sources to form a cyber security dashboard.
@@ -39,12 +44,16 @@ const CyberThreat = () => {
 
   return (
     <>
+      <DemoHeader
+    heading="Cyber threat dashboard"
+    documentlink="http://qh-xdr-internal.indexnine.com"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="Cyber threat dashboard"
         demoDesc={demoDesc}
-        idxRole={idxRole}
-        demoLink={"http://qh-xdr-internal.indexnine.com"}
       />
     </>
   );

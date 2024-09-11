@@ -1,5 +1,6 @@
 import myImage from '../../../assets/images/demoImages/demo.png';
 import DemoComponent from './DemoComponent';
+import DemoHeader from './DemoHeader';
 
 const Demo = () => {
   const demoDesc = (
@@ -27,12 +28,16 @@ const Demo = () => {
 
   return (
     <>
+    <DemoHeader
+    heading="Demos"
+    documentlink="http://demos.indexnine.com"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="Demos"
         demoDesc={demoDesc}
-        idxRole={'Our showcase of internal and external projects'}
-        demoLink={'http://demos.indexnine.com'}
       />
     </>
   );

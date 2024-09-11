@@ -6,8 +6,8 @@ import { makeStyles } from "@mui/styles";
 
 interface Demo1Props {
   image: any;
-  heading: string;
-  demoDesc: any;
+  heading?: string;
+  demoDesc?: any;
   idxRole?: any;
   demoLink?: string;
 }
@@ -17,7 +17,7 @@ const DemoComponent = ({
   heading,
   demoDesc,
   idxRole,
-  demoLink,
+  demoLink  ,
 }: Demo1Props) => {
   const classes = useStyles();
   const theme = useTheme();
@@ -29,16 +29,16 @@ const DemoComponent = ({
         <Box className="image-wrapper">
           <img src={image} className="demo-image" alt="Demo visual" />
         </Box>
-        <Box className={!isLg ? 'text-overlay-container overflow-y' : 'text-overlay-container'}>
+        <Box className={!isLg ? 'overflow-y' : ''}>
           <Box className="text-overlay">
-            <Typography
+           {heading && <Typography
               variant="h2"
               className={`${classes.p15} title`}
               gutterBottom
             >
               {heading}
-            </Typography>
-            <Box className={isLg ? classes.descSection : 'overflow-y'}>
+            </Typography>}
+            <Box className={[classes.descBox, isLg ? classes.descSection : `overflow-y ${classes.descBoxIos}`].join(' ')}>
               <Typography
                 variant="body2"
                 className={`${classes.description} description`}
@@ -80,6 +80,17 @@ const useStyles = makeStyles({
     padding: "15px",
     borderRadius: "5px",
     background: "#000000ad",
+    alignSelf: "end",
+    width: "50%",
+  },
+  descBoxIos: {
+    flex: 1,
+    border: "1px solid #000",
+    padding: "15px",
+    borderRadius: "5px",
+    background: "#000000ad",
+    alignSelf: "end",
+    width: "100%",
   },
   p15: {
     padding: 15,

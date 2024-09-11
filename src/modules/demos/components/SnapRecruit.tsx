@@ -1,6 +1,6 @@
 import myImage from "../../../assets/images/demoImages/snapRecruit.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const SnapRecruit = () => {
   const demoDesc = (
     <>
@@ -30,11 +30,16 @@ const SnapRecruit = () => {
 
   return (
     <>
+     <DemoHeader
+    heading="snap.recruit: Recruitment Automation"
+    documentlink="https://snap-recruit-demo.indexnine.com"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="snap.recruit: Recruitment Automation"
         demoDesc={demoDesc}
-        demoLink={"https://snap-recruit-demo.indexnine.com"}
       />
     </>
   );

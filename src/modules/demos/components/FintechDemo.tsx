@@ -1,6 +1,6 @@
 import myImage from "../../../assets/images/demoImages/fintech.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const Fintech = () => {
   const demoDesc = (
     <>
@@ -31,11 +31,16 @@ const Fintech = () => {
 
   return (
     <>
+    <DemoHeader
+    heading="Data in Motion: Fintech demo"
+    documentlink="https://dim-fintech-demo.indexnine.com/"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="Data in Motion: Fintech demo"
         demoDesc={demoDesc}
-        demoLink={"https://dim-fintech-demo.indexnine.com/"}
       />
     </>
   );

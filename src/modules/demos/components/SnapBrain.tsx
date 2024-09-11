@@ -1,6 +1,6 @@
 import myImage from "../../../assets/images/demoImages/snapBrain.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const SnapBrain = () => {
   const demoDesc = (
     <>
@@ -13,22 +13,27 @@ const SnapBrain = () => {
       <p><b>snap.brain</b> keeps data private and stores secrets securely, enabling end users to use company data safely to enhance the experience of the teams.</p>
 
       <p>Using <b>snap.brain</b>, you can do the following easily, no coding needed:</p>
-      <ul>
+      <ol>
         <li>Create chat assistants that know your context.</li>
         <li>Create Data analytics widgets you can ask questions to.</li>
         <li>Build an API over the model to expose your data for other systems to use.</li>
-      </ul>
+      </ol>
 
     </>
   );
 
   return (
     <>
+    <DemoHeader
+    heading="snap.brain: ProgressSelf Service AI"
+    documentlink="https://snap-brain.indexnine.com/"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="snap.brain: ProgressSelf Service AI"
         demoDesc={demoDesc}
-        demoLink={"https://snap-brain.indexnine.com/"}
       />
     </>
   );

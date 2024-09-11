@@ -9,6 +9,7 @@ interface PageTitleProps {
   docs?: string;
   showDocumentationText?: boolean;
   showButton ?: boolean;
+  demoButton ?: boolean;
 }
 
 export const PageTitle: FC<PageTitleProps> = ({
@@ -17,6 +18,7 @@ export const PageTitle: FC<PageTitleProps> = ({
   docs = '',
   showDocumentationText = true,
   showButton = true,
+  demoButton = false,
   ...rest
 }) => {
   return (
@@ -32,6 +34,17 @@ export const PageTitle: FC<PageTitleProps> = ({
         </Typography>
         <Typography variant="subtitle2">{subHeading}</Typography>
       </Grid>
+      {demoButton && <Grid item>
+        <Button
+          href={docs}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ mt: { xs: 2, md: 0 } }}
+          variant="contained"
+        >
+          Discover →
+        </Button>
+      </Grid>}
       {showButton && <Grid item>
         <Button
           href={docs}

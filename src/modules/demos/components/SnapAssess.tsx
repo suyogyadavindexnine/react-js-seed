@@ -1,6 +1,6 @@
 import myImage from "../../../assets/images/demoImages/snapAssess.png";
 import DemoComponent from "./DemoComponent";
-
+import DemoHeader from './DemoHeader';
 const SnapAssess = () => {
   const demoDesc = (
     <>
@@ -47,11 +47,16 @@ const SnapAssess = () => {
 
   return (
     <>
+    <DemoHeader
+    heading="snap.assess: AI based assessments"
+    documentlink="https://snap-assess-demo.indexnine.com/"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="snap.assess: AI based assessments"
         demoDesc={demoDesc}
-        demoLink={"https://snap-assess-demo.indexnine.com/"}
       />
     </>
   );
