@@ -19,7 +19,6 @@ import {
   DialogContent,
   DialogTitle,
   Slide,
-  Hidden
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { TransitionProps } from '@mui/material/transitions';

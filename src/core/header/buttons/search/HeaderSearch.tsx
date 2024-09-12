@@ -5,7 +5,6 @@ import {
   DialogContent,
   DialogTitle,
   Divider,
-  Hidden,
   ListItemButton,
   IconButton,
   InputAdornment,

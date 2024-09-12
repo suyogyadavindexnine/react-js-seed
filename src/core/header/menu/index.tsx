@@ -11,7 +11,6 @@ import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import { PageHeader, PageTitleWrapper } from 'src/shared/components';
 import * as ROUTES from 'src/shared/constants/routes';
 
 const ListWrapper = styled(Box)(

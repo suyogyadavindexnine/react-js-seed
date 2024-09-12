@@ -141,7 +141,7 @@ const UserDetails = (userInfo) => {
           justifyContent="center"
           size={{ xs: 12,  md: 6, lg: 4 }}
         >
-          <Box display="flex" alignItems="flex-start">
+          {/* <Box display="flex" alignItems="flex-start">
             <Chart
               height={180}
               options={chartOptions}
@@ -151,7 +151,7 @@ const UserDetails = (userInfo) => {
               ]}
               type="radialBar"
             />
-          </Box>
+          </Box> */}
         </Grid>
         <Grid
           sx={{

@@ -102,12 +102,12 @@ const Graph = () => {
           </Box>
         </Grid>
         <Grid size={{ xs: 12}} >
-          <Chart
+         {chartOptions && <Chart
             options={chartOptions}
             series={chartOptions.series}
             type={chartOptions.chart.type}
             height={chartOptions.chart.height}
-          />
+          />}
         </Grid>
       </Grid>
     </Card>

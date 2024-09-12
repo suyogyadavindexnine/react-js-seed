@@ -26,12 +26,10 @@ const ChoroplethWidget = () => {
   return (
     <>
       <PageTitleWrapper>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <PageTitle
             heading={'Choropleth Map'}
             docs={'https://leafletjs.com/examples/choropleth/'}
           />
-        </div>
       </PageTitleWrapper>
       <Box>
         <Grid

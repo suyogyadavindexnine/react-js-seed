@@ -44,7 +44,6 @@ const HeaderWrapper = styled(Box)(
 
 function Header() {
   const { sidebarToggle, toggleSidebar } = useContext<SidebarContextType>(SidebarContext);
-  console.log('sidebarToggle', sidebarToggle);
   const theme = useTheme();
 
   return (
