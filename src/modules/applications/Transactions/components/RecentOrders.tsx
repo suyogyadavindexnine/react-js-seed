@@ -26,45 +26,42 @@ const RecentOrders: FC<RecentOrdersProps> = ({
     setTab(newValue);
   };
 
-  return (
-    <>
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="end"
-        sx={{
-          pb: 2
-        }}
+  return (<>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "end",
+        pb: 2
+      }}>
+      <ToggleButtonGroup
+        value={tabs}
+        onChange={handleViewOrientation}
       >
-        <ToggleButtonGroup
-          value={tabs}
-          onChange={handleViewOrientation}
-        >
-          <ToggleButton disableRipple value="Recent_Orders_Card">
-            <GridViewSharpIcon />
-          </ToggleButton>
-          <ToggleButton disableRipple value="Recent_Orders_Table">
-            <TableRowsTwoToneIcon />
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </Box>
-      {tabs === 'Recent_Orders_Card' && (
-        <RecentOrdersCard
+        <ToggleButton disableRipple value="Recent_Orders_Card">
+          <GridViewSharpIcon />
+        </ToggleButton>
+        <ToggleButton disableRipple value="Recent_Orders_Table">
+          <TableRowsTwoToneIcon />
+        </ToggleButton>
+      </ToggleButtonGroup>
+    </Box>
+    {tabs === 'Recent_Orders_Card' && (
+      <RecentOrdersCard
+        cryptoOrders={cryptoOrders}
+        handleButtonClick={handleButtonClick}
+      />
+    )}
+    {tabs === 'Recent_Orders_Table' && (
+      <Card>
+        {' '}
+        <RecentOrdersTable
           cryptoOrders={cryptoOrders}
           handleButtonClick={handleButtonClick}
         />
-      )}
-      {tabs === 'Recent_Orders_Table' && (
-        <Card>
-          {' '}
-          <RecentOrdersTable
-            cryptoOrders={cryptoOrders}
-            handleButtonClick={handleButtonClick}
-          />
-        </Card>
-      )}
-    </>
-  );
+      </Card>
+    )}
+  </>);
 };
 
 export default RecentOrders;

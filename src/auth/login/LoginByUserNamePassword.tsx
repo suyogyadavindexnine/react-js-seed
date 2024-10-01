@@ -2,7 +2,7 @@ import { DEMO_EMAILS, I18N } from 'src/shared/constants/constants';
 import { Button, FormField } from 'src/shared/components/index';
 import { Box, Chip, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { Grid } from '@mui/material';
+import { Grid2 as Grid } from '@mui/material';
 import { FormikProvider, useFormik } from 'formik';
 import { FormFieldType } from 'src/shared/components/form-field/service/formFieldInterface';
 import { Dispatch, useEffect, useState } from 'react';
@@ -125,11 +125,7 @@ const LoginByUserNamePasswordForm = ({
         {loginFormFields?.map((field, index) => (
           <Grid key={index} container direction="row">
             <Grid
-              item
-              xs={12}
-              md={12}
-              lg={12}
-              xl={12}
+            size= {{ xs: 12, md: 12, lg: 12, xl: 12 }}
               className={index === 0 ? 'mb-16' : ''}
             >
               <FormField fieldProps={field} />

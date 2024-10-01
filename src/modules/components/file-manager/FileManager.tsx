@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Typography } from '@mui/material';
+import { Box, Grid2 as Grid, Paper, Typography } from '@mui/material';
 import TreeViewMenu from '../tree-view/TreeView';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
@@ -261,7 +261,7 @@ const FileManager = () => {
     return (
       <Grid container spacing={2}>
         {sortedFiles?.map((sortedFiles, index) => (
-          <Grid sx={{ mb: 4 }} key={index} item xs={12} lg={3}>
+          <Grid size={{ xs: 12, lg: 3 }} sx={{ mb: 4 }}key={index} >
             <Box
               className={`${
                 hasSingleClicked === index ? 'active' : ''

@@ -1,4 +1,4 @@
-import { Box, Avatar, Grid, alpha, useTheme, styled } from '@mui/material';
+import { Box, Avatar, Grid2 as Grid, alpha, useTheme, styled } from '@mui/material';
 import {
   Label,
   Text,
@@ -139,7 +139,7 @@ function WatchListColumn({ Watchlistlabel, watchListDetails }) {
       spacing={3}
     >
       {watchListDetails?.map((item) => (
-        <Grid item md={4} xs={12} key={item.unit}>
+        <Grid size={{ xs: 12, md: 4}} key={item.unit}>
           <Card
             sx={{
               overflow: 'visible'

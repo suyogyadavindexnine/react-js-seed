@@ -5,7 +5,7 @@ import {
   Box,
   CardHeader,
   FormControl,
-  Grid,
+  Grid2 as Grid,
   IconButton,
   TablePagination,
   Tooltip
@@ -163,7 +163,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
             justifyContent="flex-start"
             alignItems="center"
           >
-            <Grid item xs="auto">
+            <Grid size={{xs:"auto"}} >
               <CheckBox
                 color="primary"
                 checked={selectedAllEmployeeDetails}
@@ -171,7 +171,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                 onChange={handleSelectAllEmployees}
               />
             </Grid>
-            <Grid item xs>
+            <Grid size={{xs:"grow"}}>
               {selectedBulkActions && (
                 <Box flex={1} p={2}>
                   <BulkActions />
@@ -181,7 +181,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                 <Box flex={1} sx={{ pb: '10px', pt: '10px' }}>
                   <Box>
                     <Grid container direction="row" spacing={2}>
-                      <Grid item xs={12} md={10} sm={10} lg={11}>
+                      <Grid size={{xs:12, md:10, sm:10, lg:11}} >
                         <TextField
                           id="outlined-search"
                           label="Search field"
@@ -191,7 +191,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                           fullWidth
                         />
                       </Grid>
-                      <Grid item xs={12} md={2} sm={2} lg={1}>
+                      <Grid size={{xs:12, md:2, sm:2, lg:1}} >
                         <FormControl sx={{ ml: 1 }}>
                           <Select
                             options={filterOptions}
@@ -220,7 +220,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
               employeeDetail?.id
             );
             return (
-              <Grid item xs={12} sm={6} md={4} lg={4} key={employeeDetail?.id}>
+              <Grid size={{xs:12, md:6, sm:4, lg:4}}  key={employeeDetail?.id}>
                 <Card
                   sx={{
                     pr: 1,
@@ -250,7 +250,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                       spacing={4}
                       alignItems="center"
                     >
-                      <Grid item lg={8} md={6} sm={6} xs={6}>
+                      <Grid size={{xs:6, md:6, sm:6, lg:8}} >
                         <Typography
                           gutterBottom
                           variant="caption"
@@ -262,7 +262,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                           {employeeDetail?.designation}
                         </Typography>
                       </Grid>
-                      <Grid item lg={4} md={6} sm={6} xs={6}>
+                      <Grid size={{xs:6, md:6, sm:6, lg:4}}>
                         <Typography
                           gutterBottom
                           variant="caption"
@@ -279,7 +279,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                   <CardActions disableSpacing>
                     <Box>
                       <Grid container direction="row" alignItems="center">
-                        <Grid item xs={8}>
+                        <Grid size={{xs:8}}>
                           <CheckBox
                             color="primary"
                             checked={isEmployeeDetailSelected}
@@ -289,7 +289,7 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
                             value={isEmployeeDetailSelected}
                           />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid size={{xs:4}}>
                           <Tooltip title="Edit Order" arrow>
                             <IconButton
                               className="RecentOrderEditButton"

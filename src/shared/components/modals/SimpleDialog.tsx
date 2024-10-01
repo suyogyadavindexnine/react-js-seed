@@ -1,5 +1,5 @@
 import DialogTitle from '@mui/material/DialogTitle';
-import { Box, Dialog, DialogActions, DialogContent } from '@mui/material';
+import { Dialog, DialogActions, DialogContent } from '@mui/material';
 // import { CustomDialogProps } from 'src/shared/components/modals/services/modalInterface';
 // import { Dialog, DialogContent } from '@mui/material';
 import { CustomDialogProps } from './services/modalInterface';

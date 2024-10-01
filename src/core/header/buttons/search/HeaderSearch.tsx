@@ -1,11 +1,11 @@
-import FindInPageTwoToneIcon from '@mui/icons-material/FindInPageTwoTone';
-import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
+import FindInPageTwoToneIcon from "@mui/icons-material/FindInPageTwoTone";
+import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
 import {
   Box,
   DialogContent,
   DialogTitle,
   Divider,
-  Hidden,
+  ListItemButton,
   IconButton,
   InputAdornment,
   Link,
@@ -14,19 +14,19 @@ import {
   ListItemAvatar,
   ListItemButton,
   Slide,
-  Tooltip
-} from '@mui/material';
-import { TransitionProps } from '@mui/material/transitions';
-import { ChangeEvent, forwardRef, ReactElement, Ref, useState } from 'react';
+  Tooltip,
+} from "@mui/material";
+import { TransitionProps } from "@mui/material/transitions";
+import { ChangeEvent, forwardRef, ReactElement, Ref, useState } from "react";
 
-import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
+import ChevronRightTwoToneIcon from "@mui/icons-material/ChevronRightTwoTone";
 import {
   Avatar,
   Button,
   SimpleDialog,
   TextField,
-  Typography
-} from '../../../../shared/components/index';
+  Typography,
+} from "../../../../shared/components/index";
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & { children: ReactElement<any, string> },
@@ -37,7 +37,7 @@ const Transition = forwardRef(function Transition(
 
 const HeaderSearch = () => {
   const [openSearchResults, setOpenSearchResults] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setSearchValue(event.target.value);
@@ -83,12 +83,14 @@ const HeaderSearch = () => {
                 value={searchValue}
                 autoFocus={true}
                 onChange={handleSearchChange}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchTwoToneIcon />
-                    </InputAdornment>
-                  )
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchTwoToneIcon />
+                      </InputAdornment>
+                    ),
+                  },
                 }}
                 placeholder="Search terms here..."
                 fullWidth
@@ -107,7 +109,7 @@ const HeaderSearch = () => {
                   justifyContent="space-between"
                 >
                   <Typography variant="body2">
-                    Search results for{' '}
+                    Search results for{" "}
                     <Typography className="textweight" variant="body1">
                       {searchValue}
                     </Typography>
@@ -119,13 +121,13 @@ const HeaderSearch = () => {
                 <Divider sx={{ my: 1 }} />
                 <List disablePadding>
                   <ListItemButton>
-                    <Hidden smDown>
-                      <ListItemAvatar>
-                        <Avatar className="SearchAvatar">
-                          <FindInPageTwoToneIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                    </Hidden>
+                    <ListItemAvatar
+                      sx={{ display: { xs: "none", sm: "block" } }}
+                    >
+                      <Avatar className="SearchAvatar">
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
                     <Box flex="1">
                       <Box display="flex" justifyContent="space-between">
                         <Link
@@ -146,13 +148,13 @@ const HeaderSearch = () => {
                   </ListItemButton>
                   <Divider sx={{ my: 1 }} component="li" />
                   <ListItemButton>
-                    <Hidden smDown>
-                      <ListItemAvatar>
-                        <Avatar className="SearchAvatar">
-                          <FindInPageTwoToneIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                    </Hidden>
+                    <ListItemAvatar
+                      sx={{ display: { xs: "none", sm: "block" } }}
+                    >
+                      <Avatar className="SearchAvatar">
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
                     <Box flex="1">
                       <Box display="flex" justifyContent="space-between">
                         <Link
@@ -173,13 +175,13 @@ const HeaderSearch = () => {
                   </ListItemButton>
                   <Divider sx={{ my: 1 }} component="li" />
                   <ListItemButton>
-                    <Hidden smDown>
-                      <ListItemAvatar>
-                        <Avatar className="SearchAvatar">
-                          <FindInPageTwoToneIcon />
-                        </Avatar>
-                      </ListItemAvatar>
-                    </Hidden>
+                    <ListItemAvatar
+                      sx={{ display: { xs: "none", sm: "block" } }}
+                    >
+                      <Avatar className="SearchAvatar">
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
                     <Box flex="1">
                       <Box display="flex" justifyContent="space-between">
                         <Link

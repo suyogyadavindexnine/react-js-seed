@@ -1,7 +1,7 @@
 import {
   Box,
   Divider,
-  Grid,
+  Grid2 as Grid,
   IconButton,
   InputAdornment,
   Tooltip

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid2 as Grid } from '@mui/material';
 import Typography from 'src/shared/components/typography/Typography';
 import EventCard from './EventCard';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
@@ -88,7 +88,7 @@ const AlertsData = () => {
         alignItems="stretch"
         spacing={1}
       >
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <AlertCard alertData={alertData} />
         </Grid>
       </Grid>
@@ -99,7 +99,7 @@ const AlertsData = () => {
         alignItems="stretch"
         spacing={1}
       >
-        <Grid sx={{ my: 2 }} item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid sx={{ my: 2 }} size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <Box className="flex-basic-start">
             <Box className="rightSectionTitle">
               <Typography variant="h5">Announcements</Typography>
@@ -107,7 +107,7 @@ const AlertsData = () => {
             <Box className="upcomingEvents"></Box>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <EventCard eventData={announcementsData} showStepper={true} />
         </Grid>
       </Grid>
@@ -118,7 +118,7 @@ const AlertsData = () => {
         alignItems="stretch"
         spacing={1}
       >
-        <Grid sx={{ my: 2 }} item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid sx={{ my: 2 }} size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <Box className="flex-basic-start">
             <Box className="rightSectionTitle">
               <Typography variant="h5">Upcoming Events</Typography>
@@ -126,7 +126,7 @@ const AlertsData = () => {
             <Box className="upcomingEvents"></Box>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <EventCard eventData={upcomingEvents} />
         </Grid>
       </Grid>
@@ -137,7 +137,7 @@ const AlertsData = () => {
         alignItems="stretch"
         spacing={1}
       >
-        <Grid sx={{ my: 2 }} item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid sx={{ my: 2 }} size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <Box className="flex-basic-start">
             <Box className="rightSectionTitle">
               <Typography variant="h5">Quick Links</Typography>
@@ -145,7 +145,7 @@ const AlertsData = () => {
             <Box className="upcomingEvents"></Box>
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <EventCard eventData={quickLinkData} />
         </Grid>
       </Grid>
