@@ -4,7 +4,6 @@ import {
   List,
   ListItem,
   ListItemAvatar,
-  ListItemButton,
   ListSubheader,
   ListItemText,
   Avatar,

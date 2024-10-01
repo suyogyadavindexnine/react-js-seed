@@ -1,12 +1,12 @@
-import { Box } from '@mui/material';
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Button } from 'src/shared/components/button/Button';
-import { useDispatch } from 'react-redux';
-import * as ROUTES from '../shared/constants/routes';
-import OtpInput from 'react-otp-input';
-import { useNavigate } from 'react-router';
-import { useAuth } from 'src/providers/AuthguardContext';
+import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Button } from "src/shared/components/button/Button";
+import { useDispatch } from "react-redux";
+import * as ROUTES from "../shared/constants/routes";
+import OtpInput from "react-otp-input";
+import { useNavigate } from "react-router";
+import { useAuth } from "src/providers/AuthguardContext";
 
 interface OTPWithLoginProps {
   resendOtp?: (e) => void;
@@ -14,7 +14,7 @@ interface OTPWithLoginProps {
 
 const OTPWithLogin = ({ resendOtp }: OTPWithLoginProps) => {
   //const
-  const { t } = useTranslation(['english']);
+  const { t } = useTranslation(["english"]);
   const dispatch = useDispatch<any>();
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -23,7 +23,7 @@ const OTPWithLogin = ({ resendOtp }: OTPWithLoginProps) => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true);
 
   //state variables
-  const [otp, setOtp] = useState('');
+  const [otp, setOtp] = useState("");
   const [showError, setShowError] = useState<boolean>(false);
 
   //Effects
@@ -48,15 +48,15 @@ const OTPWithLogin = ({ resendOtp }: OTPWithLoginProps) => {
     } else {
       navigate(`${ROUTES.DASHBOARD}`);
     }
-    localStorage.setItem('accessToken', 'tokendasdasda#aasdas131233');
-    localStorage.setItem('userRoles', JSON.stringify([]));
-    
-    login('tokendasdasda#aasdas131233');
-    localStorage.setItem('logged', JSON.stringify(true));
+    localStorage.setItem("accessToken", "tokendasdasda#aasdas131233");
+    localStorage.setItem("userRoles", JSON.stringify([]));
+
+    login("tokendasdasda#aasdas131233");
+    localStorage.setItem("logged", JSON.stringify(true));
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       // verfiyOtp();
     }
   };
@@ -64,22 +64,22 @@ const OTPWithLogin = ({ resendOtp }: OTPWithLoginProps) => {
   return (
     <Box className="loginWithOtp">
       <Box className="text-h4 welcomeText font-weight-semibold" sx={{ mb: 2 }}>
-        {t('login.verificationText')}
+        {t("login.verificationText")}
       </Box>
       <Box
         className="text-medium font-weight-regular verificationSubText"
         sx={{ mb: 3 }}
       >
-        {t('login.verificationSubText')}
+        {t("login.verificationSubText")}
       </Box>
       <Box className="OtpInputs" sx={{ mb: 3 }}>
-        <Box className="otpLbl">{'OTP'}</Box>
+        <Box className="otpLbl">{"OTP"}</Box>
         <Box className="flex-basic-space-between mt-10">
           <OtpInput
             value={otp}
             onChange={setOtp}
             numInputs={6}
-            inputType={'number'}
+            inputType={"number"}
             renderInput={(props) => (
               <input {...props} onKeyDown={(e) => handleKeyDown(e)} />
             )}
@@ -87,27 +87,27 @@ const OTPWithLogin = ({ resendOtp }: OTPWithLoginProps) => {
         </Box>
 
         {showError && (
-          <Box className="otpErrorMsg mt-5">{t('enterCorrectOtp')}</Box>
+          <Box className="otpErrorMsg mt-5">{t("enterCorrectOtp")}</Box>
         )}
       </Box>
       <Button
-        btnText={t('login.VerifyAndLoginBtnText')}
+        btnText={t("login.VerifyAndLoginBtnText")}
         sx={{ mt: 2 }}
         disabled={otp.length < 6}
         className="w-100"
-        variant={'contained'}
+        variant={"contained"}
         onClick={verfiyOtp}
       />
       <Box
         className="text-medium font-weight-regular receivedOTP text-center"
         sx={{ my: 4 }}
       >
-        {t('login.dontReceiveOpt')}
+        {t("login.dontReceiveOpt")}
         <a
           // onClick={resendOtpOnEmail}
-          className={`${isButtonDisabled ? 'disabled' : ''}`}
+          className={`${isButtonDisabled ? "disabled" : ""}`}
         >
-          {t('login.resendOpt')}
+          {t("login.resendOpt")}
         </a>
       </Box>
     </Box>

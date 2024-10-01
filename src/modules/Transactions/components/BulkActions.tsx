@@ -3,17 +3,16 @@ import {
   IconButton,
   List,
   ListItem,
-  ListItemButton,
   ListItemText,
   Menu,
   Typography,
-  ListItemButton
-} from '@mui/material';
-import { useRef, useState } from 'react';
+  ListItemButton,
+} from "@mui/material";
+import { useRef, useState } from "react";
 
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
-import { Button } from '../../../shared/components/index';
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
+import MoreVertTwoToneIcon from "@mui/icons-material/MoreVertTwoTone";
+import { Button } from "../../../shared/components/index";
 
 const BulkActions = () => {
   const [onMenuOpen, menuOpen] = useState<boolean>(false);
@@ -61,12 +60,12 @@ const BulkActions = () => {
         open={onMenuOpen}
         onClose={closeMenu}
         anchorOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
+          vertical: "center",
+          horizontal: "center",
         }}
         transformOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
+          vertical: "center",
+          horizontal: "center",
         }}
       >
         <List sx={{ p: 1 }} component="nav">
