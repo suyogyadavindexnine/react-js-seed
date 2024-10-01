@@ -5,7 +5,7 @@ import {
   PageHeader,
   Card
 } from '../../shared/components/index';
-import { Grid, Container, Box } from '@mui/material';
+import { Grid2 as Grid, Container, Box } from '@mui/material';
 import { MouseEvent, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getEmployeeData } from './services/employee.service';
@@ -84,7 +84,7 @@ const Employees = () => {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12}>
+          <Grid size={{xs: 12}}>
             {tabs === 'Employees_Card' && (
               <EmployeeDetailsCard
                 employeeDetails={employees}

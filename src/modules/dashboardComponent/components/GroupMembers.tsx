@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, Avatar, Grid } from '@mui/material';
+import { Box, Avatar, Grid2 as Grid } from '@mui/material';
 import { Card, Button, Typography } from '../../../shared/components/index';
 import warningIndicatorIcon from '../../../assets/icons/HealthScore/WarningIndicator.svg';
 import greenIndicatorIcon from '../../../assets/icons/HealthScore/GreenIndicator.svg';

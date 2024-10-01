@@ -1,4 +1,4 @@
-import { forwardRef, Ref, useState, ReactElement, ChangeEvent } from 'react';
+import { forwardRef, Ref, useState, ReactElement, ChangeEvent } from "react";
 import {
   Avatar,
   Link,
@@ -6,10 +6,10 @@ import {
   Button,
   Divider,
   IconButton,
+  ListItemButton,
   InputAdornment,
   lighten,
   List,
-  ListItem,
   ListItemAvatar,
   TextField,
   Theme,
@@ -19,14 +19,13 @@ import {
   DialogContent,
   DialogTitle,
   Slide,
-  Hidden
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { TransitionProps } from '@mui/material/transitions';
-import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
-import FindInPageTwoToneIcon from '@mui/icons-material/FindInPageTwoTone';
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { TransitionProps } from "@mui/material/transitions";
+import SearchTwoToneIcon from "@mui/icons-material/SearchTwoTone";
+import FindInPageTwoToneIcon from "@mui/icons-material/FindInPageTwoTone";
 
-import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
+import ChevronRightTwoToneIcon from "@mui/icons-material/ChevronRightTwoTone";
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & { children: ReactElement<any, any> },
@@ -66,7 +65,7 @@ const DialogTitleWrapper = styled(DialogTitle)(
 
 function HeaderSearch() {
   const [openSearchResults, setOpenSearchResults] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     setSearchValue(event.target.value);
@@ -97,7 +96,6 @@ function HeaderSearch() {
           <SearchTwoToneIcon />
         </IconButton>
       </Tooltip>
-
       <DialogWrapper
         open={open}
         TransitionComponent={Transition}
@@ -112,12 +110,14 @@ function HeaderSearch() {
             value={searchValue}
             autoFocus={true}
             onChange={handleSearchChange}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchTwoToneIcon />
-                </InputAdornment>
-              )
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchTwoToneIcon />
+                  </InputAdornment>
+                ),
+              },
             }}
             placeholder="Search terms here..."
             fullWidth
@@ -129,14 +129,17 @@ function HeaderSearch() {
         {openSearchResults && (
           <DialogContent>
             <Box
-              sx={{ pt: 0, pb: 1 }}
-              display="flex"
-              justifyContent="space-between"
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                pt: 0,
+                pb: 1,
+              }}
             >
               <Typography variant="body2" component="span">
-                Search results for{' '}
+                Search results for{" "}
                 <Typography
-                  sx={{ fontWeight: 'bold' }}
+                  sx={{ fontWeight: "bold" }}
                   variant="body1"
                   component="span"
                 >
@@ -149,25 +152,32 @@ function HeaderSearch() {
             </Box>
             <Divider sx={{ my: 1 }} />
             <List disablePadding>
-              <ListItem button>
-                <Hidden smDown>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        background: (theme: Theme) =>
-                          theme.palette.secondary.main
-                      }}
-                    >
-                      <FindInPageTwoToneIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Hidden>
-                <Box flex="1">
-                  <Box display="flex" justifyContent="space-between">
+              <ListItemButton sx={{ display: { xs: "none", sm: "block" } }}>
+                <ListItemAvatar>
+                  <Avatar
+                    sx={{
+                      background: (theme: Theme) =>
+                        theme.palette.secondary.main,
+                    }}
+                  >
+                    <FindInPageTwoToneIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <Box
+                  sx={{
+                    flex: "1",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
                     <Link
                       href="#"
                       underline="hover"
-                      sx={{ fontWeight: 'bold' }}
+                      sx={{ fontWeight: "bold" }}
                       variant="body2"
                     >
                       Dashboard for Healthcare Platform
@@ -178,7 +188,7 @@ function HeaderSearch() {
                     variant="body2"
                     sx={{
                       color: (theme: Theme) =>
-                        lighten(theme.palette.secondary.main, 0.5)
+                        lighten(theme.palette.secondary.main, 0.5),
                     }}
                   >
                     This page contains all the necessary information for
@@ -186,27 +196,34 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
               <Divider sx={{ my: 1 }} component="li" />
-              <ListItem button>
-                <Hidden smDown>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        background: (theme: Theme) =>
-                          theme.palette.secondary.main
-                      }}
-                    >
-                      <FindInPageTwoToneIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Hidden>
-                <Box flex="1">
-                  <Box display="flex" justifyContent="space-between">
+              <ListItemButton>
+                <ListItemAvatar sx={{ display: { xs: "none", sm: "block" } }}>
+                  <Avatar
+                    sx={{
+                      background: (theme: Theme) =>
+                        theme.palette.secondary.main,
+                    }}
+                  >
+                    <FindInPageTwoToneIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <Box
+                  sx={{
+                    flex: "1",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
                     <Link
                       href="#"
                       underline="hover"
-                      sx={{ fontWeight: 'bold' }}
+                      sx={{ fontWeight: "bold" }}
                       variant="body2"
                     >
                       Example Projects Application
@@ -217,34 +234,41 @@ function HeaderSearch() {
                     variant="body2"
                     sx={{
                       color: (theme: Theme) =>
-                        lighten(theme.palette.secondary.main, 0.5)
+                        lighten(theme.palette.secondary.main, 0.5),
                     }}
                   >
                     This is yet another search result pointing to a app page.
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
               <Divider sx={{ my: 1 }} component="li" />
-              <ListItem button>
-                <Hidden smDown>
-                  <ListItemAvatar>
-                    <Avatar
-                      sx={{
-                        background: (theme: Theme) =>
-                          theme.palette.secondary.main
-                      }}
-                    >
-                      <FindInPageTwoToneIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                </Hidden>
-                <Box flex="1">
-                  <Box display="flex" justifyContent="space-between">
+              <ListItemButton>
+                <ListItemAvatar sx={{ display: { xs: "none", sm: "block" } }}>
+                  <Avatar
+                    sx={{
+                      background: (theme: Theme) =>
+                        theme.palette.secondary.main,
+                    }}
+                  >
+                    <FindInPageTwoToneIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <Box
+                  sx={{
+                    flex: "1",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  >
                     <Link
                       href="#"
                       underline="hover"
-                      sx={{ fontWeight: 'bold' }}
+                      sx={{ fontWeight: "bold" }}
                       variant="body2"
                     >
                       Search Results Page
@@ -255,7 +279,7 @@ function HeaderSearch() {
                     variant="body2"
                     sx={{
                       color: (theme: Theme) =>
-                        lighten(theme.palette.secondary.main, 0.5)
+                        lighten(theme.palette.secondary.main, 0.5),
                     }}
                   >
                     Choose if you would like to show or not this typography
@@ -263,10 +287,10 @@ function HeaderSearch() {
                   </Typography>
                 </Box>
                 <ChevronRightTwoToneIcon />
-              </ListItem>
+              </ListItemButton>
             </List>
             <Divider sx={{ mt: 1, mb: 2 }} />
-            <Box sx={{ textAlign: 'center' }}>
+            <Box sx={{ textAlign: "center" }}>
               <Button color="primary">View all search results</Button>
             </Box>
           </DialogContent>

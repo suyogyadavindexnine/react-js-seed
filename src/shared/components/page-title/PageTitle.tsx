@@ -1,13 +1,15 @@
 import { FC } from 'react';
 import PropTypes from 'prop-types';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
-import { Typography, Button, Grid } from '@mui/material';
+import { Typography, Button, Grid2 as Grid } from '@mui/material';
 
 interface PageTitleProps {
   heading?: string;
   subHeading?: string;
   docs?: string;
   showDocumentationText?: boolean;
+  showButton ?: boolean;
+  demoButton ?: boolean;
 }
 
 export const PageTitle: FC<PageTitleProps> = ({
@@ -15,6 +17,8 @@ export const PageTitle: FC<PageTitleProps> = ({
   subHeading = '',
   docs = '',
   showDocumentationText = true,
+  showButton = true,
+  demoButton = false,
   ...rest
 }) => {
   return (
@@ -24,13 +28,13 @@ export const PageTitle: FC<PageTitleProps> = ({
       alignItems="center"
       {...rest}
     >
-      <Grid item>
+      <Grid>
         <Typography variant="h3" component="h3" gutterBottom>
           {heading}
         </Typography>
         <Typography variant="subtitle2">{subHeading}</Typography>
       </Grid>
-      <Grid item>
+      <Grid>
         <Button
           href={docs}
           target="_blank"
@@ -41,7 +45,7 @@ export const PageTitle: FC<PageTitleProps> = ({
         >
           {heading} {showDocumentationText && 'Documentation'}
         </Button>
-      </Grid>
+      </Grid>}
     </Grid>
   );
 };

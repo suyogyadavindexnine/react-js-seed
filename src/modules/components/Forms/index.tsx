@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   Container,
-  Grid,
+  Grid2 as Grid,
   CardHeader,
   CardContent,
   Divider
@@ -78,7 +78,7 @@ function Forms() {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12}>
+          <Grid  size={{xs:12}} >
             <Card>
               <CardHeader title="Input Fields" />
               <Divider />
@@ -114,16 +114,21 @@ function Forms() {
                       id="outlined-read-only-input"
                       label="Read Only"
                       defaultValue="Hello World"
-                      InputProps={{
-                        readOnly: true
+                      slotProps={{
+                        input: {
+                          readOnly: true
+                        }
                       }}
+                    
                     />
                     <TextField
                       id="outlined-number"
                       label="Number"
                       type="number"
-                      InputLabelProps={{
-                        shrink: true
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true
+                        }
                       }}
                     />
                     <TextField
@@ -164,8 +169,10 @@ function Forms() {
                       id="filled-read-only-input"
                       label="Read Only"
                       defaultValue="Hello World"
-                      InputProps={{
-                        readOnly: true
+                      slotProps={{
+                        input: {
+                          readOnly: true
+                        }
                       }}
                       variant="filled"
                     />
@@ -173,8 +180,10 @@ function Forms() {
                       id="filled-number"
                       label="Number"
                       type="number"
-                      InputLabelProps={{
-                        shrink: true
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true
+                        }
                       }}
                       variant="filled"
                     />
@@ -227,8 +236,10 @@ function Forms() {
                       id="standard-number"
                       label="Number"
                       type="number"
-                      InputLabelProps={{
-                        shrink: true
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true
+                        }
                       }}
                       variant="standard"
                     />
@@ -250,7 +261,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{xs:12}}>
             <Card>
               <CardHeader title="Select Inputs" />
               <Divider />
@@ -284,8 +295,10 @@ function Forms() {
                       label="Native select"
                       value={currency}
                       onChange={handleChange}
-                      SelectProps={{
-                        native: true
+                      slotProps={{
+                        select: {
+                          native: true
+                        }
                       }}
                       helperText="Please select your currency"
                     >
@@ -318,8 +331,10 @@ function Forms() {
                       label="Native select"
                       value={currency}
                       onChange={handleChange}
-                      SelectProps={{
-                        native: true
+                      slotProps={{
+                        select: {
+                          native: true
+                        }
                       }}
                       helperText="Please select your currency"
                       variant="filled"
@@ -353,8 +368,10 @@ function Forms() {
                       label="Native select"
                       value={currency}
                       onChange={handleChange}
-                      SelectProps={{
-                        native: true
+                      slotProps={{
+                        select: {
+                          native: true
+                        }
                       }}
                       helperText="Please select your currency"
                       variant="standard"
@@ -370,7 +387,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{xs:12}}>
             <Card>
               <CardHeader title="Switches" />
               <Divider />
@@ -382,7 +399,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{xs:12 }}>
             <Card>
               <CardHeader title="Checkboxes &amp; Radios" />
               <Divider />
@@ -435,7 +452,7 @@ function Forms() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{xs:12}}>
             <Card>
               <CardHeader title="Sliders" />
               <Divider />

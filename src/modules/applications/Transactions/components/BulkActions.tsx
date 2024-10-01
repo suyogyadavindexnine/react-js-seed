@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from "react";
 
 import {
   Box,
@@ -6,14 +6,15 @@ import {
   IconButton,
   Button,
   ListItemText,
-  ListItem,
+  ListItemButton,
   List,
-  Typography
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
+  ListItemButton,
+  Typography,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
 
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
+import MoreVertTwoToneIcon from "@mui/icons-material/MoreVertTwoTone";
 
 const ButtonError = styled(Button)(
   ({ theme }) => `
@@ -40,9 +41,25 @@ function BulkActions() {
 
   return (
     <>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
-        <Box display="flex" alignItems="center">
-          <Typography variant="h5" color="text.secondary">
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            variant="h5"
+            sx={{
+              color: "text.secondary",
+            }}
+          >
             Bulk actions:
           </Typography>
           <ButtonError
@@ -62,28 +79,27 @@ function BulkActions() {
           <MoreVertTwoToneIcon />
         </IconButton>
       </Box>
-
       <Menu
         keepMounted
         anchorEl={moreRef.current}
         open={onMenuOpen}
         onClose={closeMenu}
         anchorOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
+          vertical: "center",
+          horizontal: "center",
         }}
         transformOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
+          vertical: "center",
+          horizontal: "center",
         }}
       >
         <List sx={{ p: 1 }} component="nav">
-          <ListItem button>
+          <ListItemButton>
             <ListItemText primary="Bulk delete selected" />
-          </ListItem>
-          <ListItem button>
+          </ListItemButton>
+          <ListItemButton>
             <ListItemText primary="Bulk edit selected" />
-          </ListItem>
+          </ListItemButton>
         </List>
       </Menu>
     </>

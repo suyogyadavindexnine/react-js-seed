@@ -4,8 +4,9 @@ import {
   Container,
   Divider,
   FormControl,
-  Grid
+  Grid2 as Grid
 } from '@mui/material';
+// import Grid from '@mui/material';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { Helmet } from 'react-helmet-async';
 import logo from 'src/assets/images/indexnine-logo.svg';
@@ -118,7 +119,7 @@ const Login = () => {
       <MainContent className="loginWrapper">
         <Container maxWidth="md">
           <Grid container spacing={2}>
-            <Grid item xs={12} lg={6} className="flex-basic-center">
+            <Grid size={{xs:12, lg:6}} className="flex-basic-center">
               <Box>
                 <img
                   className="img-fluid illustrationLoginImage"
@@ -127,7 +128,7 @@ const Login = () => {
                 ></img>
               </Box>
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid size={{xs:12,lg:6}}>
               <Card sx={{ px: 5, py: 4 }}>
                 <Box>
                   <Box sx={{ mb: 4 }}>

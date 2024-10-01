@@ -44,7 +44,6 @@ const HeaderWrapper = styled(Box)(
 
 function Header() {
   const { sidebarToggle, toggleSidebar } = useContext<SidebarContextType>(SidebarContext);
-  console.log('sidebarToggle', sidebarToggle);
   const theme = useTheme();
 
   return (
@@ -76,7 +75,7 @@ function Header() {
         <HeaderMenu />
       </Stack>
       <Box display="flex" alignItems="center">
-        <LangSelect />
+        {/* <LangSelect /> */}
         <HeaderButtons />
         <HeaderUserbox />
         <Box

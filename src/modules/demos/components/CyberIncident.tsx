@@ -1,9 +1,15 @@
 import myImage from '../../../assets/images/demoImages/cyberIncident.png';
 import DemoComponent from './DemoComponent';
+import DemoHeader from './DemoHeader';
 
 const IotDemo = () => {
   const demoDesc = (
     <>
+     <p>
+      Indexnine worked closely with customer experts to perform UX research,
+      secondary research, UX Design, UI development and consulting on APIs for
+      this product.
+    </p>
       <p>
         This demonstration showcases a workflow that greatly simplifies the
         detection and identification of threats propagating in an enterprise
@@ -37,12 +43,16 @@ const IotDemo = () => {
 
   return (
     <>
+    <DemoHeader
+    heading="Cyber incident response"
+    documentlink="http://qh-internal.indexnine.com/"
+    showDocumentationText={false}
+    showButton={false}
+    demoButton={true}
+    />
       <DemoComponent
         image={myImage}
-        heading="Cyber incident response"
         demoDesc={demoDesc}
-        idxRole={idxRole}
-        demoLink={'http://qh-internal.indexnine.com/'}
       />
     </>
   );

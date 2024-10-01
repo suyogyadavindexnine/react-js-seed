@@ -4,15 +4,17 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemButton,
   ListSubheader,
   ListItemText,
   Avatar,
   useTheme,
-  styled
-} from '@mui/material';
-import React from 'react';
-import { Card, Typography } from '../../../../shared/components/index';
-import { PopularTagsDetails } from '../models/UserData';
+  styled,
+  ListItemButton,
+} from "@mui/material";
+import React from "react";
+import { Card, Typography } from "../../../../shared/components/index";
+import { PopularTagsDetails } from "../models/UserData";
 
 const ListWrapper = styled(List)(
   () => `
@@ -29,21 +31,20 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
   console.log(groups);
   console.log(tags);
   return (
-    <Card sx={{ height: '100%' }}>
+    <Card sx={{ height: "100%" }}>
       <CardHeader title="Popular Tags" />
       <Divider />
       <ListWrapper disablePadding>
         {tags?.map((tag) => (
           <React.Fragment key={tag}>
-            <ListItem
+            <ListItemButton
               sx={{
                 color: `${theme.colors.primary.main}`,
-                '&:hover': { color: `${theme.colors.primary.dark}` }
+                "&:hover": { color: `${theme.colors.primary.dark}` },
               }}
-              button
             >
               <ListItemText primary={tag} />
-            </ListItem>
+            </ListItemButton>
             <Divider />
           </React.Fragment>
         ))}
@@ -55,7 +56,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
         <Divider />
         {groups?.map((group) => (
           <React.Fragment key={group.title}>
-            <ListItem button>
+            <ListItemButton>
               <ListItemAvatar>
                 {group.path && (
                   <Avatar sx={{ width: 38, height: 38 }} src={group.path} />
@@ -66,7 +67,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
                       width: 38,
                       height: 38,
                       background: `${theme.colors.info.main}`,
-                      color: `${theme.palette.info.contrastText}`
+                      color: `${theme.palette.info.contrastText}`,
                     }}
                   >
                     {group.logo}
@@ -75,12 +76,12 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
               </ListItemAvatar>
               <ListItemText
                 primaryTypographyProps={{
-                  variant: 'h5',
-                  color: `${theme.colors.alpha.black[100]}`
+                  variant: "h5",
+                  color: `${theme.colors.alpha.black[100]}`,
                 }}
                 primary={group.title}
               />
-            </ListItem>
+            </ListItemButton>
             <Divider />
           </React.Fragment>
         ))}

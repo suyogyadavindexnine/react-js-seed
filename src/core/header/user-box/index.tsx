@@ -1,29 +1,30 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from "react-router-dom";
 
 import {
   Avatar,
   Box,
   Button,
   Divider,
-  Hidden,
+  ListItemButton,
   lighten,
+  ListItemButton,
   List,
   ListItem,
   ListItemText,
-  Popover
-} from '@mui/material';
+  Popover,
+} from "@mui/material";
 
-import InboxTwoToneIcon from '@mui/icons-material/InboxTwoTone';
-import { styled } from '@mui/material/styles';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import AccountBoxTwoToneIcon from '@mui/icons-material/AccountBoxTwoTone';
-import LockOpenTwoToneIcon from '@mui/icons-material/LockOpenTwoTone';
-import AccountTreeTwoToneIcon from '@mui/icons-material/AccountTreeTwoTone';
-import { useAuth } from 'src/auth/auth-guard';
-import { Signout } from './../../../shared/common-functions/signout';
-import { Typography } from '../../../shared/components/index';
+import InboxTwoToneIcon from "@mui/icons-material/InboxTwoTone";
+import { styled } from "@mui/material/styles";
+import ExpandMoreTwoToneIcon from "@mui/icons-material/ExpandMoreTwoTone";
+import AccountBoxTwoToneIcon from "@mui/icons-material/AccountBoxTwoTone";
+import LockOpenTwoToneIcon from "@mui/icons-material/LockOpenTwoTone";
+import AccountTreeTwoToneIcon from "@mui/icons-material/AccountTreeTwoTone";
+import { useAuth } from "src/auth/auth-guard";
+import { Signout } from "./../../../shared/common-functions/signout";
+import { Typography } from "../../../shared/components/index";
 
 const UserBoxButton = styled(Button)(
   ({ theme }) => `
@@ -62,9 +63,9 @@ const UserBoxDescription = styled(Typography)(
 
 function HeaderUserbox() {
   const user = {
-    name: 'John Smith',
-    avatar: '/static/images/avatars/1.jpg',
-    jobtitle: 'Project Manager'
+    name: "John Smith",
+    avatar: "/static/images/avatars/1.jpg",
+    jobtitle: "Project Manager",
   };
 
   const ref = useRef<any>(null);
@@ -82,36 +83,34 @@ function HeaderUserbox() {
 
   const userLogout = () => {
     Signout();
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <>
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
         <Avatar variant="rounded" alt={user.name} src={user.avatar} />
-        <Hidden mdDown>
-          <UserBoxText>
-            <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
-            <UserBoxDescription variant="body2">
-              {user.jobtitle}
-            </UserBoxDescription>
-          </UserBoxText>
-        </Hidden>
-        <Hidden smDown>
-          <ExpandMoreTwoToneIcon sx={{ ml: 1 }} />
-        </Hidden>
+        <UserBoxText sx={{ display: { xs: "none", md: "block" } }}>
+          <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
+          <UserBoxDescription variant="body2">
+            {user.jobtitle}
+          </UserBoxDescription>
+        </UserBoxText>
+        <ExpandMoreTwoToneIcon
+          sx={{ display: { xs: "none", sm: "block" }, ml: 1 }}
+        />
       </UserBoxButton>
       <Popover
         anchorEl={ref.current}
         onClose={handleClose}
         open={isOpen}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
+          vertical: "top",
+          horizontal: "right",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
+          vertical: "top",
+          horizontal: "right",
         }}
       >
         <MenuUserBox sx={{ minWidth: 210 }} display="flex">
@@ -125,10 +124,10 @@ function HeaderUserbox() {
         </MenuUserBox>
         <Divider sx={{ mb: 0 }} />
         <List sx={{ p: 1 }} component="nav">
-          <ListItem button to="/management/profile/details" component={NavLink}>
+          <ListItemButton to="/management/profile/details" component={NavLink}>
             <AccountBoxTwoToneIcon fontSize="small" />
             <ListItemText primary="My Profile" />
-          </ListItem>
+          </ListItemButton>
           {/* <ListItem button to="/dashboards/messenger" component={NavLink}>
             <InboxTwoToneIcon fontSize="small" />
             <ListItemText primary="Messenger" />

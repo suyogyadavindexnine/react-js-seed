@@ -3,6 +3,7 @@ import {
   List,
   ListItem,
   ListItemText,
+  ListItemButton,
   Menu,
   MenuItem
 } from '@mui/material';
@@ -10,7 +11,6 @@ import { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import { PageHeader, PageTitleWrapper } from 'src/shared/components';
 import * as ROUTES from 'src/shared/constants/routes';
 
 const ListWrapper = styled(Box)(
@@ -108,9 +108,8 @@ function HeaderMenu() {
         }}
       >
         <List disablePadding component={Box} display="flex">
-          <ListItem
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             component={NavLink}
             to="/components/buttons"
           >
@@ -118,10 +117,9 @@ function HeaderMenu() {
               primaryTypographyProps={{ noWrap: true }}
               primary="Buttons"
             />
-          </ListItem>
-          <ListItem
+          </ListItemButton>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             component={NavLink}
             to="/components/forms"
           >
@@ -129,10 +127,9 @@ function HeaderMenu() {
               primaryTypographyProps={{ noWrap: true }}
               primary="Forms"
             />
-          </ListItem>
-          <ListItem
+          </ListItemButton>
+          <ListItemButton
             classes={{ root: 'MuiListItem-indicators' }}
-            button
             ref={ref}
             onClick={handleOpen}
           >
@@ -147,7 +144,7 @@ function HeaderMenu() {
                 </Box>
               }
             />
-          </ListItem>
+          </ListItemButton>
         </List>
       </ListWrapper>
       <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>

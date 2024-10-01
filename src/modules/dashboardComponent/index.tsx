@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Helmet } from 'react-helmet-async';
 
 import { PageTitleWrapper } from '../../shared/components/index';
-import { Box, Container, Grid } from '@mui/material';
+import { Box, Container, Grid2 as Grid } from '@mui/material';
 import Footer from 'src/core/footer';
 import GroupMembers from './components/GroupMembers';
 import { getDashboardUserDetails } from './services/dashboard.service';
@@ -51,7 +51,7 @@ function Dashboard() {
       <PageTitleWrapper>
         {/* <PageHeader user={dashboardData?.user} /> */}
 
-        <Grid item xs={12} md={8}>
+        <Grid size={{ xs: 12, md: 6 }} >
           <GroupMembers feeds={dashboardProfileData} />
         </Grid>
       </PageTitleWrapper>
@@ -63,7 +63,7 @@ function Dashboard() {
           alignItems="stretch"
           spacing={4}
         >
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12}}>
             <UserDetails userInfo={dashboardProfileData} />
           </Grid>
           {/* <Grid item lg={8} xs={12}>

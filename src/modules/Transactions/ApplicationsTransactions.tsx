@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import RecentOrders from './components/RecentOrders';
 import { PageTitleWrapper, PageHeader } from '../../shared/components/index';
-import { Grid, Container, Box } from '@mui/material';
+import { Grid2 as Grid, Container, Box } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getTransactionData } from './services/transaction.service';
@@ -56,7 +56,7 @@ const ApplicationsTransactions = () => {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <RecentOrders
               cryptoOrders={cryptoOrders}
               handleButtonClick={() => null}

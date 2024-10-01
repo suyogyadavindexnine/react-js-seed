@@ -1,19 +1,19 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import {
   Box,
   ListItemText,
   List,
   Menu,
   MenuItem,
-  ListItem,
-  Tooltip
-} from '@mui/material';
-import { useRef, useState } from 'react';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+  ListItemButton,
+  Tooltip,
+} from "@mui/material";
+import { useRef, useState } from "react";
+import ExpandMoreTwoToneIcon from "@mui/icons-material/ExpandMoreTwoTone";
 const LangSelect = () => {
   const { i18n } = useTranslation();
   const [lang, setLang] = useState(
-    localStorage.getItem('language') || 'English'
+    localStorage.getItem("language") || "English"
   );
 
   const ref = useRef<HTMLInputElement>(null);
@@ -30,16 +30,15 @@ const LangSelect = () => {
   const changeLanguage = (lang: string, languagename: string) => {
     setLang(languagename);
     i18n.changeLanguage(lang.toLowerCase());
-    localStorage.setItem('language', lang);
+    localStorage.setItem("language", lang);
     setOpen(false);
   };
   return (
     <>
       <Box className="listWrapper">
         <List>
-          <ListItem
-            classes={{ root: 'MuiListItem-indicators' }}
-            button
+          <ListItemButton
+            classes={{ root: "MuiListItem-indicators" }}
             ref={ref}
             defaultValue="a"
             onClick={handleOpen}
@@ -57,20 +56,20 @@ const LangSelect = () => {
                 }
               />
             </Tooltip>
-          </ListItem>
+          </ListItemButton>
         </List>
       </Box>
       <Box sx={{ mr: 1 }}>
         <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>
           <MenuItem
             sx={{ px: 3 }}
-            onClick={() => changeLanguage('English', 'English')}
+            onClick={() => changeLanguage("English", "English")}
           >
             English
           </MenuItem>
           <MenuItem
             sx={{ px: 3 }}
-            onClick={() => changeLanguage('French', 'French')}
+            onClick={() => changeLanguage("French", "French")}
           >
             French
           </MenuItem>
