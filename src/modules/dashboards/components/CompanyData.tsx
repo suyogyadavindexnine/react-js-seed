@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid2 as Grid } from '@mui/material';
 import CompanySkills from './CompanySkills';
 import CustomerProjects from './CustomerProjects';
 import TotalEmployees from './TotalEmployees';
@@ -16,13 +16,13 @@ const CompanyData = () => {
         alignItems="stretch"
         spacing={3}
       >
-        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Grid size={{ sm: 12, md: 6, lg: 6, xl: 6, xs: 12 }} >
           <TotalEmployees />
         </Grid>
         {/* <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
           <TotalEmployees />
         </Grid> */}
-        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <Grid size={{ sm: 12, md: 6, lg: 6, xl: 6, xs: 12 }}>
           <CompanySkills />
         </Grid>
       </Grid>
@@ -34,13 +34,13 @@ const CompanyData = () => {
         alignItems="stretch"
         spacing={3}
       >
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+        <Grid size={{ sm: 12, md: 4, lg: 4, xl: 4, xs: 12 }} >
           <Graph />
         </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+        <Grid size={{ sm: 12, md: 4, lg: 4, xl: 4, xs: 12 }}>
           <CustomerSatisfaction />
         </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+        <Grid size={{ sm: 12, md: 4, lg: 4, xl: 4, xs: 12 }}>
           <RegionWiseCustomer />
         </Grid>
       </Grid>
@@ -52,7 +52,7 @@ const CompanyData = () => {
         alignItems="stretch"
         spacing={3}
       >
-        <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+        <Grid size={{ sm: 12, md: 12, lg: 12, xl: 12, xs: 12 }} >
           <CustomerProjects />
         </Grid>
       </Grid>

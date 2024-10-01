@@ -51,9 +51,10 @@ const CurrencyField = () => {
           <>
             <CurrencyInput
               sx={{ m: 1 }}
-              select
-              SelectProps={{
-                native: true
+              slotProps={{
+                select: {
+                  native: true
+                }
               }}
               helperText="Please select amount"
               label="Native select"

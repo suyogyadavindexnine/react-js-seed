@@ -12,9 +12,7 @@ const ChatBotWrapper = () => {
   return (
     <>
       <PageTitleWrapper>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <PageTitle heading={t('sidebar-menu.chat_bot')} />
-        </div>
       </PageTitleWrapper>
 
       <Container sx={{ px: 5 }}>

@@ -1,13 +1,13 @@
-import {
-  DatePicker,
-  Commonstructure,
-  Cardstructure,
-  TextField
-} from '../../../shared/components/index';
+import * as React from 'react';
+import { DatePicker } from '../../../shared/components/index';
 import { useState } from 'react';
+import { Dayjs } from 'dayjs';
+import TextField from '@mui/material/TextField';
+import { Commonstructure, Cardstructure } from '../../../shared/components/index';
 
 const Datepicker = () => {
-  const [selectedDate, handleDateChange] = useState<Date>(new Date());
+  const [selectedDate, handleDateChange] = useState<Dayjs | null>(null);
+
   return (
     <>
       <Commonstructure
@@ -23,12 +23,11 @@ const Datepicker = () => {
           <>
             <DatePicker
               value={selectedDate}
-              onChange={(newDate) => {
-                handleDateChange(newDate);
-              }}
-              variant="filled"
+              onChange={(newDate) => handleDateChange(newDate)}
               label="dates"
-              renderInput={(params) => <TextField {...params} />}
+              slots={{
+                textField: (params) => <TextField {...params} />,
+              }}
             />
           </>
         }
@@ -39,13 +38,12 @@ const Datepicker = () => {
           <>
             <DatePicker
               value={selectedDate}
-              onChange={(newDate) => {
-                handleDateChange(newDate);
-              }}
-              variant="filled"
+              onChange={(newDate) => handleDateChange(newDate)}
               label="dates"
               disabled
-              renderInput={(params) => <TextField {...params} />}
+              slots={{
+                textField: (params) => <TextField {...params} />,
+              }}
             />
           </>
         }
@@ -56,13 +54,12 @@ const Datepicker = () => {
           <>
             <DatePicker
               value={selectedDate}
-              onChange={(newDate) => {
-                handleDateChange(newDate);
-              }}
-              variant="filled"
+              onChange={(newDate) => handleDateChange(newDate)}
               label="dates"
               disableFuture
-              renderInput={(params) => <TextField {...params} />}
+              slots={{
+                textField: (params) => <TextField {...params} />,
+              }}
             />
           </>
         }

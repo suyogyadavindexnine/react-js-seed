@@ -1,4 +1,4 @@
-import { Typography, Grid } from '@mui/material';
+import { Typography, Grid2 as Grid } from '@mui/material';
 
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { Button } from '../../../../shared/components/index';
@@ -9,8 +9,13 @@ function PageHeader() {
     avatar: '/static/images/avatars/1.jpg'
   };
   return (
-    <Grid container justifyContent="space-between" alignItems="center">
-      <Grid item>
+    (<Grid
+      container
+      sx={{
+        justifyContent: "space-between",
+        alignItems: "center"
+      }}>
+      <Grid >
         <Typography variant="h3" component="h3" gutterBottom>
           Transactions
         </Typography>
@@ -18,7 +23,7 @@ function PageHeader() {
           John Smith, these are your recent transactions
         </Typography>
       </Grid>
-      <Grid item>
+      <Grid >
         <Button
           btnText="  Create transaction"
           sx={{ mt: { xs: 2, md: 0 } }}
@@ -26,7 +31,7 @@ function PageHeader() {
           startIcon={<AddTwoToneIcon fontSize="small" />}
         />
       </Grid>
-    </Grid>
+    </Grid>)
   );
 }
 

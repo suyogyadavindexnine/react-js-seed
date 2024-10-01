@@ -20,7 +20,7 @@ export const SidebarMenus = ({ menuname, option }: sidebarmenuprops) => {
   const { i18n, t } = useTranslation('sidebarmenu');
   return (
     <>
-      <Box className="MenuWrapper ">
+      <Box className="MenuWrapper">
         <List
           component="div"
           subheader={

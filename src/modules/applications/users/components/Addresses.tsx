@@ -1,4 +1,4 @@
-import { Box, CardHeader, Divider, Grid } from '@mui/material';
+import { Box, CardHeader, Divider, Grid2 as Grid } from '@mui/material';
 import { ArrowForwardTwoTone } from '@mui/icons-material';
 import { Typography, Card, Button } from '../../../../shared/components/index';
 
@@ -11,7 +11,7 @@ function Addresses({ deliveryAddresses, shippingAddress, handleFollowBtn }) {
       alignItems="stretch"
       spacing={3}
     >
-      <Grid item xs={12} sm={6}>
+      <Grid size={{ xs: 12, sm: 6}}>
         <Card>
           <CardHeader
             title="Delivery Addresses"
@@ -43,7 +43,7 @@ function Addresses({ deliveryAddresses, shippingAddress, handleFollowBtn }) {
           </Box>
         </Card>
       </Grid>
-      <Grid item xs={12} sm={6}>
+      <Grid size={{ xs: 12, sm: 6}}>
         <Card>
           <CardHeader
             title="Shipping Addresses"

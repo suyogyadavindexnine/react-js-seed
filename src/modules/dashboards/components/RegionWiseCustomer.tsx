@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Card, Typography } from '../../../shared/components/index';
-import { Box, Grid, Tooltip } from '@mui/material';
+import { Box, Grid2 as Grid, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { csv } from 'd3-fetch';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
@@ -32,7 +32,7 @@ const RegionWiseCustomer = () => {
         justifyContent="center"
         alignItems="stretch"
       >
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12}} >
           <Box sx={{ p: 2 }} className="flex-basic-space-between">
             <Typography variant="h4">
               {t('dashboard.region_wise_customers.region_wise_customers')}
@@ -42,7 +42,7 @@ const RegionWiseCustomer = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12}} >
           <ComposableMap height={500}>
             {data.length > 0 && (
               <Geographies geography={geoUrl}>

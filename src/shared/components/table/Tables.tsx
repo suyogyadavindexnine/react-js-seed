@@ -20,6 +20,7 @@ import {
 import React, { FC, useEffect, useState } from 'react';
 import { TabMenu } from '../tabmenu/TabMenu';
 
+
 interface TableProps {
   rows?: any[];
   columns: any[];
@@ -150,12 +151,14 @@ export const Tables = (props: TableProps) => {
                     type="search"
                     value={searchText}
                     onChange={handleSearchChange}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <SearchIcon />
-                        </InputAdornment>
-                      )
+                    slotProps={{
+                      input: {
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <SearchIcon />
+                          </InputAdornment>
+                        ),
+                      },
                     }}
                   />
                 </Box>
@@ -213,13 +216,16 @@ export const Tables = (props: TableProps) => {
                   type="search"
                   value={searchText}
                   onChange={handleSearchChange}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon />
-                      </InputAdornment>
-                    )
+                  slotProps={{
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon />
+                        </InputAdornment>
+                      )
+                    }
                   }}
+                 
                 />
               </Box>
             )}

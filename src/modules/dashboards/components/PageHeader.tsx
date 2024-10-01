@@ -1,4 +1,4 @@
-import { Typography, Avatar, Grid } from '@mui/material';
+import { Typography, Avatar, Grid2 as Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +10,7 @@ const PageHeader = ({ user }: User) => {
 
   return (
     <Grid container alignItems="center">
-      <Grid item>
+      <Grid>
         <Avatar
           sx={{
             mr: 2,
@@ -22,7 +22,7 @@ const PageHeader = ({ user }: User) => {
           src={user?.avatar}
         />
       </Grid>
-      <Grid item>
+      <Grid>
         <Typography variant="h3" component="h3" gutterBottom>
           {t('dashboard.header.welcome')}, {user?.name}!
         </Typography>

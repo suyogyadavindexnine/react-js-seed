@@ -32,8 +32,7 @@ const HeaderUserbox = () => {
     <>
       <Button color="secondary" ref={ref} onClick={handleOpen}>
         <Avatar variant="rounded" alt={user.name} src={user.avatar} />
-        <Hidden mdDown>
-          <Box className="UserBoxText">
+          <Box className="UserBoxText" sx={{ display: { xs: 'none', md: 'block' } }}>
             <Typography className="UserBoxLabel" variant="body1">
               {user.name}
             </Typography>
@@ -41,10 +40,7 @@ const HeaderUserbox = () => {
               {user.jobtitle}
             </Typography>
           </Box>
-        </Hidden>
-        <Hidden smDown>
-          <ExpandMoreTwoToneIcon sx={{ ml: 1 }} />
-        </Hidden>
+          <ExpandMoreTwoToneIcon   sx={{ display: { xs: 'none', sm: 'block' },ml: 1 }}/>
       </Button>
       <Popover
         anchorEl={ref.current}

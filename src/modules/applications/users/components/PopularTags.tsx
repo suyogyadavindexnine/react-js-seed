@@ -4,16 +4,17 @@ import {
   List,
   ListItem,
   ListItemAvatar,
+  ListItemButton,
   ListSubheader,
   ListItemText,
   Avatar,
   useTheme,
   styled,
-  ListItemButton
-} from '@mui/material';
-import React from 'react';
-import { Card, Typography } from '../../../../shared/components/index';
-import { PopularTagsDetails } from '../models/UserData';
+  ListItemButton,
+} from "@mui/material";
+import React from "react";
+import { Card, Typography } from "../../../../shared/components/index";
+import { PopularTagsDetails } from "../models/UserData";
 
 const ListWrapper = styled(List)(
   () => `
@@ -30,7 +31,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
   console.log(groups);
   console.log(tags);
   return (
-    <Card sx={{ height: '100%' }}>
+    <Card sx={{ height: "100%" }}>
       <CardHeader title="Popular Tags" />
       <Divider />
       <ListWrapper disablePadding>
@@ -39,7 +40,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
             <ListItemButton
               sx={{
                 color: `${theme.colors.primary.main}`,
-                '&:hover': { color: `${theme.colors.primary.dark}` }
+                "&:hover": { color: `${theme.colors.primary.dark}` },
               }}
             >
               <ListItemText primary={tag} />
@@ -66,7 +67,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
                       width: 38,
                       height: 38,
                       background: `${theme.colors.info.main}`,
-                      color: `${theme.palette.info.contrastText}`
+                      color: `${theme.palette.info.contrastText}`,
                     }}
                   >
                     {group.logo}
@@ -75,8 +76,8 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
               </ListItemAvatar>
               <ListItemText
                 primaryTypographyProps={{
-                  variant: 'h5',
-                  color: `${theme.colors.alpha.black[100]}`
+                  variant: "h5",
+                  color: `${theme.colors.alpha.black[100]}`,
                 }}
                 primary={group.title}
               />

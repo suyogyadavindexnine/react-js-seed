@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Card,
   CardHeader,
-  Grid,
+  Grid2 as Grid,
   Divider,
   Container,
   Box,
@@ -64,7 +64,7 @@ const EmployeeDetailWrappper = () => {
       </PageTitleWrapper>
       <Box>
         <Grid container direction="row" justifyContent="space-between">
-          <Grid item xs={12}>
+          <Grid size= {{ xs: 12}}>
             <Card sx={{ m: 1 }}>
               <CardHeader title={t('sidebar-menu.indexnine_org')} />
               <Box sx={{ px: 2, pb: 2 }}>
