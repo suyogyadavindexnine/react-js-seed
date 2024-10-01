@@ -3,7 +3,7 @@ import { SidebarContextType } from './models/SidebarContextType';
 interface SidebarProviderProps {
   children: React.ReactNode;
 }
-// eslint-disable-next-line @typescript-eslint/no-redeclare
+ 
 export const SidebarContext = createContext<SidebarContextType>(
   {} as SidebarContextType
 );

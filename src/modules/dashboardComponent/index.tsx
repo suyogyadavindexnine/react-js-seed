@@ -24,7 +24,7 @@ function Dashboard() {
 
   useEffect(() => {
     console.log('dashboardProfileData', dashboardProfileData.userDetails);
-    let userData = dashboardProfileData;
+    const userData = dashboardProfileData;
     console.log('userData', userData);
     setData(userData.userDetails && userData.userDetails);
   }, [dashboardProfileData.userDetails, userData]);

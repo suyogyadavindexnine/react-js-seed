@@ -51,7 +51,7 @@ const OverviewFlow = () => {
   }, []);
 
   useEffect(() => {
-    let flowchart = flowchartData;
+    const flowchart = flowchartData;
     if (flowchart.edges.length) {
       setEdges(flowchart.edges);
     }

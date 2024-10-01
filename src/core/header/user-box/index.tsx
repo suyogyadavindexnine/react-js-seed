@@ -9,7 +9,6 @@ import {
   Divider,
   ListItemButton,
   lighten,
-  ListItemButton,
   List,
   ListItem,
   ListItemText,

@@ -1,9 +1,9 @@
-import { Meta, StoryObj } from '@storybook/react';
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
-import { Card } from './Card';
-import './card.stories.scss';
+import { Meta, StoryObj } from "@storybook/react";
+import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import SkipNextIcon from "@mui/icons-material/SkipNext";
+import { Card } from "./Card";
+import "./card.stories.scss";
 
 import {
   Box,
@@ -13,12 +13,12 @@ import {
   CardContent,
   CardMedia,
   IconButton,
-  Typography
-} from '@mui/material';
+  Typography,
+} from "@mui/material";
 
 export default {
-  title: 'Seed/Card',
-  component: Card
+  title: "Seed/Card",
+  component: Card,
 } as Meta;
 
 type Story = StoryObj<typeof Card>;
@@ -40,7 +40,7 @@ export const BasicCard: Story = {
               unit of measurement.
             </Typography>
             <Typography variant="h5" component="div">
-              {'measurement while rem is a relative'}
+              {"measurement while rem is a relative"}
             </Typography>
             <Typography sx={{ mb: 1.5 }} color="text.secondary">
               adjective
@@ -53,8 +53,8 @@ export const BasicCard: Story = {
           </CardContent>
         </Card>
       </>
-    )
-  }
+    ),
+  },
 };
 
 export const MediaCard: Story = {
@@ -83,8 +83,8 @@ export const MediaCard: Story = {
           </CardActions>
         </Card>
       </>
-    )
-  }
+    ),
+  },
 };
 export const CardWithAction: Story = {
   args: {
@@ -114,8 +114,8 @@ export const CardWithAction: Story = {
           </CardActionArea>
         </Card>
       </>
-    )
-  }
+    ),
+  },
 };
 
 export const CardHorizontal: Story = {
@@ -123,9 +123,9 @@ export const CardHorizontal: Story = {
     raised: true,
     children: (
       <>
-        <Card sx={{ display: 'flex', width: 337 }}>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <CardContent sx={{ flex: '1 0 auto' }}>
+        <Card sx={{ display: "flex", width: 337 }}>
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
+            <CardContent sx={{ flex: "1 0 auto" }}>
               <Typography component="div" variant="h6">
                 Live From Space
               </Typography>
@@ -137,15 +137,17 @@ export const CardHorizontal: Story = {
                 Mac Miller
               </Typography>
             </CardContent>
-            <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
               <IconButton aria-label="previous">
-                {true ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                {/* {true ? <SkipNextIcon /> : <SkipPreviousIcon />} */}
+                <SkipNextIcon />
               </IconButton>
               <IconButton aria-label="play/pause">
                 <PlayArrowIcon sx={{ height: 38, width: 38 }} />
               </IconButton>
               <IconButton aria-label="next">
-                {true ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                <SkipPreviousIcon />
+                {/* {true ? <SkipPreviousIcon /> : <SkipNextIcon />} */}
               </IconButton>
             </Box>
           </Box>
@@ -157,6 +159,6 @@ export const CardHorizontal: Story = {
           />
         </Card>
       </>
-    )
-  }
+    ),
+  },
 };

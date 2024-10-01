@@ -1,4 +1,4 @@
-export type LoadingDashboardData = 'completed' | 'pending' | 'failed';
+export type LoadingDashboardData = "completed" | "pending" | "failed";
 
 export type UserDetails = {
   name: string;
@@ -10,7 +10,7 @@ export type ChartData = {
   data: any;
 };
 
-interface ChartDataItems extends Array<ChartData> {}
+type ChartDataItems = Array<ChartData>;
 
 export type Currency = {
   unit: string;
@@ -33,7 +33,7 @@ export type AccountSecurity = {
   emailStatus: string;
 };
 
-interface CurrencyItems extends Array<Currency> {}
+type CurrencyItems = Array<Currency>;
 
 export type AccountData = {
   status: LoadingDashboardData;

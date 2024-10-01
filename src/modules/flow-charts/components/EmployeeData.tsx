@@ -67,7 +67,7 @@ const EmployeeData = ({ departmentKey }: EmployeeDataProps) => {
   }, [departmentKey]);
 
   useEffect(() => {
-    let flowchart = flowchartData;
+    const flowchart = flowchartData;
     if (flowchart?.employeeNodes?.length) {
       setNodes(flowchart?.employeeNodes);
     }

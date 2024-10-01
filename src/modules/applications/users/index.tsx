@@ -22,7 +22,7 @@ function ManagementUserProfile() {
 
   useEffect(() => {
     console.log(profileData);
-    let userData = profileData;
+    const userData = profileData;
     setData(userData);
   }, [profileData]);
 

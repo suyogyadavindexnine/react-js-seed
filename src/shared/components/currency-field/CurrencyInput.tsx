@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { NumericFormat } from 'react-number-format';
-import { TextField as MuiTextField } from '@mui/material';
-import InputAdornment from '@mui/material/InputAdornment';
+import React, { useState } from "react";
+import { NumericFormat } from "react-number-format";
+import { TextField as MuiTextField } from "@mui/material";
+import InputAdornment from "@mui/material/InputAdornment";
 import {
   NumberFormatCustomProps,
-  TextFieldProps
-} from './services/currencyFieldInterface';
+  TextFieldProps,
+} from "./services/currencyFieldInterface";
 
 const NumberFormatCustom = React.forwardRef<
-  { onChange: Function },
+  { onChange: (event: React.ChangeEvent<HTMLInputElement>) => void },
   NumberFormatCustomProps
 >((props, ref) => {
   const { onChange, ...numberFormatProps } = props;
@@ -16,8 +16,8 @@ const NumberFormatCustom = React.forwardRef<
   const onValueChange = (values: { value: string }) => {
     onChange({
       target: {
-        value: values.value
-      }
+        value: values.value,
+      },
     });
   };
 
@@ -33,7 +33,7 @@ const NumberFormatCustom = React.forwardRef<
 });
 
 export const CurrencyInput = ({ ...props }: TextFieldProps) => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value;
@@ -45,12 +45,11 @@ export const CurrencyInput = ({ ...props }: TextFieldProps) => {
       value={value}
       onChange={handleChange}
       slotProps={{
-       input: {
-        inputComponent: NumberFormatCustom as any,
-        startAdornment: <InputAdornment position="start">$</InputAdornment>
-       }
+        input: {
+          inputComponent: NumberFormatCustom as any,
+          startAdornment: <InputAdornment position="start">$</InputAdornment>,
+        },
       }}
-     
       {...props}
     />
   );

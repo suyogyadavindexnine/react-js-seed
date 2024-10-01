@@ -1,21 +1,21 @@
-import { FC } from 'react';
-import PropTypes from 'prop-types';
-import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
-import { Typography, Button, Grid2 as Grid } from '@mui/material';
+import { FC } from "react";
+import PropTypes from "prop-types";
+import AddTwoToneIcon from "@mui/icons-material/AddTwoTone";
+import { Typography, Button, Grid2 as Grid } from "@mui/material";
 
 interface PageTitleProps {
   heading?: string;
   subHeading?: string;
   docs?: string;
   showDocumentationText?: boolean;
-  showButton ?: boolean;
-  demoButton ?: boolean;
+  showButton?: boolean;
+  demoButton?: boolean;
 }
 
 export const PageTitle: FC<PageTitleProps> = ({
-  heading = '',
-  subHeading = '',
-  docs = '',
+  heading = "",
+  subHeading = "",
+  docs = "",
   showDocumentationText = true,
   showButton = true,
   demoButton = false,
@@ -43,9 +43,9 @@ export const PageTitle: FC<PageTitleProps> = ({
           variant="contained"
           startIcon={<AddTwoToneIcon fontSize="small" />}
         >
-          {heading} {showDocumentationText && 'Documentation'}
+          {heading} {showDocumentationText && "Documentation"}
         </Button>
-      </Grid>}
+      </Grid>
     </Grid>
   );
 };
@@ -53,7 +53,7 @@ export const PageTitle: FC<PageTitleProps> = ({
 PageTitle.propTypes = {
   heading: PropTypes.string,
   subHeading: PropTypes.string,
-  docs: PropTypes.string
+  docs: PropTypes.string,
 };
 
 export default PageTitle;

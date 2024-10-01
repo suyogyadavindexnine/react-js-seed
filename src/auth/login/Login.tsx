@@ -4,42 +4,37 @@ import {
   Container,
   Divider,
   FormControl,
-  Grid2 as Grid
-} from '@mui/material';
+  Grid2 as Grid,
+} from "@mui/material";
 // import Grid from '@mui/material';
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
-import { Helmet } from 'react-helmet-async';
-import logo from 'src/assets/images/indexnine-logo.svg';
-import IllustrationLogin from 'src/assets/images/IllustrationLogin.svg';
-import {
-  AUTH_CONFIG,
-} from 'src/shared/constants/constants';
-import { styled } from '@mui/material/styles';
-import * as ROUTES from '../../shared/constants/routes';
-import { useNavigate } from 'react-router';
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useAuth } from 'src/providers/AuthguardContext';
-import LoginByUserNamePassword from './LoginByUserNamePassword';
-import OTPWithLogin from '../OTPWithLogin';
-import { loginData } from './models/login';
-import { userVerifyWithOTP } from './apis/login';
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import { Helmet } from "react-helmet-async";
+import logo from "src/assets/images/indexnine-logo.svg";
+import IllustrationLogin from "src/assets/images/IllustrationLogin.svg";
+import { AUTH_CONFIG } from "src/shared/constants/constants";
+import { styled } from "@mui/material/styles";
+import * as ROUTES from "../../shared/constants/routes";
+import { useNavigate } from "react-router";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useAuth } from "src/providers/AuthguardContext";
+import LoginByUserNamePassword from "./LoginByUserNamePassword";
+import OTPWithLogin from "../OTPWithLogin";
+import { loginData } from "./models/login";
+import { userVerifyWithOTP } from "./apis/login";
 import {
   showErrorMessage,
-  showSuccessMessage
-} from 'src/shared/components/toaster/Toast';
-
-
+  showSuccessMessage,
+} from "src/shared/components/toaster/Toast";
 
 const Login = () => {
   // Constants
   const navigate = useNavigate();
-  const { t } = useTranslation(['english']);
-
+  const { t } = useTranslation(["english"]);
 
   //state variables
-  const [loginType, setLoginType] = useState<string>('');
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [loginType, setLoginType] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const [isOnEmailScreen, setIsOnEmailScreen] = useState<boolean>(true);
 
   //methods
@@ -76,13 +71,12 @@ const Login = () => {
 
   // Google Login SSO
   const responseonSuccessGoogle = (response: any) => {
-    if (response) {
-
-    }
+    /* if (response) {
+      
+    } */
   };
 
-  const responseonFailureGoogle = (response: any) => {
-  };
+  const responseonFailureGoogle = (response: any) => {};
 
   //isOnOtpScreen
   const isOnOtpScreen = (val) => {
@@ -93,19 +87,19 @@ const Login = () => {
     try {
       const payload: loginData = {
         loginType: loginType,
-        email: value.email
+        email: value.email,
       };
 
       const respData = await userVerifyWithOTP(payload);
       if (respData?.message && respData?.status) {
         showSuccessMessage(respData?.message, {
-          position: 'top-right'
+          position: "top-right",
         });
         setIsOnEmailScreen(false);
       }
     } catch (error) {
       showErrorMessage(error.response.data.message, {
-        position: 'top-right'
+        position: "top-right",
       });
     }
   };
@@ -114,12 +108,12 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title> {t('login.title')}</title>
+        <title> {t("login.title")}</title>
       </Helmet>
       <MainContent className="loginWrapper">
         <Container maxWidth="md">
           <Grid container spacing={2}>
-            <Grid size={{xs:12, lg:6}} className="flex-basic-center">
+            <Grid size={{ xs: 12, lg: 6 }} className="flex-basic-center">
               <Box>
                 <img
                   className="img-fluid illustrationLoginImage"
@@ -128,7 +122,7 @@ const Login = () => {
                 ></img>
               </Box>
             </Grid>
-            <Grid size={{xs:12,lg:6}}>
+            <Grid size={{ xs: 12, lg: 6 }}>
               <Card sx={{ px: 5, py: 4 }}>
                 <Box>
                   <Box sx={{ mb: 4 }}>
@@ -141,7 +135,7 @@ const Login = () => {
                           className="text-h4 welcomeText font-weight-semibold"
                           sx={{ mb: 4 }}
                         >
-                          {t('login.welcomeText')}
+                          {t("login.welcomeText")}
                         </Box>
                       </Box>
                       <LoginByUserNamePassword
@@ -149,7 +143,7 @@ const Login = () => {
                         setIsOnEmailScreen={setIsOnEmailScreen}
                         loginType={loginType}
                       />
-                      <Divider sx={{ my: 5 }}>{t('login.orText')}</Divider>
+                      <Divider sx={{ my: 5 }}>{t("login.orText")}</Divider>
                       <Box className="w-100">
                         <FormControl
                           className="w-100"
@@ -158,8 +152,8 @@ const Login = () => {
                         >
                           <Box
                             textAlign="center"
-                            display={'flex'}
-                            justifyContent={'center'}
+                            display={"flex"}
+                            justifyContent={"center"}
                             className="w-100"
                           >
                             <GoogleOAuthProvider

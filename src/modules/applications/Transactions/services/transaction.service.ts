@@ -61,7 +61,7 @@ export const groupSlice = createSlice({
       .addCase(getTransactionData.fulfilled, (state: any, action) => {
         state.loadingTransactionData = false;
         if (action.payload) {
-          let transactionData = action.payload.cryptoOrders;
+          const transactionData = action.payload.cryptoOrders;
           state.transactionData = [...transactionData];
           state.transactionData = getTransactionListInsert(transactionData);
         }

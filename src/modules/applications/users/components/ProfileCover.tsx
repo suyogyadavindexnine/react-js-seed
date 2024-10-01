@@ -1,14 +1,14 @@
-import PropTypes from 'prop-types';
-import { Box, Tooltip, Avatar, CardMedia, IconButton } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
-import ArrowForwardTwoToneIcon from '@mui/icons-material/ArrowForwardTwoTone';
-import UploadTwoToneIcon from '@mui/icons-material/UploadTwoTone';
-import MoreHorizTwoToneIcon from '@mui/icons-material/MoreHorizTwoTone';
-import { Button, Card, Typography } from '../../../../shared/components/index';
+import PropTypes from "prop-types";
+import { Box, Tooltip, Avatar, CardMedia, IconButton } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
+import ArrowForwardTwoToneIcon from "@mui/icons-material/ArrowForwardTwoTone";
+import UploadTwoToneIcon from "@mui/icons-material/UploadTwoTone";
+import MoreHorizTwoToneIcon from "@mui/icons-material/MoreHorizTwoTone";
+import { Button, Card, Typography } from "../../../../shared/components/index";
 
-const Input = styled('input')({
-  display: 'none'
+const Input = styled("input")({
+  display: "none",
 });
 
 // interface ProfileCoverProps {
@@ -106,7 +106,7 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
             multiple
             type="file"
             data-testid="change-cover"
-            onClick={() => handleFollowBtn('clicked!')}
+            onClick={() => handleFollowBtn("clicked!")}
           />
           <label htmlFor="change-cover">
             <Button
@@ -128,7 +128,7 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
             name="icon-button-file"
             type="file"
             data-testid="upload-btn"
-            onClick={() => handleFollowBtn('clicked!')}
+            onClick={() => handleFollowBtn("clicked!")}
           />
           <label htmlFor="icon-button-file">
             <IconButton component="span" color="primary">
@@ -146,7 +146,7 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
           {user?.jobtitle} | {user?.location} | {user?.followers} followers
         </Typography>
         <Box
-          display={{ xs: 'block', md: 'flex' }}
+          display={{ xs: "block", md: "flex" }}
           alignItems="center"
           justifyContent="space-between"
         >
@@ -156,7 +156,7 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
               className="follow-button"
               size="small"
               variant="contained"
-              onClick={() => handleFollowBtn('clicked!')}
+              onClick={() => handleFollowBtn("clicked!")}
             />
 
             <Button
@@ -164,7 +164,7 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
               size="small"
               sx={{ mx: 1 }}
               variant="outlined"
-              onClick={() => handleFollowBtn('clicked!')}
+              onClick={() => handleFollowBtn("clicked!")}
             />
 
             <IconButton color="primary" sx={{ p: 0.5 }}>
@@ -177,7 +177,7 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
             size="small"
             variant="text"
             endIcon={<ArrowForwardTwoToneIcon />}
-            onClick={() => handleFollowBtn('clicked!')}
+            onClick={() => handleFollowBtn("clicked!")}
           />
         </Box>
       </Box>
@@ -186,8 +186,9 @@ const ProfileCover = ({ user, handleFollowBtn }) => {
 };
 
 ProfileCover.propTypes = {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
 };
 
 export default ProfileCover;

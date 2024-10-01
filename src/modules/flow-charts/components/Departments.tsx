@@ -48,7 +48,7 @@ const Departments = () => {
   }, []);
 
   useEffect(() => {
-    let flowchart = flowchartData;
+    const flowchart = flowchartData;
     if (flowchart?.departmentNodes?.length) {
       setNodes(flowchart?.departmentNodes);
     }

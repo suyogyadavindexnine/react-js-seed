@@ -1,12 +1,12 @@
-import { EmployeeDetails } from '../models';
-import EmployeeDetailsTable from './EmployeeDetailsTable';
-import EmployeeDetailsCard from './EmployeeDetailsCard';
-import { FC, MouseEvent, useState } from 'react';
-import { Box } from '@mui/material';
-import GridViewSharpIcon from '@mui/icons-material/GridViewSharp';
-import TableRowsTwoToneIcon from '@mui/icons-material/TableRowsTwoTone';
-import { Card, ButtonToggle } from '../../../shared/components/index';
-import { PageHeader, PageTitleWrapper } from 'src/shared/components';
+import { EmployeeDetails } from "../models";
+import EmployeeDetailsTable from "./EmployeeDetailsTable";
+import EmployeeDetailsCard from "./EmployeeDetailsCard";
+import { FC, MouseEvent, useState } from "react";
+import { Box } from "@mui/material";
+import GridViewSharpIcon from "@mui/icons-material/GridViewSharp";
+import TableRowsTwoToneIcon from "@mui/icons-material/TableRowsTwoTone";
+import { Card, ButtonToggle } from "../../../shared/components/index";
+import { PageHeader, PageTitleWrapper } from "src/shared/components";
 
 interface EmployeeDetailsProps {
   className?: string;
@@ -14,11 +14,11 @@ interface EmployeeDetailsProps {
   handleButtonClick(): void;
 }
 
-const employeeDetailsData: FC<EmployeeDetailsProps> = ({
+const EmployeeDetailsData: FC<EmployeeDetailsProps> = ({
   employeeDetails,
-  handleButtonClick
+  handleButtonClick,
 }) => {
-  const [tabs, setTab] = useState<string | null>('Employees_Table');
+  const [tabs, setTab] = useState<string | null>("Employees_Table");
 
   const handleViewOrientation = (
     _event: MouseEvent<HTMLElement>,
@@ -73,4 +73,4 @@ const employeeDetailsData: FC<EmployeeDetailsProps> = ({
   );
 };
 
-export default employeeDetailsData;
+export default EmployeeDetailsData;

@@ -37,7 +37,7 @@ export type DecodedToken = {
 
 export type TenantUserType = {
   type: string;
-  tenants: {};
+  tenants: any;
 };
 
 export type loginData = {

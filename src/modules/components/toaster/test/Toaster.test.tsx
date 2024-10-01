@@ -10,19 +10,19 @@ const testMsg = 'testMsg';
 describe('toastMessages without options', () => {
   const options: ToastOptions = {};
   test('showSuccessMessage()', () => {
-    let res = showSuccessMessage(testMsg, options);
+    const res = showSuccessMessage(testMsg, options);
     expect(toast.success).toHaveBeenCalledTimes(1);
     expect(toast.success).toHaveBeenCalledWith(testMsg, options);
   });
 
   test('showErrorMessage()', () => {
-    let res = showErrorMessage(testMsg, options);
+    const res = showErrorMessage(testMsg, options);
     expect(toast.error).toHaveBeenCalledTimes(1);
     expect(toast.error).toHaveBeenCalledWith(testMsg, options);
   });
 
   test('showWarningMessage()', () => {
-    let res = showWarningMessage(testMsg, options);
+    const res = showWarningMessage(testMsg, options);
     expect(toast.warn).toHaveBeenCalledTimes(1);
     expect(toast.warn).toHaveBeenCalledWith(testMsg, options);
   });
@@ -32,19 +32,19 @@ describe('toastMessages with options', () => {
     theme: 'dark'
   };
   test('showSuccessMessage()', () => {
-    let res = showSuccessMessage(testMsg, options);
+    const res = showSuccessMessage(testMsg, options);
     expect(toast.success).toHaveBeenCalledTimes(1);
     expect(toast.success).toHaveBeenCalledWith(testMsg, options);
   });
 
   test('showErrorMessage()', () => {
-    let res = showErrorMessage(testMsg, options);
+    const res = showErrorMessage(testMsg, options);
     expect(toast.error).toHaveBeenCalledTimes(1);
     expect(toast.error).toHaveBeenCalledWith(testMsg, options);
   });
 
   test('showWarningMessage()', () => {
-    let res = showWarningMessage(testMsg, options);
+    const res = showWarningMessage(testMsg, options);
     expect(toast.warn).toHaveBeenCalledTimes(1);
     expect(toast.warn).toHaveBeenCalledWith(testMsg, options);
   });

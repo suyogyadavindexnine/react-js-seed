@@ -124,7 +124,7 @@ export const groupSlice = createSlice({
         state.loadingDashboardData = false;
 
         if (action.payload) {
-          let deviceInfoList = action.payload;
+          const deviceInfoList = action.payload;
           state.dashboardData = deviceInfoList;
         }
       })

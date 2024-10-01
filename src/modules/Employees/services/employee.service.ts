@@ -54,7 +54,7 @@ export const employeeSlice = createSlice({
       .addCase(getEmployeeData.fulfilled, (state: any, action) => {
         state.loadingEmployeeData = false;
         if (action.payload) {
-          let employeeData = action.payload.employeeDetails;
+          const employeeData = action.payload.employeeDetails;
           state.employeeData = [...employeeData];
           state.employeeData = getEmployeeListInsert(employeeData);
         }

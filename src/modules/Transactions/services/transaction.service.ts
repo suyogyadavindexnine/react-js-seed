@@ -62,8 +62,8 @@ export const transactionSlice = createSlice({
       .addCase(getTransactionData.fulfilled, (state: any, action) => {
         state.loadingTransactionData = false;
         if (action.payload) {
-          let transactionData = action.payload.cryptoOrders;
-          let userData = action.payload.user;
+          const transactionData = action.payload.cryptoOrders;
+          const userData = action.payload.user;
           state.transactionData = [...transactionData];
           state.transactionData = getTransactionListInsert(transactionData);
           state.userData = userData;

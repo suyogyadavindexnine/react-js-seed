@@ -27,7 +27,7 @@ function DashboardCrypto() {
 
   useEffect(() => {
     console.log(dashboardData);
-    let dashBoardDetails = dashboardData;
+    const dashBoardDetails = dashboardData;
     setAccountData(dashBoardDetails);
   }, [dashboardData]);
 

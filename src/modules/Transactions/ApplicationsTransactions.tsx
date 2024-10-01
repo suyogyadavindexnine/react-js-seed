@@ -23,7 +23,7 @@ const ApplicationsTransactions = () => {
   }, []);
 
   useEffect(() => {
-    let cryptoOrders = transactionData;
+    const cryptoOrders = transactionData;
     setCryptoOrders(cryptoOrders);
   }, [transactionData]);
 

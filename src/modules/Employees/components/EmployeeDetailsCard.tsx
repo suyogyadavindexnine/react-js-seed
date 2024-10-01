@@ -140,13 +140,13 @@ const EmployeeDetailsCard: FC<EmployeeDetailsCardProps> = ({
     setLimit(parseInt(event.target.value));
   };
 
-  let filteredEmployees = filterDataByWeekMonthYear(
+  const filteredEmployees = filterDataByWeekMonthYear(
     employeeDetails,
     filter,
     'date_of_join'
   );
 
-  let paginatedEmployees = applyPagination(filteredEmployees, page, limit);
+  const paginatedEmployees = applyPagination(filteredEmployees, page, limit);
   const selectedSomeEmployeeDetails =
     selectedEmployees.length > 0 &&
     selectedEmployees.length < employeeDetails?.length;

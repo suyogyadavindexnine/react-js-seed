@@ -288,7 +288,7 @@ const EditCustomForm = ({
    * @returns returns valiation object
    */
   const getFieldValidationsObj = (fieldObj: any) => {
-    let validationObj: FieldValidations = {};
+    const validationObj: FieldValidations = {};
 
     fieldObj?.validations?.map((item) => {
       if (item?.id === 'required') validationObj['required'] = true;
@@ -335,7 +335,7 @@ const EditCustomForm = ({
   };
 
   //Edit Form Field
-  let editFormFields: FormFieldType[] = [
+  const editFormFields: FormFieldType[] = [
     {
       name: 'name',
       type: 'text',

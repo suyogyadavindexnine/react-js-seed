@@ -50,7 +50,7 @@ const EmployeeDetail = () => {
 
   // Use Effects
   useEffect(() => {
-    let flowchart = flowchartData;
+    const flowchart = flowchartData;
     if (flowchart?.nodeData?.edges?.length) {
       setEdges(flowchart?.nodeData?.edges);
     }

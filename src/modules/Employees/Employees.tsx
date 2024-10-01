@@ -32,7 +32,7 @@ const Employees = () => {
   }, []);
 
   useEffect(() => {
-    let employees = employeeData;
+    const employees = employeeData;
     setEmployees(employees);
   }, [employeeData]);
 
