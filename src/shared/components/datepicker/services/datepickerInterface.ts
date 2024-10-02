@@ -1,4 +1,8 @@
-import { TextFieldProps } from '@mui/material';
-import { DatePickerProps } from '@mui/x-date-pickers';
+import { TextFieldProps } from "@mui/material";
+import { DatePickerProps } from "@mui/x-date-pickers";
+import { Dayjs } from "dayjs";
 
-export type CombinedProps<TInputDate = unknown, TDate = unknown> = TextFieldProps & DatePickerProps<TInputDate, TDate>;
+export type CombinedProps<
+  TInputDate extends Dayjs,
+  TDate extends boolean
+> = TextFieldProps & DatePickerProps<TInputDate, TDate>;

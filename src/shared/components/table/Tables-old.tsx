@@ -1,25 +1,25 @@
-import * as React from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { makeStyles } from '@mui/styles';
-import { TableProps } from './services/tableInterface';
-import clsx from 'clsx';
+import * as React from "react";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { makeStyles } from "@mui/styles";
+import { TableProps } from "./services/tableInterface";
+import clsx from "clsx";
 
 const useStyles = makeStyles({
   datatable: {
-    '&.MuiDataGrid-root .MuiDataGrid-cell:focus-within': {
-      outline: 'none !important'
-    }
+    "&.MuiDataGrid-root .MuiDataGrid-cell:focus-within": {
+      outline: "none !important",
+    },
   },
   clickableRow: {
     // disable cell selection style
-    '.MuiDataGrid-cell:focus': {
-      outline: 'none'
+    ".MuiDataGrid-cell:focus": {
+      outline: "none",
     },
     // pointer cursor on ALL rows
-    '& .MuiDataGrid-row:hover': {
-      cursor: 'pointer'
-    }
-  }
+    "& .MuiDataGrid-row:hover": {
+      cursor: "pointer",
+    },
+  },
 });
 export const Tables = ({
   rows,
@@ -27,7 +27,7 @@ export const Tables = ({
   showCheckboxSelection = true,
   hideFooter = false,
   isRowClickable = false,
-  handleRowClick
+  handleRowClick,
 }: TableProps) => {
   const classes = useStyles();
   return (
