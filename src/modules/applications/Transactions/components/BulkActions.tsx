@@ -6,7 +6,6 @@ import {
   IconButton,
   Button,
   ListItemText,
-  ListItem,
   List,
   ListItemButton,
   Typography
@@ -39,56 +38,64 @@ function BulkActions() {
     menuOpen(false);
   };
 
-  return (
-    <>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
-        <Box display="flex" alignItems="center">
-          <Typography variant="h5" color="text.secondary">
-            Bulk actions:
-          </Typography>
-          <ButtonError
-            sx={{ ml: 1 }}
-            startIcon={<DeleteTwoToneIcon />}
-            variant="contained"
-          >
-            Delete
-          </ButtonError>
-        </Box>
-        <IconButton
-          color="primary"
-          onClick={openMenu}
-          ref={moreRef}
-          sx={{ ml: 2, p: 1 }}
+  return (<>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between"
+      }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center"
+        }}>
+        <Typography variant="h5" sx={{
+          color: "text.secondary"
+        }}>
+          Bulk actions:
+        </Typography>
+        <ButtonError
+          sx={{ ml: 1 }}
+          startIcon={<DeleteTwoToneIcon />}
+          variant="contained"
         >
-          <MoreVertTwoToneIcon />
-        </IconButton>
+          Delete
+        </ButtonError>
       </Box>
-
-      <Menu
-        keepMounted
-        anchorEl={moreRef.current}
-        open={onMenuOpen}
-        onClose={closeMenu}
-        anchorOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
-        }}
-        transformOrigin={{
-          vertical: 'center',
-          horizontal: 'center'
-        }}
+      <IconButton
+        color="primary"
+        onClick={openMenu}
+        ref={moreRef}
+        sx={{ ml: 2, p: 1 }}
       >
-        <List sx={{ p: 1 }} component="nav">
-          <ListItemButton>
-            <ListItemText primary="Bulk delete selected" />
-          </ListItemButton>
-          <ListItemButton>
-            <ListItemText primary="Bulk edit selected" />
-          </ListItemButton>
-        </List>
-      </Menu>
-    </>
-  );
+        <MoreVertTwoToneIcon />
+      </IconButton>
+    </Box>
+    <Menu
+      keepMounted
+      anchorEl={moreRef.current}
+      open={onMenuOpen}
+      onClose={closeMenu}
+      anchorOrigin={{
+        vertical: 'center',
+        horizontal: 'center'
+      }}
+      transformOrigin={{
+        vertical: 'center',
+        horizontal: 'center'
+      }}
+    >
+      <List sx={{ p: 1 }} component="nav">
+        <ListItemButton>
+          <ListItemText primary="Bulk delete selected" />
+        </ListItemButton>
+        <ListItemButton>
+          <ListItemText primary="Bulk edit selected" />
+        </ListItemButton>
+      </List>
+    </Menu>
+  </>);
 }
 
 export default BulkActions;

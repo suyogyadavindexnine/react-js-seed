@@ -1,6 +1,6 @@
 import {
   Container,
-  Grid,
+  Grid2 as Grid,
   Card,
   CardHeader,
   CardContent,
@@ -30,14 +30,14 @@ function Tooltips() {
           alignItems="stretch"
           spacing={3}
         >
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Card>
               <CardHeader title="Positioning" />
               <Divider />
               <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Box sx={{ width: 500 }}>
                   <Grid container justifyContent="center">
-                    <Grid item>
+                    <Grid >
                       <Tooltip arrow title="Add" placement="top-start">
                         <Button>top-start</Button>
                       </Tooltip>
@@ -50,7 +50,7 @@ function Tooltips() {
                     </Grid>
                   </Grid>
                   <Grid container justifyContent="center">
-                    <Grid item xs={6}>
+                    <Grid size={{ xs:6 }} >
                       <Tooltip arrow title="Add" placement="left-start">
                         <Button>left-start</Button>
                       </Tooltip>
@@ -64,23 +64,22 @@ function Tooltips() {
                       </Tooltip>
                     </Grid>
                     <Grid
-                      item
+                      size={{ xs:6 }}
                       container
-                      xs={6}
                       alignItems="flex-end"
                       direction="column"
                     >
-                      <Grid item>
+                      <Grid>
                         <Tooltip arrow title="Add" placement="right-start">
                           <Button>right-start</Button>
                         </Tooltip>
                       </Grid>
-                      <Grid item>
+                      <Grid>
                         <Tooltip arrow title="Add" placement="right">
                           <Button>right</Button>
                         </Tooltip>
                       </Grid>
-                      <Grid item>
+                      <Grid>
                         <Tooltip arrow title="Add" placement="right-end">
                           <Button>right-end</Button>
                         </Tooltip>
@@ -88,7 +87,7 @@ function Tooltips() {
                     </Grid>
                   </Grid>
                   <Grid container justifyContent="center">
-                    <Grid item>
+                    <Grid>
                       <Tooltip arrow title="Add" placement="bottom-start">
                         <Button>bottom-start</Button>
                       </Tooltip>

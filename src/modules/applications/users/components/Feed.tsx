@@ -1,4 +1,4 @@
-import { Box, CardHeader, Divider, Avatar, Grid } from '@mui/material';
+import { Box, CardHeader, Divider, Avatar, Grid2 as Grid } from '@mui/material';
 import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
 import { Button, Card, Typography } from '../../../../shared/components/index';
 
@@ -10,7 +10,7 @@ function Feed({ feeds, handleFollowBtn }) {
       <Box p={2}>
         <Grid container spacing={0}>
           {feeds?.map((_feed) => (
-            <Grid key={_feed.name} item xs={12} sm={6} lg={4}>
+            <Grid key={_feed.name} size= {{ xs: 12, sm: 6, lg: 4}} >
               <Box p={3} display="flex" alignItems="flex-start">
                 <Avatar src={_feed.avatar} />
                 <Box pl={2}>

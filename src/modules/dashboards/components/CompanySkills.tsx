@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Card, Grid, useTheme } from '@mui/material';
+import { Box, Card, Grid2 as Grid, useTheme } from '@mui/material';
 import { Typography } from '../../../shared/components/index';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
@@ -135,14 +135,14 @@ const CompanySkills = () => {
     <>
       <Card>
         <Grid container direction="row" justifyContent="center" alignItems="stretch">
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12}} >
           <Box sx={{ px: 2, py: 2 }}>
               <Typography variant="h4">
                 {t('dashboard.company_skills.company_skills')}
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12}}>
             <Box sx={{ p: 2, maxHeight: 400 }}>
               <ApexCharts
                 options={chartData.options as any}

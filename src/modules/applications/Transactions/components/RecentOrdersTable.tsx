@@ -14,7 +14,7 @@ import {
   TableRow,
   TableContainer,
   useTheme,
-  Grid
+  Grid2 as Grid
 } from '@mui/material';
 
 import { Label } from '../../../../shared/components/index';
@@ -183,17 +183,25 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
   const theme = useTheme();
 
   return (
-    <Card>
+    (<Card>
       {selectedBulkActions && (
-        <Box flex={1} p={2}>
+        <Box
+          sx={{
+            flex: 1,
+            p: 2
+          }}>
           <BulkActions />
         </Box>
       )}
       {!selectedBulkActions && (
-        <Box flex={1} p={1}>
+        <Box
+          sx={{
+            flex: 1,
+            p: 1
+          }}>
           <Box>
             <Grid container direction="row" spacing={2}>
-              <Grid item xs={12} md={10} sm={10} lg={11}>
+              <Grid size={{ xs: 12, md: 10, sm: 10, lg: 11 }}>
                 <TextField
                   id="outlined-search"
                   label="Search field"
@@ -201,7 +209,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={12} md={2} sm={2} lg={1}>
+              <Grid size={{ xs: 12, md: 2, sm: 2, lg: 1 }}>
                 {/* <InputLabel>Status</InputLabel> */}
                 <Select
                   sx={{ width: 100 }}
@@ -354,7 +362,9 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
           </TableBody>
         </Table>
       </TableContainer>
-      <Box p={2}>
+      <Box sx={{
+        p: 2
+      }}>
         <TablePagination
           component="div"
           count={filteredCryptoOrders.length}
@@ -365,7 +375,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({
           rowsPerPageOptions={[5, 10, 25, 30]}
         />
       </Box>
-    </Card>
+    </Card>)
   );
 };
 

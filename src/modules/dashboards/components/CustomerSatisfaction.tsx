@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import Chart from 'react-apexcharts';
-import { Box, Grid, useTheme } from '@mui/material';
+import { Box, Grid2 as Grid, useTheme } from '@mui/material';
 import { Card, Typography } from '../../../shared/components/index';
 import type { ApexOptions } from 'apexcharts';
 import { useSelector } from 'react-redux';
@@ -83,14 +83,14 @@ const CustomerSatisfaction = () => {
   return (
     <Card style={{ height: 245 }}>
       <Grid container direction="row" justifyContent="center" alignItems="stretch">
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12}} >
           <Box sx={{ p: 2 }} className="flex-basic-space-between">
             <Typography variant="h4">
               {t('dashboard.customer_satisfaction.customer_satisfaction')}
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12}} >
           {chartOptions?.series ? (
             <Chart
               options={chartOptions}

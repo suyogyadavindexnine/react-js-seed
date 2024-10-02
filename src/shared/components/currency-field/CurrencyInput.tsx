@@ -44,10 +44,13 @@ export const CurrencyInput = ({ ...props }: TextFieldProps) => {
     <MuiTextField
       value={value}
       onChange={handleChange}
-      InputProps={{
+      slotProps={{
+       input: {
         inputComponent: NumberFormatCustom as any,
         startAdornment: <InputAdornment position="start">$</InputAdornment>
+       }
       }}
+     
       {...props}
     />
   );

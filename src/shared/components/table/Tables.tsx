@@ -1,24 +1,24 @@
-import { DataGrid } from '@mui/x-data-grid';
-import { makeStyles } from '@mui/styles';
-import { useTranslation } from 'react-i18next';
-import { I18N, TABLE_PAGESIZE } from 'src/shared/constants/constants';
+import { DataGrid } from "@mui/x-data-grid";
+import { makeStyles } from "@mui/styles";
+import { useTranslation } from "react-i18next";
+import { I18N, TABLE_PAGESIZE } from "src/shared/constants/constants";
 import {
   Box,
   Card,
   InputAdornment,
   MenuItem,
   Pagination,
-  Select
-} from '@mui/material';
-import { Button, TextField, Typography } from '../index';
-import SearchIcon from '@mui/icons-material/Search';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+  Select,
+} from "@mui/material";
+import { Button, TextField, Typography } from "../index";
+import SearchIcon from "@mui/icons-material/Search";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Pager,
-  PaginationResponseDto
-} from '../../../core/model/pagination.dto';
-import React, { FC, useEffect, useState } from 'react';
-import { TabMenu } from '../tabmenu/TabMenu';
+  PaginationResponseDto,
+} from "../../../core/model/pagination.dto";
+import React, { FC, useEffect, useState } from "react";
+import { TabMenu } from "../tabmenu/TabMenu";
 
 interface TableProps {
   rows?: any[];
@@ -45,10 +45,10 @@ interface TableProps {
 
 const useStyles = makeStyles({
   datatable: {
-    '&.MuiDataGrid-root .MuiDataGrid-cell:focus-within': {
-      outline: 'none !important'
-    }
-  }
+    "&.MuiDataGrid-root .MuiDataGrid-cell:focus-within": {
+      outline: "none !important",
+    },
+  },
 });
 export const Tables = (props: TableProps) => {
   const {
@@ -71,11 +71,11 @@ export const Tables = (props: TableProps) => {
     hideFooter = true,
     showCard = true,
     addButtonDisabled = false,
-    dataSelectedText
+    dataSelectedText,
   } = props;
 
   //Constants
-  const { t } = useTranslation(['english']);
+  const { t } = useTranslation(["english"]);
   const classes = useStyles();
   const noOfRowPerPage = TABLE_PAGESIZE;
 
@@ -83,7 +83,7 @@ export const Tables = (props: TableProps) => {
   const [open, setOpen] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(TABLE_PAGESIZE[0]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [isShowCustomPagination, setIsShowCustomPagination] =
     useState(showPaginaton);
   const [showDataTableFooter, setShowDataTableFooters] = useState(hideFooter);
@@ -107,7 +107,6 @@ export const Tables = (props: TableProps) => {
       setShowDataTableFooters(false);
     }
   }, [paginationData]);
-
 
   //Methods
   const handleClose = () => {
@@ -150,12 +149,14 @@ export const Tables = (props: TableProps) => {
                     type="search"
                     value={searchText}
                     onChange={handleSearchChange}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <SearchIcon />
-                        </InputAdornment>
-                      )
+                    slotProps={{
+                      input: {
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <SearchIcon />
+                          </InputAdornment>
+                        ),
+                      },
                     }}
                   />
                 </Box>
@@ -165,7 +166,7 @@ export const Tables = (props: TableProps) => {
               {showViewByMenu && (
                 <Box className="mr-18">
                   <TabMenu
-                    dataLabelText={t('table.viewBylabel')}
+                    dataLabelText={t("table.viewBylabel")}
                     dataTabMenuOption={viewByValueOptions}
                     handleOnChange={handleViewByEvent}
                     dataSelectedText={dataSelectedText}
@@ -184,19 +185,19 @@ export const Tables = (props: TableProps) => {
               )}
             </Box>
           </Box>
-          <DataGrid 
+          <DataGrid
             rows={records}
             columns={columns}
             checkboxSelection={checkboxSelection}
             disableColumnFilter={false}
             pageSizeOptions={noOfRowPerPage}
             disableColumnMenu
-            className={'table ' + className}
+            className={"table " + className}
             autoHeight={true}
             disableRowSelectionOnClick={true}
             disableDensitySelector={true}
             classes={{ root: classes.datatable }}
-            localeText={{ noRowsLabel: t('table.noResultFound') }}
+            localeText={{ noRowsLabel: t("table.noResultFound") }}
             hideFooter={!showDataTableFooter}
             loading={loading}
           />
@@ -213,12 +214,14 @@ export const Tables = (props: TableProps) => {
                   type="search"
                   value={searchText}
                   onChange={handleSearchChange}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon />
-                      </InputAdornment>
-                    )
+                  slotProps={{
+                    input: {
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <SearchIcon />
+                        </InputAdornment>
+                      ),
+                    },
                   }}
                 />
               </Box>
@@ -233,19 +236,19 @@ export const Tables = (props: TableProps) => {
               </Box>
             )}
           </Box>
-          <DataGrid 
+          <DataGrid
             rows={records}
             columns={columns}
             checkboxSelection={checkboxSelection}
             disableColumnFilter={false}
             pageSizeOptions={noOfRowPerPage}
             disableColumnMenu
-            className={'table ' + className}
+            className={"table " + className}
             autoHeight={true}
             disableRowSelectionOnClick={true}
             disableDensitySelector={true}
             classes={{ root: classes.datatable }}
-            localeText={{ noRowsLabel: t('table.noResultFound') }}
+            localeText={{ noRowsLabel: t("table.noResultFound") }}
             hideFooter={!showDataTableFooter}
             loading={loading}
             getRowId={(row) => row?.id}
@@ -257,14 +260,14 @@ export const Tables = (props: TableProps) => {
           <Box className="flex-basic-start ">
             <Typography
               className="font-weight-semibold mr-10 paginationPerPageText"
-              variant={'body2'}
+              variant={"body2"}
             >
               View
             </Typography>
             <Select
               value={rowsPerPage || 10}
               displayEmpty
-              inputProps={{ 'aria-label': 'Without label' }}
+              inputProps={{ "aria-label": "Without label" }}
               className="table-page-dropdown"
               open={open}
               onClose={handleClose}
@@ -285,7 +288,7 @@ export const Tables = (props: TableProps) => {
             </Select>
             <Typography
               className="ml-10 font-weight-semibold paginationPerPageText"
-              variant={'body2'}
+              variant={"body2"}
             >
               Per page
             </Typography>

@@ -2,11 +2,10 @@ import {
   Box,
   IconButton,
   List,
-  ListItem,
   ListItemText,
+  ListItemButton,
   Menu,
   Typography,
-  ListItemButton
 } from '@mui/material';
 import { useRef, useState } from 'react';
 

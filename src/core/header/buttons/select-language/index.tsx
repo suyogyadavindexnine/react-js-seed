@@ -1,17 +1,16 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import {
   Box,
   ListItemText,
   List,
   Menu,
   MenuItem,
-  ListItem,
   ListItemButton,
-  Tooltip
-} from '@mui/material';
-import { useRef, useState } from 'react';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import { styled } from '@mui/material/styles';
+  Tooltip,
+} from "@mui/material";
+import { useRef, useState } from "react";
+import ExpandMoreTwoToneIcon from "@mui/icons-material/ExpandMoreTwoTone";
+import { styled } from "@mui/material/styles";
 const ListWrapper = styled(Box)(
   ({ theme }) => `
           .MuiTouchRipple-root {
@@ -19,7 +18,7 @@ const ListWrapper = styled(Box)(
           }
           
           .MuiListItem-root {
-              transition: ${theme.transitions.create(['color', 'fill'])};
+              transition: ${theme.transitions.create(["color", "fill"])};
               
               &.MuiListItem-indicators {
                   padding: ${theme.spacing(1, 2)};
@@ -65,7 +64,7 @@ const ListWrapper = styled(Box)(
 function LangSelect() {
   const { i18n, t } = useTranslation();
   const [lang, setLang] = useState(
-    localStorage.getItem('language') || 'English'
+    localStorage.getItem("language") || "English"
   );
 
   const ref = useRef<any>(null);
@@ -82,7 +81,7 @@ function LangSelect() {
   const changeLanguage = (lang: string, languagename: string) => {
     setLang(languagename);
     i18n.changeLanguage(lang.toLowerCase());
-    localStorage.setItem('language', lang);
+    localStorage.setItem("language", lang);
     setOpen(false);
   };
   return (
@@ -90,7 +89,7 @@ function LangSelect() {
       <ListWrapper>
         <List>
           <ListItemButton
-            classes={{ root: 'MuiListItem-indicators' }}
+            classes={{ root: "MuiListItem-indicators" }}
             ref={ref}
             defaultValue="a"
             onClick={handleOpen}
@@ -115,13 +114,13 @@ function LangSelect() {
         <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>
           <MenuItem
             sx={{ px: 3 }}
-            onClick={() => changeLanguage('English', 'English')}
+            onClick={() => changeLanguage("English", "English")}
           >
             English
           </MenuItem>
           <MenuItem
             sx={{ px: 3 }}
-            onClick={() => changeLanguage('French', 'French')}
+            onClick={() => changeLanguage("French", "French")}
           >
             French
           </MenuItem>

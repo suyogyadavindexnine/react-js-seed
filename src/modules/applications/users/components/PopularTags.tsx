@@ -2,7 +2,6 @@ import {
   CardHeader,
   Divider,
   List,
-  ListItem,
   ListItemAvatar,
   ListSubheader,
   ListItemText,
@@ -41,6 +40,7 @@ function PopularTags({ tags, groups }: PopularTagsDetails) {
                 color: `${theme.colors.primary.main}`,
                 '&:hover': { color: `${theme.colors.primary.dark}` }
               }}
+              
             >
               <ListItemText primary={tag} />
             </ListItemButton>

@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import {
   Box,
-  Grid,
+  Grid2 as Grid,
   FormControlLabel,
   CardHeader,
   Divider,
@@ -105,7 +105,7 @@ function MyCards({ cards, handleFollowBtn }) {
       <Box p={3}>
         <Grid container spacing={3}>
           {cards?.map((card) => (
-            <Grid item xs={12} sm={6} key={card.alt}>
+            <Grid size={{ xs: 12, sm: 6 }} key={card.alt}>
               <CardCc sx={{ px: 2, pt: 2, pb: 1 }}>
                 <Box display="flex" alignItems="center">
                   <CardLogo src={card.logo} alt={card.alt} />
@@ -151,7 +151,7 @@ function MyCards({ cards, handleFollowBtn }) {
               </CardCc>
             </Grid>
           ))}
-          <Grid item xs={12} sm={6}>
+          <Grid size= {{ xs: 12, sm: 6}} >
             <Tooltip arrow title="Click to add a new card">
               <CardAddAction>
                 <CardActionArea sx={{ px: 1 }}>
