@@ -24,3 +24,19 @@ export async function apiPost<T = any>(
 ) {
   return axiosInstance.post<T>(resource, data, config);
 }
+
+export async function apiPut<T = any>(
+  resource: string,
+  data?: any,
+  config?: AxiosRequestConfig
+) {
+  return axiosInstance.put<T>(resource, data, config);
+}
+
+export async function apiDelete<T = any>(
+  resource: string,
+  data?: any,
+  config?: AxiosRequestConfig
+) {
+  return axiosInstance.delete<T>(resource, { data: data });
+}

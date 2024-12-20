@@ -1,26 +1,26 @@
-import { Suspense, lazy } from 'react';
-import { Navigate } from 'react-router-dom';
-import { RouteObject } from 'react-router';
-import SidebarLayout from 'src/core/layout/SidebarLayout';
-import BaseLayout from 'src/core';
+import { Suspense, lazy } from "react";
+import { RouteObject } from "react-router";
+import { Navigate } from "react-router-dom";
+import BaseLayout from "src/core";
+import SidebarLayout from "src/core/layout/SidebarLayout";
 
-import { GuardedRoute } from './guarded-routes';
 import {
+  ERROR_PAGE,
   LOGIN,
   SIGNUP,
   TRANSACTIONS,
-  ERROR_PAGE
-} from './../shared/constants/constants';
+} from "./../shared/constants/constants";
+import { GuardedRoute } from "./guarded-routes";
 
-import { SuspenseLoader } from 'src/shared/components/index';
-import * as ROUTES from '../shared/constants/routes';
+import Dashboard from "src/modules/Dashboard/Dashboard";
+import { SuspenseLoader } from "src/shared/components/index";
+import * as ROUTES from "../shared/constants/routes";
 
-const Loader = (Component) => (props) =>
-  (
-    <Suspense fallback={<SuspenseLoader />}>
-      <Component {...props} />
-    </Suspense>
-  );
+const Loader = (Component) => (props) => (
+  <Suspense fallback={<SuspenseLoader />}>
+    <Component {...props} />
+  </Suspense>
+);
 
 // Pages
 
@@ -35,43 +35,68 @@ const Transactions = Loader(lazy(() => TRANSACTIONS));
 
 const routes: RouteObject[] = [
   {
-    path: '',
+    path: "",
     element: <BaseLayout />,
     children: [
       {
         path: ROUTES.LOGIN,
-        element: <Login />
-      }
-    ]
+        element: <Login />,
+      },
+      {
+        path: ROUTES.ADMIN_LOGIN,
+        element: <Login />,
+      },
+    ],
   },
+
   {
-    path: 'signup',
+    path: "signup",
     element: <BaseLayout />,
     children: [
       {
-        path: '',
-        element: <SignUp />
-      }
-    ]
+        path: "",
+        element: <SignUp />,
+      },
+    ],
   },
+
   {
-    path: ROUTES.DASHBOARD,
+    path: "",
     element: <SidebarLayout />,
     children: [
       {
-        path: '',
-        element: <Navigate to={ROUTES.TRANSACTIONS} replace />
+        path: ROUTES.TENANT,
+        element: <Dashboard title="Tenant Management" />,
+      },
+      {
+        path: ROUTES.USER,
+        element: <Dashboard title="User Management" />,
+      },
+      {
+        path: ROUTES.ROLE,
+        element: <Dashboard title="Role Management" />,
+      },
+    ]
+  },
+
+  {
+    path: ROUTES.ERROR_PAGE,
+    element: <ErrorPage />,
+  },
+  {
+    path: ROUTES.DASHBOARDS,
+    element: <SidebarLayout />,
+    children: [
+      {
+        path: "",
+        element: <Navigate to={ROUTES.TRANSACTIONS} replace />,
       },
       {
         path: ROUTES.TRANSACTIONS,
-        element: <GuardedRoute component={Transactions} />
-      }
-    ]
+        element: <GuardedRoute component={Transactions} />,
+      },
+    ],
   },
-  {
-    path: ROUTES.ERROR_PAGE,
-    element: <ErrorPage />
-  }
 ];
 
 export default routes;

@@ -12,5 +12,32 @@
   "forgotPassword": "Forgot password",
   "noAccountLabel": "Don't have an account? Sign Up",
   "google": "Google",
-  "microsoft": "Microsoft"
+  "microsoft": "Microsoft",
+  "login": {
+    "title": "Login",
+    "loginAs": "Login as:",
+    "welcomeText": "Welcome to Indexnine Demos",
+    "continueBtnText": "CONTINUE",
+    "VerifyAndLoginBtnText": "VERIFY & LOGIN",
+    "orText": "OR",
+    "verificationText": "Verification Code",
+    "verificationSubText": "Please enter 6-digit verification that was sent to your email-id.",
+    "otpText": "OTP",
+    "dontReceiveOpt": "Don’t receive an OTP? ",
+    "resendOpt": "Resend OTP",
+    "logoutBtnText": "Log Out"
+  },
+  "validationErrMsg": {
+    "required_err_msg": "{{fieldLabel}} is required",
+    "checkbox_group_err_msg": "Please select at least one option",
+    "valid_email_err_msg": "Please renter a valid email",
+    "valid_number_err_msg": "Please enter a valid number",
+    "valid_integer_err_msg": "Please enter only integer number",
+    "max_value_err_msg": "{{fieldLabel}} should not be less than {{maxValue}}",
+    "min_value_err_msg": "{{fieldLabel}} should not be greater than {{minValue}}",
+    "valid_data_err_msg": "Please enter a valid data",
+    "unique_data_err_msg": "Please enter unique {{fieldLabel}}",
+    "valid_regex_err_msg": "Please enter valid regex",
+    "default_err_msg": "Something went wrong"
+  }
 }

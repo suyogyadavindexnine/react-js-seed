@@ -1,18 +1,13 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import transactionReducer from 'src/modules/Transactions/services/transaction.service';
-// import loginReducer from './loginReducer';
-// import sidebarReducer from './sidebarReducer';
-// import userGoalsReducer from './userGoalsReducer';
+import { combineReducers } from "@reduxjs/toolkit";
+import transactionReducer from "src/modules/Transactions/services/transaction.service";
+import userReducer from "./userReducer";
 
 const combinedReducer = combineReducers({
-  // login: loginReducer,
-  // sidebar: sidebarReducer,
-  // userGoals: userGoalsReducer,
   transactionData: transactionReducer,
-  userData: transactionReducer
+  userData: userReducer,
 });
 const rootReducer = (state: any, action: any) => {
-  if (action.type === 'user/logout') {
+  if (action.type === "user/logout") {
     state = undefined;
   }
   return combinedReducer(state, action);

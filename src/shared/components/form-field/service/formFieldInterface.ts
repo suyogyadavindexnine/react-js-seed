@@ -14,24 +14,26 @@ export type FormFieldType = {
   uniqueData?: any[];
   uniqueDataKey?: string;
   handleFieldChange?: (event, field, value?) => void;
+  handleKeyDown?: (event: React.KeyboardEvent) => void;
+  placeholder?: string;
 };
 
 export type FieldType =
-  | 'text'
-  | 'alphanumerics'
-  | 'radio'
-  | 'email'
-  | 'select'
-  | 'password'
-  | 'checkbox'
-  | 'textarea'
-  | 'number_only'
-  | 'autocomplete'
-  | 'checkbox_group'
-  | 'integer_only'
-  | 'switch'
-  | 'multi-select'
-  | 'regex';
+  | "text"
+  | "alphanumerics"
+  | "radio"
+  | "email"
+  | "select"
+  | "password"
+  | "checkbox"
+  | "textarea"
+  | "number_only"
+  | "autocomplete"
+  | "checkbox_group"
+  | "integer_only"
+  | "switch"
+  | "multi-select"
+  | "regex";
 
 export type FieldValidations = {
   required?: boolean;

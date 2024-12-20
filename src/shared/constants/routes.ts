@@ -1,5 +1,13 @@
 export const LOGIN = '/';
 export const ERROR_PAGE = '/not-found';
 
-export const DASHBOARD = 'dashboards';
+export const DASHBOARDS = 'dashboards';
 export const TRANSACTIONS = 'transactions';
+
+export const DASHBOARD = '/dashboard';
+export const TENANT = '/tenant';
+export const USER = '/user';
+export const ROLE = '/role';
+
+export const ADMIN_LOGIN = '/admin';
+export const ORGANIZATION = '/organization';

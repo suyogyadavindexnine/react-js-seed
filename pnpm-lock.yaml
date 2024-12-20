@@ -204,6 +204,9 @@ importers:
       jsdom:
         specifier: ^25.0.0
         version: 25.0.0
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
       redux-mock-store:
         specifier: ^1.5.4
         version: 1.5.4

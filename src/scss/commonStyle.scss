@@ -1,13 +1,13 @@
-@import './variables';
-@import './mixins';
-@import './component/login';
-@import './component/header';
-@import './component/notifications';
-@import './component/userbox';
-@import './component/layout';
-@import './component/suspenseloader';
-@import './component/sidebar';
-@import './component/app';
+@import "./variables";
+@import "./mixins";
+@import "./component/login";
+@import "./component/header";
+@import "./component/notifications";
+@import "./component/userbox";
+@import "./component/layout";
+@import "./component/suspenseloader";
+@import "./component/sidebar";
+@import "./component/app";
 
 //common classes goes here
 body {
@@ -214,7 +214,7 @@ body {
   position: relative;
   &::after {
     height: 100%;
-    content: '';
+    content: "";
     position: absolute;
     width: 1px;
     right: 0px;
@@ -224,7 +224,6 @@ body {
 
 .commonListScroll {
   @include commonScrollBar;
-  overflow: auto;
 }
 
 //password strength meter

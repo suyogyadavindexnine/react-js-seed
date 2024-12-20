@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { FormikProvider, useFormik } from 'formik';
-import { CustomFormType } from './service/customFormInterface';
-import { Grid2 as Grid } from '@mui/material';
-import FormField from '../form-field/FormField';
-import { Button } from '../button/Button';
+import { Grid } from "@mui/material";
+import { FormikProvider, useFormik } from "formik";
+import { useEffect } from "react";
+import { Button } from "../button/Button";
+import FormField from "../form-field/FormField";
+import { CustomFormType } from "./service/customFormInterface";
 
 export const CustomForm = ({
   formFields,
   initialValues,
-  submitBtnText = 'Submit',
-  cancelBtnText = 'Cancel',
+  submitBtnText = "Submit",
+  cancelBtnText = "Cancel",
   editFieldValues,
   submitBtnHandler,
   cancelBtnHandler,
-  enableReinitialize = false
+  enableReinitialize = false,
 }: CustomFormType) => {
   //Form constants
   const formik = useFormik({
@@ -24,7 +24,7 @@ export const CustomForm = ({
     onSubmit: (values: any) => {
       submitBtnHandler(values);
       handleReset();
-    }
+    },
   });
 
   const { isValid, handleSubmit, resetForm, validateForm } = formik;
@@ -48,13 +48,13 @@ export const CustomForm = ({
         <form>
           {formFields?.map((field, index) => (
             <Grid key={index} container direction="row">
-              <Grid sx={{ m: 1 }} size={{ xs: 12, md: 12, lg: 12, xl: 12 }}>
+              <Grid sx={{ m: 1 }} xs={12} md={12} lg={12} xl={12}>
                 <FormField fieldProps={field} />
               </Grid>
             </Grid>
           ))}
-          <Grid sx={{ mt: 2 }} container direction={'row-reverse'} spacing={2}>
-            <Grid size={{ xs: 12, sm: 6, md: 2, lg: 2, xl: 2 }}>
+          <Grid sx={{ mt: 2 }} container direction={"row-reverse"} spacing={2}>
+            <Grid xs={12} sm={6} md={2} lg={2} xl={2}>
               <Button
                 btnText={submitBtnText}
                 fullWidth
@@ -64,7 +64,7 @@ export const CustomForm = ({
                 onClick={(event: any) => handleSubmit(event)}
               />
             </Grid>
-            <Grid size={{ xs: 12, sm: 6, md: 2, lg: 2, xl: 2 }}>
+            <Grid xs={12} sm={6} md={2} lg={2} xl={2}>
               <Button
                 fullWidth
                 btnText={cancelBtnText}
