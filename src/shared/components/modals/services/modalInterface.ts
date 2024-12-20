@@ -1,6 +1,6 @@
 import {
   Dialog as MuiDialog,
-  DialogProps as MuiDialogProps
+  DialogProps as MuiDialogProps,
 } from '@mui/material';
 
 export interface MuiDialog extends MuiDialogProps {
@@ -9,4 +9,5 @@ export interface MuiDialog extends MuiDialogProps {
   selectedValue?: string;
   model_title?: JSX.Element;
   model_content?: JSX.Element;
+  model_actions?: JSX.Element;
 }

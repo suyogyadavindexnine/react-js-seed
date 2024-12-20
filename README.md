@@ -22,7 +22,7 @@ export default tseslint.config({
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,7 +31,7 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from 'eslint-plugin-react';
 
 export default tseslint.config({
   // Set the react version
@@ -46,5 +46,14 @@ export default tseslint.config({
     ...react.configs.recommended.rules,
     ...react.configs['jsx-runtime'].rules,
   },
-})
+});
 ```
+
+## Project Overview
+
+This seed project includes a multitenancy implementation by default. Developers who wish to opt out of this feature can follow these steps:
+
+1. Delete the `Dashboard` folder from the `modules`.
+2. Update the `navigate` path in the `getOtpOnEmail` function within the `Login` component.
+3. Remove the `DASHBOARD` path from the router configuration.
+4. Remove the `user reducer` from `store\reducer` folder and from the index file on the same path.

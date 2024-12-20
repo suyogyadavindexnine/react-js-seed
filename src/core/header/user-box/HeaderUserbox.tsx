@@ -7,11 +7,24 @@ import { Typography } from 'src/shared/components/index';
 import { getLoggedInUserData } from 'src/modules/Transactions/services/transaction.service';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppDispatch, RootState } from 'src/store/configure-store';
+import { LOGIN } from '../../../shared/constants/routes';
+import { useNavigate } from 'react-router';
+import { clearUserDetails } from '../../../store/reducer/userReducer';
+
+interface TenantRole {
+  roles?: string[];
+}
+
+interface UserData {
+  name?: string;
+  avatar?: string;
+  tenantRoles?: TenantRole[];
+}
 
 const HeaderUserbox = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { userData } = useSelector((state: RootState) => state.userData);
-
+  const navigate = useNavigate();
+  const userData = useSelector((state: RootState) => state.userData) as UserData;
   useEffect(() => {
     dispatch(getLoggedInUserData());
   }, []);
@@ -29,22 +42,43 @@ const HeaderUserbox = () => {
   };
 
   const userLogout = () => {
-    logout();
+    dispatch(clearUserDetails());
+    navigate(LOGIN);
   };
+  /**
+   * Helper function to convert SNAKE_CASE to Title Case
+   * @param name - The string to convert to title case.
+   * @returns The title case version of the input string.
+   */
+  let convertToTitleCase = (name: string | undefined): string => {
+    if (!name) return "";
+    return name
+      .toLowerCase()
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+  /**
+   * Extract and format the role
+   * @returns The formatted role string.
+   */
+  const formattedRole = convertToTitleCase(userData?.tenantRoles?.[0]?.roles?.[0]);
+
+
 
   return (
     <>
       <Button color="secondary" ref={ref} onClick={handleOpen}>
         <Avatar variant="rounded" alt={userData?.name} src={userData?.avatar} />
-        <Box className="hidden md:flex flex-col ml-2">
+        <Box className="UserBoxText">
           <Typography className="UserBoxLabel" variant="body1">
             {userData?.name}
           </Typography>
           <Typography className="UserBoxDescription" variant="body2">
-            {userData?.jobtitle}
+            {formattedRole}
           </Typography>
         </Box>
-        <ExpandMoreTwoToneIcon className="hidden sm:inline-block ml-1" />
+        <ExpandMoreTwoToneIcon sx={{ ml: 1 }} />
       </Button>
       <Popover
         anchorEl={ref.current}
@@ -66,7 +100,7 @@ const HeaderUserbox = () => {
               {userData?.name}
             </Typography>
             <Typography className="UserBoxDescription" variant="body2">
-              {userData?.jobtitle}
+              {formattedRole}
             </Typography>
           </Box>
         </Box>

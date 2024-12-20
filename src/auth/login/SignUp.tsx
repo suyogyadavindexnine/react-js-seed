@@ -3,25 +3,25 @@ import {
   CardContent,
   Container,
   CssBaseline,
-  Grid2 as Grid,
-  Link
-} from '@mui/material';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+  Grid,
+  Link,
+} from "@mui/material";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
+  Card,
+  PasswordStrengthMeter,
   TextField,
   Typography,
-  Card,
-  PasswordStrengthMeter
-} from 'src/shared/components/index';
-import Googlelogo from '../../assets/images/Googlelogo.png';
-import Microsoftlogo from '../../assets/images/Microsoftlogo.png';
+} from "src/shared/components/index";
+import Googlelogo from "../../assets/images/Googlelogo.png";
+import Microsoftlogo from "../../assets/images/Microsoftlogo.png";
 
 const SignUp = () => {
   //const
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState<string>("");
   const [isPasswordError, setIsPasswordError] = useState(false);
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const SignUp = () => {
     setIsPasswordError(isError);
   };
   const goToSignIn = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -40,13 +40,12 @@ const SignUp = () => {
         <Card>
           <Grid container spacing={2} className="">
             <Grid
+              item
               className="flex-basic-center loginBox"
-              size={{
-                xs: 12,
-                sm: 6,
-                md: 6,
-                lg: 6
-              }}
+              xs={12}
+              sm={6}
+              md={6}
+              lg={6}
             >
               <CardContent sx={{ p: 5 }}>
                 <Box sx={{ mb: 3 }} className="flex-basic-center">
@@ -104,7 +103,7 @@ const SignUp = () => {
                     type="password"
                     id="confirmpassword"
                     autoComplete="current-password"
-                    value={''}
+                    value={""}
                   />
                 </Box>
 
@@ -116,18 +115,17 @@ const SignUp = () => {
                   btnText="Sign Up"
                 ></Button>
                 <Link onClick={goToSignIn} variant="body2">
-                  {'Already have account? Sign In'}
+                  {"Already have account? Sign In"}
                 </Link>
               </CardContent>
             </Grid>
             <Grid
+              item
               className="loginWithGoogle flex-basic-center"
-              size={{
-                xs: 12,
-                sm: 6,
-                md: 6,
-                lg: 6
-              }}
+              xs={12} // Moved size props here
+              sm={6}
+              md={6}
+              lg={6}
             >
               <Box sx={{ p: 10 }} className="flex-column-center w-100">
                 <Box className="w-100">

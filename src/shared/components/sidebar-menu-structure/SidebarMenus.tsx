@@ -38,7 +38,7 @@ export const SidebarMenus = ({ menuname, option }: sidebarmenuprops) => {
                       disableRipple
                       component={RouterLink}
                       onClick={closeSidebar}
-                      to={`/${item.pathname}/${item.subpathname}`}
+                      to={`${item.pathname}${item.subpathname}`}
                       startIcon={item.icon}
                     >
                       {t(item.submenuname)}

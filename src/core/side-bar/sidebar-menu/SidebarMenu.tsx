@@ -1,19 +1,31 @@
-import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
-import { SidebarMenus } from 'src/shared/components/index';
-import * as ROUTES from 'src/shared/constants/routes';
+import TableChartTwoToneIcon from "@mui/icons-material/TableChartTwoTone";
+import { SidebarMenus } from "src/shared/components/index";
+import * as ROUTES from "src/shared/constants/routes";
 
 const SidebarMenu = () => {
   return (
     <>
       <SidebarMenus
-        menuname={'Dashboards'}
+        menuname={""}
         option={[
           {
-            pathname: ROUTES.DASHBOARD,
-            subpathname: ROUTES.TRANSACTIONS,
+            pathname: ROUTES.TENANT,
+            subpathname: '',
             icon: <TableChartTwoToneIcon />,
-            submenuname: 'transac_list'
-          }
+            submenuname: "Tenant Management",
+          },
+          {
+            pathname: ROUTES.USER,
+            subpathname: '',
+            icon: <TableChartTwoToneIcon />,
+            submenuname: "User Management",
+          },
+          {
+            pathname: ROUTES.ROLE,
+            subpathname: '',
+            icon: <TableChartTwoToneIcon />,
+            submenuname: "Role Management",
+          },
         ]}
       />
     </>
