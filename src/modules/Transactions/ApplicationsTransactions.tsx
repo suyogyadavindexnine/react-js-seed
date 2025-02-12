@@ -1,21 +1,21 @@
-import AddTwoToneIcon from "@mui/icons-material/AddTwoTone";
-import { Button, Container, Grid, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { useDispatch, useSelector } from "react-redux";
-import { PageHeader, PageTitleWrapper } from "src/shared/components/index";
-import { AppDispatch, RootState } from "src/store/configure-store";
-import RecentOrders from "./components/RecentOrders";
-import { getTransactionData } from "./services/transaction.service";
+import AddTwoToneIcon from '@mui/icons-material/AddTwoTone';
+import { Button, Container, Grid, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useDispatch, useSelector } from 'react-redux';
+import { PageHeader, PageTitleWrapper } from 'src/shared/components/index';
+import { AppDispatch, RootState } from 'src/store/configure-store';
+import RecentOrders from './components/RecentOrders';
+import { getTransactionData } from './services/transaction.service';
 
 const ApplicationsTransactions = () => {
   //constants
   const dispatch = useDispatch<AppDispatch>();
   const [cryptoOrders, setCryptoOrders] = useState([]);
   const { transactionData } = useSelector(
-    (state: RootState) => state.transactionData,
+    (state: RootState) => state.transactionData
   );
-  const { userData } = useSelector((state: RootState) => state.userData);
+  const userData = useSelector((state: RootState) => state.userData);
 
   //useEffect
   useEffect(() => {
@@ -29,7 +29,7 @@ const ApplicationsTransactions = () => {
 
   //methods
   const onBtnClick = () => {
-    console.log("btnClick done !!!!!");
+    console.log('btnClick done !!!!!');
   };
 
   return (

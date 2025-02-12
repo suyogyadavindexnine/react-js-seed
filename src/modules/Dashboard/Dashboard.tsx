@@ -1,16 +1,32 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import DashboardHeader from './DashboardHeader'
-import { Box } from '@mui/system'
-import { formFieldsByRoute, initialValuesByRoute, editUserFormFields, addAuthConfigFormFields } from 'src/shared/constants/formFields'
+import DashboardHeader from './DashboardHeader';
+import { Box } from '@mui/system';
+import {
+  formFieldsByRoute,
+  initialValuesByRoute,
+  editUserFormFields,
+  addAuthConfigFormFields,
+} from 'src/shared/constants/formFields';
 import { SimpleDialog } from 'src/shared/components/modals/SimpleDialog';
 import CustomForm from 'src/shared/components/custom-form/CustomForm';
 import { USER, TENANT, ROLE } from 'src/shared/constants/routes';
-import * as ROUTES from "../../shared/constants/routes";
+import * as ROUTES from '../../shared/constants/routes';
 import { Button, Card, Tables } from 'src/shared/components';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { addTenantAPI, addTenantAuthConfig, addUserAPI, deleteTenantAPI, deleteUserAPI, editTenantAPI, editUserAPI, getRoleAPI, getTenantAPI, getUserAPI } from './apis/userTenantRoleAPI';
+import {
+  addTenantAPI,
+  addTenantAuthConfig,
+  addUserAPI,
+  deleteTenantAPI,
+  deleteUserAPI,
+  editTenantAPI,
+  editUserAPI,
+  getRoleAPI,
+  getTenantAPI,
+  getUserAPI,
+} from './apis/userTenantRoleAPI';
 import { useSelector } from 'react-redux';
 import { RootState } from 'src/store/configure-store';
 
@@ -40,13 +56,16 @@ const Dashboard = ({ title }) => {
   const [tenants, setTenants] = useState([]);
   const [roles, setRoles] = useState([]);
   const [formFields, setFormFields] = useState(formFieldsByRoute);
-  const [authConfigFormFields, setAuthConfigFormFields] = useState(addAuthConfigFormFields);
+  const [authConfigFormFields, setAuthConfigFormFields] = useState(
+    addAuthConfigFormFields
+  );
   const location = useLocation();
   const currentPath = location.pathname;
 
   const showAddButton = currentPath !== ROUTES.ROLE;
-  const showAddAuthConfigButton = currentPath !== ROUTES.ROLE && currentPath !== ROUTES.USER;
-  const userData = useSelector((state: RootState) => state.userData)
+  const showAddAuthConfigButton =
+    currentPath !== ROUTES.ROLE && currentPath !== ROUTES.USER;
+  const userData = useSelector((state: RootState) => state.userData);
 
   /**
    * Handles the form submission for adding a new user or tenant.
@@ -54,7 +73,9 @@ const Dashboard = ({ title }) => {
    */
   const handleSubmit = async (values: any) => {
     if (currentPath === USER) {
-      const roleName = formFieldsByRoute[USER].find(field => field.id === 'role')?.options.find(option => option.value === values.role)?.label;
+      const roleName = formFieldsByRoute[USER].find(
+        (field) => field.id === 'role'
+      )?.options.find((option) => option.value === values.role)?.label;
       values.role = roleName;
       await addUserAPI(values);
       await fetchUsers(1, 10);
@@ -143,7 +164,7 @@ const Dashboard = ({ title }) => {
         return {
           tenantId: tenant.id,
           tenantName: tenant.tenant,
-          roles: tenantRole.roles || [] // Get roles associated with the tenant
+          roles: tenantRole.roles || [], // Get roles associated with the tenant
         };
       });
 
@@ -186,7 +207,7 @@ const Dashboard = ({ title }) => {
       cert: JSON.stringify(values.certificate),
       issuer: values.issuer,
       entryPoint: values.entryPoint,
-    }
+    };
 
     if (values) {
       try {
@@ -203,21 +224,25 @@ const Dashboard = ({ title }) => {
    * @param values - The form values to be submitted.
    */
   const handleUserSaveEdit = async (values: any) => {
-
     if (selectedUser) {
-
-      const role = roles.find(r => r.id === values.role);
+      const role = roles.find((r) => r.id === values.role);
       const roleName = role ? role.role : '';
 
-      const tenantRoles = [{
-        tenantId: values.tenant,
-        roles: [roleName]
-      }];
+      const tenantRoles = [
+        {
+          tenantId: values.tenant,
+          roles: [roleName],
+        },
+      ];
       try {
-        await editUserAPI(selectedUser.id, values.name, tenantRoles.map(role => ({
-          tenantId: parseInt(role.tenantId),
-          roles: role.roles.map(roleName => roleName.toString())
-        })));
+        await editUserAPI(
+          selectedUser.id,
+          values.name,
+          tenantRoles.map((role) => ({
+            tenantId: parseInt(role.tenantId),
+            roles: role.roles.map((roleName) => roleName.toString()),
+          }))
+        );
         fetchUsers(1, 10);
         setSelectedUser(null);
         setUserName('');
@@ -266,13 +291,12 @@ const Dashboard = ({ title }) => {
    * Fetches the roles from the API.
    */
   const fetchRoles = async () => {
-
     try {
       const response: Role[] = await getRoleAPI();
       // Transform role names: Replace underscores with spaces
       const transformedResponse = response.map((role) => ({
         ...role,
-        role: role.role.replace(/_/g, " "), // Replace underscores with spaces
+        role: role.role.replace(/_/g, ' '), // Replace underscores with spaces
       }));
       setRows(transformedResponse);
       setRoles(transformedResponse);
@@ -313,7 +337,6 @@ const Dashboard = ({ title }) => {
     }
   };
 
-
   /**
    * Fetches the options for the form fields and updates the form fields of add user form.
    */
@@ -327,12 +350,16 @@ const Dashboard = ({ title }) => {
       const updatedAuthConfigFields = [...addAuthConfigFormFields];
 
       // Update role options
-      const roleField = updatedFormFields[USER].find((field) => field.id === 'role');
+      const roleField = updatedFormFields[USER].find(
+        (field) => field.id === 'role'
+      );
       if (roleField) {
-        const isTenantAdmin = userData.tenantRoles.some(role => role.roles.includes('ADMIN'));
+        const isTenantAdmin = userData.tenantRoles.some((role) =>
+          role.roles.includes('ADMIN')
+        );
 
         roleField.options = roles
-          .filter(role => !(isTenantAdmin && role.role === 'SUPER_ADMIN')) // Exclude SUPER_ADMIN if Admin
+          .filter((role) => !(isTenantAdmin && role.role === 'SUPER_ADMIN')) // Exclude SUPER_ADMIN if Admin
           .map((item) => ({
             label: item.role === 'SUPER_ADMIN' ? 'SUPER_ADMIN' : item.role, // Replace SUPER_ADMIN with SUPER ADMIN
             value: item.id,
@@ -340,7 +367,9 @@ const Dashboard = ({ title }) => {
       }
 
       // Update tenant options
-      const tenantField = updatedFormFields[USER].find((field) => field.id === 'tenant');
+      const tenantField = updatedFormFields[USER].find(
+        (field) => field.id === 'tenant'
+      );
       if (tenantField) {
         tenantField.options = tenants.map((item) => ({
           label: item.tenant,
@@ -348,7 +377,9 @@ const Dashboard = ({ title }) => {
         }));
       }
 
-      const authTenantField = updatedAuthConfigFields.find((field) => field.id === 'tenant');
+      const authTenantField = updatedAuthConfigFields.find(
+        (field) => field.id === 'tenant'
+      );
       if (authTenantField) {
         authTenantField.options = tenants.map((item) => ({
           label: item.tenant,
@@ -370,16 +401,17 @@ const Dashboard = ({ title }) => {
    */
   const updateTenantOptionsForEditUser = async (updatedUserTenants: any) => {
     try {
-
-      const tenantOptions = updatedUserTenants.map(tenant => ({
+      const tenantOptions = updatedUserTenants.map((tenant) => ({
         label: tenant.tenantName, // Use tenant name here
         value: tenant.tenantId,
       }));
 
       // Update the options for tenant and role fields
       const updatedFormFields = [...editUserFormFields];
-      const tenantField = updatedFormFields.find(field => field.id === 'tenant');
-      const roleField = updatedFormFields.find(field => field.id === 'role');
+      const tenantField = updatedFormFields.find(
+        (field) => field.id === 'tenant'
+      );
+      const roleField = updatedFormFields.find((field) => field.id === 'role');
 
       if (tenantField) {
         tenantField.options = tenantOptions; // Set tenant options
@@ -387,7 +419,7 @@ const Dashboard = ({ title }) => {
       }
 
       if (roleField) {
-        roleField.options = roles.map(role => ({
+        roleField.options = roles.map((role) => ({
           label: role.role,
           value: role.id,
         }));
@@ -399,28 +431,27 @@ const Dashboard = ({ title }) => {
     }
   };
 
+  const loadOptions = async () => {
+    const updatedFormFields = await fetchOptions(); // Get updated form fields
+    setFormFields(updatedFormFields); // Set the updated form fields
+    if (currentPath === USER) {
+      fetchUsers(1, 10);
+      fetchTenants();
+      fetchRoles();
+    } else if (currentPath === TENANT) {
+      fetchTenants();
+    } else if (currentPath === ROLE) {
+      fetchRoles();
+    }
+  };
+
   /**
    * Effect hook to load options and fetch data based on the current path.
    */
   useEffect(() => {
     setRows([]);
-    const loadOptions = async () => {
-      const updatedFormFields = await fetchOptions(); // Get updated form fields
-      setFormFields(updatedFormFields); // Set the updated form fields
-      if (currentPath === USER) {
-        fetchUsers(1, 10);
-        fetchTenants();
-        fetchRoles();
-      } else if (currentPath === TENANT) {
-        fetchTenants();
-      } else if (currentPath === ROLE) {
-        fetchRoles();
-      }
-    };
     loadOptions();
-
   }, [currentPath]);
-
 
   /**
    * Dialog content for adding a new user or tenant.
@@ -446,7 +477,8 @@ const Dashboard = ({ title }) => {
       <CustomForm
         formFields={formFields[currentPath]}
         initialValues={{
-          tenantName: tenantName || initialValuesByRoute[currentPath]?.tenantName,
+          tenantName:
+            tenantName || initialValuesByRoute[currentPath]?.tenantName,
         }}
         submitBtnText="Save"
         cancelBtnText="Cancel"
@@ -472,7 +504,6 @@ const Dashboard = ({ title }) => {
    */
   const dialogContentForEditUser = (
     <Box sx={{ minWidth: 400, p: 2 }}>
-
       <CustomForm
         formFields={editUserFormFields}
         initialValues={{
@@ -498,28 +529,27 @@ const Dashboard = ({ title }) => {
         { field: 'user', headerName: 'User', width: 150 },
         { field: 'role', headerName: 'Role', width: 150 },
         {
-          field: 'actions', headerName: 'Actions', width: 150, renderCell: (params: any) => (
+          field: 'actions',
+          headerName: 'Actions',
+          width: 150,
+          renderCell: (params: any) => (
             <>
               <Button
                 aria-label="delete"
-                sx={{ color: "red" }}
+                sx={{ color: 'red' }}
                 btnClass="delete-btn"
                 onClick={() => openConfirmDeleteDialog(params.row.id)}
                 icon={<DeleteIcon />}
-              >
-              </Button>
+              ></Button>
               <Button
                 aria-label="edit"
-                sx={{ color: "blue" }}
+                sx={{ color: 'blue' }}
                 btnClass="edit-btn"
                 onClick={() => handleUserEditClick(params.row)}
                 icon={<EditIcon />}
-              >
-              </Button>
-
+              ></Button>
             </>
-
-          )
+          ),
         },
       ];
     } else if (currentPath === TENANT) {
@@ -527,28 +557,27 @@ const Dashboard = ({ title }) => {
         { field: 'id', headerName: 'ID', width: 90 },
         { field: 'tenant', headerName: 'Tenant', width: 150 },
         {
-          field: 'actions', headerName: 'Actions', width: 150, renderCell: (params: any) => (
+          field: 'actions',
+          headerName: 'Actions',
+          width: 150,
+          renderCell: (params: any) => (
             <>
               <Button
                 aria-label="delete"
-                sx={{ color: "red" }}
+                sx={{ color: 'red' }}
                 btnClass="delete-btn"
                 onClick={() => openConfirmDeleteDialog(params.row.id)}
                 icon={<DeleteIcon />}
-              >
-              </Button>
+              ></Button>
               <Button
                 aria-label="edit"
-                sx={{ color: "blue" }}
+                sx={{ color: 'blue' }}
                 btnClass="edit-btn"
                 onClick={() => handleTenantEditClick(params.row)}
                 icon={<EditIcon />}
-              >
-              </Button>
-
+              ></Button>
             </>
-
-          )
+          ),
         },
       ];
     } else if (currentPath === ROLE) {
@@ -562,11 +591,21 @@ const Dashboard = ({ title }) => {
 
   return (
     <>
-      <Box >
-        <DashboardHeader title={title} onAddTenantClick={handleAddClick} onAddAuthConfigClick={handleAddAuthConfigClick} showAddButton={showAddButton} showAddAuthConfigButton={showAddAuthConfigButton} />
+      <Box>
+        <DashboardHeader
+          title={title}
+          onAddTenantClick={handleAddClick}
+          onAddAuthConfigClick={handleAddAuthConfigClick}
+          showAddButton={showAddButton}
+          showAddAuthConfigButton={showAddAuthConfigButton}
+        />
         <Card sx={{ m: 3 }}>
           <Box flex={1}>
-            <Tables rows={rows} columns={getColumns()} checkboxSelection={false} />
+            <Tables
+              rows={rows}
+              columns={getColumns()}
+              checkboxSelection={false}
+            />
           </Box>
         </Card>
       </Box>
@@ -584,8 +623,16 @@ const Dashboard = ({ title }) => {
         model_content={
           <>
             <p>Are you sure you want to delete this?</p>
-            <Button onClick={handleConfirmDelete} color="primary" btnText='Yes'></Button>
-            <Button onClick={handleCancelDelete} color="secondary" btnText='No'></Button>
+            <Button
+              onClick={handleConfirmDelete}
+              color="primary"
+              btnText="Yes"
+            ></Button>
+            <Button
+              onClick={handleCancelDelete}
+              color="secondary"
+              btnText="No"
+            ></Button>
           </>
         }
       />
@@ -608,10 +655,7 @@ const Dashboard = ({ title }) => {
         model_content={dialogContentForAddAuthConfig}
       />
     </>
-  )
-}
+  );
+};
 
-export default Dashboard
-
-
-
+export default Dashboard;

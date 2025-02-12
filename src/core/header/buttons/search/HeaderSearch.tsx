@@ -12,7 +12,7 @@ import {
   ListItem,
   ListItemAvatar,
   Slide,
-  Tooltip
+  Tooltip,
 } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
 import { ChangeEvent, forwardRef, ReactElement, Ref, useState } from 'react';
@@ -23,7 +23,7 @@ import {
   Button,
   SimpleDialog,
   TextField,
-  Typography
+  Typography,
 } from 'src/shared/components/index';
 
 const Transition = forwardRef(function Transition(
@@ -84,14 +84,12 @@ const HeaderSearch = () => {
                 placeholder="Search terms here..."
                 fullWidth
                 label="Search"
-                slotProps={{
-                  input: {
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchTwoToneIcon />
-                      </InputAdornment>
-                    ),
-                  },
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchTwoToneIcon />
+                    </InputAdornment>
+                  ),
                 }}
               />
             </DialogTitle>
@@ -118,12 +116,14 @@ const HeaderSearch = () => {
                 </Box>
                 <Divider sx={{ my: 1 }} />
                 <List disablePadding>
-                  <ListItem >
-                      <ListItemAvatar sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Avatar className="SearchAvatar">
-                          <FindInPageTwoToneIcon />
-                        </Avatar>
-                      </ListItemAvatar>
+                  <ListItem>
+                    <ListItemAvatar
+                      sx={{ display: { xs: 'none', sm: 'block' } }}
+                    >
+                      <Avatar className="SearchAvatar">
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
                     <Box flex="1">
                       <Box display="flex" justifyContent="space-between">
                         <Link
@@ -143,12 +143,14 @@ const HeaderSearch = () => {
                     <ChevronRightTwoToneIcon />
                   </ListItem>
                   <Divider sx={{ my: 1 }} component="li" />
-                  <ListItem >
-                      <ListItemAvatar sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Avatar className="SearchAvatar">
-                          <FindInPageTwoToneIcon />
-                        </Avatar>
-                      </ListItemAvatar>
+                  <ListItem>
+                    <ListItemAvatar
+                      sx={{ display: { xs: 'none', sm: 'block' } }}
+                    >
+                      <Avatar className="SearchAvatar">
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
                     <Box flex="1">
                       <Box display="flex" justifyContent="space-between">
                         <Link
@@ -168,12 +170,14 @@ const HeaderSearch = () => {
                     <ChevronRightTwoToneIcon />
                   </ListItem>
                   <Divider sx={{ my: 1 }} component="li" />
-                  <ListItem >
-                      <ListItemAvatar sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Avatar className="SearchAvatar">
-                          <FindInPageTwoToneIcon />
-                        </Avatar>
-                      </ListItemAvatar>
+                  <ListItem>
+                    <ListItemAvatar
+                      sx={{ display: { xs: 'none', sm: 'block' } }}
+                    >
+                      <Avatar className="SearchAvatar">
+                        <FindInPageTwoToneIcon />
+                      </Avatar>
+                    </ListItemAvatar>
                     <Box flex="1">
                       <Box display="flex" justifyContent="space-between">
                         <Link

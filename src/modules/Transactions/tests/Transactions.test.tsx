@@ -20,9 +20,9 @@ const initialState = {
       amountCrypto: 34.4565,
       amount: 56787,
       cryptoCurrency: 'ETH',
-      currency: '$'
-    }
-  ]
+      currency: '$',
+    },
+  ],
 };
 const mockStore = configureMockStore();
 let store;
@@ -32,7 +32,7 @@ beforeEach(() => {
 });
 describe('test RecentOrders', () => {
   store = mockStore(initialState);
-  const handleButtonClick = jest.fn();
+  const handleButtonClick = vi.fn();
 
   const renderWithTransaction = (component) => {
     return render(

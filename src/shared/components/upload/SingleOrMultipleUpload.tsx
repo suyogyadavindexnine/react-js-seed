@@ -15,7 +15,7 @@ export const SingleOrMultipleUpload = ({
   maxFilesToUpload = 10,
   isMultiple = false,
   setSingleData,
-  setMultipleData
+  setMultipleData,
 }: SingleOrMultipleUploadProps) => {
   // State Variables
   const [files, setFiles] = useState([] as any[]);
@@ -39,14 +39,17 @@ export const SingleOrMultipleUpload = ({
   const { getRootProps, getInputProps } = useDropzone({
     multiple: isMultiple,
     maxSize: maxFileSize,
-    accept: acceptedFileFormat?.toString(),
+    accept: { acceptedFileFormat },
     onDropRejected: (rejections: FileRejection[]) => {
       if (!acceptedFileFormat.includes(rejections[0]?.file?.type)) {
-        return ToastMsgs.showErrorMessage('Please upload a file with a valid format', {
-          theme: 'colored',
-          position: 'bottom-center',
-          autoClose: 5000
-        });
+        return ToastMsgs.showErrorMessage(
+          'Please upload a file with a valid format',
+          {
+            theme: 'colored',
+            position: 'bottom-center',
+            autoClose: 5000,
+          }
+        );
       } else {
         return ToastMsgs.showErrorMessage(
           `File(s) size should be less than  ${
@@ -55,7 +58,7 @@ export const SingleOrMultipleUpload = ({
           {
             theme: 'colored',
             position: 'bottom-center',
-            autoClose: 5000
+            autoClose: 5000,
           }
         );
       }
@@ -71,24 +74,24 @@ export const SingleOrMultipleUpload = ({
         ToastMsgs.showErrorMessage('Please upload a file with a valid format', {
           theme: 'colored',
           position: 'bottom-center',
-          autoClose: 5000
+          autoClose: 5000,
         });
       }
-    }
+    },
   });
 
   const singleFileAccept = (acceptedFile: any) => {
     const newFile = new File([acceptedFile], acceptedFile?.name, {
       type: acceptedFile?.type?.includes('video')
         ? 'video/mp4'
-        : acceptedFile?.type
+        : acceptedFile?.type,
     });
     const fileData = Object.assign(newFile, {
-      preview: URL.createObjectURL(newFile)
+      preview: URL.createObjectURL(newFile),
     });
     const payload = {
       file: newFile,
-      ...fileData
+      ...fileData,
     };
     setFiles([payload]);
   };
@@ -98,7 +101,7 @@ export const SingleOrMultipleUpload = ({
     const oldFiles = uploadedFiles || [];
     acceptedFiles?.forEach((file) => {
       const fileData = Object.assign(file, {
-        preview: URL.createObjectURL(file)
+        preview: URL.createObjectURL(file),
       });
       filesList.push(fileData);
     });
@@ -109,7 +112,7 @@ export const SingleOrMultipleUpload = ({
         {
           theme: 'colored',
           position: 'bottom-center',
-          autoClose: 5000
+          autoClose: 5000,
         }
       );
     } else {

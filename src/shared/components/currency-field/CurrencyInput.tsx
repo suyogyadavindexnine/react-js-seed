@@ -4,7 +4,7 @@ import { TextField as MuiTextField } from '@mui/material';
 import InputAdornment from '@mui/material/InputAdornment';
 import {
   NumberFormatCustomProps,
-  TextFieldProps
+  TextFieldProps,
 } from './services/currencyFieldInterface';
 
 const NumberFormatCustom = React.forwardRef<
@@ -16,8 +16,8 @@ const NumberFormatCustom = React.forwardRef<
   const onValueChange = (values: { value: string }) => {
     onChange({
       target: {
-        value: values.value
-      }
+        value: values.value,
+      },
     });
   };
 
@@ -45,11 +45,10 @@ export const CurrencyInput = ({ ...props }: TextFieldProps) => {
       value={value}
       onChange={handleChange}
       {...props}
-      slotProps={{
-        input: {
-          inputComponent: NumberFormatCustom as any,
-          startAdornment: <InputAdornment position="start">$</InputAdornment>
-        }
-      }} />
+      InputProps={{
+        inputComponent: NumberFormatCustom as any,
+        startAdornment: <InputAdornment position="start">$</InputAdornment>,
+      }}
+    />
   );
 };

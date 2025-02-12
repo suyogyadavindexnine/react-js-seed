@@ -1,23 +1,23 @@
-import { Suspense, lazy } from "react";
-import { RouteObject } from "react-router";
-import { Navigate } from "react-router-dom";
-import BaseLayout from "src/core";
-import SidebarLayout from "src/core/layout/SidebarLayout";
+import { Suspense, lazy } from 'react';
+import { RouteObject } from 'react-router';
+import { Navigate } from 'react-router-dom';
+import BaseLayout from 'src/core';
+import SidebarLayout from 'src/core/layout/SidebarLayout';
 
 import {
   ERROR_PAGE,
   LOGIN,
   SIGNUP,
   TRANSACTIONS,
-} from "./../shared/constants/constants";
-import { GuardedRoute } from "./guarded-routes";
+} from './../shared/constants/constants';
+import { GuardedRoute } from './guarded-routes';
 
-import Dashboard from "src/modules/Dashboard/Dashboard";
-import { SuspenseLoader } from "src/shared/components/index";
-import * as ROUTES from "../shared/constants/routes";
-import Auth from "src/auth/login/Auth";
-import UserDashboard from "../modules/Dashboard/UserDashboard";
-import ListOfTenants from "src/auth/login/ListOfTenants";
+import Dashboard from 'src/modules/Dashboard/Dashboard';
+import { SuspenseLoader } from 'src/shared/components/index';
+import * as ROUTES from '../shared/constants/routes';
+import Auth from 'src/auth/login/Auth';
+import UserDashboard from '../modules/Dashboard/UserDashboard';
+import ListOfTenants from 'src/auth/login/ListOfTenants';
 
 const Loader = (Component) => (props) => (
   <Suspense fallback={<SuspenseLoader />}>
@@ -38,7 +38,7 @@ const Transactions = Loader(lazy(() => TRANSACTIONS));
 
 const routes: RouteObject[] = [
   {
-    path: "",
+    path: '',
     element: <BaseLayout />,
     children: [
       {
@@ -61,18 +61,18 @@ const routes: RouteObject[] = [
   },
 
   {
-    path: "signup",
+    path: 'signup',
     element: <BaseLayout />,
     children: [
       {
-        path: "",
+        path: '',
         element: <SignUp />,
       },
     ],
   },
 
   {
-    path: "",
+    path: '',
     element: <SidebarLayout />,
     children: [
       {
@@ -91,9 +91,8 @@ const routes: RouteObject[] = [
         path: ROUTES.USER_DASHBOARD,
         element: <UserDashboard />,
       },
-    ]
+    ],
   },
-
   {
     path: ROUTES.ERROR_PAGE,
     element: <ErrorPage />,
@@ -103,7 +102,7 @@ const routes: RouteObject[] = [
     element: <SidebarLayout />,
     children: [
       {
-        path: "",
+        path: '',
         element: <Navigate to={ROUTES.TRANSACTIONS} replace />,
       },
       {

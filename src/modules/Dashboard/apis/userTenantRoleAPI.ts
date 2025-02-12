@@ -40,6 +40,7 @@ export const deleteTenantAPI = async (tenantId: number) => {
     await apiDelete(`api/v1/tenants/${tenantId}`);
   } catch (error) {
     console.error('Error deleting tenant:', error);
+    alert('Users are associated with this tenant, please delete users first');
   }
 };
 

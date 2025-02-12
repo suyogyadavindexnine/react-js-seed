@@ -13,7 +13,7 @@ import {
   IconButton,
   ListItemText,
   Menu,
-  ThemeProvider
+  ThemeProvider,
 } from '@mui/material';
 import { StylesProvider } from '@mui/styles';
 import { Provider } from 'react-redux';
@@ -47,13 +47,13 @@ const App = () => {
   const themeOptions = [
     {
       id: 'PureLightTheme',
-      name: 'PureLightTheme'
+      name: 'PureLightTheme',
     },
 
     {
       id: 'NebulaFighterTheme',
-      name: 'NebulaFighterTheme'
-    }
+      name: 'NebulaFighterTheme',
+    },
   ];
 
   const configsButton = (

@@ -1,4 +1,4 @@
-import { FC, useState, createContext } from 'react';
+import { useState, createContext } from 'react';
 import { SidebarContextType } from './models/SidebarContextType';
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare
@@ -6,7 +6,7 @@ export const SidebarContext = createContext<SidebarContextType>(
   {} as SidebarContextType
 );
 
-export const SidebarProvider: FC = ({ children }:any) => {
+export const SidebarProvider = ({ children }: any) => {
   const [sidebarToggle, setSidebarToggle] = useState(false);
   const toggleSidebar = () => {
     setSidebarToggle(!sidebarToggle);
