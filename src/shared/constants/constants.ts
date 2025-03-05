@@ -90,7 +90,7 @@ export const FIELD_TYPE = {
 };
 
 export const DEMO_EMAILS = {
-  PLATFORM_ADMIN: 'aakanksha.thokare@indexnine.com',
+  PLATFORM_ADMIN: 'ironman@email.com',
   COMPANY_ADMIN: 'blackwidow@email.com',
   USER: 'spiderman@email.com',
 };
